@@ -156,9 +156,25 @@ score and refuses to write if a score disagrees with the frozen ranking. Use
 
 The **Explore** page lists the 1,781 collapsed candidate families, renders the scored
 drug → protein → (protein) → disease paths in Cytoscape with optional pathway context
-branches, and shows per-drug source identifiers and matched ClinicalTrials.gov
-records. Dashed pathway edges are sourced context and contribute nothing to the
-score. Every edge is labelled direction unknown. The **Validation** page is the
+branches, and shows per-drug source identifiers, per-entity external links and
+matched ClinicalTrials.gov records. Dashed pathway edges are sourced context and
+contribute nothing to the score. Every edge is labelled direction unknown.
+
+The graph uses a dagre layered layout running left to right. Undirected edges are
+oriented by tier (drug → protein → pathway/disease) purely so the layout ranks
+cleanly; this asserts no biological direction. Edge text is hidden by default —
+line style plus the legend carry the relation, and the full text appears on hover or
+selection. Node captions truncate at 28 characters, show the full name on hover, and
+draw above every edge with a background halo. Hovering or tapping a node highlights
+its connections and dims the rest. The default view shows the top 3 scored paths with
+pathway context off; a toggle shows all paths, and selecting a single path turns
+context back on.
+
+`scripts/label_overlap_audit.js` measures caption collisions in the live page. Run
+over the top 20 families in both the default and all-paths views (41 views): **0
+label/label and 0 label/node overlaps**. Edge-through-label geometry remains in 19 of
+41 views, which the draw order and halo keep legible; `artifacts/screenshots/` holds
+before/after images including the worst remaining case. The **Validation** page is the
 dashboard described above, including the family permutation test and the
 "what didn't work" embedding note. Literature evidence is stage 4 and the panel
 says so rather than showing anything unverified.

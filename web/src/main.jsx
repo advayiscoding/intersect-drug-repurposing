@@ -1,46 +1,78 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import cytoscape from 'cytoscape';
+import dagre from 'cytoscape-dagre';
 import { Network, Search, ArrowUpRight, ArrowRight, Layers, FlaskConical, ShieldCheck, ChevronDown, Maximize2, Plus, Minus, ExternalLink, Info, Check, CircleDot, BarChart3 } from 'lucide-react';
 import './style.css';
 
 const pct = n => `${(100*n).toFixed(2)}%`;
 const names = {path_only:'Path scoring',popularity_only:'Popularity',random:'Random reference',embedding_only:'DistMult embedding',combined:'Tuned combined'};
 const colors = {drug:'#d97742','gene/protein':'#3f8174',pathway:'#8271a6',disease:'#b66572'};
+const LABEL_MAX = 28;
+const clip = name => name.length > LABEL_MAX ? `${name.slice(0, LABEL_MAX - 1).trimEnd()}…` : name;
+const relationText = e => e.context ? 'pathway member' : e.relations.includes('protein_protein') ? 'interacts with' : 'associated with';
+cytoscape.use(dagre);
 
-function Graph({ detail, context, pathIndex, onSelect }) {
+function Graph({ detail, context, pathIndex, pathLimit, onSelect }) {
   const container = useRef(null), instance = useRef(null);
+  const [hovered, setHovered] = useState(null);
   useEffect(() => {
     if (!detail || !container.current) return;
-    let nodes = detail.graph.nodes, edges = detail.graph.edges.filter(e=>context || !e.context);
-    if(pathIndex>=0 && detail.paths[pathIndex]){
-      const path = detail.paths[pathIndex], ids = new Set(path.nodes.map(n=>n.id));
-      edges = edges.filter(e=>(ids.has(e.source)&&ids.has(e.target)) || (context&&e.context&&ids.has(e.source)));
-      const shown=new Set([...ids,...edges.flatMap(e=>[e.source,e.target])]);
-      nodes=nodes.filter(n=>shown.has(n.id));
-    } else if(!context){ const ids=new Set([detail.drug_id,...edges.flatMap(e=>[e.source,e.target])]);nodes=nodes.filter(n=>ids.has(n.id)); }
-    const buckets={drug:[], 'gene/protein':[],pathway:[],disease:[]};nodes.forEach(n=>(buckets[n.type]??=[]).push(n));
-    const elements=nodes.map(n=>{
-      const bucket=buckets[n.type],i=bucket.indexOf(n), count=bucket.length;
-      const x={drug:60,'gene/protein':330,pathway:570,disease:810}[n.type]??400;
-      return {data:{...n,id:String(n.id),label:n.name,color:colors[n.type]??'#73817e'},position:{x:x+(n.type==='gene/protein'?(i%2)*90:0),y:70+(i+1)*370/(count+1)}};
+    // Only the paths currently in view contribute edges; context branches hang off them.
+    const shownPaths = pathIndex>=0 && detail.paths[pathIndex] ? [detail.paths[pathIndex]] : detail.paths.slice(0, pathLimit);
+    const ids = new Set(shownPaths.flatMap(p=>p.nodes.map(n=>n.id)));
+    let edges = detail.graph.edges.filter(e=>(context||!e.context) &&
+      (e.context ? ids.has(e.source)||ids.has(e.target) : ids.has(e.source)&&ids.has(e.target)));
+    const shown = new Set([...ids, ...edges.flatMap(e=>[e.source,e.target])]);
+    const nodes = detail.graph.nodes.filter(n=>shown.has(n.id));
+    const elements=nodes.map(n=>({data:{...n,id:String(n.id),label:clip(n.name),full:n.name,color:colors[n.type]??'#73817e',
+      tier:{drug:0,'gene/protein':1,pathway:2,disease:3}[n.type]??1}}));
+    // The graph is undirected, so orient each edge from the lower tier upward. This is
+    // purely so the layered layout ranks drug < protein < disease/pathway and stops
+    // long edges doubling back across the canvas; it asserts no biological direction.
+    const tierOf=Object.fromEntries(elements.map(el=>[el.data.id,el.data.tier]));
+    edges.forEach(e=>{
+      let [source,target]=[String(e.source),String(e.target)];
+      if((tierOf[target]??9)<(tierOf[source]??9)) [source,target]=[target,source];
+      elements.push({data:{...e,id:`e-${e.id}`,source,target,label:relationText(e)}});
     });
-    edges.forEach(e=>elements.push({data:{...e,id:`e-${e.id}`,source:String(e.source),target:String(e.target),label:e.context?'pathway member':e.relations.includes('protein_protein')?'interacts':e.relations.includes('drug_protein')?'associated':'associated'}}));
-    const cy=cytoscape({container:container.current,elements,layout:{name:'preset',fit:true,padding:45},minZoom:.3,maxZoom:3,wheelSensitivity:.18,
+    const cy=cytoscape({container:container.current,elements,minZoom:.3,maxZoom:3,wheelSensitivity:.18,
+      layout:{name:'dagre',rankDir:'LR',nodeSep:58,rankSep:165,edgeSep:26,ranker:'network-simplex',fit:true,padding:60},
       style:[
-        {selector:'node',style:{'background-color':'data(color)','label':'data(label)','color':'#293d38','font-size':12,'font-family':'Arial','text-wrap':'wrap','text-max-width':128,'text-valign':'bottom','text-margin-y':10,width:21,height:21,'border-width':5,'border-color':'#f4f7f4'}},
+        // Labels carry a halo (text-outline) and sit above every edge, so lines never cut through text.
+        {selector:'node',style:{'background-color':'data(color)','label':'data(label)','color':'#243830','font-size':12,'font-family':'Arial','text-wrap':'wrap','text-max-width':150,'text-valign':'bottom','text-margin-y':9,width:21,height:21,'border-width':5,'border-color':'#f4f7f4','text-outline-color':'#fbfcf8','text-outline-width':3,'z-index':10}},
         {selector:'node[type="drug"]',style:{width:31,height:31,'border-color':'#f5e9dc','border-width':8,'font-weight':700}},
         {selector:'node[type="disease"]',style:{width:34,height:34,'border-color':'#f3e4e6','border-width':8,'font-weight':700}},
-        {selector:'node[type="pathway"]',style:{shape:'round-rectangle',width:20,height:20,'font-size':10,'text-max-width':145}},
-        {selector:'edge',style:{width:1.5,'line-color':'#bbc9c0','curve-style':'bezier','label':'data(label)','font-size':9,'color':'#72827a','text-background-color':'#fbfcf8','text-background-opacity':.9,'text-background-padding':3,'text-rotation':'autorotate'}},
-        {selector:'edge[?context]',style:{'line-style':'dashed','line-color':'#c4bdd2','font-size':8}},
-        {selector:':selected',style:{'border-color':'#263e35','border-width':4,'line-color':'#263e35',width:28,height:28}}
+        {selector:'node[type="pathway"]',style:{shape:'round-rectangle',width:20,height:20,'font-size':10}},
+        // No edge text by default: line style encodes the relation, the legend explains it.
+        {selector:'edge',style:{width:1.5,'line-color':'#b4c4ba','curve-style':'bezier','control-point-step-size':55,'text-rotation':'autorotate','font-size':9,'color':'#5f7268','text-background-color':'#fbfcf8','text-background-opacity':1,'text-background-padding':3,'z-index':1}},
+        {selector:'edge[?context]',style:{'line-style':'dashed','line-color':'#c4bdd2'}},
+        {selector:'.show-label',style:{'label':'data(label)','z-index':20}},
+        {selector:'.dim',style:{opacity:.16,'z-index':0}},
+        {selector:'.lit',style:{'line-color':'#5c7a5f',width:2.4,'z-index':15}},
+        {selector:'node:selected',style:{'border-color':'#263e35','border-width':4}}
       ]});
-    instance.current=cy;cy.on('tap','node',e=>onSelect(e.target.data()));
-    const observer=new ResizeObserver(()=>{cy.resize();cy.fit(undefined,45)});observer.observe(container.current);
+    instance.current=cy;
+    const focus = node => {
+      const connected = node.connectedEdges();
+      cy.elements().addClass('dim');
+      connected.removeClass('dim').addClass('lit show-label');
+      connected.connectedNodes().removeClass('dim');
+      node.removeClass('dim');
+    };
+    const clear = () => cy.elements().removeClass('dim lit show-label');
+    cy.on('tap','node',e=>{onSelect(e.target.data());focus(e.target);});
+    cy.on('mouseover','node',e=>{setHovered(e.target.data().full);focus(e.target);});
+    cy.on('mouseout','node',()=>{setHovered(null);clear();});
+    cy.on('mouseover','edge',e=>{e.target.addClass('show-label');setHovered(`${e.target.data().label} · direction unknown`);});
+    cy.on('mouseout','edge',e=>{e.target.removeClass('show-label');setHovered(null);});
+    cy.on('tap',e=>{if(e.target===cy){clear();onSelect(null);}});
+    const observer=new ResizeObserver(()=>{cy.resize();cy.fit(undefined,60)});observer.observe(container.current);
     return ()=>{observer.disconnect();cy.destroy();instance.current=null;};
-  },[detail,context,pathIndex]);
-  return <div className="graph-shell"><div ref={container} className="graph-canvas" role="img" aria-label="Interactive biological association graph; use the accessible node list below for details"/><div className="graph-tools"><button aria-label="Zoom in" onClick={()=>instance.current?.zoom(instance.current.zoom()*1.2)}><Plus size={15}/></button><button aria-label="Zoom out" onClick={()=>instance.current?.zoom(instance.current.zoom()/1.2)}><Minus size={15}/></button><button aria-label="Fit graph" onClick={()=>instance.current?.fit(undefined,45)}><Maximize2 size={15}/></button></div><div className="graph-watermark">PRIMEKG <span>/ ASSOCIATION NETWORK</span></div></div>;
+  },[detail,context,pathIndex,pathLimit]);
+  return <div className="graph-shell"><div ref={container} className="graph-canvas" role="img" aria-label="Interactive biological association graph; use the accessible node list below for details"/>
+    {hovered&&<div className="graph-hover">{hovered}</div>}
+    <div className="graph-tools"><button aria-label="Zoom in" onClick={()=>instance.current?.zoom(instance.current.zoom()*1.2)}><Plus size={15}/></button><button aria-label="Zoom out" onClick={()=>instance.current?.zoom(instance.current.zoom()/1.2)}><Minus size={15}/></button><button aria-label="Fit graph" onClick={()=>instance.current?.fit(undefined,60)}><Maximize2 size={15}/></button></div><div className="graph-watermark">PRIMEKG <span>/ ASSOCIATION NETWORK</span></div></div>;
 }
 
 function CandidateList({families,selected,onSelect}){
@@ -69,19 +101,22 @@ function EvidencePanel({detail,node}){
 }
 
 function Explorer({data}){
-  const [selected,setSelected]=useState(data.families[0].id),[drug,setDrug]=useState(data.families[0].representative_id),[detail,setDetail]=useState(null),[error,setError]=useState(''),[context,setContext]=useState(true),[pathIndex,setPathIndex]=useState(-1),[node,setNode]=useState(null);
+  const [selected,setSelected]=useState(data.families[0].id),[drug,setDrug]=useState(data.families[0].representative_id),[detail,setDetail]=useState(null),[error,setError]=useState(''),[context,setContext]=useState(false),[pathIndex,setPathIndex]=useState(-1),[allPaths,setAllPaths]=useState(false),[node,setNode]=useState(null);
+  const DEFAULT_PATHS=3, pathLimit=allPaths?Infinity:DEFAULT_PATHS;
+  const choosePath=i=>{setPathIndex(i);setContext(i>=0);};
   const family=data.families.find(f=>f.id===selected),variant=family.members.find(m=>m.drug_id===drug)??family.members[0];
-  useEffect(()=>{setDrug(family.representative_id);setPathIndex(-1);setNode(null)},[selected]);
-  useEffect(()=>{const controller=new AbortController();setDetail(null);setError('');setNode(null);setPathIndex(-1);fetch(`/api/drugs/${drug}`,{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error('Could not load cached graph');return r.json()}).then(setDetail).catch(e=>{if(e.name!=='AbortError')setError(e.message)});return()=>controller.abort()},[drug]);
+  useEffect(()=>{setDrug(family.representative_id);setPathIndex(-1);setContext(false);setNode(null)},[selected]);
+  useEffect(()=>{const controller=new AbortController();setDetail(null);setError('');setNode(null);setPathIndex(-1);setContext(false);setAllPaths(false);fetch(`/api/drugs/${drug}`,{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error('Could not load cached graph');return r.json()}).then(setDetail).catch(e=>{if(e.name!=='AbortError')setError(e.message)});return()=>controller.abort()},[drug]);
   return <><div className="page-heading"><div><span className="eyebrow">ALZHEIMER’S RESEARCH WORKBENCH</span><h1>Follow the evidence.</h1><p>Explore biological connections. Inspect the uncertainty.</p></div><div className="snapshot"><span className="status-dot"/> Cached research snapshot <small>PrimeKG · 3-hop disease neighborhood</small></div></div>
     <div className="overview-strip"><div><Network size={18}/><strong>{data.validation.candidate_count.toLocaleString()}</strong><span>eligible drugs</span></div><div><Layers size={18}/><strong>{data.validation.family_count.toLocaleString()}</strong><span>distinct families</span></div><div><ShieldCheck size={18}/><strong>Path-only</strong><span>fixed, explainable scoring</span></div><div><span className="tiny-pill">RESEARCH USE</span><span>Hypotheses, not treatment advice</span></div></div>
     <div className="workbench"><CandidateList families={data.families} selected={selected} onSelect={setSelected}/><div className="detail-column">
       <section className="graph-panel panel"><div className="detail-heading"><div><span className="eyebrow">FAMILY {String(family.rank).padStart(2,'0')} / {family.members.length>1?'GROUPED VARIANTS':'SINGLE COMPOUND'}</span><h2>{family.name}</h2></div><span className="badge green"><Check size={12}/> Sourced graph paths</span></div>
       <div className="variant-bar"><label>Viewing <select aria-label="Drug variant" value={drug} onChange={e=>setDrug(Number(e.target.value))}>{family.members.map(m=><option key={m.drug_id} value={m.drug_id}>{m.name}</option>)}</select></label><div><span>Path score</span><strong>{variant.path_score.toFixed(4)}</strong><i/> <span>{variant.path_count} paths</span></div></div>
-      <div className="graph-toolbar"><div className="legend">{[['drug','Drug'],['gene/protein','Protein'],['pathway','Pathway'],['disease','Disease']].map(([id,label])=><span key={id}><i style={{background:colors[id]}}/>{label}</span>)}</div><label className="check"><input type="checkbox" checked={context} onChange={e=>setContext(e.target.checked)}/>Pathway context</label></div>
-      {error?<div className="empty error">{error}</div>:detail?<Graph detail={detail} context={context} pathIndex={pathIndex} onSelect={setNode}/>:<div className="graph-loading"><span className="spinner"/> Loading sourced connections…</div>}
-      <div className="path-selector"><span>Scored paths</span><button className={pathIndex===-1?'active':''} onClick={()=>setPathIndex(-1)}>All</button>{detail?.paths.map((p,i)=><button key={i} className={pathIndex===i?'active':''} onClick={()=>setPathIndex(i)}>Path {i+1}</button>)}{detail&&!detail.paths.length&&<span className="muted">No scored path in this subgraph</span>}</div>
-      <div className="graph-caption"><Info size={14}/><span>Connections show associations, not causality. Dashed pathway branches are context only.</span></div>
+      <div className="graph-toolbar"><div className="legend">{[['drug','Drug'],['gene/protein','Protein'],['pathway','Pathway'],['disease','Disease']].map(([id,label])=><span key={id}><i style={{background:colors[id]}}/>{label}</span>)}<span className="legend-line"><i className="line solid"/>Association</span><span className="legend-line"><i className="line dashed"/>Pathway member</span></div><label className="check"><input type="checkbox" checked={context} onChange={e=>setContext(e.target.checked)}/>Pathway context</label></div>
+      {error?<div className="empty error">{error}</div>:detail?<Graph detail={detail} context={context} pathIndex={pathIndex} pathLimit={pathLimit} onSelect={setNode}/>:<div className="graph-loading"><span className="spinner"/> Loading sourced connections…</div>}
+      <div className="path-selector"><span>Scored paths</span><button className={pathIndex===-1?'active':''} onClick={()=>choosePath(-1)}>{allPaths?'All':`Top ${Math.min(DEFAULT_PATHS,detail?.paths.length??0)}`}</button>{detail?.paths.map((p,i)=><button key={i} className={pathIndex===i?'active':''} onClick={()=>choosePath(i)}>Path {i+1}</button>)}{detail&&!detail.paths.length&&<span className="muted">No scored path in this subgraph</span>}
+        {detail&&detail.paths.length>DEFAULT_PATHS&&<button className="toggle-all" onClick={()=>{setAllPaths(!allPaths);setPathIndex(-1);setContext(false);}}>{allPaths?`Show top ${DEFAULT_PATHS} paths`:`Show all ${detail.paths.length} paths`}</button>}</div>
+      <div className="graph-caption"><Info size={14}/><span>Hover a node to highlight its connections and read relation labels. Connections show associations, not causality. Dashed pathway branches are context only.</span></div>
       {detail&&<details className="node-list"><summary>Accessible node and connection list</summary><div>{detail.graph.nodes.map(n=><button key={n.id} onClick={()=>setNode({...n,label:n.name})}>{n.name}<small>{n.type}</small></button>)}</div><ul>{detail.graph.edges.map(e=><li key={e.id}>{detail.graph.nodes.find(n=>n.id===e.source)?.name} ↔ {detail.graph.nodes.find(n=>n.id===e.target)?.name}: {e.relations.join(', ')}; direction unknown{e.context?' (context)':''}</li>)}</ul></details>}
       </section><EvidencePanel detail={detail} node={node}/>
     </div></div></>;

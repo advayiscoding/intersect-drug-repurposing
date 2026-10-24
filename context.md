@@ -40,6 +40,19 @@ Node types in the UI: REACTOME pathway, NCBI gene, DrugBank drug, MONDO disease
 Spot-checked live: Reactome, Monarch MONDO, DrugBank and the NCT trial page all
 resolve to the right entity. NCBI Gene and AmiGO serve bot checks to automation.
 
+Part B DONE. Graph panel rebuilt for readability: dagre layered layout (rankDir LR,
+edges oriented by tier so ranks run drug -> protein -> pathway/disease), no edge
+text by default (line style + legend carry the relation; full text on hover or
+selection), node captions truncated at 28 chars with the full name on hover,
+labels drawn above edges with a halo, hover/tap highlights connected edges and dims
+the rest, and the default view shows the top 3 paths with pathway context off and a
+"show all paths" toggle. `scripts/label_overlap_audit.js` measures label collisions;
+run over the top 20 families in both views (41 views): 0 label/label and 0
+label/node overlaps. Edge-through-label geometry remains in 19 of 41 views (1-4 per
+view) and is accepted because the halo and draw order keep captions legible; the
+worst case is saved as a screenshot. Before/after screenshots in
+artifacts/screenshots/.
+
 ## Status and mandatory next action
 
 Stage 5 approved. ACTIVE: quick all-44/family/exact-CI evaluation fixes, then stage3

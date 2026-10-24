@@ -3,3 +3,8 @@
 .entity-link{font-size:11px;font-weight:600;color:#5d7b45;margin-top:14px}
 .no-link{display:block;font-size:10px;color:#a3ad92;margin-top:14px}
 .dataset-link{display:block;font-size:9px;color:#9aa58d;margin-top:10px}
+.legend-line i.line{width:16px;height:0;border-top:1.5px solid #b4c4ba;border-radius:0}
+.legend-line i.line.dashed{border-top-style:dashed;border-top-color:#c4bdd2}
+.legend-line{display:flex;align-items:center;gap:5px;font-size:9px;color:#84917c}
+.toggle-all{margin-left:auto;font-size:9px;padding:5px 9px;border:1px solid #dde4d4;border-radius:4px;color:#72875f;background:#f7faf1}
+.graph-hover{position:absolute;top:14px;left:18px;max-width:62%;background:#2b3f36;color:#f2f5ec;font-size:10px;padding:6px 9px;border-radius:5px;pointer-events:none;line-height:1.45}
