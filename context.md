@@ -6,7 +6,9 @@ Updated: 2026-10-24. Workspace: `/Users/advay/Downloads/Hackathon`.
 
 - Solo 24-hour Alzheimer's hackathon. Approved scope and stage order in PLAN.md.
 - Work autonomously, commit each stage, record assumptions and reproduction commands.
-- **STOP after stage 2, report measured results, and wait for user reply before stage 3.**
+- First checkpoint approved. NEW ORDER: evaluation hardening, then stage 5 embeddings
+  (three-hour timebox), then STOP and report. UI stage 3 and evidence stage 4 follow
+  only after the next checkpoint reply.
 - Update context.md after each meaningful code/artifact change.
 - Trial testing is not efficacy; no invented evidence or validation results.
 
@@ -14,7 +16,15 @@ Updated: 2026-10-24. Workspace: `/Users/advay/Downloads/Hackathon`.
 
 - Stage 1 committed: `874cde3`. Stage 2 implemented and validated; its code, results,
   and this handoff are committed together as `feat: validate graph rankings against independent Alzheimer trials`.
-- Mandatory checkpoint reached. Report results and WAIT for the user's reply.
+- Active: evaluation hardening and stage 5, authorized by latest user message.
+- Added config/known_controls.json, protocol.py (one-time frozen split), evaluation.py
+  (bootstrap/secondary/enrichment metrics), and isolated reverse-orientation tests.
+- Protocol frozen: 9 controls removed from original pool, discovery N=1792;
+  4 trial-label controls removed, 44 labels split 22 tuning / 22 test.
+  Opposite-split positive exclusion yields N=1770 for each evaluation universe.
+- Four control labels: donepezil, galantamine, rivastigmine, brexpiprazole.
+- Hardening tests: 14 pass. Hardening commit includes controls/split/CI implementation.
+- No new split test results inspected, embeddings not yet trained.
 - Stages 3 UI, 4 evidence/citations, 5 embeddings, 6 optional LINCS are unimplemented.
 - No credentials needed/requested yet. System Python 3.12 has required packages.
 - Git writes and network access require escalation; Git/curl approvals succeeded.
@@ -81,9 +91,15 @@ Updated: 2026-10-24. Workspace: `/Users/advay/Downloads/Hackathon`.
 
 ## Next steps before mandatory checkpoint
 
-1. Report checkpoint and WAIT. No UI/agent work until the user replies.
-2. After explicit continuation: stage 3 cached UI, stage 4 evidence + citation tests,
-   stage 5 sanitized embeddings + all baseline metrics, optional LINCS last.
+1. Separate existing Alzheimer controls using source graph indications plus an
+   explicitly sourced current treatment list. Remove controls from discovery metrics.
+2. Freeze tuning/test split before fitting weights. Add bootstrap 95% recall
+   intervals, recall@50/100, enrichment and both MRR definitions. Commit hardening.
+3. Train DistMult on sanitized graph, with type-constrained filtered negatives;
+   exclude all target/drug pairs from negatives (stronger than just held-out positives).
+4. Tune combined score only on tuning labels, compare on untouched test labels.
+   Preserve path-only primary unless embedding improves primary recall; commit stage 5.
+5. Report checkpoint and WAIT. No UI/agent implementation yet.
 
 ```sh
 PYTHONPATH=src python3 -m repurpose.cli prepare

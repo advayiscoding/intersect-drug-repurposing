@@ -1,5 +1,37 @@
 # Alzheimer's drug-repurposing workbench
 
+## Current protocol (supersedes stage-2 pool below)
+
+The first checkpoint is approved. Evaluation hardening precedes stage 5; stop again
+after stage 5. The historical stage-2 numbers below are not the new test benchmark.
+
+`artifacts/protocol.json` freezes the current evaluation before embedding fitting.
+The original 1,801 candidates are all PrimeKG drug nodes with at least one
+non-Alzheimer indication. Remove nine known Alzheimer controls, leaving 1,792.
+Controls combine source PrimeKG Alzheimer indications and the sourced names in
+`config/known_controls.json`. An indication does not assert current regulatory
+approval. Controls are reported separately, never counted as discovery misses.
+
+Four of the original 48 trial-tested drugs are controls: donepezil, galantamine,
+rivastigmine, brexpiprazole. The other 44 are split by a fixed hash into 22 tuning
+and 22 test labels. Each ranking pool excludes the opposite split's 22 positives,
+leaving 1,770 candidates. This avoids treating known opposite-split labels as
+negatives or letting them consume retrieval positions. All methods share this
+pool and split. All target-drug edges remain absent from graph training.
+
+Primary metrics are recall@10/20 with percentile 95% bootstrap intervals over
+held-out drugs (10,000 resamples). Secondary metrics include recall@50/100,
+enrichment@k = recall@k / (k / pool size), single-query MRR, and the mean reciprocal
+rank across every held-out test drug. Bootstrap intervals condition on one fixed
+model and graph, and do not capture model instability or biological uncertainty.
+With zero observed hits they can degenerate to [0,0]; that does not establish
+zero population recall. Report lift over random and popularity, not efficacy.
+
+Mixture weights use tuning labels only; test labels are reserved until weights
+and model configuration are locked. Stage-2 aggregate results were previously
+seen, so this remains an internal retrospective evaluation, not a new external
+validation cohort. See `context.md` for current implementation progress.
+
 Research hypotheses, not medical advice. Stages 1–2 implement real PrimeKG loading,
 Alzheimer's neighborhood extraction, explainable path ranking, leakage protection,
 and a retrospective validation harness.

@@ -33,3 +33,14 @@ def test_label_edge_cannot_select_an_isolated_drug_into_neighborhood():
     clean, _ = remove_target_drug_edges(edges, {1}, {2})
     subgraph = neighborhood(clean, {1})
     assert 2 not in set(subgraph.x_index) | set(subgraph.y_index)
+
+
+@pytest.mark.parametrize("relation", ["indication", "off-label use", "contraindication", "unexpected_relation"])
+@pytest.mark.parametrize("pair", [(1, 2), (2, 1)])
+def test_each_reverse_orientation_is_removed_even_without_its_forward_copy(relation, pair):
+    frame = pd.DataFrame([(*pair, relation), (2, 3, "drug_protein")],
+                         columns=["x_index", "y_index", "relation"])
+    clean, removed = remove_target_drug_edges(frame, {1}, {2})
+    assert len(removed) == 1
+    assert clean[["x_index", "y_index"]].values.tolist() == [[2, 3]]
+    assert_no_leakage(clean, {1}, {2})

@@ -32,13 +32,16 @@ JSON. A FastAPI API and React/Cytoscape UI consume those artifacts.
 - [x] Stage 2: evaluate random, popularity, and path rankings on the same eligible
   candidate universe; export recall@10, recall@20, MRR and individual ranks;
   mark embedding/combined results unavailable until trained; commit.
-- [ ] STOP at the user checkpoint: report actual metrics, working components,
-  limitations, and wait for a reply before stage 3.
+- [x] First checkpoint approved by user.
+- [ ] Harden evaluation: separate known controls; freeze tuning/test split; add
+  bootstrap intervals, secondary recall/enrichment, reverse-edge tests.
+- [ ] Stage 5 FIRST: timebox embedding experiments to three hours, exclude all
+  held-out edges and filter negatives, tune mixture only on tuning split, compare
+  once on test split. Keep path primary unless embeddings improve primary recall.
+- [ ] STOP after stage 5; report real results and await user continuation.
 - [ ] Stage 3: candidate list, interactive paths, validation dashboard using cached JSON.
 - [ ] Stage 4: retrieve PubMed evidence, run mechanism/safety/skeptic/synthesis roles,
   verify every cited PMID against retrieved IDs, flag unsupported claims, cache top 20.
-- [ ] Stage 5: train embeddings on the sanitized graph, score candidates, evaluate
-  embedding and combined rankings with the same held-out labels; preserve split provenance.
 - [ ] Stage 6: optional LINCS reversal if usable signatures exist; unavailable signals
   have no contribution and display an unavailable weight.
 

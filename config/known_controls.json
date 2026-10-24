@@ -1,0 +1,12 @@
+{
+  "reviewed_on": "2026-10-24",
+  "rule": "Separate every PrimeKG Alzheimer indication and the named treatment controls below from discovery. Graph indication does not by itself assert current approval.",
+  "treatment_names": ["donepezil", "galantamine", "benzgalantamine", "rivastigmine", "memantine", "lecanemab", "donanemab", "brexpiprazole", "dextromethorphan-bupropion"],
+  "sources": [
+    "https://www.nia.nih.gov/health/alzheimers-treatment/how-alzheimers-disease-treated",
+    "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-agitation-symptoms-associated-dementia-due-alzheimers-disease",
+    "https://www.fda.gov/news-events/press-announcements/fda-approves-first-non-antipsychotic-drug-treat-agitation-associated-dementia",
+    "https://doi.org/10.7910/DVN/IXA7BM"
+  ],
+  "combination_policy": "Combination approval does not establish approval of each individual ingredient; match combination names only. Control list is conservative and source graph controls are labeled as such."
+}

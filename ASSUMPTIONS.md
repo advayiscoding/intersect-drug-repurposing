@@ -15,3 +15,9 @@
 - MRR uses reciprocal first relevant rank for the one disease query; report mean reciprocal held-out drug rank separately to expose performance beyond the first hit.
 - Random baseline averages 1,000 fixed-seed permutations (0–999): a single random permutation would be unstable for 48 positives in 1,801 candidates.
 - Maintain context.md after meaningful changes: the user requested a durable handoff record for another model.
+- New checkpoint supersedes build order: harden evaluation, stage 5 within three hours, STOP, then UI/evidence after user continuation.
+- Known controls are the union of source PrimeKG Alzheimer indications and a sourced current treatment list; all controls leave discovery numerator and denominator, with separate reporting.
+- Freeze a deterministic 50/50 drug-label split before embeddings and mixtures; exclude opposite-split positives from each evaluation pool so they are neither false negatives nor consumed top-k positions.
+- Bootstrap resamples held-out drugs with replacement 10,000 times, conditional on the fitted graph/ranking; it does not quantify efficacy, external validity, or graph-construction uncertainty.
+- Stage-2 aggregate outcomes were already observed, so the new split is an internal retrospective evaluation; it is untouched by subsequent weight/model fitting, not a fresh external benchmark.
+- DistMult configuration will be fixed before test evaluation; combined percentile weights selected from {0,.25,.5,.75,1} only by tuning recall@20 then @10, with ties favoring path.
