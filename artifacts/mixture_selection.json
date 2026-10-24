@@ -1,0 +1,131 @@
+{
+  "embedding_weight": 0.0,
+  "path_weight": 1.0,
+  "lincs_weight": "unavailable",
+  "trials": [
+    {
+      "embedding_weight": 0.0,
+      "metrics": {
+        "mrr": 0.2,
+        "mean_reciprocal_heldout_rank": 0.016616772319490273,
+        "hits_at_10": 2,
+        "recall_at_10": 0.09090909090909091,
+        "enrichment_at_10": 16.09090909090909,
+        "hits_at_20": 2,
+        "recall_at_20": 0.09090909090909091,
+        "enrichment_at_20": 8.045454545454545,
+        "hits_at_50": 2,
+        "recall_at_50": 0.09090909090909091,
+        "enrichment_at_50": 3.2181818181818183,
+        "hits_at_100": 3,
+        "recall_at_100": 0.13636363636363635,
+        "enrichment_at_100": 2.4136363636363636
+      }
+    },
+    {
+      "embedding_weight": 0.25,
+      "metrics": {
+        "mrr": 0.007518796992481203,
+        "mean_reciprocal_heldout_rank": 0.0025374580687384804,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 0,
+        "recall_at_50": 0.0,
+        "enrichment_at_50": 0.0,
+        "hits_at_100": 0,
+        "recall_at_100": 0.0,
+        "enrichment_at_100": 0.0
+      }
+    },
+    {
+      "embedding_weight": 0.5,
+      "metrics": {
+        "mrr": 0.014084507042253521,
+        "mean_reciprocal_heldout_rank": 0.002594423242950535,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 0,
+        "recall_at_50": 0.0,
+        "enrichment_at_50": 0.0,
+        "hits_at_100": 1,
+        "recall_at_100": 0.045454545454545456,
+        "enrichment_at_100": 0.8045454545454546
+      }
+    },
+    {
+      "embedding_weight": 0.75,
+      "metrics": {
+        "mrr": 0.0196078431372549,
+        "mean_reciprocal_heldout_rank": 0.0027705837090961326,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 0,
+        "recall_at_50": 0.0,
+        "enrichment_at_50": 0.0,
+        "hits_at_100": 1,
+        "recall_at_100": 0.045454545454545456,
+        "enrichment_at_100": 0.8045454545454546
+      }
+    },
+    {
+      "embedding_weight": 1.0,
+      "metrics": {
+        "mrr": 0.011494252873563218,
+        "mean_reciprocal_heldout_rank": 0.002162677738828805,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 0,
+        "recall_at_50": 0.0,
+        "enrichment_at_50": 0.0,
+        "hits_at_100": 1,
+        "recall_at_100": 0.045454545454545456,
+        "enrichment_at_100": 0.8045454545454546
+      }
+    }
+  ],
+  "selection_rule": "Maximize tuning recall@20, then recall@10; ties prefer lower embedding weight. Never use test labels.",
+  "fit_label_ids": [
+    14961,
+    14992,
+    14402,
+    14599,
+    14968,
+    17270,
+    15666,
+    14223,
+    15611,
+    15425,
+    14975,
+    14962,
+    14664,
+    14653,
+    16588,
+    15082,
+    20270,
+    15331,
+    14323,
+    15308,
+    14685,
+    15284
+  ],
+  "test_labels_used": false,
+  "protocol_sha256": "ce2a08a2a395426f76a2aa40581d3b722fc4d596dd6b8173758140f31d4f138c",
+  "embedding_scores_sha256": "2dd55dc890611a40bed57376817a74c5a7c73c384d8ce0dedc7efebed79c54c0",
+  "rankings_sha256": "31ef11a8e719fd25dae819a6e1ac225fe9c93438c00463faa6d4e0e060e830d7"
+}

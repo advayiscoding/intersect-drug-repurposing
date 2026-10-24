@@ -27,6 +27,13 @@ def metrics(order: list[int], positives: set[int]) -> dict:
 
 
 def evaluate(root: Path):
+    if (root / "artifacts/protocol.json").exists():
+        from .report import evaluate_frozen
+        return evaluate_frozen(root)
+    return evaluate_legacy(root)
+
+
+def evaluate_legacy(root: Path):
     out, processed = root / "artifacts", root / "data/processed"
     manifest = json.loads((out / "manifest.json").read_text())
     ranking = json.loads((out / "rankings.json").read_text())

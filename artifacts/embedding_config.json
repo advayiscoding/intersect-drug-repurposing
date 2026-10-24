@@ -1,0 +1,17 @@
+{
+  "model": "DistMult",
+  "dimension": 64,
+  "epochs": 40,
+  "batch_size": 2048,
+  "negatives_per_positive": 4,
+  "lr": 0.003,
+  "regularization": 0.0001,
+  "max_per_relation_per_epoch": 30000,
+  "seed": 20261024,
+  "wall_time_limit_seconds": 10800,
+  "device": "cpu",
+  "torch_threads": 2,
+  "selection": "Fixed configuration, no test-based model selection or early stopping",
+  "target_aggregation": "max indication score over resolved Alzheimer disease nodes",
+  "protocol_sha256": "ce2a08a2a395426f76a2aa40581d3b722fc4d596dd6b8173758140f31d4f138c"
+}

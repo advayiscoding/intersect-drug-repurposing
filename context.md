@@ -1,109 +1,149 @@
 # Handoff context
 
-Updated: 2026-10-24. Workspace: `/Users/advay/Downloads/Hackathon`.
+Updated: 2026-10-24. Workspace: /Users/advay/Downloads/Hackathon.
 
-## Persistent instructions
+## Status and mandatory next action
 
-- Solo 24-hour Alzheimer's hackathon. Approved scope and stage order in PLAN.md.
-- Work autonomously, commit each stage, record assumptions and reproduction commands.
-- First checkpoint approved. NEW ORDER: evaluation hardening, then stage 5 embeddings
-  (three-hour timebox), then STOP and report. UI stage 3 and evidence stage 4 follow
-  only after the next checkpoint reply.
-- Update context.md after each meaningful code/artifact change.
-- Trial testing is not efficacy; no invented evidence or validation results.
+Stage 5 and evaluation hardening are COMPLETE. Stop at the SECOND checkpoint and
+wait for the user's reply. The first checkpoint was approved. Do NOT implement
+UI, evidence agents or further embedding experiments until continuation.
 
-## Status
+User's remaining order after next approval: stage 3 UI on real cached outputs,
+then stage 4 evidence agents with citation checks; optional LINCS last.
+Update context.md after every meaningful change, assumptions in ASSUMPTIONS.md,
+commands/results in README.md, commit each stage. Work autonomously within scope.
 
-- Stage 1 committed: `874cde3`. Stage 2 implemented and validated; its code, results,
-  and this handoff are committed together as `feat: validate graph rankings against independent Alzheimer trials`.
-- Active: evaluation hardening and stage 5, authorized by latest user message.
-- Added config/known_controls.json, protocol.py (one-time frozen split), evaluation.py
-  (bootstrap/secondary/enrichment metrics), and isolated reverse-orientation tests.
-- Protocol frozen: 9 controls removed from original pool, discovery N=1792;
-  4 trial-label controls removed, 44 labels split 22 tuning / 22 test.
-  Opposite-split positive exclusion yields N=1770 for each evaluation universe.
-- Four control labels: donepezil, galantamine, rivastigmine, brexpiprazole.
-- Hardening tests: 14 pass. Hardening commit includes controls/split/CI implementation.
-- No new split test results inspected, embeddings not yet trained.
-- Stages 3 UI, 4 evidence/citations, 5 embeddings, 6 optional LINCS are unimplemented.
-- No credentials needed/requested yet. System Python 3.12 has required packages.
-- Git writes and network access require escalation; Git/curl approvals succeeded.
+## Completed commits
 
-## Files and data
+- 874cde3: stage 1, real PrimeKG and leakage-safe path ranking.
+- 9b19251: stage 2, original retrospective evaluation.
+- 8544c49: evaluation hardening, controls and frozen split.
+- Stage-5 code/results/docs are committed with this handoff under
+  "feat: evaluate sanitized embeddings and retain path ranking after negative finding".
+  Use git log for its hash.
 
-- data.py: pandas loading, hashes, CT.gov download and exact name/alias matching.
-- graph.py: remove all drug/Alzheimer pairs, both directions/all relations, before
-  three-hop extraction, degree normalization, and NetworkX construction.
-- ranking.py: deterministic typed paths, top-10 sum, top-5 explanations, hashed ties.
-- cli.py: fetch-trials, prepare, validate. Source files are under src/repurpose/.
-- tests/test_leakage.py: 2 tests passed at stage 1; injected labels cannot alter
-  training triples, graph membership, degrees, or path rankings.
-- artifacts/: committed rankings, top-20 candidate paths, trial labels, manifest.
-- validation.py recomputes degrees/paths from sanitized triples before comparing
-  methods. artifacts/validation.json now contains real metrics and individual ranks.
-- data/raw/primekg.csv: 981,751,236 bytes, Dataverse file 6180620, MD5 verified
-  against source metadata: aac8191d4fbc5bf09cdf8c3c78b4e75f.
-- data/raw/trials.json: 2,615 completed/terminated trial records, 3 pages, 123 MiB.
-- data/processed/training_edges.parquet: the ONLY allowed embedding input.
-- data/processed/nodes.json: full node metadata. Exploratory edges.parquet also
-  exists locally; it is UNSANITIZED and must never be used for training.
-- Raw/processed files are Git-ignored. Hashes appear in artifacts/manifest.json.
+## Sources and local environment
 
-## Real counts
+- System Python 3.12 has pandas 2.3.3, NetworkX 3.6.1, torch 2.12.0, NumPy, pyarrow,
+  requests and pytest. Torch CPU, two threads. No venv created.
+- Git/network require escalation; previous Git and curl approvals succeeded.
+- PrimeKG data/raw/primekg.csv: 981,751,236 bytes, Dataverse file 6180620.
+  MD5 matches published metadata: aac8191d4fbc5bf09cdf8c3c78b4e75f.
+- data/raw/trials.json: 2,615 completed/terminated CT.gov records, 123 MiB.
+- Source graph: 129,375 nodes, 8,100,498 reciprocal rows.
+- Five Alzheimer disease nodes, excluding explicitly non-Alzheimer entity.
+- Remove ALL 146 target/drug rows in both orientations/all relations before selection.
+- Selected 3-hop typed graph: 29,216 nodes, 503,232 pairs, 503,473 typed triples.
+- ONLY data/processed/training_edges.parquet may be used for training.
+  The exploratory data/processed/edges.parquet is UNSANITIZED; never train on it.
+- Raw/processed files are Git-ignored. Model data/processed/distmult.pt is local.
+  All source/training hashes are in artifacts. No API credentials requested yet.
 
-- Source: 129,375 nodes / 8,100,498 reciprocal rows.
-- Five Alzheimer disease nodes; explicitly non-Alzheimer entity excluded.
-- Removed 146 target/drug rows (30 indication, 116 contraindication).
-- Graph: 29,216 nodes / 503,232 pairs / 503,473 typed triples.
-- Candidates: 1,801; 1,236 with paths; 159 outside graph retain zero scores.
-- 576 eligible trials; 79 matched drugs; 48 in candidate universe, all in graph.
-- Those 48 drugs match 83 unique trial IDs; 31 matched drugs outside eligibility;
-  451 intervention names did not unambiguously match.
+## Protocol and eligibility
 
-## Stage-2 results (completed)
+- Original pool: 1,801 PrimeKG drugs with a non-Alzheimer indication.
+- Known controls: union of PrimeKG Alzheimer indications and sourced treatment
+  names in config/known_controls.json (NIA/FDA sources). Graph indication is not
+  a claim of current regulatory approval. Combination approval is not assigned
+  to individual ingredient nodes.
+- Nine controls removed from discovery, leaving 1,792.
+- Original 48 matched trial labels: four controls (donepezil, galantamine,
+  rivastigmine, brexpiprazole) removed from discovery numerator AND denominator.
+- Remaining 44 labels split by fixed hash into 22 tuning and 22 test labels.
+- Each evaluation pool excludes opposite-split positives, N=1770 for each.
+- artifacts/protocol.json frozen BEFORE training; do not regenerate after results.
+- Trial inclusion: explicit Alzheimer condition, interventional treatment,
+  completed/terminated, actual enrollment >0, DRUG in experimental arm.
+- Exact normalized name/alias matching; 576 eligible trials, 79 matched drugs;
+  31 lacked non-Alzheimer indications. No fuzzy matching.
+- Historical aggregate stage-2 results were already seen; new split is an internal
+  retrospective evaluation untouched by subsequent fitting, not new external data.
+- Ground truth is independently trial-tested drugs, NOT efficacy. Symptom studies
+  are included. Direction unknown on all PrimeKG paths.
 
-| Method | recall@10 | recall@20 | query MRR | mean reciprocal held-out rank |
-| --- | ---: | ---: | ---: | ---: |
-| Random, 1000 seeds | 0.00541667 | 0.0108125 | 0.100826 | 0.00447279 |
-| Popularity | 0 | 0 | 0.03125 | 0.00446734 |
-| Path | 0.0833333 (4/48) | 0.104167 (5/48) | 0.2 | 0.0173213 |
-| Embedding / combined | unavailable | unavailable | unavailable | unavailable |
+## Embedding experiment (finished; no more fitting after test exposure)
 
-- Real evaluation completed successfully, cached path scores/degrees reproduced.
-- `python3 -m pytest -q`: 4 passed (leakage and numerical metrics).
-- PyArrow printed sandbox CPU-cache sysctl warnings; parquet read and evaluation
-  completed successfully. No failed tests or remaining data-access blocker.
+- DistMult from scratch, dimension 64, 40 fixed epochs, max30k triples/relation/epoch,
+  batch2048, 4 type-constrained negatives/positive, SparseAdam lr .003, seed20261024.
+- 503,473 source triples; 6,173,400 positive presentations.
+- Negatives reject known triples/reverses, self-pairs, and ALL Alzheimer/drug pairs
+  in either orientation and every relation; protects all held-out positives.
+- Completed run ~70 seconds. Initial attempt stopped after epoch1 (~101 seconds)
+  to replace slow repeated np.isin sorting with equivalent searchsorted lookup.
+  First-epoch loss identical; same config/seed, no test scores seen at that time.
+- Config, training history, hashes, scores in embedding_config/run/scores.json.
+- Mixture percentile weights tried {0,.25,.5,.75,1} only on tuning recall@20 then @10.
+  Ties favor path. Selected path=1, embedding=0, LINCS=unavailable.
+- Fixed DistMult did NOT improve primary recall; path remains primary.
+- Finding is specific to this experiment; no claim all embeddings fail.
 
-## Decisions and caveats
+## Current test results
 
-- Universe: all drugs with a non-Alzheimer indication. Approval unverified;
-  existing Alzheimer drugs can appear as rediscovery controls.
-- Trial criteria: explicit Alzheimer condition, completed/terminated interventional
-  treatment study, actual enrollment >0, drug assigned to an experimental arm.
-- Exact normalized drug/alias match only; no fuzzy matches. Names can be missed.
-- Delete ALL target/drug edges independent of trial labels. Retain only relations
-  listed in graph.py; graph directions stay unknown, edge confidence unavailable.
-- Fixed path score uses inverse sqrt of drug/intermediate degrees and length
-  penalty, sums top 10; no label-based tuning. Evaluation is retrospective.
-- MRR is reciprocal first relevant rank for ONE disease query. Also report the
-  separately named mean reciprocal held-out rank across all 48 positives.
-- Embedding/combined metrics unavailable until stage 5; never fabricate them.
+22 test positives / 1770 candidates. Recall values below are percentages.
+MRR_q = reciprocal first relevant rank for one Alzheimer query.
+MRR_all = average reciprocal rank across ALL 22 test drugs, not only top-k hits.
 
-## Next steps before mandatory checkpoint
+| Method | R10 | R20 | R50 | R100 | MRR_q | MRR_all |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Random 1000 runs | .554545 | 1.054545 | 2.704545 | 5.645455 | .05497550 | .004495295 |
+| Popularity | 0 | 0 | 9.090909 | 9.090909 | .02439024 | .004883710 |
+| Path | 9.090909 | 9.090909 | 9.090909 | 13.636364 | .2 | .017484527 |
+| Embedding | 0 | 0 | 0 | 9.090909 | .01639344 | .002841816 |
+| Combined (path weight1) | 9.090909 | 9.090909 | 9.090909 | 13.636364 | .2 | .017484527 |
 
-1. Separate existing Alzheimer controls using source graph indications plus an
-   explicitly sourced current treatment list. Remove controls from discovery metrics.
-2. Freeze tuning/test split before fitting weights. Add bootstrap 95% recall
-   intervals, recall@50/100, enrichment and both MRR definitions. Commit hardening.
-3. Train DistMult on sanitized graph, with type-constrained filtered negatives;
-   exclude all target/drug pairs from negatives (stronger than just held-out positives).
-4. Tune combined score only on tuning labels, compare on untouched test labels.
-   Preserve path-only primary unless embedding improves primary recall; commit stage 5.
-5. Report checkpoint and WAIT. No UI/agent implementation yet.
+- Path/combined primary recall CIs [0,22.7273%]; random R10 [.4727,.6364%],
+  R20 [.9455,1.1682%]; zero-hit empirical CIs [0,0] are degenerate, not proof.
+- Bootstrap 10k resamples of test drugs, conditional on fixed graph/model/pool.
+- Path EF20=8.04545 versus exact random k/N; sampled random lift=8.62069x.
+  +9.0909 percentage points vs popularity; zero-baseline ratio undefined.
+- Top-20 test hits: insulin detemir and insulin glulisine; correlated compounds
+  limit diversity and invalidate treating hits as independent biological discoveries.
+- Full CIs, enrichment@10/20/50/100, lift, controls and per-drug ranks in validation.json.
+- Primary metrics R10/R20; secondary R50/R100 and enrichment.
+- 18 tests pass: reverse leakage, negative filtering, numerical metrics, bootstrap,
+  tuning isolation, and cached-report/control/split invariants. Compile/diff checks pass.
 
-```sh
-PYTHONPATH=src python3 -m repurpose.cli prepare
+## Files and artifact contract for next agent
+
+src/repurpose/:
+- data.py: pandas source loading, hashes, CT.gov retrieval/matching.
+- graph.py: target resolution, all-target/drug removal, neighborhood, NetworkX.
+- ranking.py: fixed degree-normalized typed 2/3-edge paths; top10 sum, top5 explanations.
+- protocol.py: one-time immutable control/split definition.
+- evaluation.py: bootstrap/recall/enrichment/MRR/random baseline.
+- embeddings.py: DistMult trainer, filtered negative sampler.
+- selection.py: tune on tuning IDs only; immutable mixture selection.
+- report.py: frozen protocol/hash and graph recomputation audit, test evaluation, UI exports.
+- validation.py: dispatcher + legacy stage-2 implementation.
+- cli.py: fetch-trials, prepare, freeze-protocol, train-embeddings, tune, validate.
+
+UI must consume:
+- artifacts/discovery_rankings.json (1792 controls-excluded candidates)
+- artifacts/discovery_paths.json (top20 explainable paths)
+- artifacts/known_controls.json (separate controls)
+- artifacts/validation.json (v2 test metrics, CIs, caveats)
+Original rankings.json/candidate_paths.json remain unchanged frozen source inputs;
+they contain controls and must NOT be used for the discovery UI.
+No frontend/API, evidence agents, citation checker or LINCS yet.
+
+Dashboard language: lift over random/popularity, show CIs and the caveat "trial
+participation does not establish efficacy." Do not say "finding Alzheimer's drugs".
+
+## Reproduction
+
+README has full original-source and isolated frozen-input replay commands.
+In existing workspace:
 PYTHONPATH=src python3 -m repurpose.cli validate
 python3 -m pytest -q
-git status --short
-```
+
+Training and tuning refuse to overwrite a fitted experiment. Reproduce into a new
+directory with copied frozen protocol/rankings/labels/manifest and sanitized
+training_edges.parquet + nodes.json, then train-embeddings, tune, validate.
+Do not refetch trials, mutate frozen inputs or regenerate the split to reproduce.
+Model rankings and data are cached; no network is needed to audit scores.
+
+## Next action
+
+Report stage-5 checkpoint and WAIT. After explicit continuation, implement stage3 UI
+then stage4 evidence agents with deterministic PMID verification and top20 cache.
+No extra features or new benchmark/model selection after this exposed test result.

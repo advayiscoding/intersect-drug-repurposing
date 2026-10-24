@@ -1,0 +1,234 @@
+{
+  "config": {
+    "model": "DistMult",
+    "dimension": 64,
+    "epochs": 40,
+    "batch_size": 2048,
+    "negatives_per_positive": 4,
+    "lr": 0.003,
+    "regularization": 0.0001,
+    "max_per_relation_per_epoch": 30000,
+    "seed": 20261024,
+    "wall_time_limit_seconds": 10800,
+    "device": "cpu",
+    "torch_threads": 2,
+    "selection": "Fixed configuration, no test-based model selection or early stopping",
+    "target_aggregation": "max indication score over resolved Alzheimer disease nodes",
+    "protocol_sha256": "ce2a08a2a395426f76a2aa40581d3b722fc4d596dd6b8173758140f31d4f138c"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.6931209250500328,
+      "elapsed_seconds": 4.05
+    },
+    {
+      "epoch": 2,
+      "loss": 0.6812935087241625,
+      "elapsed_seconds": 5.53
+    },
+    {
+      "epoch": 3,
+      "loss": 0.5898245902437913,
+      "elapsed_seconds": 7.07
+    },
+    {
+      "epoch": 4,
+      "loss": 0.49693722434734044,
+      "elapsed_seconds": 8.99
+    },
+    {
+      "epoch": 5,
+      "loss": 0.43626504509072556,
+      "elapsed_seconds": 10.6
+    },
+    {
+      "epoch": 6,
+      "loss": 0.39729079172799464,
+      "elapsed_seconds": 12.28
+    },
+    {
+      "epoch": 7,
+      "loss": 0.3615877761652595,
+      "elapsed_seconds": 13.87
+    },
+    {
+      "epoch": 8,
+      "loss": 0.32052035433681386,
+      "elapsed_seconds": 15.61
+    },
+    {
+      "epoch": 9,
+      "loss": 0.2757502386444493,
+      "elapsed_seconds": 17.33
+    },
+    {
+      "epoch": 10,
+      "loss": 0.2341483256926662,
+      "elapsed_seconds": 19.21
+    },
+    {
+      "epoch": 11,
+      "loss": 0.20094828170381093,
+      "elapsed_seconds": 20.98
+    },
+    {
+      "epoch": 12,
+      "loss": 0.17652426169891106,
+      "elapsed_seconds": 22.65
+    },
+    {
+      "epoch": 13,
+      "loss": 0.15939426226051231,
+      "elapsed_seconds": 24.13
+    },
+    {
+      "epoch": 14,
+      "loss": 0.14567206192173457,
+      "elapsed_seconds": 25.74
+    },
+    {
+      "epoch": 15,
+      "loss": 0.13549102725167023,
+      "elapsed_seconds": 27.53
+    },
+    {
+      "epoch": 16,
+      "loss": 0.12685482429438516,
+      "elapsed_seconds": 29.35
+    },
+    {
+      "epoch": 17,
+      "loss": 0.12021006781019662,
+      "elapsed_seconds": 31.1
+    },
+    {
+      "epoch": 18,
+      "loss": 0.11383031083172873,
+      "elapsed_seconds": 32.68
+    },
+    {
+      "epoch": 19,
+      "loss": 0.11038928047606819,
+      "elapsed_seconds": 34.04
+    },
+    {
+      "epoch": 20,
+      "loss": 0.10532828008658007,
+      "elapsed_seconds": 35.42
+    },
+    {
+      "epoch": 21,
+      "loss": 0.10094110902987029,
+      "elapsed_seconds": 36.86
+    },
+    {
+      "epoch": 22,
+      "loss": 0.09854659340099285,
+      "elapsed_seconds": 38.44
+    },
+    {
+      "epoch": 23,
+      "loss": 0.09522026826284434,
+      "elapsed_seconds": 40.21
+    },
+    {
+      "epoch": 24,
+      "loss": 0.09135088951964128,
+      "elapsed_seconds": 42.03
+    },
+    {
+      "epoch": 25,
+      "loss": 0.08963608604512717,
+      "elapsed_seconds": 43.88
+    },
+    {
+      "epoch": 26,
+      "loss": 0.08753405834891294,
+      "elapsed_seconds": 45.71
+    },
+    {
+      "epoch": 27,
+      "loss": 0.08516789070869747,
+      "elapsed_seconds": 47.49
+    },
+    {
+      "epoch": 28,
+      "loss": 0.08294745936597649,
+      "elapsed_seconds": 49.19
+    },
+    {
+      "epoch": 29,
+      "loss": 0.08114827336057236,
+      "elapsed_seconds": 50.91
+    },
+    {
+      "epoch": 30,
+      "loss": 0.07987608976270023,
+      "elapsed_seconds": 52.64
+    },
+    {
+      "epoch": 31,
+      "loss": 0.07829899733003817,
+      "elapsed_seconds": 54.25
+    },
+    {
+      "epoch": 32,
+      "loss": 0.07693998917545143,
+      "elapsed_seconds": 56.07
+    },
+    {
+      "epoch": 33,
+      "loss": 0.07534590932099443,
+      "elapsed_seconds": 57.9
+    },
+    {
+      "epoch": 34,
+      "loss": 0.07441150965659242,
+      "elapsed_seconds": 59.75
+    },
+    {
+      "epoch": 35,
+      "loss": 0.07270020471983835,
+      "elapsed_seconds": 61.5
+    },
+    {
+      "epoch": 36,
+      "loss": 0.07148930376493617,
+      "elapsed_seconds": 63.24
+    },
+    {
+      "epoch": 37,
+      "loss": 0.07076580494054054,
+      "elapsed_seconds": 64.95
+    },
+    {
+      "epoch": 38,
+      "loss": 0.06986917815122165,
+      "elapsed_seconds": 66.67
+    },
+    {
+      "epoch": 39,
+      "loss": 0.06779458084584851,
+      "elapsed_seconds": 68.43
+    },
+    {
+      "epoch": 40,
+      "loss": 0.06641179038897942,
+      "elapsed_seconds": 69.99
+    }
+  ],
+  "training_triples": 503473,
+  "positive_presentations": 6173400,
+  "filtered_negative_rejections": 312253,
+  "negative_policy": "Type-constrained corruption; reject known triples and reverses, self-pairs, and ALL Alzheimer/drug pairs for all relations",
+  "no_heldout_training_edges": true,
+  "no_heldout_negative_pairs": true,
+  "elapsed_seconds": 70.13315412498196,
+  "torch_version": "2.12.0",
+  "training_edges_sha256": "f65eb0b9f518db561cb05905e375479b1236672210d4a3f6520431d86f4755de",
+  "model_sha256": "6177e0e80836a18bd45b8612f2ea7d2d2fe65550b10a4ac7f45486499f492dec",
+  "scores_sha256": "2dd55dc890611a40bed57376817a74c5a7c73c384d8ce0dedc7efebed79c54c0",
+  "test_labels_used_for_training_or_selection": false,
+  "note": "Source graph is undirected/unsigned; DistMult does not infer activation or inhibition."
+}

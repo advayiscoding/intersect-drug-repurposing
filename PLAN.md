@@ -33,9 +33,9 @@ JSON. A FastAPI API and React/Cytoscape UI consume those artifacts.
   candidate universe; export recall@10, recall@20, MRR and individual ranks;
   mark embedding/combined results unavailable until trained; commit.
 - [x] First checkpoint approved by user.
-- [ ] Harden evaluation: separate known controls; freeze tuning/test split; add
+- [x] Harden evaluation: separate known controls; freeze tuning/test split; add
   bootstrap intervals, secondary recall/enrichment, reverse-edge tests.
-- [ ] Stage 5 FIRST: timebox embedding experiments to three hours, exclude all
+- [x] Stage 5 FIRST: timebox embedding experiments to three hours, exclude all
   held-out edges and filter negatives, tune mixture only on tuning split, compare
   once on test split. Keep path primary unless embeddings improve primary recall.
 - [ ] STOP after stage 5; report real results and await user continuation.

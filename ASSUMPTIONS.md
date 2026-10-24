@@ -21,3 +21,8 @@
 - Bootstrap resamples held-out drugs with replacement 10,000 times, conditional on the fitted graph/ranking; it does not quantify efficacy, external validity, or graph-construction uncertainty.
 - Stage-2 aggregate outcomes were already observed, so the new split is an internal retrospective evaluation; it is untouched by subsequent weight/model fitting, not a fresh external benchmark.
 - DistMult configuration will be fixed before test evaluation; combined percentile weights selected from {0,.25,.5,.75,1} only by tuning recall@20 then @10, with ties favoring path.
+- Primary is path-only after one fixed DistMult trial failed to improve primary recall; the three-hour timebox is a maximum, not a requirement to keep fitting after test exposure.
+- Preserve original stage-1 rankings as frozen inputs; UI will consume discovery_rankings/discovery_paths with controls removed.
+- For zero-hit rankings, percentile bootstrap CI may be [0,0]; flag this finite-sample limitation rather than implying population certainty.
+- Lift ratios against zero popularity recall are undefined; report percentage-point differences. Enrichment uses exact random expectation, distinct from a finite Monte Carlo mean.
+- Two recovered test labels are insulin variants: report compound correlation as a limitation of drug-level bootstrap and biological diversity.

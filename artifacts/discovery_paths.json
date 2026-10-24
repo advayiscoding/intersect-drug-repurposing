@@ -1,0 +1,4767 @@
+{
+  "17647": [
+    {
+      "score": 0.058925565098878974,
+      "nodes": [
+        {
+          "id": 17647,
+          "source_id": "DB00657",
+          "type": "drug",
+          "name": "Mecamylamine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8317,
+          "source_id": "1141",
+          "type": "gene/protein",
+          "name": "CHRNB2",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8317,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.058925565098878974,
+      "nodes": [
+        {
+          "id": 17647,
+          "source_id": "DB00657",
+          "type": "drug",
+          "name": "Mecamylamine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8317,
+          "source_id": "1141",
+          "type": "gene/protein",
+          "name": "CHRNB2",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8317,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.048450158311150925,
+      "nodes": [
+        {
+          "id": 17647,
+          "source_id": "DB00657",
+          "type": "drug",
+          "name": "Mecamylamine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13566,
+          "source_id": "1139",
+          "type": "gene/protein",
+          "name": "CHRNA7",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13566,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.048450158311150925,
+      "nodes": [
+        {
+          "id": 17647,
+          "source_id": "DB00657",
+          "type": "drug",
+          "name": "Mecamylamine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13566,
+          "source_id": "1139",
+          "type": "gene/protein",
+          "name": "CHRNA7",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13566,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.004381920683746825,
+      "nodes": [
+        {
+          "id": 17647,
+          "source_id": "DB00657",
+          "type": "drug",
+          "name": "Mecamylamine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8136,
+          "source_id": "1137",
+          "type": "gene/protein",
+          "name": "CHRNA4",
+          "source": "NCBI"
+        },
+        {
+          "id": 6821,
+          "source_id": "7447",
+          "type": "gene/protein",
+          "name": "VSNL1",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8136,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 6821,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "16041": [
+    {
+      "score": 0.04612656040144425,
+      "nodes": [
+        {
+          "id": 16041,
+          "source_id": "DB14751",
+          "type": "drug",
+          "name": "Mecasermin rinfabate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.04612656040144425,
+      "nodes": [
+        {
+          "id": 16041,
+          "source_id": "DB14751",
+          "type": "drug",
+          "name": "Mecasermin rinfabate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03210806495339678,
+      "nodes": [
+        {
+          "id": 16041,
+          "source_id": "DB14751",
+          "type": "drug",
+          "name": "Mecasermin rinfabate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03210806495339678,
+      "nodes": [
+        {
+          "id": 16041,
+          "source_id": "DB14751",
+          "type": "drug",
+          "name": "Mecasermin rinfabate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02839809171235324,
+      "nodes": [
+        {
+          "id": 16041,
+          "source_id": "DB14751",
+          "type": "drug",
+          "name": "Mecasermin rinfabate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14554": [
+    {
+      "score": 0.029774566708770683,
+      "nodes": [
+        {
+          "id": 14554,
+          "source_id": "DB01277",
+          "type": "drug",
+          "name": "Mecasermin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.029774566708770683,
+      "nodes": [
+        {
+          "id": 14554,
+          "source_id": "DB01277",
+          "type": "drug",
+          "name": "Mecasermin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02072566680724196,
+      "nodes": [
+        {
+          "id": 14554,
+          "source_id": "DB01277",
+          "type": "drug",
+          "name": "Mecasermin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02072566680724196,
+      "nodes": [
+        {
+          "id": 14554,
+          "source_id": "DB01277",
+          "type": "drug",
+          "name": "Mecasermin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.018330889377669163,
+      "nodes": [
+        {
+          "id": 14554,
+          "source_id": "DB01277",
+          "type": "drug",
+          "name": "Mecasermin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14799": [
+    {
+      "score": 0.03466876226407682,
+      "nodes": [
+        {
+          "id": 14799,
+          "source_id": "DB00030",
+          "type": "drug",
+          "name": "Insulin human",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03466876226407682,
+      "nodes": [
+        {
+          "id": 14799,
+          "source_id": "DB00030",
+          "type": "drug",
+          "name": "Insulin human",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.019912576573338177,
+      "nodes": [
+        {
+          "id": 14799,
+          "source_id": "DB00030",
+          "type": "drug",
+          "name": "Insulin human",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.019912576573338177,
+      "nodes": [
+        {
+          "id": 14799,
+          "source_id": "DB00030",
+          "type": "drug",
+          "name": "Insulin human",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.017611748841908675,
+      "nodes": [
+        {
+          "id": 14799,
+          "source_id": "DB00030",
+          "type": "drug",
+          "name": "Insulin human",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "15331": [
+    {
+      "score": 0.03210806495339678,
+      "nodes": [
+        {
+          "id": 15331,
+          "source_id": "DB01306",
+          "type": "drug",
+          "name": "Insulin aspart",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03210806495339678,
+      "nodes": [
+        {
+          "id": 15331,
+          "source_id": "DB01306",
+          "type": "drug",
+          "name": "Insulin aspart",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02839809171235324,
+      "nodes": [
+        {
+          "id": 15331,
+          "source_id": "DB01306",
+          "type": "drug",
+          "name": "Insulin aspart",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02839809171235324,
+      "nodes": [
+        {
+          "id": 15331,
+          "source_id": "DB01306",
+          "type": "drug",
+          "name": "Insulin aspart",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0020067540595872986,
+      "nodes": [
+        {
+          "id": 15331,
+          "source_id": "DB01306",
+          "type": "drug",
+          "name": "Insulin aspart",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "15332": [
+    {
+      "score": 0.03210806495339678,
+      "nodes": [
+        {
+          "id": 15332,
+          "source_id": "DB01309",
+          "type": "drug",
+          "name": "Insulin glulisine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03210806495339678,
+      "nodes": [
+        {
+          "id": 15332,
+          "source_id": "DB01309",
+          "type": "drug",
+          "name": "Insulin glulisine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02839809171235324,
+      "nodes": [
+        {
+          "id": 15332,
+          "source_id": "DB01309",
+          "type": "drug",
+          "name": "Insulin glulisine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02839809171235324,
+      "nodes": [
+        {
+          "id": 15332,
+          "source_id": "DB01309",
+          "type": "drug",
+          "name": "Insulin glulisine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0020067540595872986,
+      "nodes": [
+        {
+          "id": 15332,
+          "source_id": "DB01309",
+          "type": "drug",
+          "name": "Insulin glulisine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "19718": [
+    {
+      "score": 0.05954913341754137,
+      "nodes": [
+        {
+          "id": 19718,
+          "source_id": "DB13173",
+          "type": "drug",
+          "name": "Cerliponase alfa",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.05954913341754137,
+      "nodes": [
+        {
+          "id": 19718,
+          "source_id": "DB13173",
+          "type": "drug",
+          "name": "Cerliponase alfa",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.002838893546781011,
+      "nodes": [
+        {
+          "id": 19718,
+          "source_id": "DB13173",
+          "type": "drug",
+          "name": "Cerliponase alfa",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 4550,
+          "source_id": "3481",
+          "type": "gene/protein",
+          "name": "IGF2",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4550,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.002838893546781011,
+      "nodes": [
+        {
+          "id": 19718,
+          "source_id": "DB13173",
+          "type": "drug",
+          "name": "Cerliponase alfa",
+          "source": "DrugBank"
+        },
+        {
+          "id": 2114,
+          "source_id": "3482",
+          "type": "gene/protein",
+          "name": "IGF2R",
+          "source": "NCBI"
+        },
+        {
+          "id": 4550,
+          "source_id": "3481",
+          "type": "gene/protein",
+          "name": "IGF2",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 2114,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4550,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14435": [
+    {
+      "score": 0.029310519088027464,
+      "nodes": [
+        {
+          "id": 14435,
+          "source_id": "DB09564",
+          "type": "drug",
+          "name": "Insulin degludec",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.029310519088027464,
+      "nodes": [
+        {
+          "id": 14435,
+          "source_id": "DB09564",
+          "type": "drug",
+          "name": "Insulin degludec",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.025923792368260635,
+      "nodes": [
+        {
+          "id": 14435,
+          "source_id": "DB09564",
+          "type": "drug",
+          "name": "Insulin degludec",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.025923792368260635,
+      "nodes": [
+        {
+          "id": 14435,
+          "source_id": "DB09564",
+          "type": "drug",
+          "name": "Insulin degludec",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0018319074430017165,
+      "nodes": [
+        {
+          "id": 14435,
+          "source_id": "DB09564",
+          "type": "drug",
+          "name": "Insulin degludec",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14329": [
+    {
+      "score": 0.029310519088027464,
+      "nodes": [
+        {
+          "id": 14329,
+          "source_id": "DB01307",
+          "type": "drug",
+          "name": "Insulin detemir",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.029310519088027464,
+      "nodes": [
+        {
+          "id": 14329,
+          "source_id": "DB01307",
+          "type": "drug",
+          "name": "Insulin detemir",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.025923792368260635,
+      "nodes": [
+        {
+          "id": 14329,
+          "source_id": "DB01307",
+          "type": "drug",
+          "name": "Insulin detemir",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.025923792368260635,
+      "nodes": [
+        {
+          "id": 14329,
+          "source_id": "DB01307",
+          "type": "drug",
+          "name": "Insulin detemir",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0018319074430017165,
+      "nodes": [
+        {
+          "id": 14329,
+          "source_id": "DB01307",
+          "type": "drug",
+          "name": "Insulin detemir",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14653": [
+    {
+      "score": 0.024225079155575462,
+      "nodes": [
+        {
+          "id": 14653,
+          "source_id": "DB00122",
+          "type": "drug",
+          "name": "Choline",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13566,
+          "source_id": "1139",
+          "type": "gene/protein",
+          "name": "CHRNA7",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13566,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.024225079155575462,
+      "nodes": [
+        {
+          "id": 14653,
+          "source_id": "DB00122",
+          "type": "drug",
+          "name": "Choline",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13566,
+          "source_id": "1139",
+          "type": "gene/protein",
+          "name": "CHRNA7",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13566,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.015891043154093207,
+      "nodes": [
+        {
+          "id": 14653,
+          "source_id": "DB00122",
+          "type": "drug",
+          "name": "Choline",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8038,
+          "source_id": "43",
+          "type": "gene/protein",
+          "name": "ACHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8038,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.015891043154093207,
+      "nodes": [
+        {
+          "id": 14653,
+          "source_id": "DB00122",
+          "type": "drug",
+          "name": "Choline",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8038,
+          "source_id": "43",
+          "type": "gene/protein",
+          "name": "ACHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8038,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.01422200309971436,
+      "nodes": [
+        {
+          "id": 14653,
+          "source_id": "DB00122",
+          "type": "drug",
+          "name": "Choline",
+          "source": "DrugBank"
+        },
+        {
+          "id": 341,
+          "source_id": "590",
+          "type": "gene/protein",
+          "name": "BCHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 341,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "15242": [
+    {
+      "score": 0.01449427589131121,
+      "nodes": [
+        {
+          "id": 15242,
+          "source_id": "DB11638",
+          "type": "drug",
+          "name": "Artenimol",
+          "source": "DrugBank"
+        },
+        {
+          "id": 3111,
+          "source_id": "1808",
+          "type": "gene/protein",
+          "name": "DPYSL2",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 3111,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.01449427589131121,
+      "nodes": [
+        {
+          "id": 15242,
+          "source_id": "DB11638",
+          "type": "drug",
+          "name": "Artenimol",
+          "source": "DrugBank"
+        },
+        {
+          "id": 3111,
+          "source_id": "1808",
+          "type": "gene/protein",
+          "name": "DPYSL2",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 3111,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.013153341044116409,
+      "nodes": [
+        {
+          "id": 15242,
+          "source_id": "DB11638",
+          "type": "drug",
+          "name": "Artenimol",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1031,
+          "source_id": "26330",
+          "type": "gene/protein",
+          "name": "GAPDHS",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1031,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.013153341044116409,
+      "nodes": [
+        {
+          "id": 15242,
+          "source_id": "DB11638",
+          "type": "drug",
+          "name": "Artenimol",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1031,
+          "source_id": "26330",
+          "type": "gene/protein",
+          "name": "GAPDHS",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1031,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.011433239009500589,
+      "nodes": [
+        {
+          "id": 15242,
+          "source_id": "DB11638",
+          "type": "drug",
+          "name": "Artenimol",
+          "source": "DrugBank"
+        },
+        {
+          "id": 7621,
+          "source_id": "7167",
+          "type": "gene/protein",
+          "name": "TPI1",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 7621,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14893": [
+    {
+      "score": 0.03509312031717982,
+      "nodes": [
+        {
+          "id": 14893,
+          "source_id": "DB04818",
+          "type": "drug",
+          "name": "Iproniazid",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8192,
+          "source_id": "4129",
+          "type": "gene/protein",
+          "name": "MAOB",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8192,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03509312031717982,
+      "nodes": [
+        {
+          "id": 14893,
+          "source_id": "DB04818",
+          "type": "drug",
+          "name": "Iproniazid",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8192,
+          "source_id": "4129",
+          "type": "gene/protein",
+          "name": "MAOB",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8192,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0181428752857415,
+      "nodes": [
+        {
+          "id": 14893,
+          "source_id": "DB04818",
+          "type": "drug",
+          "name": "Iproniazid",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13807,
+          "source_id": "1565",
+          "type": "gene/protein",
+          "name": "CYP2D6",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13807,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0181428752857415,
+      "nodes": [
+        {
+          "id": 14893,
+          "source_id": "DB04818",
+          "type": "drug",
+          "name": "Iproniazid",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13807,
+          "source_id": "1565",
+          "type": "gene/protein",
+          "name": "CYP2D6",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13807,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0014936623927350923,
+      "nodes": [
+        {
+          "id": 14893,
+          "source_id": "DB04818",
+          "type": "drug",
+          "name": "Iproniazid",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1650,
+          "source_id": "4128",
+          "type": "gene/protein",
+          "name": "MAOA",
+          "source": "NCBI"
+        },
+        {
+          "id": 8192,
+          "source_id": "4129",
+          "type": "gene/protein",
+          "name": "MAOB",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1650,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 8192,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "16843": [
+    {
+      "score": 0.027524094128159014,
+      "nodes": [
+        {
+          "id": 16843,
+          "source_id": "DB00449",
+          "type": "drug",
+          "name": "Dipivefrin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8038,
+          "source_id": "43",
+          "type": "gene/protein",
+          "name": "ACHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8038,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.027524094128159014,
+      "nodes": [
+        {
+          "id": 16843,
+          "source_id": "DB00449",
+          "type": "drug",
+          "name": "Dipivefrin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8038,
+          "source_id": "43",
+          "type": "gene/protein",
+          "name": "ACHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8038,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.024633231954107326,
+      "nodes": [
+        {
+          "id": 16843,
+          "source_id": "DB00449",
+          "type": "drug",
+          "name": "Dipivefrin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 341,
+          "source_id": "590",
+          "type": "gene/protein",
+          "name": "BCHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 341,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.024633231954107326,
+      "nodes": [
+        {
+          "id": 16843,
+          "source_id": "DB00449",
+          "type": "drug",
+          "name": "Dipivefrin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 341,
+          "source_id": "590",
+          "type": "gene/protein",
+          "name": "BCHE",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 341,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0018654638716871883,
+      "nodes": [
+        {
+          "id": 16843,
+          "source_id": "DB00449",
+          "type": "drug",
+          "name": "Dipivefrin",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1494,
+          "source_id": "154",
+          "type": "gene/protein",
+          "name": "ADRB2",
+          "source": "NCBI"
+        },
+        {
+          "id": 12825,
+          "source_id": "10347",
+          "type": "gene/protein",
+          "name": "ABCA7",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1494,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 12825,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "16699": [
+    {
+      "score": 0.054799662435119106,
+      "nodes": [
+        {
+          "id": 16699,
+          "source_id": "DB13166",
+          "type": "drug",
+          "name": "Zofenopril",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13097,
+          "source_id": "1636",
+          "type": "gene/protein",
+          "name": "ACE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13097,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.054799662435119106,
+      "nodes": [
+        {
+          "id": 16699,
+          "source_id": "DB13166",
+          "type": "drug",
+          "name": "Zofenopril",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13097,
+          "source_id": "1636",
+          "type": "gene/protein",
+          "name": "ACE",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13097,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0008570821289034478,
+      "nodes": [
+        {
+          "id": 16699,
+          "source_id": "DB13166",
+          "type": "drug",
+          "name": "Zofenopril",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13097,
+          "source_id": "1636",
+          "type": "gene/protein",
+          "name": "ACE",
+          "source": "NCBI"
+        },
+        {
+          "id": 611,
+          "source_id": "351",
+          "type": "gene/protein",
+          "name": "APP",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13097,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 611,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0008570821289034478,
+      "nodes": [
+        {
+          "id": 16699,
+          "source_id": "DB13166",
+          "type": "drug",
+          "name": "Zofenopril",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13097,
+          "source_id": "1636",
+          "type": "gene/protein",
+          "name": "ACE",
+          "source": "NCBI"
+        },
+        {
+          "id": 611,
+          "source_id": "351",
+          "type": "gene/protein",
+          "name": "APP",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13097,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 611,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14489": [
+    {
+      "score": 0.03462716805322219,
+      "nodes": [
+        {
+          "id": 14489,
+          "source_id": "DB14518",
+          "type": "drug",
+          "name": "Aluminum acetate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4003,
+          "source_id": "7018",
+          "type": "gene/protein",
+          "name": "TF",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4003,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.03462716805322219,
+      "nodes": [
+        {
+          "id": 14489,
+          "source_id": "DB14518",
+          "type": "drug",
+          "name": "Aluminum acetate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4003,
+          "source_id": "7018",
+          "type": "gene/protein",
+          "name": "TF",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4003,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.012770236105969925,
+      "nodes": [
+        {
+          "id": 14489,
+          "source_id": "DB14518",
+          "type": "drug",
+          "name": "Aluminum acetate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 611,
+          "source_id": "351",
+          "type": "gene/protein",
+          "name": "APP",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 611,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.012770236105969925,
+      "nodes": [
+        {
+          "id": 14489,
+          "source_id": "DB14518",
+          "type": "drug",
+          "name": "Aluminum acetate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 611,
+          "source_id": "351",
+          "type": "gene/protein",
+          "name": "APP",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 611,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.002703927549210335,
+      "nodes": [
+        {
+          "id": 14489,
+          "source_id": "DB14518",
+          "type": "drug",
+          "name": "Aluminum acetate",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4003,
+          "source_id": "7018",
+          "type": "gene/protein",
+          "name": "TF",
+          "source": "NCBI"
+        },
+        {
+          "id": 8855,
+          "source_id": "3077",
+          "type": "gene/protein",
+          "name": "HFE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4003,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 8855,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "14885": [
+    {
+      "score": 0.032826608214930636,
+      "nodes": [
+        {
+          "id": 14885,
+          "source_id": "DB01171",
+          "type": "drug",
+          "name": "Moclobemide",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8192,
+          "source_id": "4129",
+          "type": "gene/protein",
+          "name": "MAOB",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8192,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.032826608214930636,
+      "nodes": [
+        {
+          "id": 14885,
+          "source_id": "DB01171",
+          "type": "drug",
+          "name": "Moclobemide",
+          "source": "DrugBank"
+        },
+        {
+          "id": 8192,
+          "source_id": "4129",
+          "type": "gene/protein",
+          "name": "MAOB",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 8192,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.016971105832553263,
+      "nodes": [
+        {
+          "id": 14885,
+          "source_id": "DB01171",
+          "type": "drug",
+          "name": "Moclobemide",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13807,
+          "source_id": "1565",
+          "type": "gene/protein",
+          "name": "CYP2D6",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13807,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.016971105832553263,
+      "nodes": [
+        {
+          "id": 14885,
+          "source_id": "DB01171",
+          "type": "drug",
+          "name": "Moclobemide",
+          "source": "DrugBank"
+        },
+        {
+          "id": 13807,
+          "source_id": "1565",
+          "type": "gene/protein",
+          "name": "CYP2D6",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 13807,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0013971932312809247,
+      "nodes": [
+        {
+          "id": 14885,
+          "source_id": "DB01171",
+          "type": "drug",
+          "name": "Moclobemide",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1650,
+          "source_id": "4128",
+          "type": "gene/protein",
+          "name": "MAOA",
+          "source": "NCBI"
+        },
+        {
+          "id": 8192,
+          "source_id": "4129",
+          "type": "gene/protein",
+          "name": "MAOB",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1650,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 8192,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "16512": [
+    {
+      "score": 0.047565149415449405,
+      "nodes": [
+        {
+          "id": 16512,
+          "source_id": "DB04895",
+          "type": "drug",
+          "name": "Pegaptanib",
+          "source": "DrugBank"
+        },
+        {
+          "id": 749,
+          "source_id": "7422",
+          "type": "gene/protein",
+          "name": "VEGFA",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 749,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.047565149415449405,
+      "nodes": [
+        {
+          "id": 16512,
+          "source_id": "DB04895",
+          "type": "drug",
+          "name": "Pegaptanib",
+          "source": "DrugBank"
+        },
+        {
+          "id": 749,
+          "source_id": "7422",
+          "type": "gene/protein",
+          "name": "VEGFA",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 749,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.003858043067235631,
+      "nodes": [
+        {
+          "id": 16512,
+          "source_id": "DB04895",
+          "type": "drug",
+          "name": "Pegaptanib",
+          "source": "DrugBank"
+        },
+        {
+          "id": 749,
+          "source_id": "7422",
+          "type": "gene/protein",
+          "name": "VEGFA",
+          "source": "NCBI"
+        },
+        {
+          "id": 9689,
+          "source_id": "9510",
+          "type": "gene/protein",
+          "name": "ADAMTS1",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 749,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 9689,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.003858043067235631,
+      "nodes": [
+        {
+          "id": 16512,
+          "source_id": "DB04895",
+          "type": "drug",
+          "name": "Pegaptanib",
+          "source": "DrugBank"
+        },
+        {
+          "id": 749,
+          "source_id": "7422",
+          "type": "gene/protein",
+          "name": "VEGFA",
+          "source": "NCBI"
+        },
+        {
+          "id": 9689,
+          "source_id": "9510",
+          "type": "gene/protein",
+          "name": "ADAMTS1",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 749,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 9689,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0010667942723761035,
+      "nodes": [
+        {
+          "id": 16512,
+          "source_id": "DB04895",
+          "type": "drug",
+          "name": "Pegaptanib",
+          "source": "DrugBank"
+        },
+        {
+          "id": 749,
+          "source_id": "7422",
+          "type": "gene/protein",
+          "name": "VEGFA",
+          "source": "NCBI"
+        },
+        {
+          "id": 33,
+          "source_id": "2932",
+          "type": "gene/protein",
+          "name": "GSK3B",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 749,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 33,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "17955": [
+    {
+      "score": 0.04490132550669372,
+      "nodes": [
+        {
+          "id": 17955,
+          "source_id": "DB06343",
+          "type": "drug",
+          "name": "Teprotumumab",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.04490132550669372,
+      "nodes": [
+        {
+          "id": 17955,
+          "source_id": "DB06343",
+          "type": "drug",
+          "name": "Teprotumumab",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0021405867039085676,
+      "nodes": [
+        {
+          "id": 17955,
+          "source_id": "DB06343",
+          "type": "drug",
+          "name": "Teprotumumab",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 4550,
+          "source_id": "3481",
+          "type": "gene/protein",
+          "name": "IGF2",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4550,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0021405867039085676,
+      "nodes": [
+        {
+          "id": 17955,
+          "source_id": "DB06343",
+          "type": "drug",
+          "name": "Teprotumumab",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 4550,
+          "source_id": "3481",
+          "type": "gene/protein",
+          "name": "IGF2",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4550,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0019042403611367264,
+      "nodes": [
+        {
+          "id": 17955,
+          "source_id": "DB06343",
+          "type": "drug",
+          "name": "Teprotumumab",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 5720,
+          "source_id": "3479",
+          "type": "gene/protein",
+          "name": "IGF1",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 5720,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "15282": [
+    {
+      "score": 0.025383654128340476,
+      "nodes": [
+        {
+          "id": 15282,
+          "source_id": "DB00046",
+          "type": "drug",
+          "name": "Insulin lispro",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.025383654128340476,
+      "nodes": [
+        {
+          "id": 15282,
+          "source_id": "DB00046",
+          "type": "drug",
+          "name": "Insulin lispro",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02245066275334686,
+      "nodes": [
+        {
+          "id": 15282,
+          "source_id": "DB00046",
+          "type": "drug",
+          "name": "Insulin lispro",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02245066275334686,
+      "nodes": [
+        {
+          "id": 15282,
+          "source_id": "DB00046",
+          "type": "drug",
+          "name": "Insulin lispro",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0015864783830212797,
+      "nodes": [
+        {
+          "id": 15282,
+          "source_id": "DB00046",
+          "type": "drug",
+          "name": "Insulin lispro",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ],
+  "15283": [
+    {
+      "score": 0.025383654128340476,
+      "nodes": [
+        {
+          "id": 15283,
+          "source_id": "DB00047",
+          "type": "drug",
+          "name": "Insulin glargine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.025383654128340476,
+      "nodes": [
+        {
+          "id": 15283,
+          "source_id": "DB00047",
+          "type": "drug",
+          "name": "Insulin glargine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02245066275334686,
+      "nodes": [
+        {
+          "id": 15283,
+          "source_id": "DB00047",
+          "type": "drug",
+          "name": "Insulin glargine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.02245066275334686,
+      "nodes": [
+        {
+          "id": 15283,
+          "source_id": "DB00047",
+          "type": "drug",
+          "name": "Insulin glargine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 1066,
+          "source_id": "3480",
+          "type": "gene/protein",
+          "name": "IGF1R",
+          "source": "NCBI"
+        },
+        {
+          "id": 83960,
+          "source_id": "11401",
+          "type": "disease",
+          "name": "Alzheimer disease without neurofibrillary tangles",
+          "source": "MONDO"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 1066,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 83960,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    },
+    {
+      "score": 0.0015864783830212797,
+      "nodes": [
+        {
+          "id": 15283,
+          "source_id": "DB00047",
+          "type": "drug",
+          "name": "Insulin glargine",
+          "source": "DrugBank"
+        },
+        {
+          "id": 4536,
+          "source_id": "3643",
+          "type": "gene/protein",
+          "name": "INSR",
+          "source": "NCBI"
+        },
+        {
+          "id": 4596,
+          "source_id": "3416",
+          "type": "gene/protein",
+          "name": "IDE",
+          "source": "NCBI"
+        },
+        {
+          "id": 28780,
+          "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+          "type": "disease",
+          "name": "Alzheimer disease",
+          "source": "MONDO_grouped"
+        }
+      ],
+      "edges": [
+        {
+          "source": "PrimeKG",
+          "target": 4536,
+          "relations": [
+            "drug_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 4596,
+          "relations": [
+            "protein_protein"
+          ],
+          "direction": "direction unknown"
+        },
+        {
+          "source": "PrimeKG",
+          "target": 28780,
+          "relations": [
+            "disease_protein"
+          ],
+          "direction": "direction unknown"
+        }
+      ],
+      "direction": "direction unknown"
+    }
+  ]
+}

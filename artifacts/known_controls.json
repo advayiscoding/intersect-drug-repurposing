@@ -1,0 +1,159 @@
+[
+  {
+    "drug_id": 15113,
+    "name": "Galantamine",
+    "in_original_pool": true,
+    "in_trial_labels": true,
+    "basis": [
+      "PrimeKG Alzheimer indication",
+      "sourced treatment list"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 8,
+      "embedding_only": 4,
+      "popularity_only": 648
+    }
+  },
+  {
+    "drug_id": 15126,
+    "name": "Donepezil",
+    "in_original_pool": true,
+    "in_trial_labels": true,
+    "basis": [
+      "PrimeKG Alzheimer indication",
+      "sourced treatment list"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 29,
+      "embedding_only": 2,
+      "popularity_only": 527
+    }
+  },
+  {
+    "drug_id": 15232,
+    "name": "Brexpiprazole",
+    "in_original_pool": true,
+    "in_trial_labels": true,
+    "basis": [
+      "sourced treatment list"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 196,
+      "embedding_only": 143,
+      "popularity_only": 1001
+    }
+  },
+  {
+    "drug_id": 15294,
+    "name": "Tacrine",
+    "in_original_pool": true,
+    "in_trial_labels": false,
+    "basis": [
+      "PrimeKG Alzheimer indication"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 66,
+      "embedding_only": 21,
+      "popularity_only": 656
+    }
+  },
+  {
+    "drug_id": 15818,
+    "name": "Memantine",
+    "in_original_pool": false,
+    "in_trial_labels": false,
+    "basis": [
+      "sourced treatment list"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": null,
+      "embedding_only": null,
+      "popularity_only": null
+    }
+  },
+  {
+    "drug_id": 17174,
+    "name": "Rivastigmine",
+    "in_original_pool": true,
+    "in_trial_labels": true,
+    "basis": [
+      "PrimeKG Alzheimer indication",
+      "sourced treatment list"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 77,
+      "embedding_only": 1,
+      "popularity_only": 630
+    }
+  },
+  {
+    "drug_id": 20185,
+    "name": "Epicriptine",
+    "in_original_pool": true,
+    "in_trial_labels": false,
+    "basis": [
+      "PrimeKG Alzheimer indication"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 942,
+      "embedding_only": 16,
+      "popularity_only": 1169
+    }
+  },
+  {
+    "drug_id": 20211,
+    "name": "Acetylcarnitine",
+    "in_original_pool": true,
+    "in_trial_labels": false,
+    "basis": [
+      "PrimeKG Alzheimer indication"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 1174,
+      "embedding_only": 3,
+      "popularity_only": 1230
+    }
+  },
+  {
+    "drug_id": 20523,
+    "name": "Pramiracetam",
+    "in_original_pool": true,
+    "in_trial_labels": false,
+    "basis": [
+      "PrimeKG Alzheimer indication"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 1395,
+      "embedding_only": 150,
+      "popularity_only": 1552
+    }
+  },
+  {
+    "drug_id": 20575,
+    "name": "Ipidacrine",
+    "in_original_pool": true,
+    "in_trial_labels": false,
+    "basis": [
+      "PrimeKG Alzheimer indication"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": 1366,
+      "embedding_only": 9,
+      "popularity_only": 1472
+    }
+  },
+  {
+    "drug_id": 21155,
+    "name": "Lecanemab",
+    "in_original_pool": false,
+    "in_trial_labels": false,
+    "basis": [
+      "sourced treatment list"
+    ],
+    "ranks_in_original_pool": {
+      "path_only": null,
+      "embedding_only": null,
+      "popularity_only": null
+    }
+  }
+]
