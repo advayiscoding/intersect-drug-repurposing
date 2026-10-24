@@ -1,0 +1,1995 @@
+{
+  "label": "drugs independently tested in Alzheimer's trials",
+  "labels": [
+    {
+      "drug_id": 14161,
+      "name": "Olanzapine",
+      "trials": [
+        {
+          "nct_id": "NCT00245206",
+          "url": "https://clinicaltrials.gov/study/NCT00245206",
+          "intervention": "Olanzapine",
+          "matched_names": [
+            "Olanzapine"
+          ],
+          "title": "Side Effects of Newer Antipsychotics in Older Adults",
+          "status": "COMPLETED",
+          "enrollment": 406
+        }
+      ]
+    },
+    {
+      "drug_id": 14179,
+      "name": "Raloxifene",
+      "trials": [
+        {
+          "nct_id": "NCT00368459",
+          "url": "https://clinicaltrials.gov/study/NCT00368459",
+          "intervention": "raloxifene",
+          "matched_names": [
+            "raloxifene",
+            "Evista"
+          ],
+          "title": "Raloxifene for Women With Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 42
+        }
+      ]
+    },
+    {
+      "drug_id": 14218,
+      "name": "Lamivudine",
+      "trials": [
+        {
+          "nct_id": "NCT04552795",
+          "url": "https://clinicaltrials.gov/study/NCT04552795",
+          "intervention": "3TC",
+          "matched_names": [
+            "3TC",
+            "Epivir",
+            "lamivudine"
+          ],
+          "title": "Pilot Study to Investigate the Safety and Feasibility of AntiRetroviral Therapy for Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 12
+        }
+      ]
+    },
+    {
+      "drug_id": 14223,
+      "name": "Risperidone",
+      "trials": [
+        {
+          "nct_id": "NCT00245206",
+          "url": "https://clinicaltrials.gov/study/NCT00245206",
+          "intervention": "Risperidone",
+          "matched_names": [
+            "Risperidone",
+            "Risperidal"
+          ],
+          "title": "Side Effects of Newer Antipsychotics in Older Adults",
+          "status": "COMPLETED",
+          "enrollment": 406
+        }
+      ]
+    },
+    {
+      "drug_id": 14271,
+      "name": "Isotretinoin",
+      "trials": [
+        {
+          "nct_id": "NCT01560585",
+          "url": "https://clinicaltrials.gov/study/NCT01560585",
+          "intervention": "Isotretinoin",
+          "matched_names": [
+            "Isotretinoin"
+          ],
+          "title": "Open Label Study of Isotretinoin in Mild to Moderate Alzheimer's Disease",
+          "status": "TERMINATED",
+          "enrollment": 3
+        }
+      ]
+    },
+    {
+      "drug_id": 14286,
+      "name": "Rifampicin",
+      "trials": [
+        {
+          "nct_id": "NCT00439166",
+          "url": "https://clinicaltrials.gov/study/NCT00439166",
+          "intervention": "rifampicin",
+          "matched_names": [
+            "rifampicin",
+            "Rofact",
+            "Rifadin"
+          ],
+          "title": "Effects of Doxycycline and Rifampicin on Biomarkers of Alzheimer's Disease in the Cerebrospinal Fluid",
+          "status": "COMPLETED",
+          "enrollment": 100
+        }
+      ]
+    },
+    {
+      "drug_id": 14306,
+      "name": "Pioglitazone",
+      "trials": [
+        {
+          "nct_id": "NCT00982202",
+          "url": "https://clinicaltrials.gov/study/NCT00982202",
+          "intervention": "pioglitazone",
+          "matched_names": [
+            "pioglitazone",
+            "Actos"
+          ],
+          "title": "Pioglitazone in Alzheimer Disease",
+          "status": "COMPLETED",
+          "enrollment": 25
+        },
+        {
+          "nct_id": "NCT01931566",
+          "url": "https://clinicaltrials.gov/study/NCT01931566",
+          "intervention": "Pioglitazone",
+          "matched_names": [
+            "Pioglitazone"
+          ],
+          "title": "Biomarker Qualification for Risk of Mild Cognitive Impairment (MCI) Due to Alzheimer's Disease (AD) and Safety and Efficacy Evaluation of Pioglitazone in Delaying Its Onset",
+          "status": "TERMINATED",
+          "enrollment": 3494
+        },
+        {
+          "nct_id": "NCT02284906",
+          "url": "https://clinicaltrials.gov/study/NCT02284906",
+          "intervention": "Pioglitazone",
+          "matched_names": [
+            "Pioglitazone",
+            "AD-4833"
+          ],
+          "title": "AD-4833/TOMM40_303 Extension Study of the Safety and Efficacy of Pioglitazone to Slow Cognitive Decline in Participants With Mild Cognitive Impairment Due to Alzheimer Disease",
+          "status": "TERMINATED",
+          "enrollment": 40
+        }
+      ]
+    },
+    {
+      "drug_id": 14323,
+      "name": "Aripiprazole",
+      "trials": [
+        {
+          "nct_id": "NCT00245206",
+          "url": "https://clinicaltrials.gov/study/NCT00245206",
+          "intervention": "Aripiprazole",
+          "matched_names": [
+            "Aripiprazole"
+          ],
+          "title": "Side Effects of Newer Antipsychotics in Older Adults",
+          "status": "COMPLETED",
+          "enrollment": 406
+        }
+      ]
+    },
+    {
+      "drug_id": 14329,
+      "name": "Insulin detemir",
+      "trials": [
+        {
+          "nct_id": "NCT01547169",
+          "url": "https://clinicaltrials.gov/study/NCT01547169",
+          "intervention": "insulin detemir",
+          "matched_names": [
+            "insulin detemir",
+            "Levemir"
+          ],
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Long-acting Insulin Detemir - 21 Days",
+          "status": "COMPLETED",
+          "enrollment": 60
+        },
+        {
+          "nct_id": "NCT01547169",
+          "url": "https://clinicaltrials.gov/study/NCT01547169",
+          "intervention": "insulin detemir",
+          "matched_names": [
+            "insulin detemir",
+            "Levemir"
+          ],
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Long-acting Insulin Detemir - 21 Days",
+          "status": "COMPLETED",
+          "enrollment": 60
+        },
+        {
+          "nct_id": "NCT01595646",
+          "url": "https://clinicaltrials.gov/study/NCT01595646",
+          "intervention": "Insulin detemir",
+          "matched_names": [
+            "Insulin detemir",
+            "Levemir"
+          ],
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Long-acting Insulin Detemir - 120 Days (SL120)",
+          "status": "COMPLETED",
+          "enrollment": 37
+        }
+      ]
+    },
+    {
+      "drug_id": 14402,
+      "name": "Pitavastatin",
+      "trials": [
+        {
+          "nct_id": "NCT00548145",
+          "url": "https://clinicaltrials.gov/study/NCT00548145",
+          "intervention": "Pitavastatin",
+          "matched_names": [
+            "Pitavastatin"
+          ],
+          "title": "The Clinical Study of Pitavastatin Treatment for Group of Mild to Moderate Alzheimer's Disease",
+          "status": "TERMINATED",
+          "enrollment": 38
+        }
+      ]
+    },
+    {
+      "drug_id": 14424,
+      "name": "Methylene blue",
+      "trials": [
+        {
+          "nct_id": "NCT02380573",
+          "url": "https://clinicaltrials.gov/study/NCT02380573",
+          "intervention": "Methylene Blue",
+          "matched_names": [
+            "Methylene Blue",
+            "Phenothiazin-5-ium, 3, 7-bis (dimethylamino)-chloride, trihydrate"
+          ],
+          "title": "Effects of Methylene Blue in Healthy Aging, Mild Cognitive Impairment and Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 117
+        }
+      ]
+    },
+    {
+      "drug_id": 14475,
+      "name": "Semaglutide",
+      "trials": [
+        {
+          "nct_id": "NCT04777409",
+          "url": "https://clinicaltrials.gov/study/NCT04777409",
+          "intervention": "Semaglutide",
+          "matched_names": [
+            "Semaglutide"
+          ],
+          "title": "A Research Study Investigating Semaglutide in People With Early Alzheimer's Disease (EVOKE Plus)",
+          "status": "COMPLETED",
+          "enrollment": 1840
+        },
+        {
+          "nct_id": "NCT05891496",
+          "url": "https://clinicaltrials.gov/study/NCT05891496",
+          "intervention": "Semaglutide",
+          "matched_names": [
+            "Semaglutide"
+          ],
+          "title": "A Research Study Looking at the Effect of Semaglutide on the Immune System and Other Biological Processes in People With Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 23
+        }
+      ]
+    },
+    {
+      "drug_id": 14539,
+      "name": "Prazosin",
+      "trials": [
+        {
+          "nct_id": "NCT01126099",
+          "url": "https://clinicaltrials.gov/study/NCT01126099",
+          "intervention": "Prazosin",
+          "matched_names": [
+            "Prazosin",
+            "minipress"
+          ],
+          "title": "Prazosin Treatment for Disruptive Agitation in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 20
+        }
+      ]
+    },
+    {
+      "drug_id": 14599,
+      "name": "Montelukast",
+      "trials": [
+        {
+          "nct_id": "NCT03991988",
+          "url": "https://clinicaltrials.gov/study/NCT03991988",
+          "intervention": "Montelukast",
+          "matched_names": [
+            "Montelukast"
+          ],
+          "title": "Montelukast Therapy on Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 32
+        }
+      ]
+    },
+    {
+      "drug_id": 14653,
+      "name": "Choline",
+      "trials": [
+        {
+          "nct_id": "NCT05880849",
+          "url": "https://clinicaltrials.gov/study/NCT05880849",
+          "intervention": "Choline",
+          "matched_names": [
+            "Choline",
+            "Choline Bitartrate",
+            "VitaCholine(R)"
+          ],
+          "title": "Choline Effects - Pre-symptomatic AD",
+          "status": "COMPLETED",
+          "enrollment": 15
+        }
+      ]
+    },
+    {
+      "drug_id": 14664,
+      "name": "Sapropterin",
+      "trials": [
+        {
+          "nct_id": "NCT01439555",
+          "url": "https://clinicaltrials.gov/study/NCT01439555",
+          "intervention": "Tetrahydrobiopterin",
+          "matched_names": [
+            "Tetrahydrobiopterin",
+            "Kuvan",
+            "Sapropterin"
+          ],
+          "title": "Endothelial Facilitation in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 11
+        }
+      ]
+    },
+    {
+      "drug_id": 14685,
+      "name": "Progesterone",
+      "trials": [
+        {
+          "nct_id": "NCT00066157",
+          "url": "https://clinicaltrials.gov/study/NCT00066157",
+          "intervention": "Medroxyprogesterone",
+          "matched_names": [
+            "Medroxyprogesterone",
+            "progesterone"
+          ],
+          "title": "Alzheimer's Disease: Therapeutic Potential of Estrogen",
+          "status": "COMPLETED",
+          "enrollment": 42
+        }
+      ]
+    },
+    {
+      "drug_id": 14961,
+      "name": "Simvastatin",
+      "trials": [
+        {
+          "nct_id": "NCT01439555",
+          "url": "https://clinicaltrials.gov/study/NCT01439555",
+          "intervention": "Simvastatin",
+          "matched_names": [
+            "Simvastatin",
+            "Tetrahydrobiopterin"
+          ],
+          "title": "Endothelial Facilitation in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 11
+        }
+      ]
+    },
+    {
+      "drug_id": 14962,
+      "name": "Trazodone",
+      "trials": [
+        {
+          "nct_id": "NCT01142258",
+          "url": "https://clinicaltrials.gov/study/NCT01142258",
+          "intervention": "Trazodone",
+          "matched_names": [
+            "Trazodone"
+          ],
+          "title": "Trazodone for Sleep Disorders in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 40
+        }
+      ]
+    },
+    {
+      "drug_id": 14968,
+      "name": "Modafinil",
+      "trials": [
+        {
+          "nct_id": "NCT00626210",
+          "url": "https://clinicaltrials.gov/study/NCT00626210",
+          "intervention": "modafinil",
+          "matched_names": [
+            "modafinil",
+            "Provigil"
+          ],
+          "title": "Modafinil Treatment for Sleep/Wake Disturbances in Older Adults",
+          "status": "TERMINATED",
+          "enrollment": 2
+        },
+        {
+          "nct_id": "NCT01172145",
+          "url": "https://clinicaltrials.gov/study/NCT01172145",
+          "intervention": "Modafinil",
+          "matched_names": [
+            "Modafinil",
+            "Provigil"
+          ],
+          "title": "Treatment of Apathy in Alzheimer's Disease With Modafinil",
+          "status": "COMPLETED",
+          "enrollment": 22
+        }
+      ]
+    },
+    {
+      "drug_id": 14975,
+      "name": "Sirolimus",
+      "trials": [
+        {
+          "nct_id": "NCT04200911",
+          "url": "https://clinicaltrials.gov/study/NCT04200911",
+          "intervention": "Rapamune",
+          "matched_names": [
+            "Rapamune",
+            "Sirolimus"
+          ],
+          "title": "Cognition, Age, and RaPamycin Effectiveness - DownregulatIon of thE mTor Pathway",
+          "status": "COMPLETED",
+          "enrollment": 10
+        },
+        {
+          "nct_id": "NCT06022068",
+          "url": "https://clinicaltrials.gov/study/NCT06022068",
+          "intervention": "Sirolimus",
+          "matched_names": [
+            "Sirolimus",
+            "Rapamycin"
+          ],
+          "title": "Evaluating Rapamycin Treatment in Alzheimer's Disease Using Positron Emission Tomography",
+          "status": "COMPLETED",
+          "enrollment": 14
+        }
+      ]
+    },
+    {
+      "drug_id": 14991,
+      "name": "Cilostazol",
+      "trials": [
+        {
+          "nct_id": "NCT01409564",
+          "url": "https://clinicaltrials.gov/study/NCT01409564",
+          "intervention": "Cilostazol",
+          "matched_names": [
+            "Cilostazol"
+          ],
+          "title": "Cilostazol Augmentation Study in Dementia",
+          "status": "COMPLETED",
+          "enrollment": 46
+        }
+      ]
+    },
+    {
+      "drug_id": 14992,
+      "name": "Itraconazole",
+      "trials": [
+        {
+          "nct_id": "NCT06586606",
+          "url": "https://clinicaltrials.gov/study/NCT06586606",
+          "intervention": "Itraconazole",
+          "matched_names": [
+            "Itraconazole"
+          ],
+          "title": "A Study to Evaluate the Effects of Itraconazole on MK-1708 in Healthy Participants (MK-1708-003)",
+          "status": "COMPLETED",
+          "enrollment": 12
+        }
+      ]
+    },
+    {
+      "drug_id": 15082,
+      "name": "Citalopram",
+      "trials": [
+        {
+          "nct_id": "NCT00898807",
+          "url": "https://clinicaltrials.gov/study/NCT00898807",
+          "intervention": "citalopram",
+          "matched_names": [
+            "citalopram",
+            "Celexa"
+          ],
+          "title": "Citalopram for Agitation in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 186
+        }
+      ]
+    },
+    {
+      "drug_id": 15099,
+      "name": "Zolpidem",
+      "trials": [
+        {
+          "nct_id": "NCT03075241",
+          "url": "https://clinicaltrials.gov/study/NCT03075241",
+          "intervention": "Zolpidem",
+          "matched_names": [
+            "Zolpidem"
+          ],
+          "title": "Z-Drugs for Sleep Disorders in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 62
+        }
+      ]
+    },
+    {
+      "drug_id": 15113,
+      "name": "Galantamine",
+      "trials": [
+        {
+          "nct_id": "NCT00679627",
+          "url": "https://clinicaltrials.gov/study/NCT00679627",
+          "intervention": "Galantamine",
+          "matched_names": [
+            "Galantamine"
+          ],
+          "title": "A Study of Galantamine Used to Treat Patients With Mild to Moderate Alzheimer's Disease",
+          "status": "TERMINATED",
+          "enrollment": 2051
+        },
+        {
+          "nct_id": "NCT01054976",
+          "url": "https://clinicaltrials.gov/study/NCT01054976",
+          "intervention": "Galantamine",
+          "matched_names": [
+            "Galantamine"
+          ],
+          "title": "The Efficacy of Galantamine Treatment on Attention in Patients With Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 99
+        },
+        {
+          "nct_id": "NCT01362686",
+          "url": "https://clinicaltrials.gov/study/NCT01362686",
+          "intervention": "Galantamine",
+          "matched_names": [
+            "Galantamine",
+            "Razadyne"
+          ],
+          "title": "Comparative Research of Alzheimer's Disease Drugs",
+          "status": "TERMINATED",
+          "enrollment": 200
+        },
+        {
+          "nct_id": "NCT01478633",
+          "url": "https://clinicaltrials.gov/study/NCT01478633",
+          "intervention": "Galantamine",
+          "matched_names": [
+            "Galantamine"
+          ],
+          "title": "Evaluation of Efficacy and Safety of Galantamine in Patients With Dementia of Alzheimer's Type Who Failed to Benefit From Donepezil",
+          "status": "COMPLETED",
+          "enrollment": 102
+        },
+        {
+          "nct_id": "NCT01677754",
+          "url": "https://clinicaltrials.gov/study/NCT01677754",
+          "intervention": "Galantamine",
+          "matched_names": [
+            "Galantamine"
+          ],
+          "title": "A Study of RO4602522 in Participants With Moderate Severity Alzheimer Disease on Background Alzheimer Disease Therapy",
+          "status": "COMPLETED",
+          "enrollment": 542
+        }
+      ]
+    },
+    {
+      "drug_id": 15126,
+      "name": "Donepezil",
+      "trials": [
+        {
+          "nct_id": "NCT00381381",
+          "url": "https://clinicaltrials.gov/study/NCT00381381",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "The Clinical Response of Choline Acetyltransferase and Apolipoprotein Epsilon Gene Polymorphisms to Donepezil in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 199
+        },
+        {
+          "nct_id": "NCT00480870",
+          "url": "https://clinicaltrials.gov/study/NCT00480870",
+          "intervention": "donepezil",
+          "matched_names": [
+            "donepezil"
+          ],
+          "title": "The Effect of Anticholinesterase Drugs on Sleep in Alzheimer's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 65
+        },
+        {
+          "nct_id": "NCT00566501",
+          "url": "https://clinicaltrials.gov/study/NCT00566501",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "Open-Label Extension Study of 23 mg Donepezil SR in Participants With Moderate to Severe Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 915
+        },
+        {
+          "nct_id": "NCT00766363",
+          "url": "https://clinicaltrials.gov/study/NCT00766363",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "Safety, Tolerability, and Pharmacokinetic Study of EVP-6124 in Patients With Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 49
+        },
+        {
+          "nct_id": "NCT01023425",
+          "url": "https://clinicaltrials.gov/study/NCT01023425",
+          "intervention": "donepezil",
+          "matched_names": [
+            "donepezil",
+            "donepezil-aricept"
+          ],
+          "title": "Clinical Trial of Donepezil Between the Naive Group and the Switching Group",
+          "status": "COMPLETED",
+          "enrollment": 72
+        },
+        {
+          "nct_id": "NCT01023867",
+          "url": "https://clinicaltrials.gov/study/NCT01023867",
+          "intervention": "donepezil",
+          "matched_names": [
+            "donepezil",
+            "donepezil-aricept"
+          ],
+          "title": "Clinical Trial of Donepezil Between the Patients With Alzheimer's Disease and Mixed Dementia",
+          "status": "COMPLETED",
+          "enrollment": 88
+        },
+        {
+          "nct_id": "NCT01266525",
+          "url": "https://clinicaltrials.gov/study/NCT01266525",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "Effect of Different Doses of SAR110894 on Cognition in Patients With Mild to Moderate Alzheimer's Disease on Donepezil",
+          "status": "COMPLETED",
+          "enrollment": 291
+        },
+        {
+          "nct_id": "NCT01362686",
+          "url": "https://clinicaltrials.gov/study/NCT01362686",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "Comparative Research of Alzheimer's Disease Drugs",
+          "status": "TERMINATED",
+          "enrollment": 200
+        },
+        {
+          "nct_id": "NCT01677754",
+          "url": "https://clinicaltrials.gov/study/NCT01677754",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "A Study of RO4602522 in Participants With Moderate Severity Alzheimer Disease on Background Alzheimer Disease Therapy",
+          "status": "COMPLETED",
+          "enrollment": 542
+        },
+        {
+          "nct_id": "NCT02051335",
+          "url": "https://clinicaltrials.gov/study/NCT02051335",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "Roflumilast and Donepezil to Reverse Scopolamine Induced Cognitive Deficits in Healthy Adults",
+          "status": "COMPLETED",
+          "enrollment": 27
+        },
+        {
+          "nct_id": "NCT02178124",
+          "url": "https://clinicaltrials.gov/study/NCT02178124",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "A Phase I Clinical Study, Randomized, Single-blind, Placebo-controlled, Multiple Doses, Dose Escalation Study of the Safety, Tolerability and Pharmacokinetics of Donepezil Patch in Healthy Male Subjects.",
+          "status": "COMPLETED",
+          "enrollment": 24
+        },
+        {
+          "nct_id": "NCT02550665",
+          "url": "https://clinicaltrials.gov/study/NCT02550665",
+          "intervention": "donepezil",
+          "matched_names": [
+            "donepezil",
+            "aricept"
+          ],
+          "title": "Optimal Dose Escalation Strategy to Successful Achievement of High Dose Donepezil 23mg",
+          "status": "COMPLETED",
+          "enrollment": 176
+        },
+        {
+          "nct_id": "NCT02769065",
+          "url": "https://clinicaltrials.gov/study/NCT02769065",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "Study of TAK-071 in Healthy Participants and Participants With Mild Cognitive Impairment/Mild Alzheimer Disease and Relative Bioavailability (BA) and Food Effect of TAK-071 in Healthy Participants",
+          "status": "TERMINATED",
+          "enrollment": 179
+        },
+        {
+          "nct_id": "NCT03030105",
+          "url": "https://clinicaltrials.gov/study/NCT03030105",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "Study to Evaluate the Effects of BPN14770 on Scopolamine-induced Cognitive Impairment in Healthy Volunteers",
+          "status": "COMPLETED",
+          "enrollment": 38
+        },
+        {
+          "nct_id": "NCT03055741",
+          "url": "https://clinicaltrials.gov/study/NCT03055741",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept\u00ae"
+          ],
+          "title": "Study of DHP1401 in Patients With Mild-moderate Alzheimer's Disease Treated With Donepezil(DRAMA)",
+          "status": "COMPLETED",
+          "enrollment": 180
+        },
+        {
+          "nct_id": "NCT04117178",
+          "url": "https://clinicaltrials.gov/study/NCT04117178",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "Monitoring Anti-Dementia Drugs by Serum Levels",
+          "status": "COMPLETED",
+          "enrollment": 132
+        },
+        {
+          "nct_id": "NCT04308304",
+          "url": "https://clinicaltrials.gov/study/NCT04308304",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "MK-1942/Donepezil Interactions in Participants With Alzheimer's Disease (MK-1942-005)",
+          "status": "COMPLETED",
+          "enrollment": 27
+        },
+        {
+          "nct_id": "NCT04730635",
+          "url": "https://clinicaltrials.gov/study/NCT04730635",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "MK-0000",
+            "Donepezil hydrochloride",
+            "Aricept"
+          ],
+          "title": "Cognition Platform Study in Participants at Risk for Alzheimer's Disease (AD) (MK-0000-413)",
+          "status": "COMPLETED",
+          "enrollment": 44
+        },
+        {
+          "nct_id": "NCT06285240",
+          "url": "https://clinicaltrials.gov/study/NCT06285240",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "Efficacy and Safety of MK-1167 in Participants With Alzheimer's Disease Dementia Taking Stable Donepezil Treatment (MK-1167-007)",
+          "status": "COMPLETED",
+          "enrollment": 28
+        }
+      ]
+    },
+    {
+      "drug_id": 15148,
+      "name": "Escitalopram",
+      "trials": [
+        {
+          "nct_id": "NCT00702780",
+          "url": "https://clinicaltrials.gov/study/NCT00702780",
+          "intervention": "escitalopram",
+          "matched_names": [
+            "escitalopram",
+            "Lexapro"
+          ],
+          "title": "Progression Delaying Effect of Escitalopram in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 74
+        },
+        {
+          "nct_id": "NCT01841125",
+          "url": "https://clinicaltrials.gov/study/NCT01841125",
+          "intervention": "escitalopram",
+          "matched_names": [
+            "escitalopram",
+            "lexacure Tab"
+          ],
+          "title": "Escitalopram for the Treatment of Depression in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 84
+        },
+        {
+          "nct_id": "NCT01876823",
+          "url": "https://clinicaltrials.gov/study/NCT01876823",
+          "intervention": "es-citalopram",
+          "matched_names": [
+            "es-citalopram",
+            "Lexapro"
+          ],
+          "title": "Memantine Plus Es-citalopram in Elderly Depressed Patients With Cognitive Impairment",
+          "status": "COMPLETED",
+          "enrollment": 60
+        }
+      ]
+    },
+    {
+      "drug_id": 15179,
+      "name": "Nicotinamide",
+      "trials": [
+        {
+          "nct_id": "NCT00580931",
+          "url": "https://clinicaltrials.gov/study/NCT00580931",
+          "intervention": "Nicotinamide",
+          "matched_names": [
+            "Nicotinamide",
+            "Enduramide"
+          ],
+          "title": "Safety Study of Nicotinamide to Treat Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 50
+        },
+        {
+          "nct_id": "NCT03061474",
+          "url": "https://clinicaltrials.gov/study/NCT03061474",
+          "intervention": "Nicotinamide",
+          "matched_names": [
+            "Nicotinamide",
+            "Niacinamide"
+          ],
+          "title": "Nicotinamide as an Early Alzheimer's Disease Treatment",
+          "status": "COMPLETED",
+          "enrollment": 46
+        }
+      ]
+    },
+    {
+      "drug_id": 15201,
+      "name": "Dapagliflozin",
+      "trials": [
+        {
+          "nct_id": "NCT03801642",
+          "url": "https://clinicaltrials.gov/study/NCT03801642",
+          "intervention": "Dapagliflozin",
+          "matched_names": [
+            "Dapagliflozin",
+            "Farxiga"
+          ],
+          "title": "Dapagliflozin In Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 46
+        }
+      ]
+    },
+    {
+      "drug_id": 15232,
+      "name": "Brexpiprazole",
+      "trials": [
+        {
+          "nct_id": "NCT03548584",
+          "url": "https://clinicaltrials.gov/study/NCT03548584",
+          "intervention": "Brexpiprazole",
+          "matched_names": [
+            "Brexpiprazole",
+            "OPC-34712"
+          ],
+          "title": "A Trial to Evaluate the Safety, Efficacy, and Tolerability of Brexpiprazole in Treating Agitation Associated With Dementia of the Alzheimer's Type",
+          "status": "COMPLETED",
+          "enrollment": 345
+        },
+        {
+          "nct_id": "NCT03594123",
+          "url": "https://clinicaltrials.gov/study/NCT03594123",
+          "intervention": "Brexpiprazole",
+          "matched_names": [
+            "Brexpiprazole"
+          ],
+          "title": "A 12-week Extension Trial to Evaluate the Safety and Tolerability of Brexpiprazole in the Treatment of Subjects With Agitation Associated With Dementia of the Alzheimer's Type",
+          "status": "COMPLETED",
+          "enrollment": 259
+        },
+        {
+          "nct_id": "NCT03594123",
+          "url": "https://clinicaltrials.gov/study/NCT03594123",
+          "intervention": "Brexpiprazole",
+          "matched_names": [
+            "Brexpiprazole"
+          ],
+          "title": "A 12-week Extension Trial to Evaluate the Safety and Tolerability of Brexpiprazole in the Treatment of Subjects With Agitation Associated With Dementia of the Alzheimer's Type",
+          "status": "COMPLETED",
+          "enrollment": 259
+        },
+        {
+          "nct_id": "NCT03620981",
+          "url": "https://clinicaltrials.gov/study/NCT03620981",
+          "intervention": "Brexpiprazole",
+          "matched_names": [
+            "Brexpiprazole"
+          ],
+          "title": "Brexpiprazole for the Treatment of Patients With Agitation Associated With Dementia of the Alzheimer's Type",
+          "status": "COMPLETED",
+          "enrollment": 410
+        },
+        {
+          "nct_id": "NCT03724942",
+          "url": "https://clinicaltrials.gov/study/NCT03724942",
+          "intervention": "Brexpiprazole",
+          "matched_names": [
+            "Brexpiprazole",
+            "OPC-34712"
+          ],
+          "title": "Brexpiprazole for the Long-term Treatment of Patients With Agitation Associated With Dementia of the Alzheimer's Type",
+          "status": "COMPLETED",
+          "enrollment": 164
+        }
+      ]
+    },
+    {
+      "drug_id": 15284,
+      "name": "Interferon beta-1a",
+      "trials": [
+        {
+          "nct_id": "NCT01075763",
+          "url": "https://clinicaltrials.gov/study/NCT01075763",
+          "intervention": "Interferon beta-1a",
+          "matched_names": [
+            "Interferon beta-1a",
+            "Rebif\u00ae"
+          ],
+          "title": "A Pilot Trial of Interferon Beta-1a in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 42
+        }
+      ]
+    },
+    {
+      "drug_id": 15308,
+      "name": "Riluzole",
+      "trials": [
+        {
+          "nct_id": "NCT01703117",
+          "url": "https://clinicaltrials.gov/study/NCT01703117",
+          "intervention": "Riluzole",
+          "matched_names": [
+            "Riluzole",
+            "no other names"
+          ],
+          "title": "Riluzole in Mild Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 50
+        }
+      ]
+    },
+    {
+      "drug_id": 15331,
+      "name": "Insulin aspart",
+      "trials": [
+        {
+          "nct_id": "NCT02462161",
+          "url": "https://clinicaltrials.gov/study/NCT02462161",
+          "intervention": "Insulin aspart",
+          "matched_names": [
+            "Insulin aspart",
+            "NovoLog Fast-Acting Insulin Aspart"
+          ],
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Short-Acting Insulin Aspart",
+          "status": "COMPLETED",
+          "enrollment": 24
+        }
+      ]
+    },
+    {
+      "drug_id": 15332,
+      "name": "Insulin glulisine",
+      "trials": [
+        {
+          "nct_id": "NCT01436045",
+          "url": "https://clinicaltrials.gov/study/NCT01436045",
+          "intervention": "Insulin glulisine",
+          "matched_names": [
+            "Insulin glulisine",
+            "Apidra"
+          ],
+          "title": "Safety and Effectiveness Study of Intranasal Insulin Glulisine on Cognitive and Memory in Mild-Mod AD Patients.",
+          "status": "COMPLETED",
+          "enrollment": 12
+        },
+        {
+          "nct_id": "NCT02503501",
+          "url": "https://clinicaltrials.gov/study/NCT02503501",
+          "intervention": "Insulin glulisine",
+          "matched_names": [
+            "Insulin glulisine",
+            "Apidra"
+          ],
+          "title": "Intranasal Glulisine in Amnestic Mild Cognitive Impairment and Probable Mild Alzheimer's Disease",
+          "status": "TERMINATED",
+          "enrollment": 49
+        }
+      ]
+    },
+    {
+      "drug_id": 15425,
+      "name": "Doxycycline",
+      "trials": [
+        {
+          "nct_id": "NCT00439166",
+          "url": "https://clinicaltrials.gov/study/NCT00439166",
+          "intervention": "doxycycline",
+          "matched_names": [
+            "doxycycline"
+          ],
+          "title": "Effects of Doxycycline and Rifampicin on Biomarkers of Alzheimer's Disease in the Cerebrospinal Fluid",
+          "status": "COMPLETED",
+          "enrollment": 100
+        }
+      ]
+    },
+    {
+      "drug_id": 15611,
+      "name": "Suvorexant",
+      "trials": [
+        {
+          "nct_id": "NCT02750306",
+          "url": "https://clinicaltrials.gov/study/NCT02750306",
+          "intervention": "Suvorexant",
+          "matched_names": [
+            "Suvorexant",
+            "MK-4305"
+          ],
+          "title": "Safety and Efficacy of Suvorexant (MK-4305) for the Treatment of Insomnia in Participants With Alzheimer's Disease (MK-4305-061)",
+          "status": "COMPLETED",
+          "enrollment": 285
+        }
+      ]
+    },
+    {
+      "drug_id": 15666,
+      "name": "Baricitinib",
+      "trials": [
+        {
+          "nct_id": "NCT05189106",
+          "url": "https://clinicaltrials.gov/study/NCT05189106",
+          "intervention": "Baricitinib",
+          "matched_names": [
+            "Baricitinib",
+            "Olumiant",
+            "INCB28050",
+            "LY3009104"
+          ],
+          "title": "Neurodegenerative Alzheimer's Disease and Amyotrophic Lateral Sclerosis (NADALS) Basket Trial",
+          "status": "COMPLETED",
+          "enrollment": 17
+        }
+      ]
+    },
+    {
+      "drug_id": 15836,
+      "name": "Telmisartan",
+      "trials": [
+        {
+          "nct_id": "NCT02085265",
+          "url": "https://clinicaltrials.gov/study/NCT02085265",
+          "intervention": "Telmisartan",
+          "matched_names": [
+            "Telmisartan",
+            "Micardis"
+          ],
+          "title": "Telmisartan vs. Perindopril in Mild-Moderate Alzheimer's Disease Patients",
+          "status": "TERMINATED",
+          "enrollment": 23
+        }
+      ]
+    },
+    {
+      "drug_id": 15840,
+      "name": "Digoxin",
+      "trials": [
+        {
+          "nct_id": "NCT00831506",
+          "url": "https://clinicaltrials.gov/study/NCT00831506",
+          "intervention": "digoxin",
+          "matched_names": [
+            "digoxin"
+          ],
+          "title": "Dimebon (PF-01913539)-Digoxin Drug-Drug Interaction Study In Healthy Subjects",
+          "status": "COMPLETED",
+          "enrollment": 12
+        },
+        {
+          "nct_id": "NCT00831506",
+          "url": "https://clinicaltrials.gov/study/NCT00831506",
+          "intervention": "digoxin",
+          "matched_names": [
+            "digoxin"
+          ],
+          "title": "Dimebon (PF-01913539)-Digoxin Drug-Drug Interaction Study In Healthy Subjects",
+          "status": "COMPLETED",
+          "enrollment": 12
+        }
+      ]
+    },
+    {
+      "drug_id": 15986,
+      "name": "Salsalate",
+      "trials": [
+        {
+          "nct_id": "NCT03277573",
+          "url": "https://clinicaltrials.gov/study/NCT03277573",
+          "intervention": "Salsalate",
+          "matched_names": [
+            "Salsalate"
+          ],
+          "title": "Salsalate in Patients Mild to Moderate Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 40
+        }
+      ]
+    },
+    {
+      "drug_id": 16063,
+      "name": "Scopolamine",
+      "trials": [
+        {
+          "nct_id": "NCT02051335",
+          "url": "https://clinicaltrials.gov/study/NCT02051335",
+          "intervention": "Scopolamine",
+          "matched_names": [
+            "Scopolamine",
+            "Hyoscine hydrobromide"
+          ],
+          "title": "Roflumilast and Donepezil to Reverse Scopolamine Induced Cognitive Deficits in Healthy Adults",
+          "status": "COMPLETED",
+          "enrollment": 27
+        }
+      ]
+    },
+    {
+      "drug_id": 16588,
+      "name": "Metformin",
+      "trials": [
+        {
+          "nct_id": "NCT01965756",
+          "url": "https://clinicaltrials.gov/study/NCT01965756",
+          "intervention": "Metformin",
+          "matched_names": [
+            "Metformin"
+          ],
+          "title": "Effect of Insulin Sensitizer Metformin on AD Biomarkers",
+          "status": "COMPLETED",
+          "enrollment": 20
+        }
+      ]
+    },
+    {
+      "drug_id": 16855,
+      "name": "Methylphenidate",
+      "trials": [
+        {
+          "nct_id": "NCT00495820",
+          "url": "https://clinicaltrials.gov/study/NCT00495820",
+          "intervention": "Methylphenidate",
+          "matched_names": [
+            "Methylphenidate",
+            "Ritalin"
+          ],
+          "title": "Methylphenidate for Apathy in Alzheimer's Dementia: A Controlled Study",
+          "status": "COMPLETED",
+          "enrollment": 60
+        },
+        {
+          "nct_id": "NCT01117181",
+          "url": "https://clinicaltrials.gov/study/NCT01117181",
+          "intervention": "Methylphenidate",
+          "matched_names": [
+            "Methylphenidate",
+            "Ritalin"
+          ],
+          "title": "Apathy in Dementia Methylphenidate Trial (ADMET)",
+          "status": "COMPLETED",
+          "enrollment": 60
+        }
+      ]
+    },
+    {
+      "drug_id": 17174,
+      "name": "Rivastigmine",
+      "trials": [
+        {
+          "nct_id": "NCT00766363",
+          "url": "https://clinicaltrials.gov/study/NCT00766363",
+          "intervention": "Rivastigmine",
+          "matched_names": [
+            "Rivastigmine"
+          ],
+          "title": "Safety, Tolerability, and Pharmacokinetic Study of EVP-6124 in Patients With Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 49
+        },
+        {
+          "nct_id": "NCT01183806",
+          "url": "https://clinicaltrials.gov/study/NCT01183806",
+          "intervention": "Rivastigmine",
+          "matched_names": [
+            "Rivastigmine",
+            "Rivastigmine use"
+          ],
+          "title": "Effects of Exercise and Rivastigmine on Quality of Life of Alzheimer's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 40
+        },
+        {
+          "nct_id": "NCT01362686",
+          "url": "https://clinicaltrials.gov/study/NCT01362686",
+          "intervention": "Rivastigmine",
+          "matched_names": [
+            "Rivastigmine",
+            "Exelon"
+          ],
+          "title": "Comparative Research of Alzheimer's Disease Drugs",
+          "status": "TERMINATED",
+          "enrollment": 200
+        },
+        {
+          "nct_id": "NCT01585272",
+          "url": "https://clinicaltrials.gov/study/NCT01585272",
+          "intervention": "ENA713",
+          "matched_names": [
+            "ENA713",
+            "Rivastigmine"
+          ],
+          "title": "Tolerability of Rivastigmine Before and After Switching From Oral Formulation to Transdermal Patch in Alzheimer's Dementia",
+          "status": "COMPLETED",
+          "enrollment": 121
+        },
+        {
+          "nct_id": "NCT01677754",
+          "url": "https://clinicaltrials.gov/study/NCT01677754",
+          "intervention": "Rivastigmine",
+          "matched_names": [
+            "Rivastigmine"
+          ],
+          "title": "A Study of RO4602522 in Participants With Moderate Severity Alzheimer Disease on Background Alzheimer Disease Therapy",
+          "status": "COMPLETED",
+          "enrollment": 542
+        },
+        {
+          "nct_id": "NCT01948791",
+          "url": "https://clinicaltrials.gov/study/NCT01948791",
+          "intervention": "ENA713",
+          "matched_names": [
+            "ENA713",
+            "Rivastigmine"
+          ],
+          "title": "16w Interventional Study on Titration and Dose/Efficacy Assessment of Exelon in Chinese Alzheimer's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 222
+        },
+        {
+          "nct_id": "NCT02444637",
+          "url": "https://clinicaltrials.gov/study/NCT02444637",
+          "intervention": "Rivastigmine",
+          "matched_names": [
+            "Rivastigmine",
+            "Exelon"
+          ],
+          "title": "Open Label Trial of Rivastigmine Patch in Subjects With Mild to Moderate Stage AD Having Coexisting svCVD",
+          "status": "COMPLETED",
+          "enrollment": 100
+        },
+        {
+          "nct_id": "NCT02989402",
+          "url": "https://clinicaltrials.gov/study/NCT02989402",
+          "intervention": "Rivastigmine",
+          "matched_names": [
+            "Rivastigmine"
+          ],
+          "title": "A Phase IV Study to Evaluate Safety, Tolerability and Effectiveness of Rivastigmine Patch 15cm2 in Patients With Severe Dementia of the Alzheimer's Type.",
+          "status": "COMPLETED",
+          "enrollment": 100
+        }
+      ]
+    },
+    {
+      "drug_id": 17270,
+      "name": "Pimavanserin",
+      "trials": [
+        {
+          "nct_id": "NCT03118947",
+          "url": "https://clinicaltrials.gov/study/NCT03118947",
+          "intervention": "Pimavanserin",
+          "matched_names": [
+            "Pimavanserin"
+          ],
+          "title": "A Study of Pimavanserin for the Treatment of Agitation and Aggression in Subjects With Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 79
+        }
+      ]
+    },
+    {
+      "drug_id": 18277,
+      "name": "Levetiracetam",
+      "trials": [
+        {
+          "nct_id": "NCT02002819",
+          "url": "https://clinicaltrials.gov/study/NCT02002819",
+          "intervention": "levetiracetam",
+          "matched_names": [
+            "levetiracetam",
+            "Keppra"
+          ],
+          "title": "Levetiracetam for Alzheimer's Disease-Associated Network Hyperexcitability",
+          "status": "COMPLETED",
+          "enrollment": 34
+        },
+        {
+          "nct_id": "NCT03489044",
+          "url": "https://clinicaltrials.gov/study/NCT03489044",
+          "intervention": "Levetiracetam",
+          "matched_names": [
+            "Levetiracetam"
+          ],
+          "title": "An Investigation of Levetiracetam in Alzheimer's Disease",
+          "status": "COMPLETED",
+          "enrollment": 8
+        },
+        {
+          "nct_id": "NCT03875638",
+          "url": "https://clinicaltrials.gov/study/NCT03875638",
+          "intervention": "Levetiracetam",
+          "matched_names": [
+            "Levetiracetam"
+          ],
+          "title": "Treating Hyperexcitability in AD With Levetiracetam",
+          "status": "COMPLETED",
+          "enrollment": 58
+        }
+      ]
+    },
+    {
+      "drug_id": 20270,
+      "name": "Edaravone",
+      "trials": [
+        {
+          "nct_id": "NCT05323812",
+          "url": "https://clinicaltrials.gov/study/NCT05323812",
+          "intervention": "TW001",
+          "matched_names": [
+            "TW001",
+            "Edaravone"
+          ],
+          "title": "ASURE: Alzheimer Study Using oRal Edaravone",
+          "status": "COMPLETED",
+          "enrollment": 61
+        }
+      ]
+    }
+  ],
+  "all_matched_count": 79,
+  "excluded_outside_candidate_universe": [
+    {
+      "drug_id": 14072,
+      "name": "Resveratrol"
+    },
+    {
+      "drug_id": 14165,
+      "name": "Rosiglitazone"
+    },
+    {
+      "drug_id": 14660,
+      "name": "Medical Cannabis"
+    },
+    {
+      "drug_id": 15520,
+      "name": "Roflumilast"
+    },
+    {
+      "drug_id": 15661,
+      "name": "Bryostatin 1"
+    },
+    {
+      "drug_id": 15665,
+      "name": "Saracatinib"
+    },
+    {
+      "drug_id": 15793,
+      "name": "Lornoxicam"
+    },
+    {
+      "drug_id": 15818,
+      "name": "Memantine"
+    },
+    {
+      "drug_id": 16051,
+      "name": "IRL-1620"
+    },
+    {
+      "drug_id": 16292,
+      "name": "Velusetrag"
+    },
+    {
+      "drug_id": 16857,
+      "name": "Bifeprunox"
+    },
+    {
+      "drug_id": 17702,
+      "name": "Thiethylperazine"
+    },
+    {
+      "drug_id": 17889,
+      "name": "Varenicline"
+    },
+    {
+      "drug_id": 18001,
+      "name": "Epigallocatechin gallate"
+    },
+    {
+      "drug_id": 18225,
+      "name": "scyllo-inositol"
+    },
+    {
+      "drug_id": 18263,
+      "name": "Verubecestat"
+    },
+    {
+      "drug_id": 18334,
+      "name": "Neflamapimod"
+    },
+    {
+      "drug_id": 18442,
+      "name": "Tideglusib"
+    },
+    {
+      "drug_id": 19363,
+      "name": "Tertomotide"
+    },
+    {
+      "drug_id": 21068,
+      "name": "Bapineuzumab"
+    },
+    {
+      "drug_id": 21071,
+      "name": "Solanezumab"
+    },
+    {
+      "drug_id": 21081,
+      "name": "Crenezumab"
+    },
+    {
+      "drug_id": 21084,
+      "name": "Gantenerumab"
+    },
+    {
+      "drug_id": 21099,
+      "name": "Aducanumab"
+    },
+    {
+      "drug_id": 21293,
+      "name": "Idalopirdine"
+    },
+    {
+      "drug_id": 21432,
+      "name": "Posiphen"
+    },
+    {
+      "drug_id": 21548,
+      "name": "ORM-12741"
+    },
+    {
+      "drug_id": 21553,
+      "name": "GSK-239512"
+    },
+    {
+      "drug_id": 21554,
+      "name": "ABT-288"
+    },
+    {
+      "drug_id": 21679,
+      "name": "Masitinib"
+    },
+    {
+      "drug_id": 21852,
+      "name": "Dexpramipexole"
+    }
+  ],
+  "eligible_trials": 576,
+  "unmatched_intervention_names": [
+    "11C-L-deprenyl-D2",
+    "15mg T3D-959",
+    "2 mg/day",
+    "250mg rilapladib",
+    "3 mg/day",
+    "30 mg T3D-959",
+    "45 mg T3D-959",
+    "50561 high dose",
+    "50561 low dose",
+    "6 mg/day",
+    "AAB-003 (PF-05236812)",
+    "AADvac1",
+    "ABBV-552",
+    "ABBV-8E12",
+    "ABBV-916",
+    "ABT-089",
+    "ABT-126",
+    "ABT-354",
+    "ABT-384",
+    "ABT-957",
+    "ABvac40",
+    "AC-3933",
+    "ACD856",
+    "ACD856 (fed cohort)",
+    "ACU193",
+    "AChEI",
+    "AD16 30mg\u300140mg",
+    "AD16 5mg\u300110mg\u300120mg\u300130mg\u300140mg\u300160mg\u300180mg",
+    "AGB101 220 mg tablet",
+    "AL001",
+    "AL002",
+    "ALIA-1758",
+    "ALZ-801",
+    "ALZ-801 170 mg Fasting",
+    "ALZ-801 205 mg After Food",
+    "ALZ-801 205 mg Fasting",
+    "ALZ-801 342 mg Fasting",
+    "ALZ-801 or matching placebo",
+    "ANAVEX2-73",
+    "ANAVEX2-73 Intravenous",
+    "ANAVEX2-73 Oral",
+    "AQW051",
+    "ASN51",
+    "ASP0777",
+    "ATH-1017",
+    "AVP-786",
+    "AVP-786-18",
+    "AVP-786-28",
+    "AVP-786-42.63",
+    "AVP-923-20",
+    "AVP-923-30",
+    "AXS-05",
+    "AXS-05 (dextromethorphan-bupropion)",
+    "AZD1446",
+    "AZD3480",
+    "AZD5213",
+    "Acetyl-L-Carnitine",
+    "Acetylcholinesterase Inhibitors",
+    "Active Comparator",
+    "Aducanumab (BIIB037)",
+    "Aducanumab (recombinant, fully human anti-A\u03b2 IgG1 mAb)",
+    "Allogeneic MSC",
+    "Allopregnanolone",
+    "Allopregnanolone injection (intravenous solution)",
+    "Aricept",
+    "Aricept (donepezil IR 10 mg)",
+    "Aricept (donepezil SR 23 mg)",
+    "Aripiprazole (BMS-337039)",
+    "Astragalus Membranaceus Root",
+    "AstroStem",
+    "Avagacestat",
+    "Azeliragon",
+    "Azeliragon 5mg",
+    "BAN2401 10 mg/kg",
+    "BAN2401 2.5 mg/kg",
+    "BAN2401 5 mg/kg",
+    "BEY2153",
+    "BI 409306",
+    "BI 409306 25 mg",
+    "BI 409306 50 mg",
+    "BI 425809 dose 1",
+    "BI 425809 dose 2",
+    "BI 425809 dose 3",
+    "BI 425809 dose 4",
+    "BIIB076",
+    "BIIB092",
+    "BMS-241027",
+    "BMS-708163",
+    "BMS-708163 + Cooperstown Cocktail",
+    "BPN14770",
+    "Bapineuzumab 0.5 mg/kg",
+    "Bapineuzumab 1.0 m/kg",
+    "Benfotiamine",
+    "Brexpiprazole, OPC-34712",
+    "Bryostatin",
+    "Buntanetap/Posiphen",
+    "CERE-110: Adeno-Associated Virus injection Surgery",
+    "CHF 5074",
+    "CHF 5074 1x",
+    "CHF 5074 2x",
+    "CHF 5074 3x",
+    "CHF 5974",
+    "CHF5074 1x",
+    "CHF5074 2x",
+    "CHF5074 3x",
+    "CKD-355A (D797/Memantine HCl 20mg)",
+    "CKD-355B (D797/Memantine HCl 20mg)",
+    "CMS121",
+    "CNP520",
+    "CNP520 15mg",
+    "CNP520 50mg",
+    "COR388 capsule",
+    "CPC-201",
+    "CT1812",
+    "CTS21166 (ZPQ-21166)",
+    "CY6463",
+    "Cerebrolysin + donepezil",
+    "Cerebrolysin + placebo",
+    "Circadin",
+    "Coconut Oil Beverage",
+    "Comparator: Placebo 5mg (run in)",
+    "Contraloid acetate",
+    "Crenezumab dose level 1",
+    "Crenezumab dose level 2",
+    "Crenezumb dose level 3",
+    "Curcumin and ginkgo extract",
+    "DAOI-A group",
+    "DAOI-B",
+    "DAOI-B group",
+    "DAOI-C group",
+    "DAOIB",
+    "DHA (Docosahexaenoic Acid)",
+    "DHP1401",
+    "DMB-I (Dimebon)",
+    "DNL747",
+    "DONEPEZIL HYDROCHLORIDE",
+    "Daratumumab Injection",
+    "Dasatinib + Quercetin",
+    "Deferiprone 600mg delayed release tablets",
+    "Dimebon",
+    "Dimebon (latrepirdine)",
+    "Dimebon 20 mg po TID",
+    "Dimebon tablet for oral administration",
+    "Donanemab",
+    "Donepezil (Aricept)",
+    "Donepezil 10 mg",
+    "Donepezil 5 - 10 mg",
+    "Donepezil 5mg",
+    "Donepezil HCL",
+    "Donepezil HCl",
+    "Donepezil Hydrochloride",
+    "Donepezil TDS",
+    "Donepezil TDS Version A",
+    "Donepezil TDS Version B",
+    "Donepezil TDS Version D",
+    "Donepezil TDS Version E",
+    "Donepezil hydrochloride",
+    "Donepezil patch",
+    "Donepezil placebo",
+    "Dronabinol (Marinol\u00ae)",
+    "Drug: E2609",
+    "Drug: EVP-6124",
+    "Drug: NIC5-15",
+    "E2020",
+    "E2212",
+    "E2609",
+    "E2814",
+    "EGb 761\u00ae (Tanakan\u00ae)",
+    "EHT 0202 etazolate",
+    "EI-1071 tablet, oral",
+    "EVP-0962",
+    "EVP-6124",
+    "EVP-6124 (0.1 mg/day)",
+    "EVP-6124 (0.3 mg/day)",
+    "EVP-6124 (1.0 mg/day)",
+    "Elenbecestat",
+    "Eligard 22.5Mg Suspension for Injection",
+    "Elpipodect",
+    "Empagliflozin 10 MG",
+    "Emraclidine",
+    "Exendin-4 SC",
+    "Experimental 1",
+    "Experimental Bapineuzumab",
+    "Experimental: ALZ-801",
+    "Filgrastim (75mcg/0.3ml)",
+    "G-CSF; filgrastim",
+    "GB-5001",
+    "GC021109",
+    "GRF6019",
+    "GSI-953",
+    "GSK2647544",
+    "GSK2647544 oral",
+    "GSK2981710",
+    "GSK4527226",
+    "GSK933776",
+    "GV1001 0.56mg",
+    "GV1001 1.12mg",
+    "Galantamine 16 mg/day",
+    "Galantamine 24 mg/day",
+    "Galantamine CR",
+    "Galantamine and Donepezil",
+    "Group 1 ELND005",
+    "Group 2 ELND005",
+    "HPP854",
+    "HTL0009936",
+    "HTL0009936 modified release",
+    "HTL0018318",
+    "High dose ANAVEX2-73",
+    "ID1201",
+    "INM-176",
+    "ION269",
+    "ITI-007",
+    "Idalopirdine (Lu AE58054) 60 mg",
+    "Idalopirdine 60 mg",
+    "Immune Globulin Intravenous (Human), 10% (IGIV, 10%)",
+    "Insulin",
+    "Insulin (Humulin\u00ae R U-100)",
+    "J147",
+    "JNJ-39393406",
+    "JNJ-54861911 10 mg",
+    "JNJ-54861911 50 mg",
+    "JNJ-54861911, 10 mg",
+    "JNJ-54861911, 10 milligram (mg)",
+    "JNJ-54861911, 25 mg",
+    "JNJ-54861911, 50 mg",
+    "JNJ-63733657",
+    "KHK6640",
+    "L-Arginine",
+    "LMTM",
+    "LY03020",
+    "LY2062430",
+    "LY2599666",
+    "LY3202626",
+    "LY3372689",
+    "LY450139",
+    "LY451395",
+    "LYN-057",
+    "Lanabecestat",
+    "Lecanemab 10 mg/kg",
+    "Lecanemab 2.5 mg/kg",
+    "Lecanemab 5.0 mg/kg",
+    "Leucettinib-21",
+    "Lipoic acid and fish oil concentrate",
+    "Lu AE58054",
+    "Lu AF20513",
+    "Lu AF20513, double high dose",
+    "Lu AF20513, high dose",
+    "Lu AF20513, low dose",
+    "Lu AF20513, medium dose",
+    "Lu AF87908",
+    "MABT5102A",
+    "MAR",
+    "MEM 1003",
+    "MIB-626",
+    "MK-0249 25 mg",
+    "MK-0249 7.5 mg",
+    "MK-1167",
+    "MK-1708",
+    "MK-1942",
+    "MK-7622",
+    "MK-8931",
+    "MK0249",
+    "MLC601",
+    "MP-101",
+    "MPC-7869",
+    "MSDC-0160",
+    "MT-4666",
+    "Memantine (once daily)",
+    "Memantine (twice daily)",
+    "Memantine hydrochloride",
+    "Memantine-HCl",
+    "Metabolic Cofactor Supplementation",
+    "Mevidalen",
+    "Mid dose ANAVEX2-73",
+    "Montelukast buccal film",
+    "NDX-1017",
+    "NE3107",
+    "NH280105- MAD",
+    "NH280105- SAD",
+    "NMRA-323511",
+    "NPT 2042 (Reference formula/Formulation 1)",
+    "NPT 2042 (Test formula/Formulation 2)",
+    "NPT 2042 (bumetanide analog) or Matching Placebo",
+    "NPT088",
+    "NSA-789",
+    "NTRX-07",
+    "NanoLithium\u00ae NP03",
+    "Novasoy",
+    "ONO-2020",
+    "Oxaloacetate (OAA) 1g",
+    "Oxaloacetate (OAA) 2g",
+    "PF-03654746",
+    "PF-04447943",
+    "PF-04494700",
+    "PF-04494700 - High Dose Arm",
+    "PF-04494700 - Low Dose Arm",
+    "PF-05212377 (SAM-760)",
+    "PM012",
+    "PQ912",
+    "PQ912 oral",
+    "PRI-002",
+    "PTI-125, 100 mg tablets",
+    "PU-AD",
+    "PXT00864",
+    "Patients- dose titration",
+    "Pepinemab",
+    "Phenazopyridine hydrochloride",
+    "Pimavanserin 20 mg",
+    "Pimavanserin 34 mg",
+    "Pimavanserin tartrate",
+    "Piromelatine",
+    "Piromelatine 20 mg",
+    "Placebo",
+    "Placebo (Capsules)",
+    "Placebo (Insulin Diluent)",
+    "Placebo Comparator: Placebo",
+    "Placebo matched to Rifampin",
+    "Placebo matched to doxycycline",
+    "Placebo matching BI 409306 25 mg",
+    "Placebo matching BI 409306 50 mg",
+    "Placebo matching BMS-241027",
+    "Placebo to 10 cm^2 patch",
+    "Placebo to 15 cm^2 patch",
+    "Placebo to Donepezil",
+    "Placebo to MK-0249",
+    "Placebo to Rivastigmine capsules",
+    "Placebo to match GSK933776",
+    "Placebos",
+    "Posiphen\u00ae tartrate capsules",
+    "Quetiapine Fumarate",
+    "RO4602522",
+    "RO5313534",
+    "RO7105705",
+    "RO7126209",
+    "RPh201",
+    "RPh201, botanical drug product",
+    "RSG XR",
+    "RVT-101",
+    "RVT-101 35 mg tablets",
+    "Razadyne ER",
+    "Recombinant Human Serum Albumin",
+    "Regular Insulin",
+    "Remternetug (IV)",
+    "Remternetug (SC)",
+    "Rifaximin 550 milligrams (MG)",
+    "Rivastigmine 10 cm^2",
+    "Rivastigmine 10 cm^2 transdermal patch",
+    "Rivastigmine 13.3 mg/24 h (15 cm^2)",
+    "Rivastigmine 15 cm^2",
+    "Rivastigmine 4.6 mg/24 h (5 cm^2)",
+    "Rivastigmine 5 and 10 cm^2 patch",
+    "Rivastigmine 5 cm^2",
+    "Rivastigmine 5 cm^2 transdermal patch",
+    "Rivastigmine 9.5 mg/24 h (10 cm^2)",
+    "Rivastigmine Patch",
+    "Rivastigmine patch (4.6 mg/day switch to 9.5 mg/day)",
+    "Rivastigmine patch (9.5 mg/day)",
+    "Rivastigmine transdermal patch",
+    "Roflumilast placebo",
+    "Rosiglitazone (Extended Release)",
+    "Rosiglitazone Extended Release 2mg",
+    "Rosiglitazone Extended Release 8mg",
+    "Rosiglitazone XR",
+    "Rosiglitazone XR (extended release) oral tablets",
+    "S -Equol",
+    "SAGE-718",
+    "SAM-531",
+    "SAM-531 1.5 mg",
+    "SAM-531 3.0 mg",
+    "SAM-531 5.0 mg",
+    "SAR110894",
+    "SAR228810",
+    "SB-742457",
+    "SB-742457 15mg",
+    "SB-742457 35mg",
+    "SHR-1707",
+    "SHR-1707 injection",
+    "SNP318 (A)",
+    "SPG302",
+    "SRA-444",
+    "SSR180711C",
+    "ST101",
+    "Sagramostim",
+    "Salvia officinalis (sage)",
+    "Scopolamine 0.6 MG/ML",
+    "Seltorexant",
+    "Semagludtide",
+    "Semorinemab",
+    "Sertraline (Zoloft)",
+    "Simufilam",
+    "Simufilam 100 mg oral tablet",
+    "Simufilam 100 mg tablet",
+    "Simufilam 50 mg oral tablet",
+    "Sodium oligo-mannurarate 600mg",
+    "Sodium oligo-mannurarate 900mg",
+    "Standard of care",
+    "T-817MA",
+    "T-817MA-H",
+    "T-817MA-L",
+    "T3D-959",
+    "TAK-071",
+    "TAK-071 Placebo",
+    "TB006",
+    "THN 201",
+    "TRx0237",
+    "TRx0237 150 mg/day",
+    "TRx0237 16 mg/day",
+    "TRx0237 200 mg/day",
+    "TRx0237 250 mg/day",
+    "TRx0237 8 mg/day",
+    "Talsaclidine",
+    "Talsaclidine 12 mg",
+    "Talsaclidine 24 mg",
+    "Talsaclidine 36 mg",
+    "Talsaclidine 6 mg",
+    "Tilavonemab",
+    "Transdermal estradiol",
+    "VG-3927",
+    "VI-1121",
+    "VX-745",
+    "Valaciclovir 500Mg Tablet",
+    "Valproate",
+    "Verubecestat (Part I and Part II)",
+    "Verubecestat 12 mg (Parts 1 and 2)",
+    "Verubecestat 40 mg (Parts 1 and 2)",
+    "Wei Li Bai capsules",
+    "XPro1595",
+    "Xanamem\u00ae 10 mg",
+    "Xanamem\u00ae 5 mg",
+    "Xanamem\u2122",
+    "ZT-1",
+    "Zagotenemab",
+    "Zoplicone",
+    "[18F]GSK2647544 IV bolus",
+    "[18F]GTP1",
+    "dimebon",
+    "dl-alpha-tocopherol",
+    "donanemab",
+    "donepezil 5-10mg",
+    "drug-drug interaction",
+    "hydrocodone/APAP w placebo PRN",
+    "ladostigil hemitartrate",
+    "lecozotan SR",
+    "lecozotan SR (SRA-333)",
+    "masitinib (AB1010)",
+    "placebo",
+    "sabirnetug (ACU193)",
+    "semagacestat",
+    "simufilam",
+    "testosterone gel",
+    "troriluzole"
+  ]
+}

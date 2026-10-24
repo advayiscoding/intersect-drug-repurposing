@@ -1,0 +1,74 @@
+{
+  "source": "https://dataverse.harvard.edu/api/access/datafile/6180620",
+  "primekg_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+  "trials_sha256": "1c68d608baeaaccfdc2100c924497c0383d208dcdd87a385975acdfbed601bdf",
+  "trials_retrieved_at": "2026-10-24T18:48:31.977326+00:00",
+  "training_edges_sha256": "f65eb0b9f518db561cb05905e375479b1236672210d4a3f6520431d86f4755de",
+  "source_nodes": 129375,
+  "source_rows": 8100498,
+  "target_diseases": [
+    {
+      "id": 28780,
+      "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+      "type": "disease",
+      "name": "Alzheimer disease",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 31527,
+      "source_id": "11513",
+      "type": "disease",
+      "name": "Alzheimer disease, familial early-onset, with coexisting amyloid and prion pathology",
+      "source": "MONDO"
+    },
+    {
+      "id": 32654,
+      "source_id": "17233_100087",
+      "type": "disease",
+      "name": "familial Alzheimer disease",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 83960,
+      "source_id": "11401",
+      "type": "disease",
+      "name": "Alzheimer disease without neurofibrillary tangles",
+      "source": "MONDO"
+    },
+    {
+      "id": 94982,
+      "source_id": "10783",
+      "type": "disease",
+      "name": "Alzheimer disease, susceptibility to, mitochondrial",
+      "source": "MONDO"
+    }
+  ],
+  "hops": 3,
+  "allowed_relations": [
+    "contraindication",
+    "disease_protein",
+    "drug_protein",
+    "indication",
+    "off-label use",
+    "pathway_protein",
+    "protein_protein"
+  ],
+  "removed_target_drug_rows": 146,
+  "removed_relations": {
+    "contraindication": 116,
+    "indication": 30
+  },
+  "graph_nodes": 29216,
+  "graph_pairs": 503232,
+  "training_triples": 503473,
+  "candidates": 1801,
+  "heldout_drugs": 48,
+  "candidates_with_paths": 1236,
+  "candidates_outside_subgraph": 159,
+  "heldout_outside_subgraph": [],
+  "leakage_guard": "passed: all target/drug relationships removed before selection and degrees",
+  "direction": "direction unknown",
+  "edge_confidence": "unavailable; uniform evidence weight",
+  "candidate_policy": "all PrimeKG drugs with a non-Alzheimer indication; regulatory approval unverified",
+  "scope": "research hypotheses; not medical advice"
+}
