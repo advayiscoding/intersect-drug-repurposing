@@ -29,7 +29,7 @@ JSON. A FastAPI API and React/Cytoscape UI consume those artifacts.
   resolve IDs; remove held-out disease/drug pairs in both directions and all relation
   types before neighborhood selection, degree computation, and path scoring;
   export a 3-hop graph and explainable ranked candidates; test leakage guard; commit.
-- [ ] Stage 2: evaluate random, popularity, and path rankings on the same eligible
+- [x] Stage 2: evaluate random, popularity, and path rankings on the same eligible
   candidate universe; export recall@10, recall@20, MRR and individual ranks;
   mark embedding/combined results unavailable until trained; commit.
 - [ ] STOP at the user checkpoint: report actual metrics, working components,

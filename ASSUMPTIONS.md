@@ -12,3 +12,6 @@
 - Exact normalized names or trial-provided aliases only: conservative matching avoids falsely assigning a trial to the wrong drug.
 - PrimeKG relation endpoints do not establish biological action direction or numerical evidence confidence: export unknown direction and use uniform edge weights.
 - Use a retrospective holdout rather than a time split: the snapshot lacks sufficient per-edge dates to enforce temporal exclusion honestly.
+- MRR uses reciprocal first relevant rank for the one disease query; report mean reciprocal held-out drug rank separately to expose performance beyond the first hit.
+- Random baseline averages 1,000 fixed-seed permutations (0–999): a single random permutation would be unstable for 48 positives in 1,801 candidates.
+- Maintain context.md after meaningful changes: the user requested a durable handoff record for another model.

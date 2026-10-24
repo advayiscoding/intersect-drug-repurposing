@@ -1,7 +1,8 @@
 # Alzheimer's drug-repurposing workbench
 
-Research hypotheses, not medical advice. Stage 1 implements real PrimeKG loading,
-Alzheimer's neighborhood extraction, explainable path ranking, and leakage protection.
+Research hypotheses, not medical advice. Stages 1–2 implement real PrimeKG loading,
+Alzheimer's neighborhood extraction, explainable path ranking, leakage protection,
+and a retrospective validation harness.
 The UI, evidence agents, and embeddings are scheduled after the stage-2 checkpoint.
 
 ## Setup and source snapshots
@@ -16,6 +17,7 @@ mkdir -p data/raw data/processed artifacts
 curl -fL --retry 3 'https://dataverse.harvard.edu/api/access/datafile/6180620' -o data/raw/primekg.csv
 repurpose fetch-trials
 repurpose prepare
+repurpose validate
 python -m pytest -q
 ```
 
@@ -74,6 +76,7 @@ The evaluation is a retrospective graph holdout, not a temporal/prospective test
 - `artifacts/candidate_paths.json`: top-20 candidates' graph explanations.
 - `artifacts/trial_labels.json`: matched trial IDs, names, and matching exclusions.
 - `artifacts/manifest.json`: data hashes, graph counts, and leakage audit.
+- `artifacts/validation.json`: metrics, held-out drug ranks, baselines, and audit.
 
 These JSON files can be read without the raw dataset or network access. Demo server
 commands will be added with stage 3; there is no web demo at this checkpoint yet.
@@ -81,3 +84,36 @@ commands will be added with stage 3; there is no web demo at this checkpoint yet
 Sources: [PrimeKG repository](https://github.com/mims-harvard/PrimeKG),
 [PrimeKG dataset](https://doi.org/10.7910/DVN/IXA7BM),
 [ClinicalTrials.gov API](https://clinicaltrials.gov/data-api/api).
+
+## Stage-2 checkpoint results
+
+Evaluated 48 trial-tested drugs (83 unique matched trial records) in a fixed
+1,801-drug universe. All direct Alzheimer/drug edges were removed before graph
+selection. Validation independently reloads the sanitized export and recomputes
+degrees and path scores, rejecting cached mismatches or changed training data.
+
+| Method | Recall@10 | Recall@20 | MRR |
+| --- | ---: | ---: | ---: |
+| Random, mean of 1,000 permutations | 0.54% | 1.08% | 0.1008 |
+| Popularity (sanitized subgraph degree) | 0.00% | 0.00% | 0.0313 |
+| Path | 8.33% (4/48) | 10.42% (5/48) | 0.2000 |
+| Embedding | unavailable | unavailable | unavailable |
+| Combined | unavailable | unavailable | unavailable |
+
+MRR follows the information-retrieval definition: reciprocal of the first relevant
+rank, averaged over disease queries. Here there is only one disease query, so path
+MRR is 1/5. The separate mean reciprocal rank across **all held-out drugs** is
+0.01732 for paths, 0.00447 for popularity, and 0.00447 for random. Both definitions
+are stored explicitly to avoid confusing the single-query result with a multi-query
+benchmark. Random intervals in the JSON describe variation between permutations.
+
+This is evidence of recovering known trial participation, not evidence of efficacy
+or novel discovery. Exact matching found 79 drugs; 31 lacked a non-Alzheimer
+indication and were excluded under the predeclared universe rule. 451 intervention
+names did not yield an unambiguous exact match. The evaluation includes symptom
+studies and existing Alzheimer drugs, and indirect historical information can
+remain in a retrospective graph. No temporal generalization is claimed.
+
+Embedding and combined results will be populated after stage 5 trains on the same
+sanitized graph. Citation checker tests belong to stage 4, when evidence is added.
+The four current tests cover leakage invariance and numerical metric definitions.

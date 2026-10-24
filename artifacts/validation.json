@@ -1,0 +1,680 @@
+{
+  "evaluation": "retrospective graph-only holdout",
+  "ground_truth": "drugs independently tested in Alzheimer's trials; not proven efficacy",
+  "candidate_count": 1801,
+  "heldout_count": 48,
+  "query_count": 1,
+  "metric_definitions": {
+    "recall_at_k": "Number of held-out drugs in first k positions / all held-out drugs",
+    "mrr": "Mean reciprocal first relevant rank across disease queries; one Alzheimer's query here",
+    "mean_reciprocal_heldout_rank": "Mean of 1/rank over all held-out drugs; separate from query MRR",
+    "random": "Mean of 1000 seeded permutations of the identical candidate universe",
+    "random_interval": "2.5th\u201397.5th percentiles across permutations, not an efficacy interval"
+  },
+  "methods": {
+    "random": {
+      "status": "available",
+      "metrics": {
+        "recall_at_10": 0.005416666666666666,
+        "recall_at_20": 0.0108125,
+        "mrr": 0.10082625663486484,
+        "mean_reciprocal_heldout_rank": 0.004472787207805722,
+        "hits_at_10": 0.26,
+        "hits_at_20": 0.519
+      },
+      "permutation_95_percent_interval": {
+        "recall_at_10": [
+          0.0,
+          0.020833333333333332
+        ],
+        "recall_at_20": [
+          0.0,
+          0.041666666666666664
+        ],
+        "mrr": [
+          0.007936507936507936,
+          1.0
+        ],
+        "mean_reciprocal_heldout_rank": [
+          0.0015904151278496614,
+          0.022854982125476486
+        ],
+        "hits_at_10": [
+          0,
+          1
+        ],
+        "hits_at_20": [
+          0,
+          2
+        ]
+      },
+      "runs": 1000,
+      "seeds": "0..999"
+    },
+    "popularity_only": {
+      "status": "available",
+      "metrics": {
+        "recall_at_10": 0.0,
+        "recall_at_20": 0.0,
+        "mrr": 0.03125,
+        "mean_reciprocal_heldout_rank": 0.00446734491789234,
+        "hits_at_10": 0,
+        "hits_at_20": 0
+      }
+    },
+    "path_only": {
+      "status": "available",
+      "metrics": {
+        "recall_at_10": 0.08333333333333333,
+        "recall_at_20": 0.10416666666666667,
+        "mrr": 0.2,
+        "mean_reciprocal_heldout_rank": 0.01732134134319845,
+        "hits_at_10": 4,
+        "hits_at_20": 5
+      }
+    },
+    "embedding_only": {
+      "status": "unavailable",
+      "metrics": null,
+      "reason": "Embedding training is stage 5"
+    },
+    "combined": {
+      "status": "unavailable",
+      "metrics": null,
+      "reason": "Requires stage-5 embedding score; LINCS optional"
+    }
+  },
+  "heldout_ranks": [
+    {
+      "drug_id": 14161,
+      "name": "Olanzapine",
+      "ranks": {
+        "path_only": 474,
+        "popularity_only": 42
+      },
+      "trial_ids": [
+        "NCT00245206"
+      ]
+    },
+    {
+      "drug_id": 14179,
+      "name": "Raloxifene",
+      "ranks": {
+        "path_only": 428,
+        "popularity_only": 384
+      },
+      "trial_ids": [
+        "NCT00368459"
+      ]
+    },
+    {
+      "drug_id": 14218,
+      "name": "Lamivudine",
+      "ranks": {
+        "path_only": 626,
+        "popularity_only": 354
+      },
+      "trial_ids": [
+        "NCT04552795"
+      ]
+    },
+    {
+      "drug_id": 14223,
+      "name": "Risperidone",
+      "ranks": {
+        "path_only": 481,
+        "popularity_only": 116
+      },
+      "trial_ids": [
+        "NCT00245206"
+      ]
+    },
+    {
+      "drug_id": 14271,
+      "name": "Isotretinoin",
+      "ranks": {
+        "path_only": 1123,
+        "popularity_only": 115
+      },
+      "trial_ids": [
+        "NCT01560585"
+      ]
+    },
+    {
+      "drug_id": 14286,
+      "name": "Rifampicin",
+      "ranks": {
+        "path_only": 877,
+        "popularity_only": 170
+      },
+      "trial_ids": [
+        "NCT00439166"
+      ]
+    },
+    {
+      "drug_id": 14306,
+      "name": "Pioglitazone",
+      "ranks": {
+        "path_only": 182,
+        "popularity_only": 143
+      },
+      "trial_ids": [
+        "NCT00982202",
+        "NCT01931566",
+        "NCT02284906"
+      ]
+    },
+    {
+      "drug_id": 14323,
+      "name": "Aripiprazole",
+      "ranks": {
+        "path_only": 471,
+        "popularity_only": 73
+      },
+      "trial_ids": [
+        "NCT00245206"
+      ]
+    },
+    {
+      "drug_id": 14329,
+      "name": "Insulin detemir",
+      "ranks": {
+        "path_only": 10,
+        "popularity_only": 1304
+      },
+      "trial_ids": [
+        "NCT01547169",
+        "NCT01595646"
+      ]
+    },
+    {
+      "drug_id": 14402,
+      "name": "Pitavastatin",
+      "ranks": {
+        "path_only": 678,
+        "popularity_only": 533
+      },
+      "trial_ids": [
+        "NCT00548145"
+      ]
+    },
+    {
+      "drug_id": 14424,
+      "name": "Methylene blue",
+      "ranks": {
+        "path_only": 475,
+        "popularity_only": 126
+      },
+      "trial_ids": [
+        "NCT02380573"
+      ]
+    },
+    {
+      "drug_id": 14475,
+      "name": "Semaglutide",
+      "ranks": {
+        "path_only": 369,
+        "popularity_only": 1186
+      },
+      "trial_ids": [
+        "NCT04777409",
+        "NCT05891496"
+      ]
+    },
+    {
+      "drug_id": 14539,
+      "name": "Prazosin",
+      "ranks": {
+        "path_only": 1027,
+        "popularity_only": 699
+      },
+      "trial_ids": [
+        "NCT01126099"
+      ]
+    },
+    {
+      "drug_id": 14599,
+      "name": "Montelukast",
+      "ranks": {
+        "path_only": 696,
+        "popularity_only": 828
+      },
+      "trial_ids": [
+        "NCT03991988"
+      ]
+    },
+    {
+      "drug_id": 14653,
+      "name": "Choline",
+      "ranks": {
+        "path_only": 11,
+        "popularity_only": 686
+      },
+      "trial_ids": [
+        "NCT05880849"
+      ]
+    },
+    {
+      "drug_id": 14664,
+      "name": "Sapropterin",
+      "ranks": {
+        "path_only": 97,
+        "popularity_only": 1150
+      },
+      "trial_ids": [
+        "NCT01439555"
+      ]
+    },
+    {
+      "drug_id": 14685,
+      "name": "Progesterone",
+      "ranks": {
+        "path_only": 448,
+        "popularity_only": 32
+      },
+      "trial_ids": [
+        "NCT00066157"
+      ]
+    },
+    {
+      "drug_id": 14961,
+      "name": "Simvastatin",
+      "ranks": {
+        "path_only": 421,
+        "popularity_only": 222
+      },
+      "trial_ids": [
+        "NCT01439555"
+      ]
+    },
+    {
+      "drug_id": 14962,
+      "name": "Trazodone",
+      "ranks": {
+        "path_only": 335,
+        "popularity_only": 541
+      },
+      "trial_ids": [
+        "NCT01142258"
+      ]
+    },
+    {
+      "drug_id": 14968,
+      "name": "Modafinil",
+      "ranks": {
+        "path_only": 937,
+        "popularity_only": 476
+      },
+      "trial_ids": [
+        "NCT00626210",
+        "NCT01172145"
+      ]
+    },
+    {
+      "drug_id": 14975,
+      "name": "Sirolimus",
+      "ranks": {
+        "path_only": 954,
+        "popularity_only": 133
+      },
+      "trial_ids": [
+        "NCT04200911",
+        "NCT06022068"
+      ]
+    },
+    {
+      "drug_id": 14991,
+      "name": "Cilostazol",
+      "ranks": {
+        "path_only": 216,
+        "popularity_only": 993
+      },
+      "trial_ids": [
+        "NCT01409564"
+      ]
+    },
+    {
+      "drug_id": 14992,
+      "name": "Itraconazole",
+      "ranks": {
+        "path_only": 1024,
+        "popularity_only": 281
+      },
+      "trial_ids": [
+        "NCT06586606"
+      ]
+    },
+    {
+      "drug_id": 15082,
+      "name": "Citalopram",
+      "ranks": {
+        "path_only": 365,
+        "popularity_only": 558
+      },
+      "trial_ids": [
+        "NCT00898807"
+      ]
+    },
+    {
+      "drug_id": 15099,
+      "name": "Zolpidem",
+      "ranks": {
+        "path_only": 272,
+        "popularity_only": 655
+      },
+      "trial_ids": [
+        "NCT03075241"
+      ]
+    },
+    {
+      "drug_id": 15113,
+      "name": "Galantamine",
+      "ranks": {
+        "path_only": 8,
+        "popularity_only": 648
+      },
+      "trial_ids": [
+        "NCT00679627",
+        "NCT01054976",
+        "NCT01362686",
+        "NCT01478633",
+        "NCT01677754"
+      ]
+    },
+    {
+      "drug_id": 15126,
+      "name": "Donepezil",
+      "ranks": {
+        "path_only": 29,
+        "popularity_only": 527
+      },
+      "trial_ids": [
+        "NCT00381381",
+        "NCT00480870",
+        "NCT00566501",
+        "NCT00766363",
+        "NCT01023425",
+        "NCT01023867",
+        "NCT01266525",
+        "NCT01362686",
+        "NCT01677754",
+        "NCT02051335",
+        "NCT02178124",
+        "NCT02550665",
+        "NCT02769065",
+        "NCT03030105",
+        "NCT03055741",
+        "NCT04117178",
+        "NCT04308304",
+        "NCT04730635",
+        "NCT06285240"
+      ]
+    },
+    {
+      "drug_id": 15148,
+      "name": "Escitalopram",
+      "ranks": {
+        "path_only": 101,
+        "popularity_only": 424
+      },
+      "trial_ids": [
+        "NCT00702780",
+        "NCT01841125",
+        "NCT01876823"
+      ]
+    },
+    {
+      "drug_id": 15179,
+      "name": "Nicotinamide",
+      "ranks": {
+        "path_only": 373,
+        "popularity_only": 431
+      },
+      "trial_ids": [
+        "NCT00580931",
+        "NCT03061474"
+      ]
+    },
+    {
+      "drug_id": 15201,
+      "name": "Dapagliflozin",
+      "ranks": {
+        "path_only": 142,
+        "popularity_only": 972
+      },
+      "trial_ids": [
+        "NCT03801642"
+      ]
+    },
+    {
+      "drug_id": 15232,
+      "name": "Brexpiprazole",
+      "ranks": {
+        "path_only": 196,
+        "popularity_only": 1001
+      },
+      "trial_ids": [
+        "NCT03548584",
+        "NCT03594123",
+        "NCT03620981",
+        "NCT03724942"
+      ]
+    },
+    {
+      "drug_id": 15284,
+      "name": "Interferon beta-1a",
+      "ranks": {
+        "path_only": 968,
+        "popularity_only": 1401
+      },
+      "trial_ids": [
+        "NCT01075763"
+      ]
+    },
+    {
+      "drug_id": 15308,
+      "name": "Riluzole",
+      "ranks": {
+        "path_only": 919,
+        "popularity_only": 941
+      },
+      "trial_ids": [
+        "NCT01703117"
+      ]
+    },
+    {
+      "drug_id": 15331,
+      "name": "Insulin aspart",
+      "ranks": {
+        "path_only": 5,
+        "popularity_only": 1331
+      },
+      "trial_ids": [
+        "NCT02462161"
+      ]
+    },
+    {
+      "drug_id": 15332,
+      "name": "Insulin glulisine",
+      "ranks": {
+        "path_only": 6,
+        "popularity_only": 1341
+      },
+      "trial_ids": [
+        "NCT01436045",
+        "NCT02503501"
+      ]
+    },
+    {
+      "drug_id": 15425,
+      "name": "Doxycycline",
+      "ranks": {
+        "path_only": 1211,
+        "popularity_only": 155
+      },
+      "trial_ids": [
+        "NCT00439166"
+      ]
+    },
+    {
+      "drug_id": 15611,
+      "name": "Suvorexant",
+      "ranks": {
+        "path_only": 1073,
+        "popularity_only": 1087
+      },
+      "trial_ids": [
+        "NCT02750306"
+      ]
+    },
+    {
+      "drug_id": 15666,
+      "name": "Baricitinib",
+      "ranks": {
+        "path_only": 566,
+        "popularity_only": 958
+      },
+      "trial_ids": [
+        "NCT05189106"
+      ]
+    },
+    {
+      "drug_id": 15836,
+      "name": "Telmisartan",
+      "ranks": {
+        "path_only": 367,
+        "popularity_only": 358
+      },
+      "trial_ids": [
+        "NCT02085265"
+      ]
+    },
+    {
+      "drug_id": 15840,
+      "name": "Digoxin",
+      "ranks": {
+        "path_only": 1037,
+        "popularity_only": 490
+      },
+      "trial_ids": [
+        "NCT00831506"
+      ]
+    },
+    {
+      "drug_id": 15986,
+      "name": "Salsalate",
+      "ranks": {
+        "path_only": 1212,
+        "popularity_only": 540
+      },
+      "trial_ids": [
+        "NCT03277573"
+      ]
+    },
+    {
+      "drug_id": 16063,
+      "name": "Scopolamine",
+      "ranks": {
+        "path_only": 232,
+        "popularity_only": 46
+      },
+      "trial_ids": [
+        "NCT02051335"
+      ]
+    },
+    {
+      "drug_id": 16588,
+      "name": "Metformin",
+      "ranks": {
+        "path_only": 1227,
+        "popularity_only": 93
+      },
+      "trial_ids": [
+        "NCT01965756"
+      ]
+    },
+    {
+      "drug_id": 16855,
+      "name": "Methylphenidate",
+      "ranks": {
+        "path_only": 1602,
+        "popularity_only": 234
+      },
+      "trial_ids": [
+        "NCT00495820",
+        "NCT01117181"
+      ]
+    },
+    {
+      "drug_id": 17174,
+      "name": "Rivastigmine",
+      "ranks": {
+        "path_only": 77,
+        "popularity_only": 630
+      },
+      "trial_ids": [
+        "NCT00766363",
+        "NCT01183806",
+        "NCT01362686",
+        "NCT01585272",
+        "NCT01677754",
+        "NCT01948791",
+        "NCT02444637",
+        "NCT02989402"
+      ]
+    },
+    {
+      "drug_id": 17270,
+      "name": "Pimavanserin",
+      "ranks": {
+        "path_only": 976,
+        "popularity_only": 1072
+      },
+      "trial_ids": [
+        "NCT03118947"
+      ]
+    },
+    {
+      "drug_id": 18277,
+      "name": "Levetiracetam",
+      "ranks": {
+        "path_only": 1721,
+        "popularity_only": 787
+      },
+      "trial_ids": [
+        "NCT02002819",
+        "NCT03489044",
+        "NCT03875638"
+      ]
+    },
+    {
+      "drug_id": 20270,
+      "name": "Edaravone",
+      "ranks": {
+        "path_only": 1597,
+        "popularity_only": 1370
+      },
+      "trial_ids": [
+        "NCT05323812"
+      ]
+    }
+  ],
+  "audit": {
+    "no_target_drug_edges": true,
+    "cached_path_scores_recomputed": true,
+    "degrees_recomputed": true,
+    "llm_used": false,
+    "training_edges_sha256": "f65eb0b9f518db561cb05905e375479b1236672210d4a3f6520431d86f4755de",
+    "rankings_sha256": "31ef11a8e719fd25dae819a6e1ac225fe9c93438c00463faa6d4e0e060e830d7",
+    "trial_labels_sha256": "4b6aaeac21e90ab244854dfd11887545b88b2512e5ab5a2adb43f5a008f06c45"
+  },
+  "limitations": [
+    "Trial participation is not efficacy; includes symptomatic treatment studies.",
+    "Single disease query: MRR is determined by the first relevant result.",
+    "Conservative exact name matching and indication eligibility restrict coverage.",
+    "Retrospective edge holdout does not remove historical indirect knowledge or publication bias.",
+    "Existing Alzheimer drugs can be rediscovery controls; regulatory status is unverified.",
+    "Rank scores are not probabilities; unsigned paths do not establish mechanism.",
+    "Embedding and combined results are pending stage 5."
+  ]
+}
