@@ -38,4 +38,9 @@
 - The layered layout orients each undirected edge from the lower tier (drug < protein < pathway/disease) so dagre ranks the flow left to right. This is a layout device only and asserts no biological direction; every edge is still labelled direction unknown.
 - Node captions are truncated at 28 characters with the full name shown on hover; edge relations are hidden by default and revealed on hover or selection, with line style and a legend carrying the relation type instead.
 - Residual edge-through-label geometry is accepted where the halo keeps the caption legible: labels draw above edges with a background outline, so a line passes behind the glyphs rather than through them.
+- Evidence agents run on claude-sonnet-5 via the Anthropic API, with the key read from ANTHROPIC_API_KEY or a Git-ignored .env. No key means the app runs from cache only and says live queries are unavailable; it never degrades to unverified text.
+- The retrieved set is the family's own PubMed results. A claim citing a PMID the agent was not shown fails verification even when that PMID is real, because the quote cannot be checked against a record the pipeline did not retrieve.
+- Quote window is 8 to 40 words. Shorter spans are too weak to tie a claim to a record; longer ones let a whole abstract be pasted in place of a claim.
+- Agents run once per family on the family's member names, never per variant, so grouped variants share one review.
+- Agent output is display-only. It never feeds the ranking or the validation numbers, and the dashboard states that validation covers the graph ranking alone.
 - DrugBank, NCBI Gene and AmiGO serve bot checks to automated clients. Their URL formats were confirmed by other means; absence of an automated 200 is not evidence of a broken link.

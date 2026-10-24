@@ -53,6 +53,30 @@ view) and is accepted because the halo and draw order keep captions legible; the
 worst case is saved as a screenshot. Before/after screenshots in
 artifacts/screenshots/.
 
+Part C (stage 4) DONE. Five roles: deterministic PubMed retriever
+(`pubmed.py`, disk cache under data/cache/pubmed, E-utilities throttle, NCBI key
+from .env) plus mechanism analyst, safety analyst, skeptic and synthesiser in
+`agents.py` on claude-sonnet-5. `citations.py` is the deterministic span checker:
+PMID must be in that family's retrieved set and the 8-40 word quote must appear
+verbatim in that record's title or abstract after unicode/whitespace normalisation;
+failures are flagged "unverified" in the UI and never shown as supported.
+`evidence.py` caches per family (never per variant) to artifacts/evidence.json;
+`build-evidence --limit 20` builds it, `--family` and `--refresh` scope reruns.
+API: /api/evidence/{family_id}, with ?live=1 re-running the agents and falling back
+to cache on error, labelling each result cached or live. Agent output never feeds
+the ranking or validation. Keys live in a Git-ignored .env (user-supplied; be
+sparing, limited credits). Notable finding: the #1 ranked family, mecamylamine, is a
+nicotinic ANTAGONIST that blocked nicotine's cognitive enhancement in the retrieved
+animal work, with no human Alzheimer evidence - a good honest demo beat.
+
+Cache results for the top 20 families: 229/231 claims verified (0.87% failure),
+17 of 20 families produced at least one verified claim. The 3 without any
+(Dipivefrin, Zofenopril, Itopride) retrieved ZERO PubMed records for their query,
+and the agents correctly reported that nothing was retrieved rather than inventing
+support. Both failures were length-window rejections (one 42-word quote, one 4-word
+quote), not fabricated citations or PMIDs. Rebuilding costs real credits: use
+--family to scope reruns and do not pass --refresh casually.
+
 ## Status and mandatory next action
 
 Stage 5 approved. ACTIVE: quick all-44/family/exact-CI evaluation fixes, then stage3

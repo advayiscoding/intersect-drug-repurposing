@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import cytoscape from 'cytoscape';
 import dagre from 'cytoscape-dagre';
-import { Network, Search, ArrowUpRight, ArrowRight, Layers, FlaskConical, ShieldCheck, ChevronDown, Maximize2, Plus, Minus, ExternalLink, Info, Check, CircleDot, BarChart3 } from 'lucide-react';
+import { AlertTriangle, Network, Search, ArrowUpRight, ArrowRight, Layers, FlaskConical, ShieldCheck, ChevronDown, Maximize2, Plus, Minus, ExternalLink, Info, Check, CircleDot, BarChart3 } from 'lucide-react';
 import './style.css';
 
 const pct = n => `${(100*n).toFixed(2)}%`;
@@ -88,7 +88,64 @@ function CandidateList({families,selected,onSelect}){
     </div><div className="panel-foot"><ShieldCheck size={14}/> Known Alzheimer’s controls excluded</div></aside>;
 }
 
-function EvidencePanel({detail,node}){
+function Claim({claim}){
+  return <li className={claim.verified?'claim':'claim unverified'}>
+    <p>{claim.text}</p>
+    {claim.verified
+      ? <blockquote>“{claim.quote}”<a href={`https://pubmed.ncbi.nlm.nih.gov/${claim.pmid}/`} target="_blank" rel="noopener noreferrer">PMID {claim.pmid} <ExternalLink size={11}/></a></blockquote>
+      : <span className="unverified-flag"><AlertTriangle size={12}/> Unverified — {claim.failure}. Not shown as supported.</span>}
+    {claim.evidence_type&&<span className="type-tag">{claim.evidence_type}</span>}
+  </li>;
+}
+
+function AgentSection({title,body,claims}){
+  if(!body&&!(claims||[]).length) return null;
+  return <div className="agent-section"><h4>{title}</h4>{body&&<p>{body}</p>}
+    <ul className="claims">{(claims||[]).map((c,i)=><Claim key={i} claim={c}/>)}</ul></div>;
+}
+
+function LiteraturePanel({family,evidence}){
+  const [data,setData]=useState(null),[state,setState]=useState('idle'),[error,setError]=useState('');
+  const cached=evidence.cached_family_ids.includes(family.id);
+  useEffect(()=>{setData(null);setState('idle');setError('');if(!cached)return;
+    setState('loading');
+    fetch(`/api/evidence/${encodeURIComponent(family.id)}`).then(r=>r.ok?r.json():Promise.reject(new Error('No cached review')))
+      .then(d=>{setData(d);setState('ready')}).catch(e=>{setError(e.message);setState('error')});},[family.id,cached]);
+  const runLive=()=>{setState('loading');
+    fetch(`/api/evidence/${encodeURIComponent(family.id)}?live=1`).then(r=>r.ok?r.json():Promise.reject(new Error('Live query failed')))
+      .then(d=>{setData(d);setState('ready')}).catch(e=>{setError(e.message);setState('error')});};
+  if(!cached&&state==='idle') return <div className="literature-pending"><FlaskConical size={25}/><div><h3>No cached review for this family</h3>
+    <p>Agent review is cached for the top {evidence.cached_family_ids.length} ranked families. Nothing is generated on the fly for the rest, so no unverified text is shown here.</p>
+    <span className="badge neutral">Not reviewed</span></div></div>;
+  if(state==='loading') return <div className="graph-loading"><span className="spinner"/> Loading the cached literature review…</div>;
+  if(state==='error') return <div className="empty error"><p>{error}</p></div>;
+  if(!data) return null;
+  const counts=data.claim_counts;
+  return <div className="literature">
+    <div className="hypothesis-banner"><AlertTriangle size={15}/><span><strong>Research hypothesis, not medical advice.</strong> {data.disclaimer.replace(/^Research hypothesis, not medical advice\.\s*/,'')}</span></div>
+    <div className="literature-meta">
+      <span className={`badge ${data.freshness==='live'?'green':'neutral'}`}>{data.freshness==='live'?'Live query':'Cached'}</span>
+      <span className="badge neutral">{data.model}</span>
+      <span className="badge neutral">Direction: {data.direction}</span>
+      {data.evidence_types.map(t=><span key={t} className="type-tag">{t}</span>)}
+      <span className="claim-count">{counts.verified}/{counts.total} claims verified{counts.failed?`, ${counts.failed} flagged`:''}</span>
+      {evidence.live_available&&<button className="toggle-all" onClick={runLive}>Re-run live</button>}
+    </div>
+    {data.live_error&&<p className="fine-print">Live query unavailable, showing cached review: {data.live_error}</p>}
+    <AgentSection title="Synthesis" body={data.synthesis.summary} claims={data.synthesis.claims}/>
+    {!!(data.synthesis.open_questions||[]).length&&<div className="agent-section"><h4>Open questions</h4><ul className="questions">{data.synthesis.open_questions.map((q,i)=><li key={i}>{q}</li>)}</ul></div>}
+    <AgentSection title="Mechanism analyst" body={data.mechanism.summary} claims={data.mechanism.claims}/>
+    <AgentSection title="Safety analyst" body={data.safety.summary} claims={data.safety.claims}/>
+    <AgentSection title="Skeptic" body={data.skeptic.counter_evidence} claims={data.skeptic.claims}/>
+    <details className="retrieval-detail"><summary>Retrieved records ({data.retrieval.retrieved_count}) and query</summary>
+      <p className="mono">{data.retrieval.query}</p>
+      <ul>{Object.values(data.records).map(r=><li key={r.pmid}><a href={r.url} target="_blank" rel="noopener noreferrer">PMID {r.pmid}</a> · {r.journal} {r.year} — {r.title}</li>)}</ul>
+      <p className="fine-print">{data.verification.method}. A claim citing a PMID outside this set, or quoting text that is not in it, is flagged and never shown as supported. {data.scope}</p>
+    </details>
+  </div>;
+}
+
+function EvidencePanel({detail,node,family,evidence}){
   const [tab,setTab]=useState('graph');
   return <section className="evidence panel"><div className="section-title"><h2>Evidence & provenance</h2><span className="badge neutral">Graph evidence available</span></div>
     <div className="small-tabs" role="tablist" aria-label="Evidence views">{[['graph','Graph sources'],['trials','Trial records'],['literature','Literature review']].map(([id,label])=><button key={id} role="tab" aria-selected={tab===id} onClick={()=>setTab(id)}>{label}{id==='trials'&&<span>{detail?.trials.length??0}</span>}</button>)}</div>
@@ -96,7 +153,7 @@ function EvidencePanel({detail,node}){
       {node&&(node.url?<a className="entity-link" href={node.url} target="_blank" rel="noopener noreferrer">Open in {node.source} <ExternalLink size={13}/></a>:<span className="no-link">No reliable external page for this identifier</span>)}
       <a className="dataset-link" href="https://doi.org/10.7910/DVN/IXA7BM" target="_blank" rel="noopener noreferrer">PrimeKG source dataset <ExternalLink size={12}/></a></div><div className="evidence-note"><ShieldCheck size={20}/><strong>What the graph can tell us</strong><p>Association and pathway membership. Activation, inhibition and treatment benefit remain unverified.</p><span>Direction unknown on all displayed edges</span></div></div>}
     {tab==='trials'&&<div className="trial-list">{detail?.trials.length?detail.trials.map((t,i)=><a key={`${t.nct_id}-${i}`} href={t.url} target="_blank" rel="noopener noreferrer"><span className="mono">{t.nct_id}</span><strong>{t.title}</strong><span>{t.status.toLowerCase()} · {t.enrollment} enrolled <ExternalLink size={13}/></span></a>):<p className="muted">No eligible exact-matched trial record in this cached snapshot. This does not establish that no trial exists.</p>}<p className="fine-print">Trial registrations document testing, not efficacy. They are excluded from graph scoring.</p></div>}
-    {tab==='literature'&&<div className="literature-pending"><FlaskConical size={25}/><div><h3>Literature analysis is next</h3><p>Mechanism, safety and skeptical review will appear here after stage 4. No generated claims or unverified citations are shown.</p><span className="badge neutral">Not yet reviewed</span></div></div>}
+    {tab==='literature'&&<LiteraturePanel family={family} evidence={evidence}/>}
   </section>;
 }
 
@@ -118,7 +175,7 @@ function Explorer({data}){
         {detail&&detail.paths.length>DEFAULT_PATHS&&<button className="toggle-all" onClick={()=>{setAllPaths(!allPaths);setPathIndex(-1);setContext(false);}}>{allPaths?`Show top ${DEFAULT_PATHS} paths`:`Show all ${detail.paths.length} paths`}</button>}</div>
       <div className="graph-caption"><Info size={14}/><span>Hover a node to highlight its connections and read relation labels. Connections show associations, not causality. Dashed pathway branches are context only.</span></div>
       {detail&&<details className="node-list"><summary>Accessible node and connection list</summary><div>{detail.graph.nodes.map(n=><button key={n.id} onClick={()=>setNode({...n,label:n.name})}>{n.name}<small>{n.type}</small></button>)}</div><ul>{detail.graph.edges.map(e=><li key={e.id}>{detail.graph.nodes.find(n=>n.id===e.source)?.name} ↔ {detail.graph.nodes.find(n=>n.id===e.target)?.name}: {e.relations.join(', ')}; direction unknown{e.context?' (context)':''}</li>)}</ul></details>}
-      </section><EvidencePanel detail={detail} node={node}/>
+      </section><EvidencePanel detail={detail} node={node} family={family} evidence={data.evidence}/>
     </div></div></>;
 }
 
@@ -128,6 +185,7 @@ function Validation({data}){
   return <><div className="page-heading"><div><span className="eyebrow">VALIDATION / ALL 44 DISCOVERY LABELS</span><h1>A small signal, with limits.</h1><p>Lift over baselines. Every denominator and assumption visible.</p></div><span className="badge green"><ShieldCheck size={14}/> Untuned path scoring</span></div>
     <div className="validation-stats"><article><span>RECALL @ 20</span><strong>{pct(path.metrics.recall_at_20)}</strong><p>4 of 44 trial-tested drugs</p><small>95% exact CI {pct(path.exact_95_ci.recall_at_20[0])}–{pct(path.exact_95_ci.recall_at_20[1])}</small></article><article><span>LIFT OVER RANDOM @ 20</span><strong>{path.metrics.enrichment_at_20.toFixed(2)}<em>×</em></strong><p>vs. exact random expectation</p><small>+{path.lift['20'].vs_popularity_percentage_points.toFixed(2)} percentage points over popularity</small></article><article><span>DISTINCT FAMILIES @ 20 DRUGS</span><strong>{path.distinct_families_at_k['20']}<em> / {v.positive_family_count}</em></strong><p>{path.recovered_families_at_k['20'].join(' + ')||'None recovered'}</p><small>Family-card permutation p = {fp['20'].p_value_one_sided.toFixed(3)}</small></article></div>
     <div className="caution"><Info size={21}/><div><strong>Small sample. Related compounds.</strong><p>{v.small_sample_note} {v.efficacy_note}</p></div></div>
+    <div className="caution scope"><ShieldCheck size={21}/><div><strong>These numbers cover the graph ranking only.</strong><p>Literature agents read the ranked candidates; nothing they produce feeds back into the ranking or into any figure on this page. No agent output was used to fit, tune or select anything.</p></div></div>
     <section className="panel validation-table"><div className="section-title"><div><span className="eyebrow">PRIMARY VALIDATION</span><h2>Per-drug recall & baseline lift</h2></div><span className="muted">{v.candidate_count.toLocaleString()} candidates · 44 labels</span></div><div className="table-scroll"><table><thead><tr><th>Ranking method</th><th>Recall@10 <small>95% Clopper–Pearson CI</small></th><th>Recall@20 <small>95% Clopper–Pearson CI</small></th><th>Recall@50 <small>secondary</small></th><th>Recall@100 <small>secondary</small></th><th>Enrichment@20</th></tr></thead><tbody>{['path_only','popularity_only','random'].map(m=><tr className={m==='path_only'?'highlight':''} key={m}><th>{names[m]}{m==='path_only'&&<span className="badge green">Primary</span>}</th>{[10,20,50,100].map(k=><RecallCell key={k} result={v.methods[m]} k={k}/>)}<td>{v.methods[m].metrics.enrichment_at_20.toFixed(2)}×</td></tr>)}</tbody></table></div><p className="table-note">Exact intervals use integer drug recoveries. Correlated variants weaken the independence assumption. Random recall k/N is an analytical reference, so no fitted-proportion CI applies.</p></section>
     <div className="validation-grid"><section className="panel"><div className="section-title"><div><span className="eyebrow">COUNT BIOLOGICAL DIVERSITY</span><h2>Family-level recovery</h2></div><Layers size={20}/></div><div className="table-scroll"><table><thead><tr><th>Cutoff</th><th>Path: families in top-k drugs</th><th>Popularity</th><th>Random expectation</th></tr></thead><tbody>{[10,20,50].map(k=><tr key={k}><th>Top {k} drugs</th><td>{path.distinct_families_at_k[k]}</td><td>{v.methods.popularity_only.distinct_families_at_k[k]}</td><td>{v.methods.random.distinct_families_at_k[k].toFixed(2)}</td></tr>)}</tbody></table></div><div className="family-null"><h3>Family-aware permutation test</h3><p>Shuffle {v.family_count.toLocaleString()} collapsed families, keeping each family together. Count labeled families among the first k cards.</p><div>{[10,20,50].map(k=><span key={k}>Top {k} cards <strong>{fp[k].observed} families</strong><small>p = {fp[k].p_value_one_sided.toFixed(3)}</small></span>)}</div><small>10,000 permutations. k=20 primary; k=10/50 exploratory, unadjusted. Grouping was defined after earlier results.</small></div></section>
     <section className="panel methods-panel"><span className="eyebrow">METHOD NOTES</span><h2>Fixed rules. No fitted weights.</h2><p>Path length penalty, degree normalization and top-10 path aggregation were fixed before the first evaluation. No hyperparameter was fitted to trial labels.</p><div className="method-item"><Check size={16}/><p>Known Alzheimer’s controls excluded from discovery counts.</p></div><div className="method-item"><Check size={16}/><p>All target–drug edges removed in both directions before graph selection and scoring.</p></div><div className="method-item"><Check size={16}/><p>All 44 discovery labels evaluated; full-set results remain retrospective after method selection.</p></div><h3>What didn’t work</h3><p>{v.embedding_note.replace(/^What didn't work:\s*/,'')}</p><div className="mrr"><span>Single-query MRR <strong>{path.metrics.mrr.toFixed(4)}</strong></span><span>Mean reciprocal rank, all 44 <strong>{path.metrics.mean_reciprocal_heldout_rank.toFixed(5)}</strong></span></div></section></div>

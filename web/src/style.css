@@ -8,3 +8,31 @@
 .legend-line{display:flex;align-items:center;gap:5px;font-size:9px;color:#84917c}
 .toggle-all{margin-left:auto;font-size:9px;padding:5px 9px;border:1px solid #dde4d4;border-radius:4px;color:#72875f;background:#f7faf1}
 .graph-hover{position:absolute;top:14px;left:18px;max-width:62%;background:#2b3f36;color:#f2f5ec;font-size:10px;padding:6px 9px;border-radius:5px;pointer-events:none;line-height:1.45}
+.literature{padding:20px 25px}
+.hypothesis-banner{display:flex;gap:10px;align-items:flex-start;background:#f3eddf;border:1px solid #e5dac3;border-radius:6px;padding:12px 15px;color:#8d7144;font-size:11px;line-height:1.55;margin-bottom:16px}
+.hypothesis-banner svg{flex-shrink:0;margin-top:1px}
+.literature-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px}
+.claim-count{font-size:10px;color:#8d9b7f}
+.type-tag{font-size:9px;letter-spacing:.4px;border:1px solid #dbe3d3;border-radius:3px;padding:3px 6px;color:#73886a;background:#f6f9f0;text-transform:lowercase}
+.agent-section{border-top:1px solid #ecefe5;padding:16px 0}
+.agent-section h4{font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:#7b8d68;margin:0 0 9px;font-weight:650}
+.agent-section>p{font-size:12px;color:#5e7059;line-height:1.7}
+.claims{list-style:none;padding:0;margin:14px 0 0}
+.claim{border-left:2px solid #d9e2cf;padding:0 0 0 13px;margin-bottom:15px}
+.claim.unverified{border-left-color:#e0c9a6;opacity:.85}
+.claim p{font-size:11.5px;color:#4f6450;line-height:1.6}
+.claim blockquote{margin:7px 0 0;font-size:10.5px;color:#8b9a81;font-style:italic;line-height:1.6}
+.claim blockquote a{display:inline-block;margin-left:8px;font-style:normal;font-size:9.5px;color:#6a854f}
+.unverified-flag{display:flex;align-items:center;gap:6px;font-size:10px;color:#a4833f;margin-top:7px}
+.claim .type-tag{margin-top:8px;display:inline-block}
+.questions{margin:8px 0 0;padding-left:18px}
+.questions li{font-size:11.5px;color:#64785f;line-height:1.65;margin-bottom:6px}
+.retrieval-detail{border-top:1px solid #ecefe5;padding-top:15px;font-size:11px;color:#84947a}
+.retrieval-detail summary{cursor:pointer;color:#718659}
+.retrieval-detail ul{padding-left:17px;margin:12px 0}
+.retrieval-detail li{margin-bottom:7px;line-height:1.55}
+.retrieval-detail .mono{display:block;margin-top:11px;font-size:10px;color:#95a38b;word-break:break-word}
+.literature-meta .badge{white-space:normal;max-width:100%;line-height:1.45}
+.caution.scope{background:#eef2e7;border-color:#dde5d2;color:#6d8160}
+.caution.scope strong{color:#5c7550}
+.caution.scope p{color:#7b8d72}

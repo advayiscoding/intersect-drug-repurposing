@@ -170,6 +170,55 @@ its connections and dims the rest. The default view shows the top 3 scored paths
 pathway context off; a toggle shows all paths, and selecting a single path turns
 context back on.
 
+## Evidence agents
+
+Five roles produce the literature review shown in the Explore page's **Literature
+review** tab. They run **per family, never per variant**, and their output never
+enters the ranking or the validation metrics.
+
+1. **Retriever** (`pubmed.py`, deterministic, no model): one relevance-ranked PubMed
+   query per family through NCBI E-utilities. Every response is cached to
+   `data/cache/pubmed/` before use, throttled to the E-utilities limit (10 req/s with
+   `NCBI_API_KEY`, 3 without), and a failure with no cached copy is reported rather
+   than silently returning an empty set.
+2. **Mechanism analyst** — what the records report about the drug/biology link, with
+   the direction of any effect only where a record states it, otherwise
+   "direction unknown".
+3. **Safety analyst** — reported adverse effects and population cautions, and an
+   explicit note when the records are silent, since silence is not evidence of safety.
+4. **Skeptic** — null results, small samples, surrogate endpoints, population
+   mismatch, missing Alzheimer-specific evidence.
+5. **Synthesizer** — a neutral summary over the other three plus open questions.
+
+The runtime model is **`claude-sonnet-5`** via the Anthropic API. The key is read from
+`ANTHROPIC_API_KEY` (or a Git-ignored `.env`) and is never committed. With no key the
+app still runs entirely from the cached review and the UI says live queries are
+unavailable.
+
+### Span-level citation verification
+
+`citations.py` decides what the UI may show as supported, and it calls no model.
+Every claim must carry a PMID **and** a verbatim quote of 8–40 words. The checker
+normalizes case, whitespace and unicode punctuation, then requires that the PMID is in
+the retrieved set *for that family* and that the quote appears in that record's title
+or abstract. A claim citing a PMID the agent was never shown fails even if the PMID
+exists in PubMed. Failing claims are flagged "unverified" in the UI with the reason
+and are never presented as supported. `tests/test_citations.py` covers a valid quote,
+a fabricated quote, a real PMID with a mismatched quote, a PMID outside the retrieved
+set, and quotes below and above the length window; `tests/test_agents.py` runs the
+whole orchestration against a stub client to confirm only verifiable claims survive.
+
+```sh
+PYTHONPATH=src python3 -m repurpose.cli build-evidence --limit 20
+PYTHONPATH=src python3 -m repurpose.cli build-evidence --family "Insulin variants" --refresh
+```
+
+Reviews are cached for the top 20 families in `artifacts/evidence.json`. The UI labels
+each review **cached** or **live**; `GET /api/evidence/{family_id}?live=1` re-runs the
+agents and falls back to the cached review on timeout or error, reporting why. Families
+outside the cached top 20 show "not reviewed" rather than anything ungrounded. Every
+agent view carries the research-hypothesis banner and no agent text may claim efficacy.
+
 `scripts/label_overlap_audit.js` measures caption collisions in the live page. Run
 over the top 20 families in both the default and all-paths views (41 views): **0
 label/label and 0 label/node overlaps**. Edge-through-label geometry remains in 19 of
