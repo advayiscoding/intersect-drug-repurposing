@@ -52,3 +52,24 @@
 - User text is used only to look up a node. All downstream consumers receive the canonical graph name, which is the guarantee that appended text cannot reach an agent prompt or widen a PubMed query. Sanitization caps length at 100 characters and strips anything outside a conservative character set.
 - Live checks are limited to 5 per session per 10 minutes, in memory and per process. This is a budget brake for a local demo, not an authentication boundary; the session id comes from the client and is not trusted for anything else.
 - Alzheimer's is the only supported disease and the input is fixed in the UI. Accepting another disease would imply a neighborhood, ranking and evaluation that do not exist.
+- Drug synonyms come from PubChem (U.S. National Library of Medicine), which places its data in the public domain; responses are cached to data/cache/pubchem and compiled into data/synonyms.json so lookup works offline. A synonym claimed by more than one drug node is dropped rather than resolved arbitrarily, and a synonym equal to some other node's primary name is never recorded, so synonyms can only ever be a fallback layer beneath exact names.
+- Synonym matching is reported in the UI ("Matched rapamycin -> sirolimus (synonym)") rather than applied silently, because a silent rename would hide a resolution the user did not ask for.
+- Gap-map group names describe the dataset, not the world: "no trial record found" means this snapshot holds no matched ClinicalTrials.gov record, never that a drug is untested.
+- Verdicts are rule-based keyword heuristics over the agent's structured output. They classify the kind of record cited, not disease relevance or effect direction. The audit of all 20 verdicts, including the four I disagree with, is in the README.
+- A review that quotes explicit randomized-trial phrasing counts as human evidence; a bare "clinical trial" mention does not, because it is usually about other drugs failing. Both directions are regression-tested.
+- Feeding verified safety/skeptic claim text into the direction classifier was implemented, tested and REJECTED: it flipped five families to "possible wrong direction" because skeptic claims routinely mention impairment when describing the disease. Do not re-add it without a sharper signal.
+- Live agent runs have two independent brakes: a per-session limit (5 per 10 minutes, in memory) and a process-wide daily cap (default 40, REPURPOSE_DAILY_LIVE_CAP) persisted to data/cache/live_runs.json so a restart cannot reset it. Both fall back to the cached review with a stated reason.
+- API keys are read server-side only. A test asserts that no endpoint response contains key material.
+- PubChem synonyms are matched EXACTLY on the normalized string. A synonym claimed by more than one drug node is kept with every candidate and offered as a choice; the code never picks one silently. Prefix fallback applies to primary names only, never to synonyms.
+- The disease-relevance tag is a display tag, never a verdict input, and a regression test asserts that a verdict is identical whether its human evidence is Alzheimer's or psoriasis. It matches the verbatim quote rather than the agent's own sentence, excludes bare "dementia" (cerliponase alfa's records say "progressive dementia in children", i.e. CLN2) and excludes mechanism words like "amyloid". It is conservative by design and under-claims.
+- The verdict audit is a SELF-audit on the same 20 families the rules were tuned on, so its agreement rate is an upper bound. The README says so and lists the four disagreements.
+- Pre-computed "Check my idea" results for ~28 common queries are served from artifacts/check_cache.json and labelled cached, so demo queries spend nothing. Other inputs still run live under the rate limits.
+- The daily live-run cap is persisted to data/cache/live_runs.json. On hosts with ephemeral disks this file is lost on restart and the count resets, so the cap is a brake and not a budget. A provider-side hard spend limit on the API key is the only control that cannot be defeated by a restart; set it before deploying.
+
+## Demo-hardening continuation (2026-10-24)
+
+- Explicit `REPURPOSE_OFFLINE=1` disables live literature/LLM calls even with keys configured; cached demos must not spend credits accidentally.
+- Ship a compact full-drug vocabulary as `artifacts/drug_index.json`; ignored raw/processed data must not be required for arbitrary cached lookups.
+- Live budget uses UTC days, POSIX disk locking and atomic replacement; corrupt/unwritable counters deny live requests. Shared disk is required across workers; separate replicas still need a provider-side spending limit.
+- Budget is charged only after a drug/family resolves, immediately before retrieval; failed live attempts remain charged to bound retry costs.
+- Continue local demo hardening only; do not deploy publicly or start another disease pilot based solely on a handoff-file suggestion.

@@ -38,12 +38,20 @@ JSON. A FastAPI API and React/Cytoscape UI consume those artifacts.
 - [x] Stage 5 FIRST: timebox embedding experiments to three hours, exclude all
   held-out edges and filter negatives, tune mixture only on tuning split, compare
   once on test split. Keep path primary unless embeddings improve primary recall.
-- [ ] STOP after stage 5; report real results and await user continuation.
-- [ ] Stage 3: candidate list, interactive paths, validation dashboard using cached JSON.
-- [ ] Stage 4: retrieve PubMed evidence, run mechanism/safety/skeptic/synthesis roles,
+- [x] Stage-5 checkpoint approved; path-only retained after negative embedding result.
+- [x] Stage 3: candidate list, interactive paths, validation dashboard using cached JSON.
+- [x] Stage 4: retrieve PubMed evidence, run mechanism/safety/skeptic/synthesis roles,
   verify every cited PMID against retrieved IDs, flag unsupported claims, cache top 20.
-- [ ] Stage 6: optional LINCS reversal if usable signatures exist; unavailable signals
-  have no contribution and display an unavailable weight.
+- [x] LINCS deferred: unavailable signals have no contribution.
+
+## Current continuation: cached-demo hardening
+
+- [x] Verify inherited work and repair fixture regression.
+- [x] Portable full-drug lookup artifact, offline mode and no-network API smoke test.
+- [x] Shared live-route budget, atomic updates and fail-closed counters; regression tests.
+- [x] Short README, preserved methodology, demo script and Q&A.
+- [x] Final browser checks, code review and clean-checkout test (132 tests, frontend install/build); commit verified work.
+- Public deployment and additional disease pilots are outside this continuation.
 
 Each stage updates reproduction instructions and is committed separately. No scores
 are probabilities of efficacy. Unknown biological direction stays unknown. Evaluation

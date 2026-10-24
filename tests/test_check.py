@@ -95,6 +95,8 @@ def build_root(tmp_path, with_paths=True):
     artifacts.mkdir(parents=True)
     processed.mkdir(parents=True)
     (processed / "nodes.json").write_text(json.dumps(DRUGS))
+    (artifacts / "known_controls.json").write_text(json.dumps([
+        {"drug_id": 3, "name": "Donepezil"}]))
     member = {"drug_id": 1, "name": "Insulin detemir", "path_count": 4, "path_score": 0.15}
     (artifacts / "family_rankings.json").write_text(json.dumps(
         [{"id": "insulin", "name": "Insulin variants", "rank": 3, "representative_id": 1,
@@ -123,6 +125,13 @@ def test_a_drug_in_the_graph_with_no_path_says_so_instead_of_an_empty_page(tmp_p
     assert result["status"] == "no_path"
     assert "no drug" in result["message"] and "path" in result["message"]
     assert result["drug"]["name"] == "Insulin detemir"
+
+
+def test_excluded_control_is_not_misrepresented_as_a_graph_path_search(tmp_path):
+    result = check(build_root(tmp_path), "Donepezil", "Alzheimer")
+    assert result["known_control"] is True
+    assert "not assessed" in result["message"]
+    assert "no drug → protein" not in result["message"]
 
 
 def test_an_unsupported_disease_is_refused_with_an_explanation(tmp_path):
@@ -163,3 +172,65 @@ def test_a_live_run_is_labelled_live(tmp_path):
     result = check(build_root(tmp_path), "insulin detemir", "alzheimer", live=True,
                    evidence_loader=lambda fid: None, live_runner=lambda family: REVIEW)
     assert result["freshness"] == "live" and result["verdict"] == "supported by human evidence"
+
+
+def test_the_daily_cap_blocks_after_its_budget_and_survives_a_restart(tmp_path):
+    from repurpose.ratelimit import DailyCap
+    path = tmp_path / "live_runs.json"
+    cap = DailyCap(path, limit=3)
+    assert [cap.check(today="2026-10-24")["allowed"] for _ in range(3)] == [True, True, True]
+    spent = cap.check(today="2026-10-24")
+    assert spent["allowed"] is False and spent["remaining"] == 0
+    # A fresh object reads the same file, so restarting the server does not reset it.
+    assert DailyCap(path, limit=3).check(today="2026-10-24")["allowed"] is False
+    # A new day starts a new budget.
+    assert DailyCap(path, limit=3).check(today="2026-10-25")["allowed"] is True
+
+
+def test_the_daily_cap_is_configurable_and_defaults_sensibly(tmp_path, monkeypatch):
+    from repurpose.ratelimit import DEFAULT_DAILY_CAP, daily_cap
+    monkeypatch.delenv("REPURPOSE_DAILY_LIVE_CAP", raising=False)
+    assert daily_cap(tmp_path).limit == DEFAULT_DAILY_CAP
+    monkeypatch.setenv("REPURPOSE_DAILY_LIVE_CAP", "7")
+    assert daily_cap(tmp_path).limit == 7
+
+
+def test_no_api_endpoint_ever_returns_key_material(monkeypatch):
+    """The key is read server-side only; responses carry booleans, never secrets."""
+    import json as _json
+    from fastapi.testclient import TestClient
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-TESTSENTINEL0001")
+    monkeypatch.setenv("NCBI_API_KEY", "ncbi-TESTSENTINEL0002")
+    from repurpose.api import app
+    client = TestClient(app)
+    for path in ("/api/health", "/api/overview", "/api/gap-map",
+                 "/api/check?drug=Mecamylamine", "/api/check?drug=Zzzqq&live=1"):
+        body = _json.dumps(client.get(path).json())
+        assert "TESTSENTINEL" not in body
+        assert "sk-ant" not in body
+
+
+def test_an_ambiguous_synonym_offers_every_candidate_and_resolves_none(tmp_path):
+    root = build_root(tmp_path)
+    (root / "data/synonyms.json").write_text(json.dumps(
+        {"map": {"shared alias": [1, 2], "lone alias": [2]}}))
+    result = check(root, "shared alias", "Alzheimer's disease")
+    assert result["status"] == "ambiguous"
+    assert {c["name"] for c in result["candidates"]} == {"Insulin detemir", "Mecamylamine"}
+    assert "nothing is resolved for you" in result["message"]
+
+
+def test_an_unambiguous_synonym_resolves_and_says_how(tmp_path):
+    root = build_root(tmp_path)
+    (root / "data/synonyms.json").write_text(json.dumps({"map": {"lone alias": [1]}}))
+    result = check(root, "Lone Alias", "Alzheimer's disease", evidence_loader=lambda f: REVIEW)
+    assert result["status"] == "ok"
+    assert result["drug"]["match_type"] == "synonym"
+    assert "→ Insulin detemir (synonym)" in result["drug"]["match_note"]
+
+
+def test_a_synonym_never_overrides_a_real_drug_name(tmp_path):
+    root = build_root(tmp_path)
+    (root / "data/synonyms.json").write_text(json.dumps({"map": {"mecamylamine": [1]}}))
+    result = check(root, "Mecamylamine", "Alzheimer's disease")
+    assert result["drug"]["name"] == "Mecamylamine" and result["drug"]["match_type"] == "exact"

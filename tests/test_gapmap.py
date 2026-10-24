@@ -77,11 +77,11 @@ def test_evidence_tier_normalization(tag, tier):
 
 
 @pytest.mark.parametrize("verdict,trials,group", [
-    ("supported by human evidence", 0, "supported but untested"),
-    ("animal or in vitro only", 0, "supported but untested"),
+    ("supported by human evidence", 0, "evidence retrieved, no trial record found"),
+    ("animal or in vitro only", 0, "evidence retrieved, no trial record found"),
     ("mixed or contested", 0, "contested or possible wrong direction"),
     ("possible wrong direction", 0, "contested or possible wrong direction"),
-    ("none in the retrieved set", 0, "insufficient evidence retrieved"),
+    ("none in the retrieved set", 0, "no evidence retrieved"),
     # A registered trial is a fact and outranks every verdict, including absence.
     ("supported by human evidence", 3, "already in trials"),
     ("possible wrong direction", 1, "already in trials"),
@@ -101,3 +101,54 @@ def test_a_protective_direction_mentioning_deficits_is_not_a_wrong_direction():
 def test_a_drug_reported_to_cause_the_deficit_is_a_wrong_direction():
     harmful = "reported as inducing/contributing to cognitive impairment and neurotoxicity"
     assert verdict_for(record([claim("human trial")], harmful))["verdict"] == "possible wrong direction"
+
+
+def test_a_review_reporting_randomized_trial_results_counts_as_human_evidence():
+    # The agent tags the RECORD type; a review of RCTs is still human evidence.
+    rct = claim("review")
+    rct["quote"] = "Recent randomized controlled trials have demonstrated the efficacy of moclobemide"
+    assert verdict_for(record([rct]))["verdict"] == "supported by human evidence"
+
+
+def test_a_bare_clinical_trial_mention_about_other_drugs_is_not_promoted():
+    # "Numerous clinical trials for AD have failed" says nothing about this drug.
+    other = claim("review")
+    other["quote"] = "Numerous clinical trials of drug candidates for Alzheimer's disease (AD) have failed"
+    assert verdict_for(record([other]))["verdict"] == "animal or in vitro only"
+
+
+def test_the_card_carries_a_tier_breakdown_and_a_supporting_quote():
+    good = claim("human trial"); good["quote"] = "a verbatim span"
+    assessment = verdict_for(record([claim("animal"), good]))
+    assert assessment["evidence_tier_counts"] == {"animal": 1, "human trial": 1}
+    assert assessment["supporting_quote"]["evidence_type"] == "human trial"
+    assert assessment["supporting_quote"]["quote"] == "a verbatim span"
+
+
+def test_absence_has_no_supporting_quote():
+    assert verdict_for(record([]))["supporting_quote"] is None
+
+
+def test_disease_relevance_tags_human_evidence_by_condition():
+    from repurpose.gapmap import disease_relevance
+    ad = claim("human trial"); ad["quote"] = "adults with mild cognitive impairment or Alzheimer's disease"
+    other = claim("human trial"); other["quote"] = "children with CLN2 disease between the ages of 3 and 16"
+    assert disease_relevance([ad, other])["key"] == "alzheimer"
+    assert disease_relevance([other])["key"] == "other"
+    assert disease_relevance([claim("animal")])["key"] == "unassessed"
+    assert disease_relevance([])["key"] == "unassessed"
+
+
+def test_relevance_reads_the_quote_not_the_agents_own_sentence():
+    # The agent may write "not adults with Alzheimer's"; only the source span counts.
+    c = claim("human trial")
+    c["quote"] = "a rare lysosomal disorder that causes progressive dementia in children"
+    c["text"] = "The trial enrolled children with CLN2, not adults with Alzheimer's disease"
+    from repurpose.gapmap import disease_relevance
+    assert disease_relevance([c])["key"] == "other"
+
+
+def test_relevance_never_changes_a_verdict():
+    ad = claim("human trial"); ad["quote"] = "patients with Alzheimer's disease"
+    other = claim("human trial"); other["quote"] = "patients with psoriasis"
+    assert verdict_for(record([ad]))["verdict"] == verdict_for(record([other]))["verdict"]

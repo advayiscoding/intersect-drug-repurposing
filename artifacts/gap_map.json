@@ -17,8 +17,26 @@
         "in vitro",
         "review"
       ],
+      "evidence_tier_counts": {
+        "animal": 9,
+        "in vitro": 2,
+        "review": 2
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 13,
       "direction_signal": "opposing",
+      "supporting_quote": {
+        "quote": "This beneficial effect of nicotine was abolished in animals pretreated with a low dose (0.5 mg/kg) of mecamylamine",
+        "pmid": "2899825",
+        "evidence_type": "animal",
+        "text": "In primates performing a delayed matching-to-sample task, mecamylamine pretreatment abolished the memory-enhancing effect of nicotine, indicating it blocks nicotinic receptor activity underlying this cognitive benefit."
+      },
       "direction": "mecamylamine reported to block/antagonize nicotinic receptor-mediated cognitive effects",
       "trial_count": 0,
       "trials": [],
@@ -44,14 +62,32 @@
         "other",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 3,
+        "other": 2,
+        "review": 10
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 3,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 15,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Individuals with T21 display chronic IGF1 deficiency downstream of growth hormone production, associated with a specific inflammatory profile involving elevated tumor necrosis factor alpha (TNF-\u03b1).",
+        "pmid": "36577365",
+        "evidence_type": "human trial",
+        "text": "A Down syndrome biomarker study links low IGF1 to neurodegeneration and elevated inflammatory markers, but it reports endogenous IGF1 deficiency as a disease biosignature rather than any adverse effect of mecasermin administration, so it provides no direct safety data for the drug."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 4,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "insulin",
@@ -75,8 +111,25 @@
         "human trial",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 13,
+        "review": 2
+      },
+      "disease_relevance": {
+        "key": "alzheimer",
+        "label": "human evidence in Alzheimer's",
+        "human_claims": 13,
+        "human_claims_in_alzheimer": 3,
+        "note": "At least one verified human-trial claim names an Alzheimer's or dementia context."
+      },
       "verified_claims": 15,
       "direction_signal": "contested",
+      "supporting_quote": {
+        "quote": "Intranasal insulin is a potential treatment for neurodegenerative disease shown to increase cerebral glucose uptake, reduce amyloid plaques, and improve verbal memory in cognitively impaired as well as healthy adults.",
+        "pmid": "33719017",
+        "evidence_type": "human trial",
+        "text": "A phase II trial of intranasal insulin glulisine was conducted in amnestic MCI and mild Alzheimer's disease to test safety and cognitive efficacy, building on prior insulin work linked to reduced amyloid plaques."
+      },
       "direction": "mixed/unclear across variants",
       "trial_count": 5,
       "trials": [
@@ -122,14 +175,32 @@
         "in vitro",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 10,
+        "in vitro": 3,
+        "review": 2
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 10,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 15,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Recombinant human tripeptidyl peptidase 1 (cerliponase alfa) is an enzyme-replacement therapy that has been developed to treat neuronal ceroid lipofuscinosis type 2 (CLN2) disease",
+        "pmid": "29688815",
+        "evidence_type": "human trial",
+        "text": "Cerliponase alfa is described as a recombinant human TPP1 enzyme-replacement therapy for CLN2 disease, a lysosomal disorder causing progressive childhood dementia."
+      },
       "direction": "Reported to decrease A\u03b2 accumulation in vitro; reported to attenuate/slow CLN2 disease progression in clinical trials. Direction of the general TPP1-protein\u2013disease association in PrimeKG is otherwise unknown.",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 8,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-14653",
@@ -148,8 +219,26 @@
         "other",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 5,
+        "other": 1,
+        "review": 10
+      },
+      "disease_relevance": {
+        "key": "alzheimer",
+        "label": "human evidence in Alzheimer's",
+        "human_claims": 5,
+        "human_claims_in_alzheimer": 2,
+        "note": "At least one verified human-trial claim names an Alzheimer's or dementia context."
+      },
       "verified_claims": 16,
       "direction_signal": "contested",
+      "supporting_quote": {
+        "quote": "Dietary choline intake has been associated with a lower risk of cognitive dysfunction, lessened brain white-matter hyperintensity volume, and a reduced risk of incident dementia",
+        "pmid": "40447055",
+        "evidence_type": "other",
+        "text": "A cohort study reports that dietary choline intake has been associated with lower risk of cognitive dysfunction and dementia-related outcomes."
+      },
       "direction": "mixed/not uniform: cholinergic system reviews describe cholinergic neuron loss and deficiency occurring in AD without specifying whether choline causes or results from pathology, whereas a dietary intake study reports higher choline intake associated with lower risk markers, and a citicoline meta-analysis reports a positive effect on cognition",
       "trial_count": 1,
       "trials": [
@@ -177,14 +266,30 @@
       "evidence_tiers": [
         "animal"
       ],
+      "evidence_tier_counts": {
+        "animal": 16
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 16,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Dihydroartemisinin Induces O-GlcNAcylation and Improves Cognitive Function in a Mouse Model of Tauopathy.",
+        "pmid": "34511503",
+        "evidence_type": "animal",
+        "text": "In a mouse model of tauopathy, dihydroartemisinin was reported to induce O-GlcNAcylation and improve cognitive function."
+      },
       "direction": "Animal studies report DHA as ameliorating or reducing disease-associated pathology/behavioral deficits (i.e., an inhibitory/protective direction), though edge direction in the knowledge graph itself is unspecified.",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 5,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-14893",
@@ -203,14 +308,32 @@
         "other",
         "review"
       ],
+      "evidence_tier_counts": {
+        "in vitro": 7,
+        "other": 1,
+        "review": 5
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 13,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "The serendipitous discovery that iproniazid was a weak MAO inhibitor (MAOI) led to the development and widespread use of MAOIs as antidepressants in the early 1950s",
+        "pmid": "9230635",
+        "evidence_type": "review",
+        "text": "Iproniazid is reported to have been discovered as a weak inhibitor of monoamine oxidase (MAO), leading to the development of MAO inhibitors as antidepressants."
+      },
       "direction": "inhibits MAO (reported for iproniazid); no reported effect on monocytic neurotoxic secretion",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 5,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-16843",
@@ -225,14 +348,23 @@
       "path_count": 31,
       "verdict": "none in the retrieved set",
       "evidence_tiers": [],
+      "evidence_tier_counts": {},
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 0,
       "direction_signal": "neutral",
+      "supporting_quote": null,
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 0,
       "freshness": "cached",
-      "group": "insufficient evidence retrieved"
+      "group": "no evidence retrieved"
     },
     {
       "family_id": "drug-16699",
@@ -247,14 +379,23 @@
       "path_count": 4,
       "verdict": "none in the retrieved set",
       "evidence_tiers": [],
+      "evidence_tier_counts": {},
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 0,
       "direction_signal": "neutral",
+      "supporting_quote": null,
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 0,
       "freshness": "cached",
-      "group": "insufficient evidence retrieved"
+      "group": "no evidence retrieved"
     },
     {
       "family_id": "drug-14489",
@@ -272,14 +413,31 @@
         "in vitro",
         "other"
       ],
+      "evidence_tier_counts": {
+        "in vitro": 1,
+        "other": 2
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 3,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Aluminium chelator (transferrin) reverses biochemical deficiency in Alzheimer brain preparations",
+        "pmid": "2562902",
+        "evidence_type": "in vitro",
+        "text": "The only available record concerns a transferrin-based aluminum chelator studied in Alzheimer brain preparations, not aluminum acetate itself, and contains no safety, dosing, or adverse-effect data for older adults."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 1,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-14885",
@@ -292,18 +450,36 @@
       "path_score": 0.10506113683127954,
       "path_strength": 0.4557,
       "path_count": 10,
-      "verdict": "animal or in vitro only",
+      "verdict": "supported by human evidence",
       "evidence_tiers": [
+        "human trial",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 3,
+        "review": 12
+      },
+      "disease_relevance": {
+        "key": "alzheimer",
+        "label": "human evidence in Alzheimer's",
+        "human_claims": 3,
+        "human_claims_in_alzheimer": 3,
+        "note": "At least one verified human-trial claim names an Alzheimer's or dementia context."
+      },
       "verified_claims": 15,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Recent randomized controlled trials have demonstrated the efficacy of sertraline and moclobemide to treat depression in Alzheimer's disease.",
+        "pmid": "16784411",
+        "evidence_type": "human trial",
+        "text": "A review on depression in Alzheimer's disease reports that randomized controlled trials demonstrated efficacy of moclobemide for treating depression in Alzheimer's disease patients."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 8,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-16512",
@@ -322,14 +498,32 @@
         "other",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 4,
+        "other": 4,
+        "review": 5
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 4,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 13,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "VEGF inhibitors may be linked to Parkinson-like events and dementia, or variants of these diseases.",
+        "pmid": "32226387",
+        "evidence_type": "human trial",
+        "text": "A pharmacovigilance analysis hypothesizes that because VEGF regulates central nervous system processes including dopaminergic neurons, VEGF inhibitors such as pegaptanib could be associated with dementia or Parkinson-like events."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 2,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-17955",
@@ -346,14 +540,30 @@
       "evidence_tiers": [
         "other"
       ],
+      "evidence_tier_counts": {
+        "other": 8
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 8,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "In this report, we discuss an interesting case of recurrent falls in an elderly woman with hyperthyroidism who was repeatedly found to have unremarkable lab results and negative imaging studies.",
+        "pmid": "35237487",
+        "evidence_type": "other",
+        "text": "The record describes an elderly woman with thyroid eye disease (thyroid ophthalmopathy) presenting with recurrent falls, illustrating a disease-related complication in an older adult population, but does not mention teprotumumab treatment or its adverse effects."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 1,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-17173",
@@ -372,14 +582,32 @@
         "in vitro",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 1,
+        "in vitro": 2,
+        "review": 8
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 1,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 11,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Their efficacy in the treatment of dementing illnesses is evaluated.",
+        "pmid": "2872586",
+        "evidence_type": "human trial",
+        "text": "An older general pharmacology review evaluates cholinergic agents alongside several unrelated drug classes for dementing illnesses broadly, without isolating physostigmine-specific outcomes or confirming disease-modifying efficacy."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 8,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-17197",
@@ -394,14 +622,23 @@
       "path_count": 10,
       "verdict": "none in the retrieved set",
       "evidence_tiers": [],
+      "evidence_tier_counts": {},
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 0,
       "direction_signal": "neutral",
+      "supporting_quote": null,
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 0,
       "freshness": "cached",
-      "group": "insufficient evidence retrieved"
+      "group": "no evidence retrieved"
     },
     {
       "family_id": "drug-14186",
@@ -420,8 +657,26 @@
         "human trial",
         "review"
       ],
+      "evidence_tier_counts": {
+        "animal": 4,
+        "human trial": 2,
+        "review": 10
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 2,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 16,
       "direction_signal": "opposing",
+      "supporting_quote": {
+        "quote": "These agents trigger reactive oxygen species (ROS) generation, cause mitochondrial dysfunction, and induce DNA damage, all of which impair synaptic plasticity and neurogenesis.",
+        "pmid": "40997625",
+        "evidence_type": "review",
+        "text": "A review reports that cisplatin, along with other chemotherapeutics, triggers ROS generation, mitochondrial dysfunction, and DNA damage that impair synaptic plasticity and neurogenesis, mechanisms relevant to chemobrain."
+      },
       "direction": "reported as cisplatin inducing/contributing to cognitive impairment and neurotoxicity (not Alzheimer's disease specifically); overall drug-protein-disease edge direction in PrimeKG is unknown",
       "trial_count": 0,
       "trials": [],
@@ -447,14 +702,33 @@
         "other",
         "review"
       ],
+      "evidence_tier_counts": {
+        "animal": 2,
+        "in vitro": 1,
+        "other": 1,
+        "review": 10
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 14,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "Apart from acting as inhibitors of both cholinesterases and monoamine oxidases, they show improvement of cognitive impairment, antioxidant activities, enhancement of iron-chelating activities",
+        "pmid": "31864798",
+        "evidence_type": "review",
+        "text": "Propargylamine-derived multi-target ligands, the chemical class containing pargyline, are reported to inhibit both cholinesterases and monoamine oxidases while affecting multiple Alzheimer's disease-related pathways."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 8,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-14299",
@@ -472,14 +746,31 @@
         "human trial",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 6,
+        "review": 10
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 6,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 16,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "We aimed to investigate the association between antidepressants and cognitive decline in patients with dementia, and the risk of severe dementia, fractures and death, depending on antidepressant class, drug, and dose.",
+        "pmid": "39994788",
+        "evidence_type": "human trial",
+        "text": "A national cohort study examined antidepressant use, including specific drugs, and its association with cognitive decline and other outcomes in dementia patients, without specifying a direction of effect for sertraline."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 8,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     },
     {
       "family_id": "drug-14880",
@@ -497,8 +788,25 @@
         "other",
         "review"
       ],
+      "evidence_tier_counts": {
+        "other": 2,
+        "review": 13
+      },
+      "disease_relevance": {
+        "key": "unassessed",
+        "label": "relevance not assessed",
+        "human_claims": 0,
+        "human_claims_in_alzheimer": 0,
+        "note": "No verified human-trial claim, so disease relevance was not assessed."
+      },
       "verified_claims": 15,
       "direction_signal": "contested",
+      "supporting_quote": {
+        "quote": "nicotine is the main psychoactive component of tobacco and its positive and negative reinforcement effects are proposed to be the key mechanism",
+        "pmid": "36736944",
+        "evidence_type": "review",
+        "text": "A review frames nicotine's cognitive effects as potentially beneficial, including in Alzheimer's disease, raising the question of whether this is a 'friend or foe' relationship."
+      },
       "direction": "mixed/unclear",
       "trial_count": 0,
       "trials": [],
@@ -522,25 +830,55 @@
         "human trial",
         "review"
       ],
+      "evidence_tier_counts": {
+        "human trial": 3,
+        "review": 12
+      },
+      "disease_relevance": {
+        "key": "other",
+        "label": "human evidence in other conditions",
+        "human_claims": 3,
+        "human_claims_in_alzheimer": 0,
+        "note": "Verified human-trial claims exist, but none of them names an Alzheimer's or dementia context; the human evidence is for other conditions."
+      },
       "verified_claims": 15,
       "direction_signal": "neutral",
+      "supporting_quote": {
+        "quote": "The revised Cochrane risk of bias tool for randomized trials was used to assess all of the reports for risk of bias.",
+        "pmid": "36722274",
+        "evidence_type": "human trial",
+        "text": "A systematic review and meta-analysis of L-carnosine in age-related diseases used a formal risk-of-bias tool across clinical studies, indicating some methodological scrutiny, but the abstract does not specify adverse event rates or elderly-specific tolerability findings."
+      },
       "direction": "direction unknown",
       "trial_count": 0,
       "trials": [],
       "retrieved_count": 3,
       "freshness": "cached",
-      "group": "supported but untested"
+      "group": "evidence retrieved, no trial record found"
     }
   ],
+  "verification": {
+    "families_reviewed": 20,
+    "families_with_a_verified_claim": 17,
+    "claims_generated": 231,
+    "claims_verified": 229,
+    "claims_dropped_or_flagged": 2,
+    "failure_fraction": 0.0087,
+    "failure_reasons": {
+      "quote too long": 1,
+      "quote too short": 1
+    },
+    "method": "Span-level: the PMID must be in that family's retrieved set and the 8-40 word quote must appear verbatim in that record's title or abstract. A flagged claim is never shown as supported."
+  },
   "counts": {
     "already in trials": 2,
     "contested or possible wrong direction": 3,
-    "supported but untested": 12,
-    "insufficient evidence retrieved": 3
+    "evidence retrieved, no trial record found": 12,
+    "no evidence retrieved": 3
   },
   "verdict_counts": {
-    "supported by human evidence": 6,
-    "animal or in vitro only": 6,
+    "supported by human evidence": 7,
+    "animal or in vitro only": 5,
     "mixed or contested": 3,
     "possible wrong direction": 2,
     "none in the retrieved set": 3

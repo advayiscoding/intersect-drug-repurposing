@@ -38,35 +38,63 @@ def is_supported_disease(text: str) -> bool:
 class DrugIndex:
     """Case- and punctuation-insensitive index over every drug node in the graph."""
 
-    def __init__(self, drugs: list[dict]):
+    def __init__(self, drugs: list[dict], synonyms: dict | None = None):
         self.drugs = drugs
         self.by_name: dict[str, dict] = {}
+        self.by_id: dict[int, dict] = {}
         for drug in drugs:
             self.by_name.setdefault(normalize(drug["name"]), drug)
+            self.by_id[drug["id"]] = drug
             source_id = str(drug.get("source_id", "")).strip().casefold()
             if source_id:
                 self.by_name.setdefault(source_id, drug)
+        # Synonyms never override a primary name: they are a fallback layer only.
+        # A synonym may carry several candidates; those are offered, never chosen.
+        self.synonyms: dict[str, list[int]] = {}
+        for key, ids in (synonyms or {}).items():
+            if key in self.by_name:
+                continue
+            known = [i for i in (ids if isinstance(ids, list) else [ids]) if i in self.by_id]
+            if known:
+                self.synonyms[key] = known
 
     @classmethod
     def load(cls, root: Path) -> "DrugIndex":
-        nodes = json.loads((root / "data/processed/nodes.json").read_text())
-        return cls([n for n in nodes if n["type"] == "drug"])
+        path = root / "artifacts/drug_index.json"
+        if not path.exists():
+            path = root / "data/processed/nodes.json"
+        nodes = json.loads(path.read_text())
+        path = root / "data/synonyms.json"
+        synonyms = json.loads(path.read_text()).get("map", {}) if path.exists() else {}
+        return cls([n for n in nodes if n["type"] == "drug"], synonyms)
 
-    def resolve(self, text: str) -> dict | None:
+    def match(self, text: str) -> dict | None:
+        """Resolve to a node and say HOW it matched, so the UI can show it."""
         key = normalize(text)
         if not key:
             return None
         hit = self.by_name.get(key) or self.by_name.get(sanitize(text).strip().casefold())
         if hit:
-            return hit
-        # A salt or formulation suffix ("insulin glargine injection") still resolves
-        # when the leading words name a node exactly.
+            how = "identifier" if key == str(hit.get("source_id", "")).casefold() else "exact"
+            return {"node": hit, "match_type": how, "matched_on": text.strip()}
+        if key in self.synonyms:
+            candidates = [self.by_id[i] for i in self.synonyms[key]]
+            if len(candidates) > 1:
+                return {"node": None, "match_type": "ambiguous_synonym",
+                        "matched_on": text.strip(), "candidates": candidates}
+            return {"node": candidates[0], "match_type": "synonym", "matched_on": text.strip()}
+        # Synonyms are matched exactly only. A salt or formulation suffix still
+        # resolves when the leading words name a node exactly.
         words = key.split()
         for size in range(len(words) - 1, 0, -1):
-            candidate = self.by_name.get(" ".join(words[:size]))
-            if candidate:
-                return candidate
+            prefix = " ".join(words[:size])
+            if prefix in self.by_name:
+                return {"node": self.by_name[prefix], "match_type": "prefix", "matched_on": prefix}
         return None
+
+    def resolve(self, text: str) -> dict | None:
+        found = self.match(text)
+        return found["node"] if found else None
 
     def suggestions(self, text: str, limit: int = 5) -> list[str]:
         key = normalize(text)

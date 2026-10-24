@@ -1,288 +1,233 @@
-# Handoff context
+# Handoff
 
-Updated: 2026-10-24. Workspace: /Users/advay/Downloads/Hackathon.
+Alzheimer's drug-repurposing workbench on PrimeKG. Ranked repurposing candidates with
+explainable graph paths, literature agents whose every claim is span-verified, an
+honest validation dashboard, an evidence gap map, and a "check my idea" lookup.
 
-## Session update 2026-10-24 (agent: Claude)
+**Everything here is a research hypothesis, never medical advice.** No number in this
+repository is evidence of efficacy. Keep it that way.
 
-Independent Step-0 verification of the previous handoff: 20 tests pass (not 18;
-family/exact-CI tests were added). `validate` and `validate-primary` both reproduce
-their cached artifacts exactly. Leakage guards read and confirmed: target-drug
-removal is symmetric, relation-agnostic, applied to ALL drugs before neighborhood
-selection and degree computation; the negative sampler rejects every target/drug
-pair in both orientations for every relation, so held-out positives can never be
-sampled as negatives. No discrepancy in any reported number.
+Updated 2026-10-24. Workspace `/Users/advay/Downloads/Hackathon`, branch `main`.
 
-Committed since then:
-- 72f1809 evaluation fixes (all-44 untuned path primary, Clopper-Pearson exact
-  intervals, explicit drug families, family-aware permutation test).
-- Stage 3 UI commit below.
+---
 
-Fixed a real bug found during stage 3: `build_graph` stored the edge provenance
-under the key `source`, which `ranking.py` then spread over the path edge's
-`source` endpoint, so every cached path edge had `"source": "PrimeKG"` instead of a
-node id. The attribute is now `provenance`. Path scores are unaffected;
-`artifacts/discovery_paths.json` and `candidate_paths.json` still carry the old
-broken shape and are frozen stage-1/2 inputs, so the UI reads
-`explorer_details.json` instead.
+## 1. Read this first: the honest summary
 
-Stage 3 is DONE and verified in a real browser against the real caches.
+If you demo this, these are the facts you must not soften.
 
-Stage 3 approved. Working through Part A (node links), Part B (graph readability),
-Part C (stage 4 evidence agents), one commit each.
+- **The headline is 4/44 at k=10/20 (9.09%), exact CI [2.53%, 21.67%].** That is 8.15x
+  the exact random expectation and +9.09 points over popularity (popularity is 0/44, so
+  a ratio is undefined).
+- **The recovery is essentially insulin.** Those 4 drugs span only **2 families**
+  (insulin variants, choline) out of 41 positive families, and it stays at 2 through
+  k=50. The family-aware permutation test gives **p = 0.080 at k=20** (primary), 0.023
+  at k=10, 0.322 at k=50 — exploratory and unadjusted.
+- **The embedding experiment failed.** Fixed DistMult scored 0/22 recall@10/20 on the
+  reserved split; tuning selected zero embedding weight. Documented, not hidden.
+- **Path scoring cannot see direction.** PrimeKG edges are undirected and unsigned.
+  The #1 candidate, **mecamylamine, is a nicotinic antagonist** that *blocked*
+  nicotine's cognitive benefit in the retrieved animal work. The agents caught what the
+  ranking could not.
+- **Verdicts are keyword heuristics**, self-audited on the same 20 families they were
+  tuned on. 16/20 agree; the 4 that do not are listed in docs/METHODOLOGY.md.
+- **Trial participation is not efficacy**, and absence is always "none in the retrieved
+  set", never "no evidence exists".
 
-Part A DONE. `src/repurpose/links.py` builds a per-entity external page from the
-node's own source/source_id; `prepare-ui` stamps `url` onto every cached node and
-the UI shows "Open in {source}" or an explicit no-link note, with the Dataverse DOI
-kept as a small secondary line. All external anchors use rel="noopener noreferrer".
-Node types in the UI: REACTOME pathway, NCBI gene, DrugBank drug, MONDO disease
-(linked), MONDO_grouped disease (no link). The stat-card caption now derives from
-`recovered_families_at_k` in primary_validation.json instead of hardcoded text.
-Spot-checked live: Reactome, Monarch MONDO, DrugBank and the NCT trial page all
-resolve to the right entity. NCBI Gene and AmiGO serve bot checks to automation.
+## 2. Current state
 
-Part B DONE. Graph panel rebuilt for readability: dagre layered layout (rankDir LR,
-edges oriented by tier so ranks run drug -> protein -> pathway/disease), no edge
-text by default (line style + legend carry the relation; full text on hover or
-selection), node captions truncated at 28 chars with the full name on hover,
-labels drawn above edges with a halo, hover/tap highlights connected edges and dims
-the rest, and the default view shows the top 3 paths with pathway context off and a
-"show all paths" toggle. `scripts/label_overlap_audit.js` measures label collisions;
-run over the top 20 families in both views (41 views): 0 label/label and 0
-label/node overlaps. Edge-through-label geometry remains in 19 of 41 views (1-4 per
-view) and is accepted because the halo and draw order keep captions legible; the
-worst case is saved as a screenshot. Before/after screenshots in
-artifacts/screenshots/.
+Stages 1-5 complete, plus UI, agents, gap map and check-my-idea. Local demo
+hardening is complete. **132 tests pass**, including in a clean Git-index export
+without .env or ignored datasets. Python tests reused the installed runtime;
+frontend dependencies were freshly installed from npm's offline cache, then built.
+The inherited 187-test claim was stale; nine fixture failures are now repaired.
 
-Part C (stage 4) DONE. Five roles: deterministic PubMed retriever
-(`pubmed.py`, disk cache under data/cache/pubmed, E-utilities throttle, NCBI key
-from .env) plus mechanism analyst, safety analyst, skeptic and synthesiser in
-`agents.py` on claude-sonnet-5. `citations.py` is the deterministic span checker:
-PMID must be in that family's retrieved set and the 8-40 word quote must appear
-verbatim in that record's title or abstract after unicode/whitespace normalisation;
-failures are flagged "unverified" in the UI and never shown as supported.
-`evidence.py` caches per family (never per variant) to artifacts/evidence.json;
-`build-evidence --limit 20` builds it, `--family` and `--refresh` scope reruns.
-API: /api/evidence/{family_id}, with ?live=1 re-running the agents and falling back
-to cache on error, labelling each result cached or live. Agent output never feeds
-the ranking or validation. Keys live in a Git-ignored .env (user-supplied; be
-sparing, limited credits). Notable finding: the #1 ranked family, mecamylamine, is a
-nicotinic ANTAGONIST that blocked nicotine's cognitive enhancement in the retrieved
-animal work, with no human Alzheimer evidence - a good honest demo beat.
+| Commit | What |
+| --- | --- |
+| 874cde3 | Stage 1: leakage-safe PrimeKG Alzheimer path rankings |
+| 9b19251 | Stage 2: retrospective validation vs independent trials |
+| 8544c49 | Frozen controls and evaluation protocol |
+| 8f44ea1 | Stage 5: DistMult evaluated, negative result retained |
+| 72f1809 | All-44 primary evaluation, exact CIs, drug families |
+| 4d43626 | Stage 3: workbench UI over cached artifacts |
+| 4746b8b | Per-entity external node links |
+| b9871af | Graph readability (dagre, label halos, path limiting) |
+| 840743a | Stage 4: evidence agents + span-level citation checker |
+| 8f1aed1 | Evidence gap map |
+| f1abde1 | Check my idea |
 
-Cache results for the top 20 families: 229/231 claims verified (0.87% failure),
-17 of 20 families produced at least one verified claim. The 3 without any
-(Dipivefrin, Zofenopril, Itopride) retrieved ZERO PubMed records for their query,
-and the agents correctly reported that nothing was retrieved rather than inventing
-support. Both failures were length-window rejections (one 42-word quote, one 4-word
-quote), not fabricated citations or PMIDs. Rebuilding costs real credits: use
---family to scope reruns and do not pass --refresh casually.
+**Completed in the demo-hardening commit:** inherited synonym map (PubChem),
+ambiguous-synonym chooser, disease-relevance tag, pre-computed check cache, daily
+cost cap, portable offline mode, regression tests and concise documentation.
 
-## Feature 1: evidence gap map (DONE)
+Hardening continuation: frontend production build passes (large-bundle warning).
+Added regression tests for portable drug lookup, explicit offline mode, budget
+endpoint coverage, corrupt-counter fail-closed behavior, and concurrent consumers.
+The old counter allowed 94/100 concurrent requests with a limit of five. Now uses
+a POSIX file lock and atomic replacement, shared across threads/processes on the
+same disk; day boundary is UTC. Both live API routes share one guarded runner.
+Unknown/ambiguous lookups no longer consume an agent budget. No paid API calls.
+`build-check-cache` now exports artifacts/drug_index.json from the full graph drug
+vocabulary, removing the demo's dependency on ignored processed nodes.
+Cache regenerated: 28 common queries, 22 with cached paths. Portable API smoke test
+passes using copied source/artifacts/synonyms, no .env/raw/processed files and HTTP
+blocked. Full suite: 132 passed after final review adjustments. README is now
+short; full method/audit history moved to docs/METHODOLOGY.md, demo/Q&A docs/DEMO.md.
+Browser review caught a misleading control header (“no path”); now states known
+control excluded from discovery, not biological absence. Review also added strict
+counter-date validation and shared frontend session ID across both live routes.
+Review findings fixed: counter dates validated, both frontend live routes share
+the session ID, quota metadata preserved. All four pages were checked in the
+browser at narrow width; graph selection, cached literature, known-control lookup,
+metformin lookup and validation numbers work. Final screenshots are in
+artifacts/screenshots/demo-{graph,known-control,validation}.png.
+Nonblocking warnings: Vite's ~714 kB main chunk, Starlette/httpx deprecation.
+No paid/provider calls, no model retraining and no public deployment this turn.
+Clean export tested at /tmp/intersect-demo-export.cluHoK (disposable, no secrets).
 
-Verified no secret ever reached git history before starting: `.env` was never added
-in any commit, neither key value appears in any commit, and there is no `sk-ant-`
-literal anywhere in history.
+## 3. How to run it
 
-`gapmap.py` derives, per reviewed family, a verdict from VERIFIED claims only plus a
-direction signal, then a triage group. Exact vocabularies are in the README and in
-the module. Two traps found and handled while building it: "inhibit" is NOT an
-opposing word (an MAO inhibitor inhibits by design), and a harm noun alone is not
-harm ("reducing behavioural deficits" is protective, so a harm verb AND noun are
-required with no protective word present). Both are regression-tested.
+```sh
+python -m pip install -e '.[test,demo]'
+npm ci --prefix web
+npm run build --prefix web
+REPURPOSE_OFFLINE=1 PYTHONPATH=src python3 -m uvicorn repurpose.api:app --app-dir src --host 127.0.0.1 --port 8000
+```
 
-Top 20 split: 12 supported but untested, 2 already in trials, 3 contested or
-possible wrong direction, 3 insufficient evidence retrieved. Artifact
-artifacts/gap_map.json via `build-gap-map`; served at /api/gap-map; third nav page
-in the UI with cards that cross-link into the Explore graph and evidence tabs.
-Display-only: it never re-enters ranking, validation, or agent prompts.
+Open http://127.0.0.1:8000. Four pages: **Explore** (candidate families, graph paths,
+evidence), **Gap map** (triage), **Check my idea** (arbitrary drug), **Validation**
+(the honest dashboard). It runs from artifacts plus data/synonyms.json with no keys
+or external requests. Source links need internet if clicked. Installation/build
+needs package downloads or a populated package cache, not the raw biological data.
 
-## Feature 2: check my idea (DONE)
+Rebuild commands (all optional, all offline except the two marked):
 
-`resolve.py` (sanitize + DrugIndex over all 7,957 drug nodes), `ratelimit.py`
-(5 live checks per session per 10 min, in-memory), `check.py` (orchestration with
-injected evidence_loader/live_runner so the flow is testable offline), served at
-GET /api/check, fourth nav page in the UI.
+```sh
+PYTHONPATH=src python3 -m repurpose.cli validate           # split metrics
+PYTHONPATH=src python3 -m repurpose.cli validate-primary   # all-44 primary report
+PYTHONPATH=src python3 -m repurpose.cli prepare-ui         # explorer_details.json
+PYTHONPATH=src python3 -m repurpose.cli build-gap-map      # gap_map.json
+PYTHONPATH=src python3 -m repurpose.cli build-check-cache  # check_cache.json
+PYTHONPATH=src python3 -m repurpose.cli build-synonyms     # NETWORK: PubChem
+PYTHONPATH=src python3 -m repurpose.cli build-evidence     # NETWORK + LLM: costs money
+```
 
-The security property to preserve: user text is used ONLY to look up a node.
-Everything downstream gets the canonical graph name, so appended text cannot reach
-an agent prompt or widen the PubMed query. Tests feed prompt-injection, markup and
-query-breaking strings through it.
+`cd web && npm install && npm run build` rebuilds the frontend into `web/dist`.
 
-Four outcomes, all stated explicitly: resolved / not in this graph (with close
-matches) / in the graph but no path / unsupported disease. Verified live: Mecamylamine
-resolves (verdict possible wrong direction), Rapamycin does not (it is not in PrimeKG
-under that name; suggestions are string-similar "*mycin" names, which is honest fuzzy
-matching), Copper resolves but has no path. One real live agent run through the UI:
-Aluminum acetate, 6/6 claims verified, 0 failures, labelled "live", rate limiter
-decremented. API-level rate limiting verified: 5 allowed, 6th and 7th blocked with
-the cached fallback message.
+## 4. Architecture
 
-Screenshots: artifacts/screenshots/gap-map.png (+ -top crop),
-check-my-idea-mecamylamine.png (+ -top crop), check-my-idea-not-in-graph.png.
-Note for future captures: html2canvas cannot capture the Cytoscape canvas unless the
-browser pane is FRONTED and the cy render is first baked into an <img> via cy.png().
+```
+PrimeKG CSV ──▶ graph.py ──▶ training_edges.parquet ──▶ ranking.py ──▶ rankings
+  (937 MiB)     leakage        (sanitized, the only      (fixed path     (frozen)
+                removal         allowed model input)      scoring)
+                                                              │
+CT.gov ──▶ data.py ──▶ trial_labels.json ──▶ primary_validation.py ──▶ metrics
+                                                              │
+                                        families.py ──▶ family_rankings.json
+                                                              │
+PubMed ──▶ pubmed.py ──▶ agents.py ──▶ citations.py ──▶ evidence.json
+          (cached)      (5 roles)     (span check)         │
+                                                    gapmap.py ──▶ gap_map.json
+                                                              │
+                                        api.py (read-only) ──▶ web/ (React+Cytoscape)
+```
 
-## Status and mandatory next action
+Everything the UI shows is a cached artifact. The API computes nothing per request
+except an optional live agent run.
 
-Stage 5 approved. ACTIVE: quick all-44/family/exact-CI evaluation fixes, then stage3
-local UI with real caches. STOP and report after UI works; agents stage4 follow
-after that checkpoint. No further embedding work. Latest request supersedes
-older status sections below. Include remaining-time estimates in reports.
+## 5. Invariants — do not break these
 
-User's remaining order after next approval: stage 3 UI on real cached outputs,
-then stage 4 evidence agents with citation checks; optional LINCS last.
-Update context.md after every meaningful change, assumptions in ASSUMPTIONS.md,
-commands/results in README.md, commit each stage. Work autonomously within scope.
+1. **Leakage.** `remove_target_drug_edges` strips every target-drug edge in both
+   orientations and all relation types, for **all** drugs, before neighborhood
+   selection and degree computation. The negative sampler rejects every target/drug
+   pair in either direction. Tests: `tests/test_leakage.py`, `tests/test_embeddings.py`.
+2. **No tuning on the test set.** The 22/22 split experiment is frozen in
+   `split_validation.json`. Training and tuning commands refuse to overwrite a fitted
+   experiment. Do not regenerate the split.
+3. **Agent output never feeds the ranking or validation.** It is display-only, and the
+   dashboard says so.
+4. **Nothing unverified is shown as supported.** Every claim needs a PMID in that
+   family's retrieved set plus an 8-40 word verbatim quote. Failures are flagged.
+5. **User text only ever looks up a node.** Agent prompts and PubMed queries receive
+   the canonical graph name, never raw input.
+6. **API keys are server-side only.** A test asserts no endpoint returns key material.
 
-## Completed commits
+## 6. Key numbers
 
-- 874cde3: stage 1, real PrimeKG and leakage-safe path ranking.
-- 9b19251: stage 2, original retrospective evaluation.
-- 8544c49: evaluation hardening, controls and frozen split.
-- Stage-5 code/results/docs are committed with this handoff under
-  "feat: evaluate sanitized embeddings and retain path ranking after negative finding".
-  Use git log for its hash.
+| Thing | Value |
+| --- | ---: |
+| Discovery pool | 1,792 drugs / 1,781 families |
+| Trial labels | 44 (9 controls excluded) / 41 positive families |
+| Path recall@10 and @20 | 9.09% (4/44), exact CI [2.53, 21.67]% |
+| Enrichment@20 | 8.15x exact random |
+| Distinct families recovered | 2 of 41 (insulin, choline) |
+| Family permutation p@20 | 0.080 |
+| Agent families cached | 20 |
+| Families with >=1 verified claim | 17 |
+| Claims generated / verified / failed | 231 / 229 / 2 (0.87%) |
+| Gap map groups | 12 evidence-no-trial, 2 in trials, 3 contested, 3 no evidence |
+| Disease relevance | 3 Alzheimer's, 7 other conditions, 10 not assessed |
 
-## Sources and local environment
+## 7. Traps and hard-won lessons
 
-- System Python 3.12 has pandas 2.3.3, NetworkX 3.6.1, torch 2.12.0, NumPy, pyarrow,
-  requests and pytest. Torch CPU, two threads. No venv created.
-- Git/network require escalation; previous Git and curl approvals succeeded.
-- PrimeKG data/raw/primekg.csv: 981,751,236 bytes, Dataverse file 6180620.
-  MD5 matches published metadata: aac8191d4fbc5bf09cdf8c3c78b4e75f.
-- data/raw/trials.json: 2,615 completed/terminated CT.gov records, 123 MiB.
-- Source graph: 129,375 nodes, 8,100,498 reciprocal rows.
-- Five Alzheimer disease nodes, excluding explicitly non-Alzheimer entity.
-- Remove ALL 146 target/drug rows in both orientations/all relations before selection.
-- Selected 3-hop typed graph: 29,216 nodes, 503,232 pairs, 503,473 typed triples.
-- ONLY data/processed/training_edges.parquet may be used for training.
-  The exploratory data/processed/edges.parquet is UNSANITIZED; never train on it.
-- Raw/processed files are Git-ignored. Model data/processed/distmult.pt is local.
-  All source/training hashes are in artifacts. No API credentials requested yet.
+Read these before touching the relevant code; each one cost real debugging.
 
-## Protocol and eligibility
+- **`build_graph` once stored edge provenance under the key `source`**, which
+  `ranking.py` spread over the path edge's `source` endpoint, so every cached path edge
+  read `"source": "PrimeKG"` instead of a node id. It is now `provenance`.
+- **"inhibit" is NOT an opposing direction.** An MAO inhibitor inhibits by design.
+- **A harm noun alone is not harm.** "Reducing behavioural deficits" is protective, so
+  an opposing reading needs a harm verb AND a harm noun with no protective word.
+- **Do not feed safety/skeptic text into the direction classifier.** I implemented and
+  tested it: it flipped five families to "possible wrong direction" because skeptic
+  claims routinely mention impairment when describing the disease. Rejected.
+- **Disease relevance must match the verbatim quote, not the agent's sentence**, and
+  bare "dementia" must not count: cerliponase alfa's records say "progressive dementia
+  in children" (CLN2), and its skeptic wrote "not adults with Alzheimer's".
+- **A bare "clinical trial" mention does not imply human evidence for this drug** —
+  "numerous clinical trials for AD have failed" is about other drugs. Only explicit
+  randomized-trial phrasing promotes a review to human-tier.
+- **Sonnet does not support assistant prefill**, and agent calls need ~8000 max_tokens
+  or they truncate mid-JSON.
+- **html2canvas cannot capture the Cytoscape canvas** unless the browser pane is
+  FRONTED and the render is first baked into an `<img>` via `cy.png()`.
+- **`api.py` uses `lru_cache` on artifacts**, so restart the server after rebuilding
+  any artifact or you will serve stale JSON.
+- **PubChem is latency-bound, not rate-bound.** 16 workers behind a shared 5/s token
+  bucket; a serial loop takes two hours.
 
-- Original pool: 1,801 PrimeKG drugs with a non-Alzheimer indication.
-- Known controls: union of PrimeKG Alzheimer indications and sourced treatment
-  names in config/known_controls.json (NIA/FDA sources). Graph indication is not
-  a claim of current regulatory approval. Combination approval is not assigned
-  to individual ingredient nodes.
-- Nine controls removed from discovery, leaving 1,792.
-- Original 48 matched trial labels: four controls (donepezil, galantamine,
-  rivastigmine, brexpiprazole) removed from discovery numerator AND denominator.
-- Remaining 44 labels split by fixed hash into 22 tuning and 22 test labels.
-- Each evaluation pool excludes opposite-split positives, N=1770 for each.
-- artifacts/protocol.json frozen BEFORE training; do not regenerate after results.
-- Trial inclusion: explicit Alzheimer condition, interventional treatment,
-  completed/terminated, actual enrollment >0, DRUG in experimental arm.
-- Exact normalized name/alias matching; 576 eligible trials, 79 matched drugs;
-  31 lacked non-Alzheimer indications. No fuzzy matching.
-- Historical aggregate stage-2 results were already seen; new split is an internal
-  retrospective evaluation untouched by subsequent fitting, not new external data.
-- Ground truth is independently trial-tested drugs, NOT efficacy. Symptom studies
-  are included. Direction unknown on all PrimeKG paths.
+## 8. Costs and credentials
 
-## Embedding experiment (finished; no more fitting after test exposure)
+`.env` is Git-ignored and has **never** been committed — verified by scanning every
+commit for both key values and for any `sk-ant-` literal; `.env` appears in no commit.
+Keys: `ANTHROPIC_API_KEY` (agents, claude-sonnet-5), `NCBI_API_KEY` (PubMed throughput).
 
-- DistMult from scratch, dimension 64, 40 fixed epochs, max30k triples/relation/epoch,
-  batch2048, 4 type-constrained negatives/positive, SparseAdam lr .003, seed20261024.
-- 503,473 source triples; 6,173,400 positive presentations.
-- Negatives reject known triples/reverses, self-pairs, and ALL Alzheimer/drug pairs
-  in either orientation and every relation; protects all held-out positives.
-- Completed run ~70 seconds. Initial attempt stopped after epoch1 (~101 seconds)
-  to replace slow repeated np.isin sorting with equivalent searchsorted lookup.
-  First-epoch loss identical; same config/seed, no test scores seen at that time.
-- Config, training history, hashes, scores in embedding_config/run/scores.json.
-- Mixture percentile weights tried {0,.25,.5,.75,1} only on tuning recall@20 then @10.
-  Ties favor path. Selected path=1, embedding=0, LINCS=unavailable.
-- Fixed DistMult did NOT improve primary recall; path remains primary.
-- Finding is specific to this experiment; no claim all embeddings fail.
+The user has limited credits. **Be sparing.** `build-evidence` costs roughly 4 LLM
+calls per family; use `--family` to scope reruns and never pass `--refresh` casually.
+Three cost brakes, in order of trustworthiness: a provider-side hard spend limit (the
+only one a restart cannot defeat), a persisted daily cap (`REPURPOSE_DAILY_LIVE_CAP`,
+default 40 — **resets on ephemeral-disk hosts**), and a 5-per-10-minutes session limit.
 
-## Current test results
+## 9. Where things live
 
-22 test positives / 1770 candidates. Recall values below are percentages.
-MRR_q = reciprocal first relevant rank for one Alzheimer query.
-MRR_all = average reciprocal rank across ALL 22 test drugs, not only top-k hits.
+`src/repurpose/`: `data.py` (sources, CT.gov) · `graph.py` (leakage removal, graph) ·
+`ranking.py` (fixed path scoring) · `protocol.py` (frozen split) · `evaluation.py` ·
+`primary_validation.py` (all-44, exact CIs, permutation) · `validation.py` (split) ·
+`embeddings.py` (DistMult, negative result) · `selection.py` · `families.py` ·
+`links.py` (per-entity URLs) · `ui_data.py` · `pubmed.py` · `agents.py` (5 roles) ·
+`citations.py` (span checker) · `evidence.py` · `gapmap.py` (verdicts, relevance) ·
+`resolve.py` (sanitize, drug index) · `synonyms.py` (PubChem) · `check.py` ·
+`check_cache.py` · `ratelimit.py` · `api.py` · `cli.py`
 
-| Method | R10 | R20 | R50 | R100 | MRR_q | MRR_all |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Random 1000 runs | .554545 | 1.054545 | 2.704545 | 5.645455 | .05497550 | .004495295 |
-| Popularity | 0 | 0 | 9.090909 | 9.090909 | .02439024 | .004883710 |
-| Path | 9.090909 | 9.090909 | 9.090909 | 13.636364 | .2 | .017484527 |
-| Embedding | 0 | 0 | 0 | 9.090909 | .01639344 | .002841816 |
-| Combined (path weight1) | 9.090909 | 9.090909 | 9.090909 | 13.636364 | .2 | .017484527 |
+`artifacts/` is the UI's whole world; `artifacts/screenshots/` holds before/after
+images. `scripts/label_overlap_audit.js` measures caption collisions in the live page.
+`ASSUMPTIONS.md` records judgement calls. `README.md` is the short quickstart;
+`docs/METHODOLOGY.md` holds the full methodology and `docs/DEMO.md` the demo/Q&A.
 
-- Path/combined primary recall CIs [0,22.7273%]; random R10 [.4727,.6364%],
-  R20 [.9455,1.1682%]; zero-hit empirical CIs [0,0] are degenerate, not proof.
-- Bootstrap 10k resamples of test drugs, conditional on fixed graph/model/pool.
-- Path EF20=8.04545 versus exact random k/N; sampled random lift=8.62069x.
-  +9.0909 percentage points vs popularity; zero-baseline ratio undefined.
-- Top-20 test hits: insulin detemir and insulin glulisine; correlated compounds
-  limit diversity and invalidate treating hits as independent biological discoveries.
-- Full CIs, enrichment@10/20/50/100, lift, controls and per-drug ranks in validation.json.
-- Primary metrics R10/R20; secondary R50/R100 and enrichment.
-- 18 tests pass: reverse leakage, negative filtering, numerical metrics, bootstrap,
-  tuning isolation, and cached-report/control/split invariants. Compile/diff checks pass.
+## 10. Next
 
-## Files and artifact contract for next agent
-
-src/repurpose/:
-- data.py: pandas source loading, hashes, CT.gov retrieval/matching.
-- graph.py: target resolution, all-target/drug removal, neighborhood, NetworkX.
-- ranking.py: fixed degree-normalized typed 2/3-edge paths; top10 sum, top5 explanations.
-- protocol.py: one-time immutable control/split definition.
-- evaluation.py: bootstrap/recall/enrichment/MRR/random baseline.
-- embeddings.py: DistMult trainer, filtered negative sampler.
-- selection.py: tune on tuning IDs only; immutable mixture selection.
-- report.py: frozen protocol/hash and graph recomputation audit, test evaluation, UI exports.
-- validation.py: dispatcher + legacy stage-2 implementation.
-- cli.py: fetch-trials, prepare, freeze-protocol, train-embeddings, tune, validate.
-
-UI (stage 3, built): `src/repurpose/api.py` serves cached artifacts read-only;
-`src/repurpose/ui_data.py` (`prepare-ui`) writes `artifacts/explorer_details.json`
-(16 MB, per-drug paths + Cytoscape graph + deduped trial records) after re-asserting
-no leakage and re-checking every path score against the frozen ranking. Frontend is
-`web/` (React 19, Vite 6, Cytoscape 3.30), built to `web/dist` which is Git-ignored.
-`.claude/launch.json` starts uvicorn with `--app-dir src` on port 8000.
-Verified in-browser: family list collapses variants, path selector isolates single
-paths, trial records show real NCT ids, validation dashboard matches the artifacts.
-
-UI must consume:
-- artifacts/discovery_rankings.json (1792 controls-excluded candidates)
-- artifacts/discovery_paths.json (top20 explainable paths)
-- artifacts/known_controls.json (separate controls)
-- artifacts/validation.json (v2 test metrics, CIs, caveats)
-Original rankings.json/candidate_paths.json remain unchanged frozen source inputs;
-they contain controls and must NOT be used for the discovery UI.
-No frontend/API, evidence agents, citation checker or LINCS yet.
-
-Dashboard language: lift over random/popularity, show CIs and the caveat "trial
-participation does not establish efficacy." Do not say "finding Alzheimer's drugs".
-
-## Reproduction
-
-README has full original-source and isolated frozen-input replay commands.
-In existing workspace:
-PYTHONPATH=src python3 -m repurpose.cli validate
-python3 -m pytest -q
-
-Training and tuning refuse to overwrite a fitted experiment. Reproduce into a new
-directory with copied frozen protocol/rankings/labels/manifest and sanitized
-training_edges.parquet + nodes.json, then train-embeddings, tune, validate.
-Do not refetch trials, mutate frozen inputs or regenerate the split to reproduce.
-Model rankings and data are cached; no network is needed to audit scores.
-
-## Next action
-
-Implementing explicit drug_families config, families.py, primary_validation.py.
-New artifacts primary_validation, split_validation (exact display CIs), family_rankings.
-Primary results: 4/44 at k10/20/50 (9.09%), exact CI [2.5328,21.6687%]; two
-distinct families (insulin, choline). 1781 total families, 41 positive families.
-Family-card permutation p20=.079892 (10k permutations); exploratory post-hoc.
-Added ui_data.py to cache real paths and actual protein/pathway context per drug;
-api.py serves cached JSON and built frontend; no evidence agents yet.
-Added explicit family and exact-CI tests; web React/Vite/Cytoscape dependency
-manifest created. Installing dependencies next; no UI server yet.
-Then build React/Cytoscape + FastAPI local UI, cache actual graphs and pathway context,
-verify in browser, commit and STOP. Stage4 will cache top20 FAMILIES, 1–2 live queries.
-No extra features or new benchmark/model selection after this exposed test result.
+Local demo is ready. Rehearse docs/DEMO.md (about 10–15 minutes). Public deployment
+has not been performed: obtain the user's chosen/approved host before exposing the
+app, deploy offline by default, and never ship .env or runtime budget counters.
+Allow roughly 30–60 minutes for hosting setup and smoke checks once a target exists.
+Do not start a Parkinson's pilot without a new user request; it is outside the
+approved Alzheimer's scope. No additional embedding work is needed.

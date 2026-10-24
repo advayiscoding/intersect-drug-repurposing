@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 
 from .citations import MAX_WORDS, MIN_WORDS, verify_all
-from .env import credential
+from .env import credential, offline
 
 MODEL = "claude-sonnet-5"
 MAX_ABSTRACT_CHARS = 900
@@ -60,7 +60,7 @@ SYNTHESIS = (
 
 
 def available(root: Path) -> bool:
-    return bool(credential("ANTHROPIC_API_KEY", root))
+    return not offline() and bool(credential("ANTHROPIC_API_KEY", root))
 
 
 def _records_block(records: dict) -> str:
@@ -91,9 +91,11 @@ def _call(client, system: str, prompt: str, max_tokens: int = 8000, timeout: flo
 
 def run_family(root: Path, family: dict, retrieval: dict, client=None) -> dict:
     """Run every role for one family and verify each claim before returning."""
-    import anthropic
-
-    client = client or anthropic.Anthropic(api_key=credential("ANTHROPIC_API_KEY", root))
+    if offline():
+        raise RuntimeError("Offline mode: live agents are disabled")
+    if client is None:
+        import anthropic
+        client = anthropic.Anthropic(api_key=credential("ANTHROPIC_API_KEY", root))
     records = retrieval["records"]
     default_context = "drug - protein - disease associations in PrimeKG; edge direction is unknown"
     members = ", ".join(m["name"] for m in family["members"])

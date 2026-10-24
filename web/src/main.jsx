@@ -138,7 +138,7 @@ function LiteraturePanel({family,evidence}){
     fetch(`/api/evidence/${encodeURIComponent(family.id)}`).then(r=>r.ok?r.json():Promise.reject(new Error('No cached review')))
       .then(d=>{setData(d);setState('ready')}).catch(e=>{setError(e.message);setState('error')});},[family.id,cached]);
   const runLive=()=>{setState('loading');
-    fetch(`/api/evidence/${encodeURIComponent(family.id)}?live=1`).then(r=>r.ok?r.json():Promise.reject(new Error('Live query failed')))
+    fetch(`/api/evidence/${encodeURIComponent(family.id)}?live=1&session=${SESSION}`).then(r=>r.ok?r.json():Promise.reject(new Error('Live query failed')))
       .then(d=>{setData(d);setState('ready')}).catch(e=>{setError(e.message);setState('error')});};
   if(!cached&&state==='idle') return <div className="literature-pending"><FlaskConical size={25}/><div><h3>No cached review for this family</h3>
     <p>Agent review is cached for the top {evidence.cached_family_ids.length} ranked families. Nothing is generated on the fly for the rest, so no unverified text is shown here.</p>
@@ -204,21 +204,28 @@ function Validation({data}){
 }
 
 const GROUPS=[
-  ['supported but untested','Supported, not yet tested','Verified literature support, but no matched Alzheimer’s trial record in this snapshot. The clearest gaps to look at first.'],
-  ['already in trials','Already in trials','A matched ClinicalTrials.gov record exists for a family member. Registration documents testing, not efficacy.'],
+  ['evidence retrieved, no trial record found','Evidence retrieved, no trial record found','Verified literature claims exist, and this dataset holds no matched Alzheimer’s trial record. That is a gap in the dataset, not a statement that the drug is untested.'],
+  ['already in trials','Already in trials','A matched ClinicalTrials.gov record exists for a family member in this snapshot. Registration documents testing, not efficacy.'],
   ['contested or possible wrong direction','Contested or possible wrong direction','The retrieved records disagree, or report the drug acting against the hypothesis. Read the skeptic before anything else.'],
-  ['insufficient evidence retrieved','Insufficient evidence retrieved','No verified claim survived checking for this query. That is absence in the retrieved set, not proof that no evidence exists.'],
+  ['no evidence retrieved','No evidence retrieved','No verified claim survived checking for this query. That is absence in the retrieved set, not proof that no evidence exists.'],
 ];
+const TIER_ORDER=['human trial','animal','in vitro','review','other'];
 const VERDICT_TONE={'supported by human evidence':'green','animal or in vitro only':'neutral','mixed or contested':'amber','possible wrong direction':'amber','none in the retrieved set':'neutral'};
 
 function GapCard({card,onOpen}){
+  const tiers=card.evidence_tier_counts||{};
+  const ordered=TIER_ORDER.filter(t=>tiers[t]);
+  const q=card.supporting_quote;
   return <article className="gap-card">
     <header><span className="rank">{String(card.rank).padStart(2,'0')}</span><h3>{card.family_name}</h3><span className={`badge ${VERDICT_TONE[card.verdict]??'neutral'}`}>{card.verdict}</span></header>
+    {q&&<blockquote className="verdict-quote">“{q.quote}”<a href={`https://pubmed.ncbi.nlm.nih.gov/${q.pmid}/`} target="_blank" rel="noopener noreferrer">PMID {q.pmid} <ExternalLink size={11}/></a></blockquote>}
     <div className="gap-strength"><span>Path strength</span><div className="score-track"><i style={{width:`${Math.max(3,card.path_strength*100)}%`}}/></div><strong>{card.path_score.toFixed(3)}</strong></div>
+    {!!ordered.length&&<div className="tier-breakdown"><span>Verified claims by evidence type</span><div>{ordered.map(t=><span key={t} className={`tier tier-${t.replace(/ /g,'-')}`}>{t}<strong>{tiers[t]}</strong></span>)}</div></div>}
+    {card.disease_relevance&&<div className={`relevance relevance-${card.disease_relevance.key}`} title={card.disease_relevance.note}>{card.disease_relevance.label}{card.disease_relevance.human_claims?<em>{card.disease_relevance.human_claims_in_alzheimer}/{card.disease_relevance.human_claims} human claims name an Alzheimer's context</em>:null}</div>}
     <dl className="gap-facts">
       <div><dt>Verified claims</dt><dd>{card.verified_claims}</dd></div>
       <div><dt>Records retrieved</dt><dd>{card.retrieved_count}</dd></div>
-      <div><dt>Matched trials</dt><dd>{card.trial_count||'none in this snapshot'}</dd></div>
+      <div><dt>Trial records in dataset</dt><dd>{card.trial_count||'none found'}</dd></div>
     </dl>
     <p className="gap-direction">Direction: {card.direction}</p>
     {card.members.length>1&&<p className="gap-members">{card.members.length} variants: {card.members.join(', ')}</p>}
@@ -242,7 +249,17 @@ function GapMap({onOpen}){
         {cards.map(c=><GapCard key={c.family_id} card={c} onOpen={onOpen}/>)}
         {!cards.length&&<p className="muted empty-column">No families in this group.</p>}
       </section>;})}</div>
-    <p className="table-note">{data.absence_note} Verdicts derive deterministically from verified claims and their evidence-type tags; unverified claims are excluded. These are triage categories for researchers, not a ranking of which drugs work.</p></>;
+    {data.verification&&<section className="panel verification-strip"><div className="section-title"><div><span className="eyebrow">CITATION VERIFICATION, WHOLE CACHE</span><h2>What survived checking</h2></div><ShieldCheck size={20}/></div>
+      <div className="verification-stats">
+        <div><span>Families reviewed</span><strong>{data.verification.families_reviewed}</strong></div>
+        <div><span>With ≥1 verified claim</span><strong>{data.verification.families_with_a_verified_claim}</strong></div>
+        <div><span>Claims generated</span><strong>{data.verification.claims_generated}</strong></div>
+        <div><span>Verified</span><strong>{data.verification.claims_verified}</strong></div>
+        <div><span>Dropped or flagged</span><strong>{data.verification.claims_dropped_or_flagged}</strong></div>
+        <div><span>Failure fraction</span><strong>{(data.verification.failure_fraction*100).toFixed(2)}%</strong></div>
+      </div>
+      <p className="table-note">{data.verification.method}{Object.keys(data.verification.failure_reasons||{}).length?` Reasons: ${Object.entries(data.verification.failure_reasons).map(([r,n])=>`${r} (${n})`).join(', ')}.`:''}</p></section>}
+    <p className="table-note">Verdicts are <strong>rule-based heuristics</strong> over the agents’ structured output: fixed keyword vocabularies over the reported direction plus the evidence-type tags, not a clinical judgement. Read the quote on each card before trusting its label. {data.absence_note} Verdicts derive deterministically from verified claims and their evidence-type tags; unverified claims are excluded. These are triage categories for researchers, not a ranking of which drugs work.</p></>;
 }
 
 const SESSION = Math.random().toString(36).slice(2, 12);
@@ -271,22 +288,23 @@ function CheckIdea(){
     {state==='ready'&&result&&<section className="check-result">
       {result.status!=='ok'
         ? <div className={`panel check-message ${result.status}`}>
-            <h2>{result.status==='not_in_graph'?'Not in this graph':result.status==='no_path'?'In the graph, but no path to Alzheimer’s':result.status==='unsupported_disease'?'Only Alzheimer’s is built':'Enter a drug'}</h2>
+            <h2>{result.known_control?'Known control · excluded from discovery':result.status==='not_in_graph'?'Not in this graph':result.status==='no_path'?(result.in_discovery_pool?'No scored path in this snapshot':'Outside the discovery pool'):result.status==='unsupported_disease'?'Only Alzheimer’s is built':result.status==='ambiguous'?'That synonym matches several drugs':'Enter a drug'}</h2>
             <p>{result.message}</p>
+            {!!(result.candidates||[]).length&&<div className="suggestions"><span>Choose one</span>{result.candidates.map(c=><button key={c.drug_id} onClick={()=>{setDrug(c.name);}}>{c.name}<small>{c.source_id}</small></button>)}</div>}
             {!!(result.suggestions||[]).length&&<div className="suggestions"><span>Did you mean</span>{result.suggestions.map(s=><button key={s} onClick={()=>{setDrug(s);}}>{s}</button>)}</div>}
-            {result.drug&&<p className="fine-print">Resolved to the graph node “{result.drug.name}”{result.drug.source_id?` (${result.drug.source_id})`:''}.</p>}
+            {result.drug&&<p className="fine-print">{result.drug.match_note?result.drug.match_note+'. ':''}Resolved to the graph node “{result.drug.name}”{result.drug.source_id?` (${result.drug.source_id})`:''}.</p>}
           </div>
         : <>
           <div className="check-summary panel">
-            <div><span className="eyebrow">RESOLVED</span><h2>{result.drug.name}</h2><p className="fine-print">{result.drug.source_id} · family {result.family?.name??'ungrouped'}{result.family?` · rank ${result.family.rank}`:''}</p></div>
+            <div><span className="eyebrow">RESOLVED</span><h2>{result.drug.name}</h2>{result.drug.match_note&&<p className="match-note"><Check size={12}/> {result.drug.match_note}</p>}<p className="fine-print">{result.drug.source_id} · family {result.family?.name??'ungrouped'}{result.family?` · rank ${result.family.rank}`:''}</p></div>
             <div className="check-stats">
               <div><span>Path score</span><strong>{result.path_score?.toFixed(4)??'—'}</strong></div>
               <div><span>Scored paths</span><strong>{result.path_count}</strong></div>
               <div><span>Matched trials</span><strong>{result.trials?.length||'none'}</strong></div>
-              <div><span>Verdict</span><strong className="verdict">{result.verdict??'none in the retrieved set'}</strong></div>
+              <div><span>Verdict</span><strong className="verdict">{result.verdict??'none in the retrieved set'}</strong>{result.disease_relevance&&<small className="relevance-inline">{result.disease_relevance.label}</small>}</div>
             </div>
             <div className="check-flags"><span className={`badge ${result.freshness==='live'?'green':'neutral'}`}>{result.freshness==='none'?'no review':result.freshness}</span>
-              {!result.live_available&&<span className="badge neutral">live queries unavailable — no API key configured</span>}
+              {!result.live_available&&<span className="badge neutral">live queries unavailable — offline mode or no API key</span>}
               {result.rate_limit&&<span className="badge neutral">{result.rate_limit.remaining} live checks left this session</span>}</div>
             {result.live_error&&<p className="fine-print">{result.live_error}</p>}
           </div>

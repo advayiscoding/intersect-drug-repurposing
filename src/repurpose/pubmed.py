@@ -15,7 +15,7 @@ from pathlib import Path
 
 import requests
 
-from .env import credential
+from .env import credential, offline
 
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 TOOL = {"tool": "alzheimers-repurpose", "email": "research@example.org"}
@@ -38,10 +38,12 @@ def _cache_path(root: Path, kind: str, key: str) -> Path:
 
 def _request(root: Path, kind: str, endpoint: str, params: dict, timeout: float = 25.0) -> tuple[str, str]:
     """Return (payload, source) where source is 'live' or 'cache'."""
-    key = credential("NCBI_API_KEY", root)
     cache = _cache_path(root, kind, json.dumps(params, sort_keys=True))
     if cache.exists():
         return json.loads(cache.read_text())["payload"], "cache"
+    if offline():
+        raise RuntimeError("Offline mode: no cached PubMed response for this query")
+    key = credential("NCBI_API_KEY", root)
     query = {**TOOL, **params}
     if key:
         query["api_key"] = key
@@ -50,7 +52,8 @@ def _request(root: Path, kind: str, endpoint: str, params: dict, timeout: float 
         response = requests.get(f"{BASE}/{endpoint}", params=query, timeout=timeout)
         response.raise_for_status()
     except Exception as error:  # network, HTTP or timeout
-        raise RuntimeError(f"PubMed {endpoint} failed with no cached copy: {error}") from error
+        # HTTP errors can contain the API key in a query string. Never expose it.
+        raise RuntimeError(f"PubMed {endpoint} failed with no cached copy ({type(error).__name__})") from error
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_text(json.dumps({"params": params, "payload": response.text}))
     return response.text, "live"

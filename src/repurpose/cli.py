@@ -72,7 +72,7 @@ def prepare(root: Path, hops: int):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["fetch-trials", "prepare", "freeze-protocol", "train-embeddings", "tune", "validate", "validate-primary", "prepare-ui", "build-evidence", "build-gap-map"])
+    parser.add_argument("command", choices=["fetch-trials", "prepare", "freeze-protocol", "train-embeddings", "tune", "validate", "validate-primary", "prepare-ui", "build-evidence", "build-gap-map", "build-synonyms", "build-check-cache"])
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--hops", type=int, choices=[2, 3], default=3)
     parser.add_argument("--limit", type=int, default=20, help="build-evidence: top N families")
@@ -95,6 +95,12 @@ def main():
     elif args.command == "validate-primary":
         from .primary_validation import evaluate_primary
         evaluate_primary(args.root)
+    elif args.command == "build-synonyms":
+        from .synonyms import build as build_synonyms
+        build_synonyms(args.root, limit=args.limit if args.limit != 20 else None)
+    elif args.command == "build-check-cache":
+        from .check_cache import build as build_check_cache
+        build_check_cache(args.root)
     elif args.command == "build-gap-map":
         from .gapmap import build as build_gap_map
         build_gap_map(args.root)

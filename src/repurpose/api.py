@@ -40,40 +40,64 @@ def drug_detail(drug_id:int):
     return value
 
 
+def _run_live(family, session="anonymous", quota_state=None):
+    """The single budgeted entry point for both live UI routes."""
+    from .agents import available, run_family
+    from .pubmed import retrieve
+    from .ratelimit import daily_cap, limiter
+    if not available(ROOT):
+        raise RuntimeError("Live queries unavailable; offline mode or no API key configured")
+    quota = limiter.check(str(session)[:64])
+    if quota_state is not None:
+        quota_state.update(quota)
+    if not quota["allowed"]:
+        raise RuntimeError(f"Live checks are limited to {quota['limit']} per "
+                           f"{quota['window_seconds'] // 60} minutes for this session")
+    budget = daily_cap(ROOT).check()
+    if not budget["allowed"]:
+        raise RuntimeError(f"The shared daily budget of {budget['limit']} live agent runs "
+                           f"is exhausted or unavailable for {budget['day']} (UTC)")
+    try:
+        return run_family(ROOT, family, retrieve(ROOT, [m["name"] for m in family["members"]]))
+    except Exception as error:
+        # Provider errors can include request URLs, headers, or private payloads.
+        raise RuntimeError(f"Live review failed ({type(error).__name__}); showing cached evidence") from error
+
+
 @app.get("/api/check")
 def check_idea(drug: str = "", disease: str = "Alzheimer's disease", live: bool = False,
                session: str = "anonymous"):
     """Resolve a drug/disease pair. User text is only used to look up a graph node."""
     from .check import check
-    from .agents import available, run_family
+    from .agents import available
     from .evidence import load_cache
-    from .pubmed import retrieve
-    from .ratelimit import limiter
+    from .ratelimit import daily_cap
+    from .check_cache import load as load_check_cache
+    from .resolve import normalize
+
+    if not live:
+        precomputed = load_check_cache(ROOT)["queries"].get(normalize(drug))
+        if precomputed and normalize(disease) in ("alzheimer", "alzheimers",
+                                                  "alzheimer s disease", "alzheimers disease",
+                                                  "alzheimer disease"):
+            from .agents import available as _available
+            return {**precomputed, "freshness": precomputed.get("freshness", "cached"),
+                    "live_available": _available(ROOT),
+                    "rate_limit": None, "daily_cap": daily_cap(ROOT).state()}
 
     cache = load_cache(ROOT)["families"]
-    quota = None
+    quota = {}
+    cap = daily_cap(ROOT)
     runner = None
-    if live:
-        if not available(ROOT):
-            live = False
-        else:
-            quota = limiter.check(str(session)[:64])
-            if not quota["allowed"]:
-                live = False
-            else:
-                def runner(family):
-                    full = next(f for f in artifact("family_rankings.json") if f["id"] == family["id"])
-                    return run_family(ROOT, full, retrieve(ROOT, [m["name"] for m in full["members"]]))
+    if live and available(ROOT):
+        def runner(family):
+            full = next(f for f in artifact("family_rankings.json") if f["id"] == family["id"])
+            return _run_live(full, session, quota)
     result = check(ROOT, drug, disease, live=live,
                    evidence_loader=cache.get, live_runner=runner)
     result["live_available"] = available(ROOT)
-    result["rate_limit"] = quota
-    if quota and not quota["allowed"]:
-        result["live_error"] = (f"Live checks are limited to {quota['limit']} per "
-                                f"{quota['window_seconds'] // 60} minutes for this session; "
-                                f"showing the cached review.")
-    elif not result.get("live_available"):
-        result.setdefault("live_error", None)
+    result["rate_limit"] = quota or None
+    result["daily_cap"] = cap.state()
     return result
 
 
@@ -89,10 +113,10 @@ def health():
 
 
 @app.get("/api/evidence/{family_id}")
-def evidence(family_id:str, live:bool=False):
+def evidence(family_id:str, live:bool=False, session:str="anonymous"):
     """Serve the cached agent review. `live=1` re-runs the agents, falling back to cache."""
     from .evidence import load_cache
-    from .agents import available, run_family
+    from .agents import available
     cached = load_cache(ROOT)["families"].get(family_id)
     if not live:
         if cached is None:
@@ -101,13 +125,12 @@ def evidence(family_id:str, live:bool=False):
     if not available(ROOT):
         if cached is None:
             raise HTTPException(503, "Live queries unavailable and nothing cached for this family")
-        return {**cached, "freshness":"cached", "live_error":"No API key configured; live queries are unavailable"}
-    from .pubmed import retrieve
+        return {**cached, "freshness":"cached", "live_error":"Offline mode or no API key configured; live queries are unavailable"}
     family = next((f for f in artifact("family_rankings.json") if f["id"]==family_id), None)
     if family is None:
         raise HTTPException(404, "Unknown family")
     try:
-        record = run_family(ROOT, family, retrieve(ROOT, [m["name"] for m in family["members"]]))
+        record = _run_live(family, session)
         return {**record, "freshness":"live"}
     except Exception as error:
         if cached is None:

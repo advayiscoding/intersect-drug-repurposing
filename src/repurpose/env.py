@@ -8,6 +8,11 @@ import os
 from pathlib import Path
 
 
+def offline() -> bool:
+    """Explicit process setting wins over any locally configured credentials."""
+    return os.environ.get("REPURPOSE_OFFLINE", "").lower() in {"1", "true", "yes"}
+
+
 def load_env(root: Path | None = None) -> None:
     path = (root or Path(".")) / ".env"
     if not path.exists():

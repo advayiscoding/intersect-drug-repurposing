@@ -27,8 +27,9 @@ def _resources(root_str: str):
     read = lambda name: json.loads((root / "artifacts" / name).read_text())
     families = read("family_rankings.json")
     family_of = {m["drug_id"]: f for f in families for m in f["members"]}
+    controls = {c["drug_id"]: c for c in read("known_controls.json")}
     return (DrugIndex.load(root), read("explorer_details.json"), family_of,
-            {r["drug_id"]: r for r in read("discovery_rankings.json")})
+            {r["drug_id"]: r for r in read("discovery_rankings.json")}, controls)
 
 
 def check(root: Path, drug_text: str, disease_text: str, live: bool = False,
@@ -47,16 +48,28 @@ def check(root: Path, drug_text: str, disease_text: str, live: bool = False,
     if not is_supported_disease(disease_text):
         return {**base, "status": "unsupported_disease", "message": UNSUPPORTED_DISEASE}
 
-    index, details, family_of, rankings = _resources(str(root))
-    node = index.resolve(drug_text)
-    if node is None:
+    index, details, family_of, rankings, controls = _resources(str(root))
+    found = index.match(drug_text)
+    if found is None:
         return {**base, "status": "not_in_graph",
                 "message": f"“{drug_text}” is not a drug node in this PrimeKG snapshot. "
                            "That means it is absent from this graph, not that it does not exist.",
                 "suggestions": index.suggestions(drug_text)}
 
+    if found["match_type"] == "ambiguous_synonym":
+        return {**base, "status": "ambiguous",
+                "message": f"“{found['matched_on']}” is a synonym for more than one drug node in "
+                           "this snapshot. Pick the one you meant; nothing is resolved for you.",
+                "candidates": [{"drug_id": c["id"], "name": c["name"],
+                                "source_id": c.get("source_id")} for c in found["candidates"]]}
+
     # Everything downstream uses the canonical graph name, never the raw user text.
-    drug = {"drug_id": node["id"], "name": node["name"], "source_id": node.get("source_id")}
+    node = found["node"]
+    drug = {"drug_id": node["id"], "name": node["name"], "source_id": node.get("source_id"),
+            "match_type": found["match_type"], "matched_on": found["matched_on"]}
+    if found["match_type"] in ("synonym", "prefix"):
+        drug["match_note"] = (f"Matched {found['matched_on']} → {node['name']} "
+                              f"({'synonym' if found['match_type'] == 'synonym' else 'name prefix'})")
     detail = details.get(str(node["id"]))
     ranking = rankings.get(node["id"])
     paths = (detail or {}).get("paths", [])
@@ -64,11 +77,17 @@ def check(root: Path, drug_text: str, disease_text: str, live: bool = False,
         reason = ("It is in the graph, but no drug → protein → (protein) → disease path "
                   "reaches an Alzheimer node in the sanitized subgraph, so the path ranking has "
                   "nothing to explain here.")
-        if ranking is None:
-            reason += (" It is also outside the discovery pool, which only contains drugs with a "
-                       "non-Alzheimer indication in PrimeKG.")
+        if node["id"] in controls:
+            reason = ("Known Alzheimer's control: excluded from the discovery pool and not "
+                      "counted as a miss or discovery. Paths are not assessed in this cached "
+                      "discovery view; absence here is not evidence of no biological connection.")
+        elif ranking is None:
+            reason = ("This graph drug is outside the discovery pool, which requires a "
+                      "non-Alzheimer indication in PrimeKG. Paths are not assessed in this "
+                      "cached discovery view; absence here is not evidence of no connection.")
         return {**base, "status": "no_path", "drug": drug, "message": reason,
-                "in_discovery_pool": ranking is not None}
+                "in_discovery_pool": ranking is not None,
+                "known_control": node["id"] in controls}
 
     family = family_of.get(node["id"])
     result = {**base, "status": "ok", "drug": drug,
