@@ -48,3 +48,7 @@
 - A matched trial record outranks every verdict in the grouping, including absence of evidence: registration is a fact about the registry, while the verdict is an inference from retrieved literature. Registration still documents testing, not efficacy.
 - "animal or in vitro only" also covers review-only and other-only families: it means no verified human-trial claim, not that animal work specifically exists.
 - Gap-map output is display-only triage and is written to its own artifact; it never re-enters the ranking, the validation numbers, or the agent prompts.
+- "Check my idea" resolves against every drug node in the graph (7,957), not just the 1,792 discovery candidates, so a drug can resolve and still have no path or no cached review. Each of those states is reported explicitly rather than rendered as an empty page.
+- User text is used only to look up a node. All downstream consumers receive the canonical graph name, which is the guarantee that appended text cannot reach an agent prompt or widen a PubMed query. Sanitization caps length at 100 characters and strips anything outside a conservative character set.
+- Live checks are limited to 5 per session per 10 minutes, in memory and per process. This is a budget brake for a local demo, not an authentication boundary; the session id comes from the client and is not trusted for anything else.
+- Alzheimer's is the only supported disease and the input is fixed in the UI. Accepting another disease would imply a neighborhood, ranking and evaluation that do not exist.

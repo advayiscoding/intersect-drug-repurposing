@@ -275,6 +275,41 @@ contested or possible wrong direction, 3 insufficient evidence retrieved.** Each
 links to that family's graph and evidence views and carries its cached/live label.
 Absence is always phrased "none in the retrieved set", never "no evidence exists".
 
+## Check my idea
+
+Enter a drug and get the same treatment any ranked candidate gets: its graph paths,
+the evidence agents' output, and the same verdict tag. **Alzheimer's disease is the
+only disease built**, and the UI says so — the graph, the ranking and the cached
+reviews are all Alzheimer-specific, so another disease would need its own
+neighborhood and evaluation first.
+
+Four outcomes, each stated plainly rather than rendering an empty page:
+
+| Outcome | What it means |
+| --- | --- |
+| **resolved** | Graph paths, cached or live agent review, verdict tag. |
+| **not in this graph** | The name is not a drug node in this PrimeKG snapshot — absent from this graph, not non-existent. Close matches are suggested. |
+| **in the graph, no path** | The drug node exists but no drug → protein → (protein) → disease path reaches an Alzheimer node in the sanitized subgraph. |
+| **unsupported disease** | Anything other than Alzheimer's. |
+
+Names resolve case-insensitively and ignore punctuation and spacing, accept the
+DrugBank identifier, and fall back to a leading-prefix match so "insulin glargine
+injection" still resolves. Unmatched input gets close matches from the graph's own
+vocabulary.
+
+**Untrusted input.** User text is sanitized to a conservative character set, stripped
+of control characters and capped at 100 characters, and is used *only to look up a
+node*. Every downstream consumer — the agent prompts and the PubMed query — receives
+the canonical node name taken from the graph, so text appended to a drug name cannot
+reach an agent instruction or widen a retrieval query. This is covered by tests that
+feed in prompt-injection, markup and query-breaking strings.
+
+**Live runs are throttled** to 5 per session per 10 minutes (`ratelimit.py`), so
+repeated clicking cannot exhaust the PubMed quota or the LLM budget. A live run is
+labelled "live"; on timeout, error or an exhausted allowance the cached review is
+shown instead, labelled "cached", with the reason stated. Every claim passes the same
+span-level citation checker, and nothing unverified is ever shown as supported.
+
 `scripts/label_overlap_audit.js` measures caption collisions in the live page. Run
 over the top 20 families in both the default and all-paths views (41 views): **0
 label/label and 0 label/node overlaps**. Edge-through-label geometry remains in 19 of

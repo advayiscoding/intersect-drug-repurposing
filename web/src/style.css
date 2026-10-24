@@ -66,3 +66,26 @@
 .badge.amber{background:#f6eddf;border:1px solid #e7d8bf;color:#9a7c45}
 .empty-column{padding:14px;text-align:center;font-size:10px}
 @media (max-width:1250px){.gap-columns{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check-form{display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap;padding:22px 25px;margin-bottom:22px}
+.check-form label{display:flex;flex-direction:column;gap:7px;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#7b8d68;font-weight:650}
+.check-form input{border:1px solid var(--line);border-radius:5px;padding:11px 12px;font-size:13px;min-width:300px;background:#fbfcf7;color:#2d4034;text-transform:none;letter-spacing:0;font-weight:400}
+.check-form input:disabled{background:#f1f2ec;color:#8b9682}
+.check-form small{font-size:9px;color:#9ba593;letter-spacing:0;text-transform:none;font-weight:400}
+.check-actions{display:flex;gap:9px;margin-left:auto}
+.check-actions button{font-size:11px;padding:11px 18px;border-radius:5px;border:1px solid #dde4d3;color:#64804f;background:#f7faf1}
+.check-actions .primary{background:#4f6b45;border-color:#4f6b45;color:#f6f9f0;font-weight:600}
+.check-result{display:grid;gap:20px}
+.check-message{padding:26px 28px}
+.check-message h2{font-family:Georgia,serif;font-size:24px;font-weight:400;margin-bottom:11px}
+.check-message p{font-size:12px;color:#7d8f75;max-width:720px;line-height:1.7}
+.suggestions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.suggestions span{font-size:10px;color:#9aa593;letter-spacing:1px;text-transform:uppercase}
+.suggestions button{font-size:11px;padding:7px 11px;border:1px solid #dde4d3;border-radius:4px;color:#64804f;background:#f7faf1}
+.check-summary{padding:24px 26px;display:grid;gap:18px}
+.check-summary h2{font-family:Georgia,serif;font-size:27px;font-weight:400}
+.check-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;border-top:1px solid #ecefe5;padding-top:17px}
+.check-stats span{font-size:9px;letter-spacing:1.1px;color:#9aa593;text-transform:uppercase}
+.check-stats strong{display:block;margin-top:7px;font-size:17px;font-weight:500;color:#4f6b45;font-family:monospace}
+.check-stats strong.verdict{font-family:inherit;font-size:12px;line-height:1.5}
+.check-flags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+@media (max-width:900px){.check-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}

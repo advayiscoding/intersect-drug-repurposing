@@ -40,6 +40,43 @@ def drug_detail(drug_id:int):
     return value
 
 
+@app.get("/api/check")
+def check_idea(drug: str = "", disease: str = "Alzheimer's disease", live: bool = False,
+               session: str = "anonymous"):
+    """Resolve a drug/disease pair. User text is only used to look up a graph node."""
+    from .check import check
+    from .agents import available, run_family
+    from .evidence import load_cache
+    from .pubmed import retrieve
+    from .ratelimit import limiter
+
+    cache = load_cache(ROOT)["families"]
+    quota = None
+    runner = None
+    if live:
+        if not available(ROOT):
+            live = False
+        else:
+            quota = limiter.check(str(session)[:64])
+            if not quota["allowed"]:
+                live = False
+            else:
+                def runner(family):
+                    full = next(f for f in artifact("family_rankings.json") if f["id"] == family["id"])
+                    return run_family(ROOT, full, retrieve(ROOT, [m["name"] for m in full["members"]]))
+    result = check(ROOT, drug, disease, live=live,
+                   evidence_loader=cache.get, live_runner=runner)
+    result["live_available"] = available(ROOT)
+    result["rate_limit"] = quota
+    if quota and not quota["allowed"]:
+        result["live_error"] = (f"Live checks are limited to {quota['limit']} per "
+                                f"{quota['window_seconds'] // 60} minutes for this session; "
+                                f"showing the cached review.")
+    elif not result.get("live_available"):
+        result.setdefault("live_error", None)
+    return result
+
+
 @app.get("/api/gap-map")
 def gap_map():
     return artifact("gap_map.json")

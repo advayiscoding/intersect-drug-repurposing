@@ -96,6 +96,32 @@ artifacts/gap_map.json via `build-gap-map`; served at /api/gap-map; third nav pa
 in the UI with cards that cross-link into the Explore graph and evidence tabs.
 Display-only: it never re-enters ranking, validation, or agent prompts.
 
+## Feature 2: check my idea (DONE)
+
+`resolve.py` (sanitize + DrugIndex over all 7,957 drug nodes), `ratelimit.py`
+(5 live checks per session per 10 min, in-memory), `check.py` (orchestration with
+injected evidence_loader/live_runner so the flow is testable offline), served at
+GET /api/check, fourth nav page in the UI.
+
+The security property to preserve: user text is used ONLY to look up a node.
+Everything downstream gets the canonical graph name, so appended text cannot reach
+an agent prompt or widen the PubMed query. Tests feed prompt-injection, markup and
+query-breaking strings through it.
+
+Four outcomes, all stated explicitly: resolved / not in this graph (with close
+matches) / in the graph but no path / unsupported disease. Verified live: Mecamylamine
+resolves (verdict possible wrong direction), Rapamycin does not (it is not in PrimeKG
+under that name; suggestions are string-similar "*mycin" names, which is honest fuzzy
+matching), Copper resolves but has no path. One real live agent run through the UI:
+Aluminum acetate, 6/6 claims verified, 0 failures, labelled "live", rate limiter
+decremented. API-level rate limiting verified: 5 allowed, 6th and 7th blocked with
+the cached fallback message.
+
+Screenshots: artifacts/screenshots/gap-map.png (+ -top crop),
+check-my-idea-mecamylamine.png (+ -top crop), check-my-idea-not-in-graph.png.
+Note for future captures: html2canvas cannot capture the Cytoscape canvas unless the
+browser pane is FRONTED and the cy render is first baked into an <img> via cy.png().
+
 ## Status and mandatory next action
 
 Stage 5 approved. ACTIVE: quick all-44/family/exact-CI evaluation fixes, then stage3

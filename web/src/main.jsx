@@ -104,6 +104,32 @@ function AgentSection({title,body,claims}){
     <ul className="claims">{(claims||[]).map((c,i)=><Claim key={i} claim={c}/>)}</ul></div>;
 }
 
+function LiteratureBody({data,onRunLive}){
+  const counts=data.claim_counts;
+  return <div className="literature">
+    <div className="hypothesis-banner"><AlertTriangle size={15}/><span><strong>Research hypothesis, not medical advice.</strong> {(data.disclaimer||'').replace(/^Research hypothesis, not medical advice\.\s*/,'')}</span></div>
+    <div className="literature-meta">
+      <span className={`badge ${data.freshness==='live'?'green':'neutral'}`}>{data.freshness==='live'?'Live query':'Cached'}</span>
+      <span className="badge neutral">{data.model}</span>
+      <span className="badge neutral">Direction: {data.direction}</span>
+      {(data.evidence_types||[]).map(t=><span key={t} className="type-tag">{t}</span>)}
+      <span className="claim-count">{counts.verified}/{counts.total} claims verified{counts.failed?`, ${counts.failed} flagged`:''}</span>
+      {onRunLive&&<button className="toggle-all" onClick={onRunLive}>Re-run live</button>}
+    </div>
+    {data.live_error&&<p className="fine-print">Live query unavailable, showing cached review: {data.live_error}</p>}
+    <AgentSection title="Synthesis" body={data.synthesis.summary} claims={data.synthesis.claims}/>
+    {!!(data.synthesis.open_questions||[]).length&&<div className="agent-section"><h4>Open questions</h4><ul className="questions">{data.synthesis.open_questions.map((q,i)=><li key={i}>{q}</li>)}</ul></div>}
+    <AgentSection title="Mechanism analyst" body={data.mechanism.summary} claims={data.mechanism.claims}/>
+    <AgentSection title="Safety analyst" body={data.safety.summary} claims={data.safety.claims}/>
+    <AgentSection title="Skeptic" body={data.skeptic.counter_evidence} claims={data.skeptic.claims}/>
+    <details className="retrieval-detail"><summary>Retrieved records ({data.retrieval.retrieved_count}) and query</summary>
+      <p className="mono">{data.retrieval.query}</p>
+      <ul>{Object.values(data.records).map(r=><li key={r.pmid}><a href={r.url} target="_blank" rel="noopener noreferrer">PMID {r.pmid}</a> · {r.journal} {r.year} — {r.title}</li>)}</ul>
+      <p className="fine-print">{data.verification.method}. A claim citing a PMID outside this set, or quoting text that is not in it, is flagged and never shown as supported. {data.scope}</p>
+    </details>
+  </div>;
+}
+
 function LiteraturePanel({family,evidence}){
   const [data,setData]=useState(null),[state,setState]=useState('idle'),[error,setError]=useState('');
   const cached=evidence.cached_family_ids.includes(family.id);
@@ -120,29 +146,7 @@ function LiteraturePanel({family,evidence}){
   if(state==='loading') return <div className="graph-loading"><span className="spinner"/> Loading the cached literature review…</div>;
   if(state==='error') return <div className="empty error"><p>{error}</p></div>;
   if(!data) return null;
-  const counts=data.claim_counts;
-  return <div className="literature">
-    <div className="hypothesis-banner"><AlertTriangle size={15}/><span><strong>Research hypothesis, not medical advice.</strong> {data.disclaimer.replace(/^Research hypothesis, not medical advice\.\s*/,'')}</span></div>
-    <div className="literature-meta">
-      <span className={`badge ${data.freshness==='live'?'green':'neutral'}`}>{data.freshness==='live'?'Live query':'Cached'}</span>
-      <span className="badge neutral">{data.model}</span>
-      <span className="badge neutral">Direction: {data.direction}</span>
-      {data.evidence_types.map(t=><span key={t} className="type-tag">{t}</span>)}
-      <span className="claim-count">{counts.verified}/{counts.total} claims verified{counts.failed?`, ${counts.failed} flagged`:''}</span>
-      {evidence.live_available&&<button className="toggle-all" onClick={runLive}>Re-run live</button>}
-    </div>
-    {data.live_error&&<p className="fine-print">Live query unavailable, showing cached review: {data.live_error}</p>}
-    <AgentSection title="Synthesis" body={data.synthesis.summary} claims={data.synthesis.claims}/>
-    {!!(data.synthesis.open_questions||[]).length&&<div className="agent-section"><h4>Open questions</h4><ul className="questions">{data.synthesis.open_questions.map((q,i)=><li key={i}>{q}</li>)}</ul></div>}
-    <AgentSection title="Mechanism analyst" body={data.mechanism.summary} claims={data.mechanism.claims}/>
-    <AgentSection title="Safety analyst" body={data.safety.summary} claims={data.safety.claims}/>
-    <AgentSection title="Skeptic" body={data.skeptic.counter_evidence} claims={data.skeptic.claims}/>
-    <details className="retrieval-detail"><summary>Retrieved records ({data.retrieval.retrieved_count}) and query</summary>
-      <p className="mono">{data.retrieval.query}</p>
-      <ul>{Object.values(data.records).map(r=><li key={r.pmid}><a href={r.url} target="_blank" rel="noopener noreferrer">PMID {r.pmid}</a> · {r.journal} {r.year} — {r.title}</li>)}</ul>
-      <p className="fine-print">{data.verification.method}. A claim citing a PMID outside this set, or quoting text that is not in it, is flagged and never shown as supported. {data.scope}</p>
-    </details>
-  </div>;
+  return <LiteratureBody data={data} onRunLive={evidence.live_available?runLive:null}/>;
 }
 
 function EvidencePanel({detail,node,family,evidence,tabRequest}){
@@ -241,14 +245,73 @@ function GapMap({onOpen}){
     <p className="table-note">{data.absence_note} Verdicts derive deterministically from verified claims and their evidence-type tags; unverified claims are excluded. These are triage categories for researchers, not a ranking of which drugs work.</p></>;
 }
 
+const SESSION = Math.random().toString(36).slice(2, 12);
+
+function CheckIdea(){
+  const [drug,setDrug]=useState(''),[result,setResult]=useState(null),[state,setState]=useState('idle'),[error,setError]=useState('');
+  const [context,setContext]=useState(false),[pathIndex,setPathIndex]=useState(-1),[node,setNode]=useState(null);
+  const run=(live)=>{
+    if(!drug.trim()) return;
+    setState('loading');setError('');setNode(null);setPathIndex(-1);
+    const url=`/api/check?drug=${encodeURIComponent(drug.slice(0,100))}&disease=${encodeURIComponent("Alzheimer's disease")}&live=${live?1:0}&session=${SESSION}`;
+    fetch(url).then(r=>r.ok?r.json():Promise.reject(new Error('Check failed')))
+      .then(d=>{setResult(d);setState('ready')}).catch(e=>{setError(e.message);setState('error')});
+  };
+  const detail=result&&result.status==='ok'?{drug_id:result.drug.drug_id,paths:result.paths,graph:result.graph,trials:result.trials}:null;
+  return <><div className="page-heading"><div><span className="eyebrow">CHECK MY IDEA</span><h1>Have a hunch?</h1><p>Look a drug up against the same graph, the same agents and the same checker.</p></div><span className="badge neutral">Alzheimer’s disease only</span></div>
+    <div className="hypothesis-banner wide"><AlertTriangle size={15}/><span><strong>Research hypothesis, not medical advice.</strong> This reports what the graph and the retrieved literature say. It is not a treatment recommendation, and nothing here changes the ranking or the validation numbers.</span></div>
+    <form className="check-form panel" onSubmit={e=>{e.preventDefault();run(false)}}>
+      <label>Drug<input value={drug} maxLength={100} onChange={e=>setDrug(e.target.value)} placeholder="e.g. metformin, rapamycin, insulin detemir" aria-label="Drug name"/></label>
+      <label>Disease<input value="Alzheimer's disease" disabled aria-label="Disease"/><small>The only disease built in this workbench.</small></label>
+      <div className="check-actions"><button type="submit" className="primary">Check</button>
+        {result?.live_available&&<button type="button" onClick={()=>run(true)}>Run agents live</button>}</div>
+    </form>
+    {state==='loading'&&<div className="page-loading"><span className="spinner"/>Resolving against the graph…</div>}
+    {state==='error'&&<div className="empty error"><p>{error}</p></div>}
+    {state==='ready'&&result&&<section className="check-result">
+      {result.status!=='ok'
+        ? <div className={`panel check-message ${result.status}`}>
+            <h2>{result.status==='not_in_graph'?'Not in this graph':result.status==='no_path'?'In the graph, but no path to Alzheimer’s':result.status==='unsupported_disease'?'Only Alzheimer’s is built':'Enter a drug'}</h2>
+            <p>{result.message}</p>
+            {!!(result.suggestions||[]).length&&<div className="suggestions"><span>Did you mean</span>{result.suggestions.map(s=><button key={s} onClick={()=>{setDrug(s);}}>{s}</button>)}</div>}
+            {result.drug&&<p className="fine-print">Resolved to the graph node “{result.drug.name}”{result.drug.source_id?` (${result.drug.source_id})`:''}.</p>}
+          </div>
+        : <>
+          <div className="check-summary panel">
+            <div><span className="eyebrow">RESOLVED</span><h2>{result.drug.name}</h2><p className="fine-print">{result.drug.source_id} · family {result.family?.name??'ungrouped'}{result.family?` · rank ${result.family.rank}`:''}</p></div>
+            <div className="check-stats">
+              <div><span>Path score</span><strong>{result.path_score?.toFixed(4)??'—'}</strong></div>
+              <div><span>Scored paths</span><strong>{result.path_count}</strong></div>
+              <div><span>Matched trials</span><strong>{result.trials?.length||'none'}</strong></div>
+              <div><span>Verdict</span><strong className="verdict">{result.verdict??'none in the retrieved set'}</strong></div>
+            </div>
+            <div className="check-flags"><span className={`badge ${result.freshness==='live'?'green':'neutral'}`}>{result.freshness==='none'?'no review':result.freshness}</span>
+              {!result.live_available&&<span className="badge neutral">live queries unavailable — no API key configured</span>}
+              {result.rate_limit&&<span className="badge neutral">{result.rate_limit.remaining} live checks left this session</span>}</div>
+            {result.live_error&&<p className="fine-print">{result.live_error}</p>}
+          </div>
+          <section className="graph-panel panel">
+            <div className="graph-toolbar"><div className="legend">{[['drug','Drug'],['gene/protein','Protein'],['pathway','Pathway'],['disease','Disease']].map(([id,label])=><span key={id}><i style={{background:colors[id]}}/>{label}</span>)}<span className="legend-line"><i className="line solid"/>Association</span><span className="legend-line"><i className="line dashed"/>Pathway member</span></div><label className="check"><input type="checkbox" checked={context} onChange={e=>setContext(e.target.checked)}/>Pathway context</label></div>
+            <Graph detail={detail} context={context} pathIndex={pathIndex} pathLimit={3} onSelect={setNode}/>
+            <div className="path-selector"><span>Scored paths</span><button className={pathIndex===-1?'active':''} onClick={()=>{setPathIndex(-1);setContext(false)}}>Top 3</button>{result.paths.map((p,i)=><button key={i} className={pathIndex===i?'active':''} onClick={()=>{setPathIndex(i);setContext(true)}}>Path {i+1}</button>)}</div>
+            <div className="graph-caption"><Info size={14}/><span>Connections show associations, not causality. Direction unknown on every edge.</span></div>
+          </section>
+          {result.evidence
+            ? <section className="evidence panel"><div className="section-title"><h2>Evidence &amp; provenance</h2><span className={`badge ${result.freshness==='live'?'green':'neutral'}`}>{result.freshness}</span></div>
+                <LiteratureBody data={{...result.evidence,freshness:result.freshness,live_error:result.live_error}}/></section>
+            : <div className="panel literature-pending"><FlaskConical size={25}/><div><h3>No review for this drug</h3><p>{result.evidence_message}</p><span className="badge neutral">Not reviewed</span></div></div>}
+        </>}
+    </section>}</>;
+}
+
 function App(){
   const [page,setPage]=useState('explore'),[data,setData]=useState(null),[error,setError]=useState('');
   const [focus,setFocus]=useState(null);
   useEffect(()=>{fetch('/api/overview').then(r=>{if(!r.ok)throw new Error('Cached data is unavailable. Run validate-primary and prepare-ui.');return r.json()}).then(setData).catch(e=>setError(e.message))},[]);
   const openFamily=(card,tab)=>{setFocus({familyId:card.family_id,tab,at:Date.now()});setPage('explore');};
-  const nav=[['explore','Explore',Network],['gaps','Gap map',Layers],['validation','Validation',BarChart3]];
+  const nav=[['explore','Explore',Network],['gaps','Gap map',Layers],['check','Check my idea',FlaskConical],['validation','Validation',BarChart3]];
   return <><header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setPage('explore')}}><span className="brand-symbol"><Network size={22}/></span>intersect<span className="brand-sub">/ biology</span></a><nav aria-label="Main navigation">{nav.map(([id,label,Icon])=><button key={id} className={page===id?'active':''} onClick={()=>setPage(id)}><Icon size={16}/>{label}</button>)}</nav><div className="header-label"><span className="status-dot"/>LOCAL RESEARCH DEMO</div></header>
-    <main>{error?<div className="empty error"><h1>Could not load the workbench</h1><p>{error}</p></div>:!data?<div className="page-loading"><span className="spinner"/>Opening the cached research workbench…</div>:page==='gaps'?<GapMap onOpen={openFamily}/>:page==='validation'?<Validation data={data}/>:<Explorer data={data} focus={focus}/>}</main>
+    <main>{error?<div className="empty error"><h1>Could not load the workbench</h1><p>{error}</p></div>:!data?<div className="page-loading"><span className="spinner"/>Opening the cached research workbench…</div>:page==='gaps'?<GapMap onOpen={openFamily}/>:page==='check'?<CheckIdea/>:page==='validation'?<Validation data={data}/>:<Explorer data={data} focus={focus}/>}</main>
     <footer><span><FlaskConical size={14}/> Research hypotheses only</span><p>Trial participation does not establish efficacy. Not medical advice.</p><span>PrimeKG × trial evidence</span></footer></>;
 }
 createRoot(document.getElementById('root')).render(<App/>);
