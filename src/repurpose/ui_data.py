@@ -6,6 +6,7 @@ import pandas as pd
 
 from .data import write_json, digest
 from .graph import build_graph, assert_no_leakage
+from .links import external_link
 from .ranking import score_candidates, related
 
 
@@ -45,8 +46,9 @@ def prepare_ui(root: Path):
                 u,v = sorted([gene,pathway])
                 graph_edges[f"{u}-{v}"] = {"id":f"{u}-{v}", "source":gene,"target":pathway,
                     **graph[gene][pathway],"context":True}
+        linked = [{**n, "url": external_link(n)} for n in graph_nodes.values()]
         details[str(drug)] = {"drug_id":drug,"paths":row["paths"],
-            "graph":{"nodes":list(graph_nodes.values()),"edges":list(graph_edges.values())},
+            "graph":{"nodes":linked,"edges":list(graph_edges.values())},
             "trials":list({t["nct_id"]:t for t in labels.get(drug,{}).get("trials",[])}.values()),
             "evidence_status":"graph_only", "literature":[],
             "note":"Pathway branches are sourced context, not part of the ranking score. Biological direction is unknown. Literature agents are pending stage 4."}

@@ -25,8 +25,20 @@ node id. The attribute is now `provenance`. Path scores are unaffected;
 broken shape and are frozen stage-1/2 inputs, so the UI reads
 `explorer_details.json` instead.
 
-Stage 3 is DONE and verified in a real browser against the real caches. Next is
-stage 4 evidence agents, then polish/demo.
+Stage 3 is DONE and verified in a real browser against the real caches.
+
+Stage 3 approved. Working through Part A (node links), Part B (graph readability),
+Part C (stage 4 evidence agents), one commit each.
+
+Part A DONE. `src/repurpose/links.py` builds a per-entity external page from the
+node's own source/source_id; `prepare-ui` stamps `url` onto every cached node and
+the UI shows "Open in {source}" or an explicit no-link note, with the Dataverse DOI
+kept as a small secondary line. All external anchors use rel="noopener noreferrer".
+Node types in the UI: REACTOME pathway, NCBI gene, DrugBank drug, MONDO disease
+(linked), MONDO_grouped disease (no link). The stat-card caption now derives from
+`recovered_families_at_k` in primary_validation.json instead of hardcoded text.
+Spot-checked live: Reactome, Monarch MONDO, DrugBank and the NCT trial page all
+resolve to the right entity. NCBI Gene and AmiGO serve bot checks to automation.
 
 ## Status and mandatory next action
 

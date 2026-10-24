@@ -50,6 +50,7 @@ def evaluate_primary(root: Path):
         raise ValueError("Discovery universe changed")
     by_id = {r["drug_id"]: r for r in rows}
     family_ids = {i: family_for(row, config)[0] for i,row in by_id.items()}
+    family_names = {family_for(row, config)[0]: family_for(row, config)[1] for row in by_id.values()}
     positive_families = {family_ids[i] for i in positives}
     orders = {"path_only": universe,
               "popularity_only": ordered({r["drug_id"]:r["degree"] for r in rows}, universe)}
@@ -58,7 +59,8 @@ def evaluate_primary(root: Path):
         stats = rank_metrics(order, positives)
         ci = {f"recall_at_{k}": clopper_pearson(stats[f"hits_at_{k}"], len(positives)) for k in (10,20,50,100)}
         methods[name] = {"metrics": stats, "exact_95_ci": ci,
-            "distinct_families_at_k": {str(k): len({family_ids[i] for i in order[:k] if i in positives}) for k in (10,20,50)}}
+            "distinct_families_at_k": {str(k): len({family_ids[i] for i in order[:k] if i in positives}) for k in (10,20,50)},
+            "recovered_families_at_k": {str(k): sorted({family_names[family_ids[i]] for i in order[:k] if i in positives}) for k in (10,20,50)}}
     random = random_summary(universe, positives)
     for k in (10,20,50,100):
         random["metrics"][f"recall_at_{k}"] = k/len(universe)

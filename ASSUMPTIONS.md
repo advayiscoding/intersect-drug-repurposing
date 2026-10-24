@@ -33,3 +33,5 @@
 - Random recall k/N is an analytical reference with no estimated-proportion CI; do not apply binomial intervals to fractional Monte Carlo hit counts.
 - Local UI uses React/Cytoscape with FastAPI serving cached artifacts; no hosting deployment is needed for this repository checkpoint.
 - Pathway nodes in the graph are sourced context branches connected to proteins; do not invent direct pathway–disease edges or claim they contributed to the path score.
+- External node links are built from the node's own source and identifier. PrimeKG stores MONDO/HP/GO/UBERON ids unprefixed and unpadded, so they are reconstructed to 7-digit CURIEs. MONDO and HPO point at Monarch Initiative because hpo.jax.org term pages do not resolve server-side; GO uses AmiGO as requested; UBERON uses the OBO PURL. MONDO_grouped nodes collapse many ontology terms and CTD exposure ids have no stable page, so both render no link rather than a wrong one.
+- DrugBank, NCBI Gene and AmiGO serve bot checks to automated clients. Their URL formats were confirmed by other means; absence of an automated 200 is not evidence of a broken link.

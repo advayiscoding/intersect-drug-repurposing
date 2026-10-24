@@ -46,6 +46,20 @@
         "20": 2,
         "50": 2
       },
+      "recovered_families_at_k": {
+        "10": [
+          "Choline",
+          "Insulin variants"
+        ],
+        "20": [
+          "Choline",
+          "Insulin variants"
+        ],
+        "50": [
+          "Choline",
+          "Insulin variants"
+        ]
+      },
       "lift": {
         "10": {
           "vs_random_ratio": 16.29090909090909,
@@ -104,6 +118,15 @@
         "10": 0,
         "20": 0,
         "50": 3
+      },
+      "recovered_families_at_k": {
+        "10": [],
+        "20": [],
+        "50": [
+          "Olanzapine",
+          "Progesterone",
+          "Scopolamine"
+        ]
       },
       "lift": {
         "10": {
