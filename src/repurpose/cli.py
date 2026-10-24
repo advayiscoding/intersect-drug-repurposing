@@ -72,7 +72,7 @@ def prepare(root: Path, hops: int):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["fetch-trials", "prepare", "freeze-protocol", "train-embeddings", "tune", "validate"])
+    parser.add_argument("command", choices=["fetch-trials", "prepare", "freeze-protocol", "train-embeddings", "tune", "validate", "validate-primary", "prepare-ui"])
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--hops", type=int, choices=[2, 3], default=3)
     args = parser.parse_args()
@@ -89,6 +89,12 @@ def main():
     elif args.command == "tune":
         from .selection import tune
         tune(args.root)
+    elif args.command == "validate-primary":
+        from .primary_validation import evaluate_primary
+        evaluate_primary(args.root)
+    elif args.command == "prepare-ui":
+        from .ui_data import prepare_ui
+        prepare_ui(args.root)
     else:
         from .validation import evaluate
         evaluate(args.root)

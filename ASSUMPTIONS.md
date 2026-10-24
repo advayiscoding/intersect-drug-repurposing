@@ -26,3 +26,10 @@
 - For zero-hit rankings, percentile bootstrap CI may be [0,0]; flag this finite-sample limitation rather than implying population certainty.
 - Lift ratios against zero popularity recall are undefined; report percentage-point differences. Enrichment uses exact random expectation, distinct from a finite Monte Carlo mean.
 - Two recovered test labels are insulin variants: report compound correlation as a limitation of drug-level bootstrap and biological diversity.
+- Stage 5 approved: no more embedding work; all 44 non-control labels now define the descriptive primary evaluation because path hyperparameters were fixed before labels. Preserve the split experiment separately.
+- Family registry explicitly groups insulin variants, mecasermin formulations, citalopram/escitalopram, interferon-beta and growth-hormone variants; all others remain singleton. It is conservative and post-hoc, not an exhaustive chemical similarity classification.
+- Exact Clopper-Pearson intervals replace displayed bootstrap intervals. They still assume binomial drug outcomes; family dependence is addressed separately, not erased by exact arithmetic.
+- Family permutation randomizes collapsed family order uniformly; each family contributes at most one positive. k=20 is the primary family statistic, k=10/50 exploratory. This differs from distinct families recovered in the first k individual drugs.
+- Random recall k/N is an analytical reference with no estimated-proportion CI; do not apply binomial intervals to fractional Monte Carlo hit counts.
+- Local UI uses React/Cytoscape with FastAPI serving cached artifacts; no hosting deployment is needed for this repository checkpoint.
+- Pathway nodes in the graph are sourced context branches connected to proteins; do not invent direct pathway–disease edges or claim they contributed to the path score.

@@ -9,3 +9,4 @@ data/processed/*
 !data/processed/.gitkeep
 .env
 node_modules/
+web/dist/

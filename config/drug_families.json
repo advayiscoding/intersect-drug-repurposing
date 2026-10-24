@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "policy": "Conservative, explicit near-duplicate grouping. Unmatched drugs are singletons; broad mechanism classes are not merged. This registry was defined after viewing earlier results, so family inference is exploratory.",
+  "groups": [
+    {"id": "insulin", "name": "Insulin variants", "prefixes": ["insulin "], "names": ["insulin"], "rationale": "Human insulin and named insulin analogues/formulations; variants are not independent biological discoveries."},
+    {"id": "mecasermin", "name": "Mecasermin formulations", "names": ["mecasermin", "mecasermin rinfabate"], "rationale": "IGF-1 and its complex formulation; grouped for presentation, not asserted identical."},
+    {"id": "citalopram", "name": "Citalopram / escitalopram", "names": ["citalopram", "escitalopram"], "rationale": "Racemate and S-enantiomer."},
+    {"id": "interferon-beta", "name": "Interferon beta variants", "names": ["interferon beta-1a", "interferon beta-1b", "peginterferon beta-1a"], "rationale": "Related interferon beta preparations."},
+    {"id": "somatropin", "name": "Growth hormone variants", "names": ["somatropin", "somatrem", "somatotropin"], "rationale": "Closely related recombinant growth hormone variants."}
+  ]
+}

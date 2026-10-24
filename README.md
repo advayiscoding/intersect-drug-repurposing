@@ -5,9 +5,10 @@
 The first checkpoint is approved. Evaluation hardening precedes stage 5; stop again
 after stage 5. The historical stage-2 numbers below are not the new test benchmark.
 
-**Stage 5 is complete; paused at the second checkpoint. Path-only remains primary.**
-The fixed DistMult experiment did not improve primary recall. UI and evidence agents
-are the next stages after user continuation, in that order.
+**Stage 5 is complete and path-only remains primary.** The fixed DistMult experiment
+did not improve primary recall. The primary report is now untuned path scoring on all
+44 non-control labels with exact intervals and a family-aware permutation test; see
+"Primary evaluation" below. Evidence agents are the remaining stage.
 
 `artifacts/protocol.json` freezes the current evaluation before embedding fitting.
 The original 1,801 candidates are all PrimeKG drug nodes with at least one
@@ -127,7 +128,11 @@ The evaluation is a retrospective graph holdout, not a temporal/prospective test
 - `artifacts/rankings.json`, `candidate_paths.json`: frozen stage-1 inputs, not UI discovery data.
 - `artifacts/trial_labels.json`: matched trial IDs, names, and matching exclusions.
 - `artifacts/manifest.json`: data hashes, graph counts, and leakage audit.
-- `artifacts/validation.json`: metrics, held-out drug ranks, baselines, and audit.
+- `artifacts/validation.json`: split metrics, held-out drug ranks, baselines, and audit.
+- `artifacts/primary_validation.json`: primary all-44 path metrics, exact intervals, family counts, permutation test.
+- `artifacts/split_validation.json`: the preserved 22/22 experiment with exact display intervals.
+- `artifacts/family_rankings.json`: collapsed family cards for the UI candidate list.
+- `artifacts/explorer_details.json`: cached per-drug paths, graph and trial records for the UI.
 
 These JSON files can be read without the raw dataset or network access. Demo server
 commands will be added with stage 3; there is no web demo at this checkpoint yet.
@@ -217,6 +222,68 @@ Mixture weights were tried at 0, .25, .5, .75, 1 using tuning recall@20 then @10
 with ties favoring path. The model and mixture were locked before test evaluation.
 No new experiments were fitted after examining test performance. Source hashes,
 config, training losses, selections and audits are stored in the embedding artifacts.
+
+## Primary evaluation: all 44 discovery labels
+
+The path hyperparameters (0.5 length penalty, −0.5 degree exponent, top-10 path sum)
+were fixed before the first validation run and no weight is fitted to trial labels.
+With the embedding mixture resolved to path weight 1 / embedding weight 0, no fitted
+parameter remains, so the primary report evaluates **untuned path scoring on all 44
+non-control trial labels** in the 1,792-drug discovery pool. The earlier 22/22 split
+is preserved separately in `artifacts/split_validation.json` as the documented
+model-selection experiment. Reporting all 44 after method selection is retrospective
+and descriptive; it is not a fresh prospective holdout.
+
+Displayed intervals are **95% Clopper–Pearson exact binomial** over integer drug
+recoveries out of 44. Exact arithmetic does not repair dependence between
+near-duplicate compounds, which the family analysis below addresses instead.
+
+| Ranking method | Recall@10 [95% exact CI] | Recall@20 [95% exact CI] | Recall@50 | Recall@100 | Enrichment@20 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Path (primary) | 9.09% (4/44) [2.53, 21.67] | 9.09% (4/44) [2.53, 21.67] | 9.09% [2.53, 21.67] | 13.64% [5.17, 27.35] | 8.15× |
+| Popularity | 0% (0/44) [0, 8.04] | 0% (0/44) [0, 8.04] | 6.82% [1.43, 18.66] | 11.36% [3.79, 24.56] | 0× |
+| Random (analytical k/N) | 0.56% | 1.12% | 2.79% | 5.58% | 1× |
+
+Path recall@20 is **8.15× the exact random expectation** and **+9.09 percentage
+points over popularity**; a ratio against a zero popularity baseline is undefined.
+Single-query MRR is 0.2; the mean reciprocal rank across all 44 labels is 0.01536.
+Random recall k/N is an analytical reference, not an estimated proportion, so no
+binomial interval is attached to it.
+
+### Drug families and biological diversity
+
+`config/drug_families.json` explicitly groups near-duplicate compounds (insulin
+variants, mecasermin formulations, citalopram/escitalopram, interferon-beta and
+growth-hormone variants). This collapses the 1,792 drugs into **1,781 families** and
+the 44 labels into **41 positive families**. The grouping is conservative, post-hoc,
+and not an exhaustive chemical-similarity classification.
+
+**State plainly: the recovery is essentially insulin.** Path scoring recovers 4 of 44
+labelled drugs in the top 10, but those 4 span only **2 distinct families** — insulin
+variants and choline — and this stays at 2 of 41 families through k=50. In the earlier
+22-drug split the two top-20 hits were insulin detemir and insulin glulisine, i.e. one
+drug family. Treating the hits as independent biological discoveries is not supported.
+
+| Cutoff | Path: distinct labelled families in top-k drugs | Popularity | Random expectation |
+| --- | ---: | ---: | ---: |
+| Top 10 drugs | 2 | 0 | 0.25 |
+| Top 20 drugs | 2 | 0 | 0.49 |
+| Top 50 drugs | 2 | 3 | 1.22 |
+
+A **family-aware permutation test** shuffles the 1,781 collapsed family cards
+uniformly (10,000 permutations, each family contributing at most one positive) and
+counts labelled families among the first k cards. Observed 2 families at every
+cutoff: **p = 0.023 at k=10, p = 0.080 at k=20 (primary), p = 0.322 at k=50**. These
+are exploratory and unadjusted, the grouping was defined after earlier results, and
+none of it is an efficacy test.
+
+Full per-method metrics, intervals, lift, family counts and provenance hashes are in
+`artifacts/primary_validation.json`; the preserved split experiment with exact
+display intervals is in `artifacts/split_validation.json`.
+
+```sh
+PYTHONPATH=src python3 -m repurpose.cli validate-primary
+```
 
 ### Reproduce from frozen inputs
 

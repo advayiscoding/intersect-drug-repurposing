@@ -6,11 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "alzheimers-repurpose"
 version = "0.1.0"
 requires-python = ">=3.11"
-dependencies = ["pandas==2.3.3", "networkx==3.6.1", "requests>=2.32,<3", "pyarrow>=19,<24", "numpy>=2,<3"]
+dependencies = ["pandas==2.3.3", "networkx==3.6.1", "requests>=2.32,<3", "pyarrow>=19,<24", "numpy>=2,<3", "scipy>=1.14,<2"]
 
 [project.optional-dependencies]
 test = ["pytest>=8,<10"]
 embedding = ["torch==2.12.0"]
+demo = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
 
 [project.scripts]
 repurpose = "repurpose.cli:main"

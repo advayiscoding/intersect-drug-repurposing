@@ -1,0 +1,214 @@
+{
+  "version": 3,
+  "candidate_count": 1792,
+  "heldout_count": 44,
+  "family_count": 1781,
+  "positive_family_count": 41,
+  "primary_method": "path_only",
+  "methods": {
+    "path_only": {
+      "metrics": {
+        "mrr": 0.2,
+        "mean_reciprocal_heldout_rank": 0.01536390737111104,
+        "hits_at_10": 4,
+        "recall_at_10": 0.09090909090909091,
+        "enrichment_at_10": 16.29090909090909,
+        "hits_at_20": 4,
+        "recall_at_20": 0.09090909090909091,
+        "enrichment_at_20": 8.145454545454545,
+        "hits_at_50": 4,
+        "recall_at_50": 0.09090909090909091,
+        "enrichment_at_50": 3.2581818181818183,
+        "hits_at_100": 6,
+        "recall_at_100": 0.13636363636363635,
+        "enrichment_at_100": 2.4436363636363634
+      },
+      "exact_95_ci": {
+        "recall_at_10": [
+          0.025328421703450767,
+          0.21668658946527453
+        ],
+        "recall_at_20": [
+          0.025328421703450767,
+          0.21668658946527453
+        ],
+        "recall_at_50": [
+          0.025328421703450767,
+          0.21668658946527453
+        ],
+        "recall_at_100": [
+          0.05173082948627348,
+          0.27350689090382385
+        ]
+      },
+      "distinct_families_at_k": {
+        "10": 2,
+        "20": 2,
+        "50": 2
+      },
+      "lift": {
+        "10": {
+          "vs_random_ratio": 16.29090909090909,
+          "vs_popularity_percentage_points": 9.090909090909092
+        },
+        "20": {
+          "vs_random_ratio": 8.145454545454545,
+          "vs_popularity_percentage_points": 9.090909090909092
+        },
+        "50": {
+          "vs_random_ratio": 3.2581818181818183,
+          "vs_popularity_percentage_points": 2.2727272727272734
+        },
+        "100": {
+          "vs_random_ratio": 2.4436363636363634,
+          "vs_popularity_percentage_points": 2.272727272727272
+        }
+      }
+    },
+    "popularity_only": {
+      "metrics": {
+        "mrr": 0.03125,
+        "mean_reciprocal_heldout_rank": 0.004738831296639475,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 3,
+        "recall_at_50": 0.06818181818181818,
+        "enrichment_at_50": 2.4436363636363634,
+        "hits_at_100": 5,
+        "recall_at_100": 0.11363636363636363,
+        "enrichment_at_100": 2.036363636363636
+      },
+      "exact_95_ci": {
+        "recall_at_10": [
+          0.0,
+          0.08041993976357587
+        ],
+        "recall_at_20": [
+          0.0,
+          0.08041993976357587
+        ],
+        "recall_at_50": [
+          0.014287668426975394,
+          0.18656201007202233
+        ],
+        "recall_at_100": [
+          0.0379437129392748,
+          0.24557677631553135
+        ]
+      },
+      "distinct_families_at_k": {
+        "10": 0,
+        "20": 0,
+        "50": 3
+      },
+      "lift": {
+        "10": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_percentage_points": 0.0
+        },
+        "20": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_percentage_points": 0.0
+        },
+        "50": {
+          "vs_random_ratio": 2.4436363636363634,
+          "vs_popularity_percentage_points": 0.0
+        },
+        "100": {
+          "vs_random_ratio": 2.036363636363636,
+          "vs_popularity_percentage_points": 0.0
+        }
+      }
+    },
+    "random": {
+      "metrics": {
+        "mrr": 0.09571311420204959,
+        "mean_reciprocal_heldout_rank": 0.004585154834818443,
+        "hits_at_10": 0.24553571428571427,
+        "recall_at_10": 0.005580357142857143,
+        "enrichment_at_10": 1.0,
+        "hits_at_20": 0.49107142857142855,
+        "recall_at_20": 0.011160714285714286,
+        "enrichment_at_20": 1.0,
+        "hits_at_50": 1.2276785714285714,
+        "recall_at_50": 0.027901785714285716,
+        "enrichment_at_50": 1.0,
+        "hits_at_100": 2.455357142857143,
+        "recall_at_100": 0.05580357142857143,
+        "enrichment_at_100": 1.0
+      },
+      "exact_95_ci": null,
+      "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+      "distinct_families_at_k": {
+        "10": 0.24542367163030077,
+        "20": 0.49059902103182473,
+        "50": 1.2246455798100229
+      },
+      "lift": {
+        "10": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_percentage_points": 0.5580357142857143
+        },
+        "20": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_percentage_points": 1.1160714285714286
+        },
+        "50": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_percentage_points": -4.028003246753246
+        },
+        "100": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_percentage_points": -5.78327922077922
+        }
+      }
+    }
+  },
+  "family_permutation": {
+    "unit": "one collapsed drug family",
+    "permutations": 10000,
+    "seed": 20261024,
+    "statistic": "distinct labeled families among the first k collapsed family cards",
+    "hypothesis": "uniform random family order, preserving family membership and positive family count",
+    "results": {
+      "10": {
+        "observed": 2,
+        "random_mean": 0.2303,
+        "p_value_one_sided": 0.0225977402259774
+      },
+      "20": {
+        "observed": 2,
+        "random_mean": 0.4648,
+        "p_value_one_sided": 0.07989201079892011
+      },
+      "50": {
+        "observed": 2,
+        "random_mean": 1.1546,
+        "p_value_one_sided": 0.3217678232176782
+      }
+    },
+    "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+  },
+  "path_hyperparameters": {
+    "label_fitted": false,
+    "length_penalty": 0.5,
+    "degree_exponent": -0.5,
+    "aggregate_top_paths": 10,
+    "note": "All fixed before the first validation run; no label-fitted weights or hyperparameters. Full-44 evaluation is retrospective/descriptive after method selection."
+  },
+  "known_controls_excluded": 9,
+  "interval_method": "95% Clopper-Pearson exact binomial, integer successes / 44 drugs; drug independence is imperfect, so also examine the family permutation test.",
+  "family_metric_note": "Distinct families at k count labeled families recovered in the first k DRUGS. Permutation test uses first k COLLAPSED FAMILY CARDS, a separate ranking unit.",
+  "small_sample_note": "The two recovered labels in the earlier 22-drug test at k=20 were insulin detemir and insulin glulisine. The sample is small and these are insulin variants, not independent biological discoveries.",
+  "efficacy_note": "Trial participation does not establish efficacy.",
+  "embedding_note": "What didn't work: fixed DistMult had 0/22 recall@10/20 on the reserved split. Tuning selected zero embedding weight. Embedding work has stopped.",
+  "provenance": {
+    "protocol_sha256": "ce2a08a2a395426f76a2aa40581d3b722fc4d596dd6b8173758140f31d4f138c",
+    "families_sha256": "59b25113d780b353700db0b2d7d62ae49e53c3681034efbb556154be1c88b782",
+    "ranking_sha256": "73ba031bacfba20c8090b12ec873fdad55e6777b7957eddd28672f35c5065e9c"
+  }
+}

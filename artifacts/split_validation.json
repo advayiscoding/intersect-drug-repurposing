@@ -1,0 +1,894 @@
+{
+  "protocol_version": 2,
+  "evaluation": "frozen internal retrospective test partition; graph-only",
+  "ground_truth": "drugs independently tested in Alzheimer's trials; trial participation does not establish efficacy",
+  "original_candidate_count": 1801,
+  "discovery_candidate_count": 1792,
+  "candidate_count": 1770,
+  "heldout_count": 22,
+  "tuning_count": 22,
+  "query_count": 1,
+  "primary_metrics": [
+    "recall_at_10",
+    "recall_at_20"
+  ],
+  "methods": {
+    "random": {
+      "status": "available",
+      "metrics": {
+        "mrr": 0.054975498806511244,
+        "mean_reciprocal_heldout_rank": 0.004495294651244261,
+        "hits_at_10": 0.122,
+        "recall_at_10": 0.005545454545454546,
+        "enrichment_at_10": 0.9815454545454544,
+        "hits_at_20": 0.232,
+        "recall_at_20": 0.010545454545454547,
+        "enrichment_at_20": 0.9332727272727273,
+        "hits_at_50": 0.595,
+        "recall_at_50": 0.027045454545454546,
+        "enrichment_at_50": 0.9574090909090909,
+        "hits_at_100": 1.242,
+        "recall_at_100": 0.05645454545454545,
+        "enrichment_at_100": 0.9992454545454545
+      },
+      "runs": 1000,
+      "exact_expected_recall": {
+        "10": 0.005649717514124294,
+        "20": 0.011299435028248588,
+        "50": 0.02824858757062147,
+        "100": 0.05649717514124294
+      },
+      "permutation_95_interval": {
+        "mrr": [
+          0.003758350336808564,
+          0.3333333333333333
+        ],
+        "mean_reciprocal_heldout_rank": [
+          0.0012941915603565978,
+          0.020665686966507193
+        ],
+        "hits_at_10": [
+          0.0,
+          1.0
+        ],
+        "recall_at_10": [
+          0.0,
+          0.045454545454545456
+        ],
+        "enrichment_at_10": [
+          0.0,
+          8.045454545454545
+        ],
+        "hits_at_20": [
+          0.0,
+          1.0
+        ],
+        "recall_at_20": [
+          0.0,
+          0.045454545454545456
+        ],
+        "enrichment_at_20": [
+          0.0,
+          4.0227272727272725
+        ],
+        "hits_at_50": [
+          0.0,
+          2.0
+        ],
+        "recall_at_50": [
+          0.0,
+          0.09090909090909091
+        ],
+        "enrichment_at_50": [
+          0.0,
+          3.2181818181818183
+        ],
+        "hits_at_100": [
+          0.0,
+          4.0
+        ],
+        "recall_at_100": [
+          0.0,
+          0.18181818181818182
+        ],
+        "enrichment_at_100": [
+          0.0,
+          3.2181818181818183
+        ]
+      },
+      "lift": {
+        "recall_at_10": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": 0.0,
+          "vs_popularity_percentage_points": 0.5545454545454546,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_20": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": 0.0,
+          "vs_popularity_percentage_points": 1.0545454545454547,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_50": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_ratio": 0.2975,
+          "vs_random_percentage_points": 0.0,
+          "vs_popularity_percentage_points": -6.386363636363638,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_100": {
+          "vs_random_ratio": 1.0,
+          "vs_popularity_ratio": 0.621,
+          "vs_random_percentage_points": 0.0,
+          "vs_popularity_percentage_points": -3.445454545454546,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        }
+      },
+      "exact_95_ci": null
+    },
+    "popularity_only": {
+      "status": "available",
+      "metrics": {
+        "mrr": 0.024390243902439025,
+        "mean_reciprocal_heldout_rank": 0.004883710352075997,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 2,
+        "recall_at_50": 0.09090909090909091,
+        "enrichment_at_50": 3.2181818181818183,
+        "hits_at_100": 2,
+        "recall_at_100": 0.09090909090909091,
+        "enrichment_at_100": 1.6090909090909091
+      },
+      "lift": {
+        "recall_at_10": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": -0.5545454545454546,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_20": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": -1.0545454545454547,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_50": {
+          "vs_random_ratio": 3.361344537815126,
+          "vs_popularity_ratio": 1.0,
+          "vs_random_percentage_points": 6.386363636363638,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_100": {
+          "vs_random_ratio": 1.6103059581320451,
+          "vs_popularity_ratio": 1.0,
+          "vs_random_percentage_points": 3.445454545454546,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        }
+      },
+      "exact_95_ci": {
+        "recall_at_10": [
+          0.0,
+          0.15437251281557457
+        ],
+        "recall_at_20": [
+          0.0,
+          0.15437251281557457
+        ],
+        "recall_at_50": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_100": [
+          0.011205586024150999,
+          0.29161274155393346
+        ]
+      }
+    },
+    "path_only": {
+      "status": "available",
+      "metrics": {
+        "mrr": 0.2,
+        "mean_reciprocal_heldout_rank": 0.017484527054592976,
+        "hits_at_10": 2,
+        "recall_at_10": 0.09090909090909091,
+        "enrichment_at_10": 16.09090909090909,
+        "hits_at_20": 2,
+        "recall_at_20": 0.09090909090909091,
+        "enrichment_at_20": 8.045454545454545,
+        "hits_at_50": 2,
+        "recall_at_50": 0.09090909090909091,
+        "enrichment_at_50": 3.2181818181818183,
+        "hits_at_100": 3,
+        "recall_at_100": 0.13636363636363635,
+        "enrichment_at_100": 2.4136363636363636
+      },
+      "lift": {
+        "recall_at_10": {
+          "vs_random_ratio": 16.39344262295082,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": 8.536363636363637,
+          "vs_popularity_percentage_points": 9.090909090909092,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_20": {
+          "vs_random_ratio": 8.620689655172413,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": 8.036363636363635,
+          "vs_popularity_percentage_points": 9.090909090909092,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_50": {
+          "vs_random_ratio": 3.361344537815126,
+          "vs_popularity_ratio": 1.0,
+          "vs_random_percentage_points": 6.386363636363638,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_100": {
+          "vs_random_ratio": 2.4154589371980677,
+          "vs_popularity_ratio": 1.4999999999999998,
+          "vs_random_percentage_points": 7.99090909090909,
+          "vs_popularity_percentage_points": 4.545454545454544,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        }
+      },
+      "exact_95_ci": {
+        "recall_at_10": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_20": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_50": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_100": [
+          0.029055851128746688,
+          0.34912209725740806
+        ]
+      }
+    },
+    "embedding_only": {
+      "status": "available",
+      "metrics": {
+        "mrr": 0.01639344262295082,
+        "mean_reciprocal_heldout_rank": 0.0028418164937675347,
+        "hits_at_10": 0,
+        "recall_at_10": 0.0,
+        "enrichment_at_10": 0.0,
+        "hits_at_20": 0,
+        "recall_at_20": 0.0,
+        "enrichment_at_20": 0.0,
+        "hits_at_50": 0,
+        "recall_at_50": 0.0,
+        "enrichment_at_50": 0.0,
+        "hits_at_100": 2,
+        "recall_at_100": 0.09090909090909091,
+        "enrichment_at_100": 1.6090909090909091
+      },
+      "lift": {
+        "recall_at_10": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": -0.5545454545454546,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_20": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": -1.0545454545454547,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_50": {
+          "vs_random_ratio": 0.0,
+          "vs_popularity_ratio": 0.0,
+          "vs_random_percentage_points": -2.7045454545454546,
+          "vs_popularity_percentage_points": -9.090909090909092,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_100": {
+          "vs_random_ratio": 1.6103059581320451,
+          "vs_popularity_ratio": 1.0,
+          "vs_random_percentage_points": 3.445454545454546,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        }
+      },
+      "exact_95_ci": {
+        "recall_at_10": [
+          0.0,
+          0.15437251281557457
+        ],
+        "recall_at_20": [
+          0.0,
+          0.15437251281557457
+        ],
+        "recall_at_50": [
+          0.0,
+          0.15437251281557457
+        ],
+        "recall_at_100": [
+          0.011205586024150999,
+          0.29161274155393346
+        ]
+      }
+    },
+    "combined": {
+      "status": "available",
+      "metrics": {
+        "mrr": 0.2,
+        "mean_reciprocal_heldout_rank": 0.017484527054592976,
+        "hits_at_10": 2,
+        "recall_at_10": 0.09090909090909091,
+        "enrichment_at_10": 16.09090909090909,
+        "hits_at_20": 2,
+        "recall_at_20": 0.09090909090909091,
+        "enrichment_at_20": 8.045454545454545,
+        "hits_at_50": 2,
+        "recall_at_50": 0.09090909090909091,
+        "enrichment_at_50": 3.2181818181818183,
+        "hits_at_100": 3,
+        "recall_at_100": 0.13636363636363635,
+        "enrichment_at_100": 2.4136363636363636
+      },
+      "lift": {
+        "recall_at_10": {
+          "vs_random_ratio": 16.39344262295082,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": 8.536363636363637,
+          "vs_popularity_percentage_points": 9.090909090909092,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_20": {
+          "vs_random_ratio": 8.620689655172413,
+          "vs_popularity_ratio": null,
+          "vs_random_percentage_points": 8.036363636363635,
+          "vs_popularity_percentage_points": 9.090909090909092,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_50": {
+          "vs_random_ratio": 3.361344537815126,
+          "vs_popularity_ratio": 1.0,
+          "vs_random_percentage_points": 6.386363636363638,
+          "vs_popularity_percentage_points": 0.0,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        },
+        "recall_at_100": {
+          "vs_random_ratio": 2.4154589371980677,
+          "vs_popularity_ratio": 1.4999999999999998,
+          "vs_random_percentage_points": 7.99090909090909,
+          "vs_popularity_percentage_points": 4.545454545454544,
+          "zero_baseline_note": "A ratio with zero baseline is undefined; use percentage-point lift."
+        }
+      },
+      "exact_95_ci": {
+        "recall_at_10": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_20": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_50": [
+          0.011205586024150999,
+          0.29161274155393346
+        ],
+        "recall_at_100": [
+          0.029055851128746688,
+          0.34912209725740806
+        ]
+      }
+    }
+  },
+  "known_controls": [
+    {
+      "drug_id": 15113,
+      "name": "Galantamine",
+      "in_original_pool": true,
+      "in_trial_labels": true,
+      "basis": [
+        "PrimeKG Alzheimer indication",
+        "sourced treatment list"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 8,
+        "embedding_only": 4,
+        "popularity_only": 648
+      }
+    },
+    {
+      "drug_id": 15126,
+      "name": "Donepezil",
+      "in_original_pool": true,
+      "in_trial_labels": true,
+      "basis": [
+        "PrimeKG Alzheimer indication",
+        "sourced treatment list"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 29,
+        "embedding_only": 2,
+        "popularity_only": 527
+      }
+    },
+    {
+      "drug_id": 15232,
+      "name": "Brexpiprazole",
+      "in_original_pool": true,
+      "in_trial_labels": true,
+      "basis": [
+        "sourced treatment list"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 196,
+        "embedding_only": 143,
+        "popularity_only": 1001
+      }
+    },
+    {
+      "drug_id": 15294,
+      "name": "Tacrine",
+      "in_original_pool": true,
+      "in_trial_labels": false,
+      "basis": [
+        "PrimeKG Alzheimer indication"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 66,
+        "embedding_only": 21,
+        "popularity_only": 656
+      }
+    },
+    {
+      "drug_id": 15818,
+      "name": "Memantine",
+      "in_original_pool": false,
+      "in_trial_labels": false,
+      "basis": [
+        "sourced treatment list"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": null,
+        "embedding_only": null,
+        "popularity_only": null
+      }
+    },
+    {
+      "drug_id": 17174,
+      "name": "Rivastigmine",
+      "in_original_pool": true,
+      "in_trial_labels": true,
+      "basis": [
+        "PrimeKG Alzheimer indication",
+        "sourced treatment list"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 77,
+        "embedding_only": 1,
+        "popularity_only": 630
+      }
+    },
+    {
+      "drug_id": 20185,
+      "name": "Epicriptine",
+      "in_original_pool": true,
+      "in_trial_labels": false,
+      "basis": [
+        "PrimeKG Alzheimer indication"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 942,
+        "embedding_only": 16,
+        "popularity_only": 1169
+      }
+    },
+    {
+      "drug_id": 20211,
+      "name": "Acetylcarnitine",
+      "in_original_pool": true,
+      "in_trial_labels": false,
+      "basis": [
+        "PrimeKG Alzheimer indication"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 1174,
+        "embedding_only": 3,
+        "popularity_only": 1230
+      }
+    },
+    {
+      "drug_id": 20523,
+      "name": "Pramiracetam",
+      "in_original_pool": true,
+      "in_trial_labels": false,
+      "basis": [
+        "PrimeKG Alzheimer indication"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 1395,
+        "embedding_only": 150,
+        "popularity_only": 1552
+      }
+    },
+    {
+      "drug_id": 20575,
+      "name": "Ipidacrine",
+      "in_original_pool": true,
+      "in_trial_labels": false,
+      "basis": [
+        "PrimeKG Alzheimer indication"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": 1366,
+        "embedding_only": 9,
+        "popularity_only": 1472
+      }
+    },
+    {
+      "drug_id": 21155,
+      "name": "Lecanemab",
+      "in_original_pool": false,
+      "in_trial_labels": false,
+      "basis": [
+        "sourced treatment list"
+      ],
+      "ranks_in_original_pool": {
+        "path_only": null,
+        "embedding_only": null,
+        "popularity_only": null
+      }
+    }
+  ],
+  "metric_definitions": {
+    "recall_at_k": "test positives in first k / all test positives",
+    "mrr": "reciprocal first relevant rank for this single disease query",
+    "mean_reciprocal_heldout_rank": "mean 1/rank across ALL test positives, including outside top-k",
+    "enrichment_at_k": "recall@k divided by exact random expected recall k/N",
+    "permutation_95_interval": "between-random-ranking variability; separate from label bootstrap uncertainty"
+  },
+  "heldout_ranks": [
+    {
+      "drug_id": 14161,
+      "name": "Olanzapine",
+      "ranks": {
+        "popularity_only": 41,
+        "path_only": 461,
+        "embedding_only": 740,
+        "combined": 461
+      },
+      "trial_ids": [
+        "NCT00245206"
+      ]
+    },
+    {
+      "drug_id": 14179,
+      "name": "Raloxifene",
+      "ranks": {
+        "popularity_only": 376,
+        "path_only": 417,
+        "embedding_only": 1510,
+        "combined": 417
+      },
+      "trial_ids": [
+        "NCT00368459"
+      ]
+    },
+    {
+      "drug_id": 14218,
+      "name": "Lamivudine",
+      "ranks": {
+        "popularity_only": 346,
+        "path_only": 611,
+        "embedding_only": 88,
+        "combined": 611
+      },
+      "trial_ids": [
+        "NCT04552795"
+      ]
+    },
+    {
+      "drug_id": 14271,
+      "name": "Isotretinoin",
+      "ranks": {
+        "popularity_only": 112,
+        "path_only": 1098,
+        "embedding_only": 217,
+        "combined": 1098
+      },
+      "trial_ids": [
+        "NCT01560585"
+      ]
+    },
+    {
+      "drug_id": 14286,
+      "name": "Rifampicin",
+      "ranks": {
+        "popularity_only": 164,
+        "path_only": 860,
+        "embedding_only": 1487,
+        "combined": 860
+      },
+      "trial_ids": [
+        "NCT00439166"
+      ]
+    },
+    {
+      "drug_id": 14306,
+      "name": "Pioglitazone",
+      "ranks": {
+        "popularity_only": 138,
+        "path_only": 175,
+        "embedding_only": 552,
+        "combined": 175
+      },
+      "trial_ids": [
+        "NCT00982202",
+        "NCT01931566",
+        "NCT02284906"
+      ]
+    },
+    {
+      "drug_id": 14329,
+      "name": "Insulin detemir",
+      "ranks": {
+        "popularity_only": 1278,
+        "path_only": 8,
+        "embedding_only": 769,
+        "combined": 8
+      },
+      "trial_ids": [
+        "NCT01547169",
+        "NCT01595646"
+      ]
+    },
+    {
+      "drug_id": 14424,
+      "name": "Methylene blue",
+      "ranks": {
+        "popularity_only": 122,
+        "path_only": 462,
+        "embedding_only": 399,
+        "combined": 462
+      },
+      "trial_ids": [
+        "NCT02380573"
+      ]
+    },
+    {
+      "drug_id": 14475,
+      "name": "Semaglutide",
+      "ranks": {
+        "popularity_only": 1161,
+        "path_only": 359,
+        "embedding_only": 506,
+        "combined": 359
+      },
+      "trial_ids": [
+        "NCT04777409",
+        "NCT05891496"
+      ]
+    },
+    {
+      "drug_id": 14539,
+      "name": "Prazosin",
+      "ranks": {
+        "popularity_only": 682,
+        "path_only": 1003,
+        "embedding_only": 1222,
+        "combined": 1003
+      },
+      "trial_ids": [
+        "NCT01126099"
+      ]
+    },
+    {
+      "drug_id": 14991,
+      "name": "Cilostazol",
+      "ranks": {
+        "popularity_only": 973,
+        "path_only": 208,
+        "embedding_only": 424,
+        "combined": 208
+      },
+      "trial_ids": [
+        "NCT01409564"
+      ]
+    },
+    {
+      "drug_id": 15099,
+      "name": "Zolpidem",
+      "ranks": {
+        "popularity_only": 640,
+        "path_only": 264,
+        "embedding_only": 1509,
+        "combined": 264
+      },
+      "trial_ids": [
+        "NCT03075241"
+      ]
+    },
+    {
+      "drug_id": 15148,
+      "name": "Escitalopram",
+      "ranks": {
+        "popularity_only": 416,
+        "path_only": 94,
+        "embedding_only": 708,
+        "combined": 94
+      },
+      "trial_ids": [
+        "NCT00702780",
+        "NCT01841125",
+        "NCT01876823"
+      ]
+    },
+    {
+      "drug_id": 15179,
+      "name": "Nicotinamide",
+      "ranks": {
+        "popularity_only": 423,
+        "path_only": 363,
+        "embedding_only": 697,
+        "combined": 363
+      },
+      "trial_ids": [
+        "NCT00580931",
+        "NCT03061474"
+      ]
+    },
+    {
+      "drug_id": 15201,
+      "name": "Dapagliflozin",
+      "ranks": {
+        "popularity_only": 952,
+        "path_only": 135,
+        "embedding_only": 324,
+        "combined": 135
+      },
+      "trial_ids": [
+        "NCT03801642"
+      ]
+    },
+    {
+      "drug_id": 15332,
+      "name": "Insulin glulisine",
+      "ranks": {
+        "popularity_only": 1314,
+        "path_only": 5,
+        "embedding_only": 947,
+        "combined": 5
+      },
+      "trial_ids": [
+        "NCT01436045",
+        "NCT02503501"
+      ]
+    },
+    {
+      "drug_id": 15836,
+      "name": "Telmisartan",
+      "ranks": {
+        "popularity_only": 350,
+        "path_only": 357,
+        "embedding_only": 61,
+        "combined": 357
+      },
+      "trial_ids": [
+        "NCT02085265"
+      ]
+    },
+    {
+      "drug_id": 15840,
+      "name": "Digoxin",
+      "ranks": {
+        "popularity_only": 481,
+        "path_only": 1013,
+        "embedding_only": 504,
+        "combined": 1013
+      },
+      "trial_ids": [
+        "NCT00831506"
+      ]
+    },
+    {
+      "drug_id": 15986,
+      "name": "Salsalate",
+      "ranks": {
+        "popularity_only": 529,
+        "path_only": 1185,
+        "embedding_only": 841,
+        "combined": 1185
+      },
+      "trial_ids": [
+        "NCT03277573"
+      ]
+    },
+    {
+      "drug_id": 16063,
+      "name": "Scopolamine",
+      "ranks": {
+        "popularity_only": 45,
+        "path_only": 224,
+        "embedding_only": 1434,
+        "combined": 224
+      },
+      "trial_ids": [
+        "NCT02051335"
+      ]
+    },
+    {
+      "drug_id": 16855,
+      "name": "Methylphenidate",
+      "ranks": {
+        "popularity_only": 227,
+        "path_only": 1571,
+        "embedding_only": 1370,
+        "combined": 1571
+      },
+      "trial_ids": [
+        "NCT00495820",
+        "NCT01117181"
+      ]
+    },
+    {
+      "drug_id": 18277,
+      "name": "Levetiracetam",
+      "ranks": {
+        "popularity_only": 770,
+        "path_only": 1690,
+        "embedding_only": 225,
+        "combined": 1690
+      },
+      "trial_ids": [
+        "NCT02002819",
+        "NCT03489044",
+        "NCT03875638"
+      ]
+    }
+  ],
+  "selected_primary": "path_only",
+  "mixture_weights": {
+    "path": 1.0,
+    "embedding": 0.0,
+    "lincs": "unavailable"
+  },
+  "embedding_finding": "Negative finding: embedding did not improve primary recall relative to path",
+  "audit": {
+    "no_target_drug_edges_either_direction": true,
+    "degrees_and_paths_recomputed": true,
+    "known_controls_excluded_from_discovery_metrics": true,
+    "tuning_test_disjoint": true,
+    "negative_sampler_excludes_all_target_drug_pairs": true,
+    "test_labels_used_for_weight_fitting": false,
+    "llm_used": false,
+    "protocol_sha256": "ce2a08a2a395426f76a2aa40581d3b722fc4d596dd6b8173758140f31d4f138c",
+    "training_edges_sha256": "f65eb0b9f518db561cb05905e375479b1236672210d4a3f6520431d86f4755de",
+    "embedding_model_sha256": "6177e0e80836a18bd45b8612f2ea7d2d2fe65550b10a4ac7f45486499f492dec",
+    "mixture_selection_sha256": "9aaaa1682e7aeb9e14f49baaabe6313d162f6b70d308ebde75938ac445f13bd5"
+  },
+  "limitations": [
+    "Trial participation does not establish efficacy; symptom studies are included.",
+    "Controls are excluded by a conservative source registry; indication does not establish current approval.",
+    "Stage-2 aggregate outcomes were previously seen; this is internal retrospective evaluation, not external prospective validation.",
+    "Rankings concern lift over random/popularity; graph connectivity and embeddings do not establish mechanism or treatment suitability.",
+    "Primary model choice after comparison is exploratory; displayed test performance is not a new independent estimate after selection.",
+    "Exact binomial intervals assume exchangeable drug outcomes; near-duplicate drugs remain correlated."
+  ],
+  "interval_note": "Display intervals replaced with Clopper-Pearson; original 22/22 model/weight experiment and scores are unchanged. Random means have no binomial CI."
+}
