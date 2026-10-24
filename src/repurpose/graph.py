@@ -48,7 +48,8 @@ def build_graph(edges: pd.DataFrame, nodes: dict) -> nx.Graph:
     for row in edges.itertuples(index=False):
         u, v = int(row.u), int(row.v)
         if not graph.has_edge(u, v):
-            graph.add_edge(u, v, relations=[], direction="direction unknown", source="PrimeKG")
+            # "provenance", not "source": path explanations use source/target for endpoints.
+            graph.add_edge(u, v, relations=[], direction="direction unknown", provenance="PrimeKG")
         graph[u][v]["relations"].append(str(row.relation))
     nx.set_node_attributes(graph, {i: nodes[i] for i in graph})
     return graph

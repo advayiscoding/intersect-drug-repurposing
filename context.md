@@ -2,11 +2,38 @@
 
 Updated: 2026-10-24. Workspace: /Users/advay/Downloads/Hackathon.
 
+## Session update 2026-10-24 (agent: Claude)
+
+Independent Step-0 verification of the previous handoff: 20 tests pass (not 18;
+family/exact-CI tests were added). `validate` and `validate-primary` both reproduce
+their cached artifacts exactly. Leakage guards read and confirmed: target-drug
+removal is symmetric, relation-agnostic, applied to ALL drugs before neighborhood
+selection and degree computation; the negative sampler rejects every target/drug
+pair in both orientations for every relation, so held-out positives can never be
+sampled as negatives. No discrepancy in any reported number.
+
+Committed since then:
+- 72f1809 evaluation fixes (all-44 untuned path primary, Clopper-Pearson exact
+  intervals, explicit drug families, family-aware permutation test).
+- Stage 3 UI commit below.
+
+Fixed a real bug found during stage 3: `build_graph` stored the edge provenance
+under the key `source`, which `ranking.py` then spread over the path edge's
+`source` endpoint, so every cached path edge had `"source": "PrimeKG"` instead of a
+node id. The attribute is now `provenance`. Path scores are unaffected;
+`artifacts/discovery_paths.json` and `candidate_paths.json` still carry the old
+broken shape and are frozen stage-1/2 inputs, so the UI reads
+`explorer_details.json` instead.
+
+Stage 3 is DONE and verified in a real browser against the real caches. Next is
+stage 4 evidence agents, then polish/demo.
+
 ## Status and mandatory next action
 
-Stage 5 and evaluation hardening are COMPLETE. Stop at the SECOND checkpoint and
-wait for the user's reply. The first checkpoint was approved. Do NOT implement
-UI, evidence agents or further embedding experiments until continuation.
+Stage 5 approved. ACTIVE: quick all-44/family/exact-CI evaluation fixes, then stage3
+local UI with real caches. STOP and report after UI works; agents stage4 follow
+after that checkpoint. No further embedding work. Latest request supersedes
+older status sections below. Include remaining-time estimates in reports.
 
 User's remaining order after next approval: stage 3 UI on real cached outputs,
 then stage 4 evidence agents with citation checks; optional LINCS last.
@@ -117,6 +144,15 @@ src/repurpose/:
 - validation.py: dispatcher + legacy stage-2 implementation.
 - cli.py: fetch-trials, prepare, freeze-protocol, train-embeddings, tune, validate.
 
+UI (stage 3, built): `src/repurpose/api.py` serves cached artifacts read-only;
+`src/repurpose/ui_data.py` (`prepare-ui`) writes `artifacts/explorer_details.json`
+(16 MB, per-drug paths + Cytoscape graph + deduped trial records) after re-asserting
+no leakage and re-checking every path score against the frozen ranking. Frontend is
+`web/` (React 19, Vite 6, Cytoscape 3.30), built to `web/dist` which is Git-ignored.
+`.claude/launch.json` starts uvicorn with `--app-dir src` on port 8000.
+Verified in-browser: family list collapses variants, path selector isolates single
+paths, trial records show real NCT ids, validation dashboard matches the artifacts.
+
 UI must consume:
 - artifacts/discovery_rankings.json (1792 controls-excluded candidates)
 - artifacts/discovery_paths.json (top20 explainable paths)
@@ -144,6 +180,15 @@ Model rankings and data are cached; no network is needed to audit scores.
 
 ## Next action
 
-Report stage-5 checkpoint and WAIT. After explicit continuation, implement stage3 UI
-then stage4 evidence agents with deterministic PMID verification and top20 cache.
+Implementing explicit drug_families config, families.py, primary_validation.py.
+New artifacts primary_validation, split_validation (exact display CIs), family_rankings.
+Primary results: 4/44 at k10/20/50 (9.09%), exact CI [2.5328,21.6687%]; two
+distinct families (insulin, choline). 1781 total families, 41 positive families.
+Family-card permutation p20=.079892 (10k permutations); exploratory post-hoc.
+Added ui_data.py to cache real paths and actual protein/pathway context per drug;
+api.py serves cached JSON and built frontend; no evidence agents yet.
+Added explicit family and exact-CI tests; web React/Vite/Cytoscape dependency
+manifest created. Installing dependencies next; no UI server yet.
+Then build React/Cytoscape + FastAPI local UI, cache actual graphs and pathway context,
+verify in browser, commit and STOP. Stage4 will cache top20 FAMILIES, 1–2 live queries.
 No extra features or new benchmark/model selection after this exposed test result.

@@ -47,7 +47,7 @@ def prepare_ui(root: Path):
                     **graph[gene][pathway],"context":True}
         details[str(drug)] = {"drug_id":drug,"paths":row["paths"],
             "graph":{"nodes":list(graph_nodes.values()),"edges":list(graph_edges.values())},
-            "trials":labels.get(drug,{}).get("trials",[]),
+            "trials":list({t["nct_id"]:t for t in labels.get(drug,{}).get("trials",[])}.values()),
             "evidence_status":"graph_only", "literature":[],
             "note":"Pathway branches are sourced context, not part of the ranking score. Biological direction is unknown. Literature agents are pending stage 4."}
     write_json(out/"explorer_details.json",details)

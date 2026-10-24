@@ -134,8 +134,34 @@ The evaluation is a retrospective graph holdout, not a temporal/prospective test
 - `artifacts/family_rankings.json`: collapsed family cards for the UI candidate list.
 - `artifacts/explorer_details.json`: cached per-drug paths, graph and trial records for the UI.
 
-These JSON files can be read without the raw dataset or network access. Demo server
-commands will be added with stage 3; there is no web demo at this checkpoint yet.
+These JSON files can be read without the raw dataset or network access.
+
+## Local demo
+
+The workbench is a React/Cytoscape frontend over a read-only FastAPI server that
+returns the cached artifacts above. Nothing is computed at request time and no
+network call is made while it runs.
+
+```sh
+python -m pip install -e '.[demo]'
+PYTHONPATH=src python3 -m repurpose.cli prepare-ui
+cd web && npm install && npm run build && cd ..
+PYTHONPATH=src python3 -m uvicorn repurpose.api:app --host 127.0.0.1 --port 8000
+```
+
+Open http://127.0.0.1:8000. `prepare-ui` rebuilds the graph from the sanitized
+training edges, re-asserts that no target–drug edge survives, recomputes every path
+score and refuses to write if a score disagrees with the frozen ranking. Use
+`cd web && npm run dev` for the Vite dev server, which proxies `/api` to port 8000.
+
+The **Explore** page lists the 1,781 collapsed candidate families, renders the scored
+drug → protein → (protein) → disease paths in Cytoscape with optional pathway context
+branches, and shows per-drug source identifiers and matched ClinicalTrials.gov
+records. Dashed pathway edges are sourced context and contribute nothing to the
+score. Every edge is labelled direction unknown. The **Validation** page is the
+dashboard described above, including the family permutation test and the
+"what didn't work" embedding note. Literature evidence is stage 4 and the panel
+says so rather than showing anything unverified.
 
 Sources: [PrimeKG repository](https://github.com/mims-harvard/PrimeKG),
 [PrimeKG dataset](https://doi.org/10.7910/DVN/IXA7BM),
