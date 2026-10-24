@@ -1,0 +1,551 @@
+{
+  "families": [
+    {
+      "family_id": "drug-17647",
+      "family_name": "Mecamylamine",
+      "rank": 1,
+      "members": [
+        "Mecamylamine"
+      ],
+      "representative_id": 17647,
+      "path_score": 0.2305582403102911,
+      "path_strength": 1.0,
+      "path_count": 8,
+      "verdict": "possible wrong direction",
+      "evidence_tiers": [
+        "animal",
+        "in vitro",
+        "review"
+      ],
+      "verified_claims": 13,
+      "direction_signal": "opposing",
+      "direction": "mecamylamine reported to block/antagonize nicotinic receptor-mediated cognitive effects",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "contested or possible wrong direction"
+    },
+    {
+      "family_id": "mecasermin",
+      "family_name": "Mecasermin formulations",
+      "rank": 2,
+      "members": [
+        "Mecasermin rinfabate",
+        "Mecasermin"
+      ],
+      "representative_id": 16041,
+      "path_score": 0.22167693722489856,
+      "path_strength": 0.9615,
+      "path_count": 30,
+      "verdict": "supported by human evidence",
+      "evidence_tiers": [
+        "human trial",
+        "other",
+        "review"
+      ],
+      "verified_claims": 15,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 4,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "insulin",
+      "family_name": "Insulin variants",
+      "rank": 3,
+      "members": [
+        "Insulin human",
+        "Insulin aspart",
+        "Insulin glulisine",
+        "Insulin degludec",
+        "Insulin detemir",
+        "Insulin lispro",
+        "Insulin glargine"
+      ],
+      "representative_id": 14799,
+      "path_score": 0.15135407703906453,
+      "path_strength": 0.6565,
+      "path_count": 52,
+      "verdict": "mixed or contested",
+      "evidence_tiers": [
+        "human trial",
+        "review"
+      ],
+      "verified_claims": 15,
+      "direction_signal": "contested",
+      "direction": "mixed/unclear across variants",
+      "trial_count": 5,
+      "trials": [
+        {
+          "nct_id": "NCT02462161",
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Short-Acting Insulin Aspart"
+        },
+        {
+          "nct_id": "NCT01436045",
+          "title": "Safety and Effectiveness Study of Intranasal Insulin Glulisine on Cognitive and Memory in Mild-Mod AD Patients."
+        },
+        {
+          "nct_id": "NCT02503501",
+          "title": "Intranasal Glulisine in Amnestic Mild Cognitive Impairment and Probable Mild Alzheimer's Disease"
+        },
+        {
+          "nct_id": "NCT01547169",
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Long-acting Insulin Detemir - 21 Days"
+        },
+        {
+          "nct_id": "NCT01595646",
+          "title": "Study of Nasal Insulin to Fight Forgetfulness - Long-acting Insulin Detemir - 120 Days (SL120)"
+        }
+      ],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "already in trials"
+    },
+    {
+      "family_id": "drug-19718",
+      "family_name": "Cerliponase alfa",
+      "rank": 4,
+      "members": [
+        "Cerliponase alfa"
+      ],
+      "representative_id": 19718,
+      "path_score": 0.12477605392864476,
+      "path_strength": 0.5412,
+      "path_count": 4,
+      "verdict": "supported by human evidence",
+      "evidence_tiers": [
+        "human trial",
+        "in vitro",
+        "review"
+      ],
+      "verified_claims": 15,
+      "direction_signal": "neutral",
+      "direction": "Reported to decrease A\u03b2 accumulation in vitro; reported to attenuate/slow CLN2 disease progression in clinical trials. Direction of the general TPP1-protein\u2013disease association in PrimeKG is otherwise unknown.",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-14653",
+      "family_name": "Choline",
+      "rank": 5,
+      "members": [
+        "Choline"
+      ],
+      "representative_id": 14653,
+      "path_score": 0.11681618036763265,
+      "path_strength": 0.5067,
+      "path_count": 20,
+      "verdict": "mixed or contested",
+      "evidence_tiers": [
+        "human trial",
+        "other",
+        "review"
+      ],
+      "verified_claims": 16,
+      "direction_signal": "contested",
+      "direction": "mixed/not uniform: cholinergic system reviews describe cholinergic neuron loss and deficiency occurring in AD without specifying whether choline causes or results from pathology, whereas a dietary intake study reports higher choline intake associated with lower risk markers, and a citicoline meta-analysis reports a positive effect on cognition",
+      "trial_count": 1,
+      "trials": [
+        {
+          "nct_id": "NCT05880849",
+          "title": "Choline Effects - Pre-symptomatic AD"
+        }
+      ],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "already in trials"
+    },
+    {
+      "family_id": "drug-15242",
+      "family_name": "Artenimol",
+      "rank": 6,
+      "members": [
+        "Artenimol"
+      ],
+      "representative_id": 15242,
+      "path_score": 0.11485474642588336,
+      "path_strength": 0.4982,
+      "path_count": 280,
+      "verdict": "animal or in vitro only",
+      "evidence_tiers": [
+        "animal"
+      ],
+      "verified_claims": 16,
+      "direction_signal": "neutral",
+      "direction": "Animal studies report DHA as ameliorating or reducing disease-associated pathology/behavioral deficits (i.e., an inhibitory/protective direction), though edge direction in the knowledge graph itself is unspecified.",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 5,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-14893",
+      "family_name": "Iproniazid",
+      "rank": 7,
+      "members": [
+        "Iproniazid"
+      ],
+      "representative_id": 14893,
+      "path_score": 0.1123150796250357,
+      "path_strength": 0.4871,
+      "path_count": 10,
+      "verdict": "animal or in vitro only",
+      "evidence_tiers": [
+        "in vitro",
+        "other",
+        "review"
+      ],
+      "verified_claims": 13,
+      "direction_signal": "neutral",
+      "direction": "inhibits MAO (reported for iproniazid); no reported effect on monocytic neurotoxic secretion",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 5,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-16843",
+      "family_name": "Dipivefrin",
+      "rank": 8,
+      "members": [
+        "Dipivefrin"
+      ],
+      "representative_id": 16843,
+      "path_score": 0.11224223357584205,
+      "path_strength": 0.4868,
+      "path_count": 31,
+      "verdict": "none in the retrieved set",
+      "evidence_tiers": [],
+      "verified_claims": 0,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 0,
+      "freshness": "cached",
+      "group": "insufficient evidence retrieved"
+    },
+    {
+      "family_id": "drug-16699",
+      "family_name": "Zofenopril",
+      "rank": 9,
+      "members": [
+        "Zofenopril"
+      ],
+      "representative_id": 16699,
+      "path_score": 0.1113134891280451,
+      "path_strength": 0.4828,
+      "path_count": 4,
+      "verdict": "none in the retrieved set",
+      "evidence_tiers": [],
+      "verified_claims": 0,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 0,
+      "freshness": "cached",
+      "group": "insufficient evidence retrieved"
+    },
+    {
+      "family_id": "drug-14489",
+      "family_name": "Aluminum acetate",
+      "rank": 10,
+      "members": [
+        "Aluminum acetate"
+      ],
+      "representative_id": 14489,
+      "path_score": 0.1065689230897147,
+      "path_strength": 0.4622,
+      "path_count": 53,
+      "verdict": "animal or in vitro only",
+      "evidence_tiers": [
+        "in vitro",
+        "other"
+      ],
+      "verified_claims": 3,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 1,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-14885",
+      "family_name": "Moclobemide",
+      "rank": 11,
+      "members": [
+        "Moclobemide"
+      ],
+      "representative_id": 14885,
+      "path_score": 0.10506113683127954,
+      "path_strength": 0.4557,
+      "path_count": 10,
+      "verdict": "animal or in vitro only",
+      "evidence_tiers": [
+        "review"
+      ],
+      "verified_claims": 15,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-16512",
+      "family_name": "Pegaptanib",
+      "rank": 12,
+      "members": [
+        "Pegaptanib"
+      ],
+      "representative_id": 16512,
+      "path_score": 0.10497997351012228,
+      "path_strength": 0.4553,
+      "path_count": 6,
+      "verdict": "supported by human evidence",
+      "evidence_tiers": [
+        "human trial",
+        "other",
+        "review"
+      ],
+      "verified_claims": 13,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 2,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-17955",
+      "family_name": "Teprotumumab",
+      "rank": 13,
+      "members": [
+        "Teprotumumab"
+      ],
+      "representative_id": 17955,
+      "path_score": 0.1047225936955381,
+      "path_strength": 0.4542,
+      "path_count": 12,
+      "verdict": "animal or in vitro only",
+      "evidence_tiers": [
+        "other"
+      ],
+      "verified_claims": 8,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 1,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-17173",
+      "family_name": "Physostigmine",
+      "rank": 14,
+      "members": [
+        "Physostigmine"
+      ],
+      "representative_id": 17173,
+      "path_score": 0.10197695934701544,
+      "path_strength": 0.4423,
+      "path_count": 12,
+      "verdict": "supported by human evidence",
+      "evidence_tiers": [
+        "human trial",
+        "in vitro",
+        "review"
+      ],
+      "verified_claims": 11,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-17197",
+      "family_name": "Itopride",
+      "rank": 15,
+      "members": [
+        "Itopride"
+      ],
+      "representative_id": 17197,
+      "path_score": 0.10037774101078259,
+      "path_strength": 0.4354,
+      "path_count": 10,
+      "verdict": "none in the retrieved set",
+      "evidence_tiers": [],
+      "verified_claims": 0,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 0,
+      "freshness": "cached",
+      "group": "insufficient evidence retrieved"
+    },
+    {
+      "family_id": "drug-14186",
+      "family_name": "Cisplatin",
+      "rank": 16,
+      "members": [
+        "Cisplatin"
+      ],
+      "representative_id": 14186,
+      "path_score": 0.09743261076666614,
+      "path_strength": 0.4226,
+      "path_count": 61,
+      "verdict": "possible wrong direction",
+      "evidence_tiers": [
+        "animal",
+        "human trial",
+        "review"
+      ],
+      "verified_claims": 16,
+      "direction_signal": "opposing",
+      "direction": "reported as cisplatin inducing/contributing to cognitive impairment and neurotoxicity (not Alzheimer's disease specifically); overall drug-protein-disease edge direction in PrimeKG is unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "contested or possible wrong direction"
+    },
+    {
+      "family_id": "drug-19223",
+      "family_name": "Pargyline",
+      "rank": 17,
+      "members": [
+        "Pargyline"
+      ],
+      "representative_id": 19223,
+      "path_score": 0.09679952832239268,
+      "path_strength": 0.4198,
+      "path_count": 4,
+      "verdict": "animal or in vitro only",
+      "evidence_tiers": [
+        "animal",
+        "in vitro",
+        "other",
+        "review"
+      ],
+      "verified_claims": 14,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-14299",
+      "family_name": "Sertraline",
+      "rank": 18,
+      "members": [
+        "Sertraline"
+      ],
+      "representative_id": 14299,
+      "path_score": 0.09577279969022542,
+      "path_strength": 0.4154,
+      "path_count": 24,
+      "verdict": "supported by human evidence",
+      "evidence_tiers": [
+        "human trial",
+        "review"
+      ],
+      "verified_claims": 16,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 8,
+      "freshness": "cached",
+      "group": "supported but untested"
+    },
+    {
+      "family_id": "drug-14880",
+      "family_name": "Nicotine",
+      "rank": 19,
+      "members": [
+        "Nicotine"
+      ],
+      "representative_id": 14880,
+      "path_score": 0.09515789192687066,
+      "path_strength": 0.4127,
+      "path_count": 44,
+      "verdict": "mixed or contested",
+      "evidence_tiers": [
+        "other",
+        "review"
+      ],
+      "verified_claims": 15,
+      "direction_signal": "contested",
+      "direction": "mixed/unclear",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 7,
+      "freshness": "cached",
+      "group": "contested or possible wrong direction"
+    },
+    {
+      "family_id": "drug-14734",
+      "family_name": "Polaprezinc",
+      "rank": 20,
+      "members": [
+        "Polaprezinc"
+      ],
+      "representative_id": 14734,
+      "path_score": 0.09489467781711254,
+      "path_strength": 0.4116,
+      "path_count": 68,
+      "verdict": "supported by human evidence",
+      "evidence_tiers": [
+        "human trial",
+        "review"
+      ],
+      "verified_claims": 15,
+      "direction_signal": "neutral",
+      "direction": "direction unknown",
+      "trial_count": 0,
+      "trials": [],
+      "retrieved_count": 3,
+      "freshness": "cached",
+      "group": "supported but untested"
+    }
+  ],
+  "counts": {
+    "already in trials": 2,
+    "contested or possible wrong direction": 3,
+    "supported but untested": 12,
+    "insufficient evidence retrieved": 3
+  },
+  "verdict_counts": {
+    "supported by human evidence": 6,
+    "animal or in vitro only": 6,
+    "mixed or contested": 3,
+    "possible wrong direction": 2,
+    "none in the retrieved set": 3
+  },
+  "scope": "Display-only triage for researchers. These groups are not a ranking of which drugs work, and nothing here feeds the path ranking or the validation metrics.",
+  "absence_note": "An empty or thin result means none in the retrieved set for this query, not that no evidence exists.",
+  "disclaimer": "Research hypothesis, not medical advice."
+}

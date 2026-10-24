@@ -219,6 +219,62 @@ agents and falls back to the cached review on timeout or error, reporting why. F
 outside the cached top 20 show "not reviewed" rather than anything ungrounded. Every
 agent view carries the research-hypothesis banner and no agent text may claim efficacy.
 
+## Evidence gap map
+
+A display-only triage view over the top 20 reviewed families, combining three inputs
+that already exist in the repository: the frozen **path strength**, an **evidence
+verdict** derived from the verified agent claims, and **trial status** from the
+matched ClinicalTrials.gov records. Nothing here feeds the ranking or the validation
+metrics, and the dashboard keeps its statement that validation covers the graph
+ranking alone. These are triage categories for researchers, **not a ranking of which
+drugs work**.
+
+```sh
+PYTHONPATH=src python3 -m repurpose.cli build-gap-map
+```
+
+### Verdict rules (deterministic, verified claims only)
+
+Unverified claims are ignored entirely. Each claim's free-text `evidence_type` tag is
+first normalized onto one tier: a tag containing "animal", "in vivo", "mouse" or
+"rodent" → **animal**; "vitro" or "cell" → **in vitro**; "human", "clinical",
+"patient", or starting with "trial" → **human trial**; "review" or "meta" →
+**review**; anything else → **other**. The reported `direction` string is classified
+as **opposing** if it contains `block`, `antagoni`, `abolish`, `oppos`, `exacerbat`,
+`worsen` or `detriment`, or if it contains both a harm verb (`induc`, `caus`,
+`contribut`, `produc`, `lead to`, `result in`) **and** a harm noun (`impair`,
+`deficit`, `toxicit`, `decline`, `dysfunction`, `damage`) with no protective word
+(`amelior`, `attenuat`, `protect`, `improv`, `reduc`, `decreas`, `slow`, `rescu`,
+`restor`, `prevent`); as **contested** if it contains `mixed`, `unclear`, `conflict`,
+`contested`, `inconsistent`, `not uniform`, `varies`, `vary` or `contradict`;
+otherwise **neutral**. `inhibit` is deliberately not an opposing word, because enzyme
+inhibition is the intended mechanism of several candidates here. Requiring a harm verb
+*and* noun keeps "reducing behavioural deficits" from reading as harm.
+
+The first rule that matches wins:
+
+| Verdict | Rule |
+| --- | --- |
+| **none in the retrieved set** | Zero verified claims. |
+| **possible wrong direction** | Direction signal is opposing. |
+| **mixed or contested** | Direction signal is contested. |
+| **supported by human evidence** | At least one verified claim on the human trial tier. |
+| **animal or in vitro only** | Verified claims exist, none on the human trial tier (animal, in vitro, review or other). |
+
+### Grouping rules
+
+| Group | Rule |
+| --- | --- |
+| **already in trials** | At least one matched ClinicalTrials.gov record for any family member. A registered trial is a fact and outranks every verdict; registration documents testing, not efficacy. |
+| **contested or possible wrong direction** | No matched trial, and the verdict is *mixed or contested* or *possible wrong direction*. |
+| **insufficient evidence retrieved** | No matched trial, and the verdict is *none in the retrieved set*. |
+| **supported but untested** | No matched trial, and the verdict is *supported by human evidence* or *animal or in vitro only*. |
+
+Current split of the top 20: **12 supported but untested, 2 already in trials, 3
+contested or possible wrong direction, 3 insufficient evidence retrieved.** Each card
+links to that family's graph and evidence views and carries its cached/live label.
+Absence is always phrased "none in the retrieved set", never "no evidence exists".
+
 `scripts/label_overlap_audit.js` measures caption collisions in the live page. Run
 over the top 20 families in both the default and all-paths views (41 views): **0
 label/label and 0 label/node overlaps**. Edge-through-label geometry remains in 19 of

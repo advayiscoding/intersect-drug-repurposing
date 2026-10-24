@@ -77,6 +77,25 @@ support. Both failures were length-window rejections (one 42-word quote, one 4-w
 quote), not fabricated citations or PMIDs. Rebuilding costs real credits: use
 --family to scope reruns and do not pass --refresh casually.
 
+## Feature 1: evidence gap map (DONE)
+
+Verified no secret ever reached git history before starting: `.env` was never added
+in any commit, neither key value appears in any commit, and there is no `sk-ant-`
+literal anywhere in history.
+
+`gapmap.py` derives, per reviewed family, a verdict from VERIFIED claims only plus a
+direction signal, then a triage group. Exact vocabularies are in the README and in
+the module. Two traps found and handled while building it: "inhibit" is NOT an
+opposing word (an MAO inhibitor inhibits by design), and a harm noun alone is not
+harm ("reducing behavioural deficits" is protective, so a harm verb AND noun are
+required with no protective word present). Both are regression-tested.
+
+Top 20 split: 12 supported but untested, 2 already in trials, 3 contested or
+possible wrong direction, 3 insufficient evidence retrieved. Artifact
+artifacts/gap_map.json via `build-gap-map`; served at /api/gap-map; third nav page
+in the UI with cards that cross-link into the Explore graph and evidence tabs.
+Display-only: it never re-enters ranking, validation, or agent prompts.
+
 ## Status and mandatory next action
 
 Stage 5 approved. ACTIVE: quick all-44/family/exact-CI evaluation fixes, then stage3

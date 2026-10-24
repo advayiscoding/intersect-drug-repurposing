@@ -44,3 +44,7 @@
 - Agents run once per family on the family's member names, never per variant, so grouped variants share one review.
 - Agent output is display-only. It never feeds the ranking or the validation numbers, and the dashboard states that validation covers the graph ranking alone.
 - DrugBank, NCBI Gene and AmiGO serve bot checks to automated clients. Their URL formats were confirmed by other means; absence of an automated 200 is not evidence of a broken link.
+- Gap-map verdicts use VERIFIED claims only and a fixed vocabulary over the mechanism agent's reported direction. "inhibit" is deliberately not an opposing word because enzyme inhibition is the intended mechanism of several candidates; a harm verb AND a harm noun are both required, with no protective word present, so "reducing behavioural deficits" is not read as harm. The exact lists are in the README and in gapmap.py.
+- A matched trial record outranks every verdict in the grouping, including absence of evidence: registration is a fact about the registry, while the verdict is an inference from retrieved literature. Registration still documents testing, not efficacy.
+- "animal or in vitro only" also covers review-only and other-only families: it means no verified human-trial claim, not that animal work specifically exists.
+- Gap-map output is display-only triage and is written to its own artifact; it never re-enters the ranking, the validation numbers, or the agent prompts.

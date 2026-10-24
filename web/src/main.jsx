@@ -145,8 +145,9 @@ function LiteraturePanel({family,evidence}){
   </div>;
 }
 
-function EvidencePanel({detail,node,family,evidence}){
+function EvidencePanel({detail,node,family,evidence,tabRequest}){
   const [tab,setTab]=useState('graph');
+  useEffect(()=>{if(tabRequest?.tab) setTab(tabRequest.tab==='literature'?'literature':'graph');},[tabRequest]);
   return <section className="evidence panel"><div className="section-title"><h2>Evidence & provenance</h2><span className="badge neutral">Graph evidence available</span></div>
     <div className="small-tabs" role="tablist" aria-label="Evidence views">{[['graph','Graph sources'],['trials','Trial records'],['literature','Literature review']].map(([id,label])=><button key={id} role="tab" aria-selected={tab===id} onClick={()=>setTab(id)}>{label}{id==='trials'&&<span>{detail?.trials.length??0}</span>}</button>)}</div>
     {tab==='graph'&&<div className="evidence-grid"><div><div className="source-mark">01 <span>STRUCTURED EVIDENCE</span></div><h3>{node?.label??'Trace every connection'}</h3><p>{node?`${node.type} · ${node.source} identifier: ${node.source_id}`:'Select a node to inspect its source identifier. Every solid edge shown belongs to a scored path in the sanitized PrimeKG graph.'}</p>
@@ -157,10 +158,14 @@ function EvidencePanel({detail,node,family,evidence}){
   </section>;
 }
 
-function Explorer({data}){
+function Explorer({data,focus}){
   const [selected,setSelected]=useState(data.families[0].id),[drug,setDrug]=useState(data.families[0].representative_id),[detail,setDetail]=useState(null),[error,setError]=useState(''),[context,setContext]=useState(false),[pathIndex,setPathIndex]=useState(-1),[allPaths,setAllPaths]=useState(false),[node,setNode]=useState(null);
   const DEFAULT_PATHS=3, pathLimit=allPaths?Infinity:DEFAULT_PATHS;
   const choosePath=i=>{setPathIndex(i);setContext(i>=0);};
+  const [tabRequest,setTabRequest]=useState(null);
+  useEffect(()=>{if(!focus)return;
+    if(data.families.some(f=>f.id===focus.familyId)) setSelected(focus.familyId);
+    setTabRequest({tab:focus.tab,at:focus.at});},[focus]);
   const family=data.families.find(f=>f.id===selected),variant=family.members.find(m=>m.drug_id===drug)??family.members[0];
   useEffect(()=>{setDrug(family.representative_id);setPathIndex(-1);setContext(false);setNode(null)},[selected]);
   useEffect(()=>{const controller=new AbortController();setDetail(null);setError('');setNode(null);setPathIndex(-1);setContext(false);setAllPaths(false);fetch(`/api/drugs/${drug}`,{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error('Could not load cached graph');return r.json()}).then(setDetail).catch(e=>{if(e.name!=='AbortError')setError(e.message)});return()=>controller.abort()},[drug]);
@@ -175,7 +180,7 @@ function Explorer({data}){
         {detail&&detail.paths.length>DEFAULT_PATHS&&<button className="toggle-all" onClick={()=>{setAllPaths(!allPaths);setPathIndex(-1);setContext(false);}}>{allPaths?`Show top ${DEFAULT_PATHS} paths`:`Show all ${detail.paths.length} paths`}</button>}</div>
       <div className="graph-caption"><Info size={14}/><span>Hover a node to highlight its connections and read relation labels. Connections show associations, not causality. Dashed pathway branches are context only.</span></div>
       {detail&&<details className="node-list"><summary>Accessible node and connection list</summary><div>{detail.graph.nodes.map(n=><button key={n.id} onClick={()=>setNode({...n,label:n.name})}>{n.name}<small>{n.type}</small></button>)}</div><ul>{detail.graph.edges.map(e=><li key={e.id}>{detail.graph.nodes.find(n=>n.id===e.source)?.name} ↔ {detail.graph.nodes.find(n=>n.id===e.target)?.name}: {e.relations.join(', ')}; direction unknown{e.context?' (context)':''}</li>)}</ul></details>}
-      </section><EvidencePanel detail={detail} node={node} family={family} evidence={data.evidence}/>
+      </section><EvidencePanel detail={detail} node={node} family={family} evidence={data.evidence} tabRequest={tabRequest}/>
     </div></div></>;
 }
 
@@ -194,11 +199,56 @@ function Validation({data}){
   </>;
 }
 
+const GROUPS=[
+  ['supported but untested','Supported, not yet tested','Verified literature support, but no matched Alzheimer’s trial record in this snapshot. The clearest gaps to look at first.'],
+  ['already in trials','Already in trials','A matched ClinicalTrials.gov record exists for a family member. Registration documents testing, not efficacy.'],
+  ['contested or possible wrong direction','Contested or possible wrong direction','The retrieved records disagree, or report the drug acting against the hypothesis. Read the skeptic before anything else.'],
+  ['insufficient evidence retrieved','Insufficient evidence retrieved','No verified claim survived checking for this query. That is absence in the retrieved set, not proof that no evidence exists.'],
+];
+const VERDICT_TONE={'supported by human evidence':'green','animal or in vitro only':'neutral','mixed or contested':'amber','possible wrong direction':'amber','none in the retrieved set':'neutral'};
+
+function GapCard({card,onOpen}){
+  return <article className="gap-card">
+    <header><span className="rank">{String(card.rank).padStart(2,'0')}</span><h3>{card.family_name}</h3><span className={`badge ${VERDICT_TONE[card.verdict]??'neutral'}`}>{card.verdict}</span></header>
+    <div className="gap-strength"><span>Path strength</span><div className="score-track"><i style={{width:`${Math.max(3,card.path_strength*100)}%`}}/></div><strong>{card.path_score.toFixed(3)}</strong></div>
+    <dl className="gap-facts">
+      <div><dt>Verified claims</dt><dd>{card.verified_claims}</dd></div>
+      <div><dt>Records retrieved</dt><dd>{card.retrieved_count}</dd></div>
+      <div><dt>Matched trials</dt><dd>{card.trial_count||'none in this snapshot'}</dd></div>
+    </dl>
+    <p className="gap-direction">Direction: {card.direction}</p>
+    {card.members.length>1&&<p className="gap-members">{card.members.length} variants: {card.members.join(', ')}</p>}
+    <footer><span className="badge neutral">{card.freshness}</span>
+      <button onClick={()=>onOpen(card,'graph')}>Graph paths <ArrowUpRight size={13}/></button>
+      <button onClick={()=>onOpen(card,'literature')}>Evidence <ArrowUpRight size={13}/></button></footer>
+  </article>;
+}
+
+function GapMap({onOpen}){
+  const [data,setData]=useState(null),[error,setError]=useState('');
+  useEffect(()=>{fetch('/api/gap-map').then(r=>r.ok?r.json():Promise.reject(new Error('Run build-gap-map first'))).then(setData).catch(e=>setError(e.message))},[]);
+  if(error) return <div className="empty error"><h1>Gap map unavailable</h1><p>{error}</p></div>;
+  if(!data) return <div className="page-loading"><span className="spinner"/>Loading the evidence gap map…</div>;
+  return <><div className="page-heading"><div><span className="eyebrow">EVIDENCE GAP MAP / TOP {data.families.length} FAMILIES</span><h1>Where the evidence isn’t.</h1><p>Graph strength, verified literature and trial status, side by side.</p></div><span className="badge green"><ShieldCheck size={14}/> Display only</span></div>
+    <div className="hypothesis-banner wide"><AlertTriangle size={15}/><span><strong>Research hypothesis, not medical advice.</strong> {data.scope}</span></div>
+    <div className="gap-columns">{GROUPS.map(([id,title,blurb])=>{
+      const cards=data.families.filter(f=>f.group===id);
+      return <section key={id} className={`gap-column ${id.replace(/ /g,'-')}`}>
+        <div className="gap-column-head"><h2>{title}<span>{cards.length}</span></h2><p>{blurb}</p></div>
+        {cards.map(c=><GapCard key={c.family_id} card={c} onOpen={onOpen}/>)}
+        {!cards.length&&<p className="muted empty-column">No families in this group.</p>}
+      </section>;})}</div>
+    <p className="table-note">{data.absence_note} Verdicts derive deterministically from verified claims and their evidence-type tags; unverified claims are excluded. These are triage categories for researchers, not a ranking of which drugs work.</p></>;
+}
+
 function App(){
   const [page,setPage]=useState('explore'),[data,setData]=useState(null),[error,setError]=useState('');
+  const [focus,setFocus]=useState(null);
   useEffect(()=>{fetch('/api/overview').then(r=>{if(!r.ok)throw new Error('Cached data is unavailable. Run validate-primary and prepare-ui.');return r.json()}).then(setData).catch(e=>setError(e.message))},[]);
-  return <><header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setPage('explore')}}><span className="brand-symbol"><Network size={22}/></span>intersect<span className="brand-sub">/ biology</span></a><nav aria-label="Main navigation"><button className={page==='explore'?'active':''} onClick={()=>setPage('explore')}><Network size={16}/>Explore</button><button className={page==='validation'?'active':''} onClick={()=>setPage('validation')}><BarChart3 size={16}/>Validation</button></nav><div className="header-label"><span className="status-dot"/>LOCAL RESEARCH DEMO</div></header>
-    <main>{error?<div className="empty error"><h1>Could not load the workbench</h1><p>{error}</p></div>:!data?<div className="page-loading"><span className="spinner"/>Opening the cached research workbench…</div>:page==='explore'?<Explorer data={data}/>:<Validation data={data}/>}</main>
+  const openFamily=(card,tab)=>{setFocus({familyId:card.family_id,tab,at:Date.now()});setPage('explore');};
+  const nav=[['explore','Explore',Network],['gaps','Gap map',Layers],['validation','Validation',BarChart3]];
+  return <><header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setPage('explore')}}><span className="brand-symbol"><Network size={22}/></span>intersect<span className="brand-sub">/ biology</span></a><nav aria-label="Main navigation">{nav.map(([id,label,Icon])=><button key={id} className={page===id?'active':''} onClick={()=>setPage(id)}><Icon size={16}/>{label}</button>)}</nav><div className="header-label"><span className="status-dot"/>LOCAL RESEARCH DEMO</div></header>
+    <main>{error?<div className="empty error"><h1>Could not load the workbench</h1><p>{error}</p></div>:!data?<div className="page-loading"><span className="spinner"/>Opening the cached research workbench…</div>:page==='gaps'?<GapMap onOpen={openFamily}/>:page==='validation'?<Validation data={data}/>:<Explorer data={data} focus={focus}/>}</main>
     <footer><span><FlaskConical size={14}/> Research hypotheses only</span><p>Trial participation does not establish efficacy. Not medical advice.</p><span>PrimeKG × trial evidence</span></footer></>;
 }
 createRoot(document.getElementById('root')).render(<App/>);

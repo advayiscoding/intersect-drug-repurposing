@@ -40,6 +40,11 @@ def drug_detail(drug_id:int):
     return value
 
 
+@app.get("/api/gap-map")
+def gap_map():
+    return artifact("gap_map.json")
+
+
 @app.get("/api/health")
 def health():
     from .agents import available

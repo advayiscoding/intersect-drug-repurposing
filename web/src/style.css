@@ -36,3 +36,33 @@
 .caution.scope{background:#eef2e7;border-color:#dde5d2;color:#6d8160}
 .caution.scope strong{color:#5c7550}
 .caution.scope p{color:#7b8d72}
+.hypothesis-banner.wide{margin-bottom:24px}
+.gap-columns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:start}
+.gap-column{display:flex;flex-direction:column;gap:12px}
+.gap-column-head{padding:14px 16px;border-radius:8px;background:#eef2e7;border:1px solid #dde5d2}
+.gap-column-head h2{font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#4f6a4a}
+.gap-column-head h2 span{font-size:11px;font-family:monospace;color:#7d8f73;background:#fffefa;border-radius:4px;padding:2px 7px}
+.gap-column-head p{font-size:10px;color:#7f8f78;margin-top:8px;line-height:1.55}
+.gap-column.already-in-trials .gap-column-head{background:#eaf0f3;border-color:#d6e1e6}
+.gap-column.contested-or-possible-wrong-direction .gap-column-head{background:#f6ede1;border-color:#e7d9c3}
+.gap-column.insufficient-evidence-retrieved .gap-column-head{background:#f1f1ec;border-color:#e2e2da}
+.gap-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:15px}
+.gap-card header{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.gap-card header h3{font-size:13px;flex:1;min-width:0;color:#36503c}
+.gap-card header .rank{font-family:monospace;font-size:10px;color:#a1aa98;margin-top:2px}
+.gap-card header .badge{font-size:8px;width:100%}
+.gap-strength{display:flex;align-items:center;gap:8px;margin:13px 0 11px;font-size:9px;color:#99a390}
+.gap-strength .score-track{flex:1}
+.gap-strength strong{font-family:monospace;font-size:10px;color:#6d8458}
+.gap-facts{display:grid;gap:6px;margin:0 0 10px}
+.gap-facts>div{display:flex;justify-content:space-between;gap:8px;font-size:10px}
+.gap-facts dt{color:#9aa391}
+.gap-facts dd{margin:0;color:#5f7557;text-align:right}
+.gap-direction{font-size:10px;color:#8b9a81;line-height:1.55;border-top:1px solid #eef1e8;padding-top:10px}
+.gap-members{font-size:9px;color:#a1ab97;margin-top:7px;line-height:1.5}
+.gap-card footer{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:12px;border-top:1px solid #eef1e8;padding-top:11px}
+.gap-card footer button{font-size:9px;display:flex;align-items:center;gap:4px;color:#6a8551;border:1px solid #dde4d3;border-radius:4px;padding:5px 8px}
+.gap-card footer button:hover{background:#f1f5ea}
+.badge.amber{background:#f6eddf;border:1px solid #e7d8bf;color:#9a7c45}
+.empty-column{padding:14px;text-align:center;font-size:10px}
+@media (max-width:1250px){.gap-columns{grid-template-columns:repeat(2,minmax(0,1fr))}}
