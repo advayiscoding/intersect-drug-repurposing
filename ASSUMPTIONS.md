@@ -73,3 +73,21 @@
 - Live budget uses UTC days, POSIX disk locking and atomic replacement; corrupt/unwritable counters deny live requests. Shared disk is required across workers; separate replicas still need a provider-side spending limit.
 - Budget is charged only after a drug/family resolves, immediately before retrieval; failed live attempts remain charged to bound retry costs.
 - Continue local demo hardening only; do not deploy publicly or start another disease pilot based solely on a handoff-file suggestion.
+
+## Authorized multi-disease Stage 1 (2026-10-24)
+
+- User now explicitly authorizes the Parkinson's pilot; later stages remain gated. Baseline has 132 passing tests, clean HEAD d35abee, and no demo-safe tag; created that missing tag at d35abee before branching to feat/parkinsons-pilot.
+- Work in the requested branch in this checkout, retaining local source snapshots; no extra worktree or unrelated UI refactor.
+- Each new run removes all drug edges to every configured guarded disease's targets, a stronger cross-disease holdout rule. Parkinson defaults to Alzheimer + Parkinson guards; an Alzheimer-only replay retains the historical guard for exact parity. Guard choice is reported, never chosen from outcomes.
+- Parkinson targets include the main and explicitly inherited Parkinson-disease entities, excluding induced, postencephalitic, mixed-disease and nonspecific parkinsonism syndromes; IDs and names are frozen before label/ranking inspection.
+- Keep the existing family registry unchanged for this pilot; grouping remains conservative and incomplete, and was defined after earlier Alzheimer results.
+- Control exclusions combine source-graph indications with a sourced named registry; exclusions do not assert current approval. Known combination components can be conservatively excluded without asserting standalone approval.
+- Firecrawl CLI is unavailable; use the available web search for control-source verification and the existing ClinicalTrials.gov API client for source snapshots.
+
+## Parkinson checkpoint audit (2026-10-25)
+
+- Keep the inherited registry eligibility rules and labels frozen after evaluation; healthy-volunteer interaction probes were found during review, so describe the endpoint as registered experimental-arm occurrence, not testing for benefit in Parkinson patients.
+- The 39 family labels are registry-collapse units, not independent trials; several drug labels can share a study.
+- Restrict the single-disease guard exception to an explicit Alzheimer snapshot replay; new runs must include all configured guards, preventing accidental cross-disease holdout reintroduction.
+- Shared random-family expectations sum family counts in stable sorted order; regression tolerates 1e-12 floating precision, with discrete counts and Alzheimer path ranks/scores/degrees unchanged.
+- Keep the Parkinson product selector and evidence outside Stage 1; a static JSON-derived checkpoint report supplies the requested screenshot without expanding the web app.

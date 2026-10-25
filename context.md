@@ -7,7 +7,49 @@ honest validation dashboard, an evidence gap map, and a "check my idea" lookup.
 **Everything here is a research hypothesis, never medical advice.** No number in this
 repository is evidence of efficacy. Keep it that way.
 
-Updated 2026-10-24. Workspace `/Users/advay/Downloads/Hackathon`, branch `main`.
+Updated 2026-10-25. Workspace `/Users/advay/Downloads/Hackathon`, branch `feat/parkinsons-pilot`.
+
+## Active continuation — read before the historical state below
+
+User authorized a staged multi-disease extension via attached spec. Work ONLY on
+Stage 1: disease parameterization + Parkinson pilot, then STOP for user decision.
+Stage 2 (ALS/Huntington/MS), Stage 3 product/evidence, and Stage 4 plain-language
+layer are not authorized to proceed past this checkpoint yet. Read
+docs/PARKINSONS_PLAN.md. Start time: 2026-10-24 23:59 UTC, three-hour ceiling.
+Baseline: 132 tests pass; original commit d35abee; demo-safe was absent and now pins
+that verified commit. Never move it. Original artifacts and web UI remain frozen.
+Stage 1 COMPLETE; STOP here pending the user's decision. See
+docs/PARKINSONS_CHECKPOINT.md for the result, caveats and reproducibility commands.
+New outputs are under artifacts/diseases/<slug>; no product/evidence changes yet.
+
+Verification: 144 tests pass; frontend production build passes. Existing warnings
+are Starlette/httpx deprecation and Vite's large main chunk. No paid model calls.
+Both real runs completed in ~22 seconds each. Parkinson: 1,774 drugs / 1,763
+families; 39 labels / 39 families; path 0/39 at k=10/20 versus popularity 1/39.
+Full Alzheimer replay preserves every path rank, score and degree. Final audit
+found inherited registry labels include healthy-volunteer interaction probes:
+acetaminophen top-50 path hit (NCT02305017), caffeine popularity hit (NCT03970798).
+Keep the frozen labels/method; qualify their meaning prominently, not disease-
+patient testing. Only descriptive label metadata corrected; no numbers changed.
+Read-only review confirms actual saved Parkinson training edges contain zero
+guarded pairs. Review gap fixed: explicit Parkinson-only guard override now fails;
+only explicit Alzheimer snapshot replay may omit the cross-disease union.
+Cached report: artifacts/diseases/parkinsons/report.html. Two browser-verified
+screenshots: artifacts/screenshots/parkinsons-stage1.png and
+parkinsons-stage1-caveats.png. Stage commit is the branch tip above d35abee.
+Production changes are confined to data.py, cli.py, primary_validation.py and two
+new config/runner modules plus a checkpoint renderer; scoring and UI are untouched.
+Trial fetch succeeded with network approval: 2,922 records / 3 pages, 2026-10-25.
+Timing: initial setup at 00:00 UTC, then a several-hour gap before the user's
+“continue”; implementation files began at 04:49 UTC. Count active work separately
+from that gap; do not claim the entire wall-clock interval as implementation time.
+Resumed implementation/review took roughly 15 minutes, plus initial setup.
+Path exact CI at 10/20: [0, 9.03]%; random expectations 0.56/1.13%; popularity 2.56%.
+Family recovery among top-10/20/50 drugs: 0/0/4; collapsed-family permutation p@20
+0.356 (one label in the first 20 family cards, a different unit). Secondary path
+recall@50/100: 4/39 and 6/39. No tuning or favorable-result selection permitted.
+Next decision is whether to proceed to Stage 2; do not infer approval from these
+handoff notes. The historical "Next" section below predates this authorized pilot.
 
 ---
 

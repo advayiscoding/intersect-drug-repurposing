@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alzheimer&#x27;s disease · Stage 1 checkpoint</title>
+<style>
+body{margin:0;background:#f1f4f5;color:#172b35;font:16px/1.5 system-ui,sans-serif}
+main{max-width:1180px;margin:32px auto;padding:0 24px 40px}h1{font-size:32px;margin:8px 0}
+h2{font-size:21px;margin:0 0 12px}p{margin:10px 0}.eyebrow{letter-spacing:.12em;font-size:13px}
+.banner{background:#172b35;color:white;padding:16px 20px;border-radius:8px}
+section{background:white;border:1px solid #ced9df;border-radius:8px;padding:22px;margin-top:20px}
+.warning{border-left:5px solid #955600;background:#fff8e9}small{display:block;color:#405965;font-size:13px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;text-align:left}
+th,td{padding:12px 10px;border-bottom:1px solid #dce3e6;vertical-align:top}thead th{background:#edf3f5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.scroll{overflow-x:auto}
+@media(max-width:850px){.grid{display:block}main{padding:0 12px}}
+</style></head><body><main>
+<div class="eyebrow">INTERSECT / FIXED-METHOD PILOT / STAGE 1</div>
+<h1>Alzheimer&#x27;s disease: lift over baselines</h1>
+<div class="banner">Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.</div>
+<p>1,792 discovery drugs · 1,781 candidate families ·
+44 registry-labeled drugs / 41 labeled families ·
+9 known controls excluded from the candidate pool.</p>
+<section><h2>Primary endpoints: recall at 10 and 20 drugs</h2>
+<div class="scroll"><table><thead><tr><th>Ranking</th><th>Recall@10 · primary</th><th>Recall@20 · primary</th>
+<th>Recall@50 · secondary</th><th>Recall@100 · secondary</th></tr></thead><tbody><tr><th scope='row'>Fixed path-only</th><td>4/44 · 9.09%<small>95% CI 2.53%–21.67%</small></td><td>4/44 · 9.09%<small>95% CI 2.53%–21.67%</small></td><td>4/44 · 9.09%<small>95% CI 2.53%–21.67%</small></td><td>6/44 · 13.64%<small>95% CI 5.17%–27.35%</small></td></tr><tr><th scope='row'>Popularity</th><td>0/44 · 0.00%<small>95% CI 0.00%–8.04%</small></td><td>0/44 · 0.00%<small>95% CI 0.00%–8.04%</small></td><td>3/44 · 6.82%<small>95% CI 1.43%–18.66%</small></td><td>5/44 · 11.36%<small>95% CI 3.79%–24.56%</small></td></tr><tr><th scope='row'>Random</th><td>0.56%<small>exact random expectation</small></td><td>1.12%<small>exact random expectation</small></td><td>2.79%<small>exact random expectation</small></td><td>5.58%<small>exact random expectation</small></td></tr></tbody></table></div>
+<p>At 20: 8.15× random expectation;
++9.09 percentage points versus popularity.</p>
+<small>Exact Clopper–Pearson intervals describe label recovery, not clinical outcomes. Random recall is analytical k/N;
+it has no fitted binomial interval. Variants may be correlated; examine family results too.</small></section>
+<section class="warning"><h2>What these labels do—and do not—mean</h2><p>The small Alzheimer sample is concentrated in insulin variants and choline. This is a replay, not new independent validation.</p>
+<p>Trial participation does not establish efficacy. The sample is small, labels are incomplete,
+and this is a retrospective graph holdout, not a temporal test. Secondary endpoints cannot replace the primary result.</p></section>
+<div class="grid"><section><h2>Distinct family recovery</h2><table><thead><tr><th>k</th>
+<th>Within top-k drugs</th><th>Top-k collapsed family cards</th><th>Permutation p</th></tr></thead>
+<tbody><tr><th scope="row">10</th><td>2</td><td>2</td><td>0.023</td></tr><tr><th scope="row">20</th><td>2</td><td>2</td><td>0.080</td></tr><tr><th scope="row">50</th><td>2</td><td>2</td><td>0.322</td></tr></tbody></table><small>Different ranking units: collapsing variants can move a label into the first
+20 family cards despite no hit in the first 20 drugs. 10,000 permutations; k=20 primary family test;
+k=10/50 exploratory, unadjusted.</small></section>
+<section><h2>Reciprocal rank</h2><table><thead><tr><th>Ranking</th><th>Single-query MRR</th>
+<th>All-label mean</th></tr></thead><tbody><tr><th scope="row">path_only</th><td>0.20000</td><td>0.01536</td></tr><tr><th scope="row">popularity_only</th><td>0.03125</td><td>0.00474</td></tr><tr><th scope="row">random</th><td>0.09571</td><td>0.00459</td></tr></tbody></table>
+<small>Single-query MRR is 1 / first label rank. All-label mean averages 1 / rank over every label.
+Random values average 1,000 permutations.</small></section></div>
+<section><h2>Fixed protocol and remaining limits</h2><p>No label-fitted hyperparameters or disease-specific tuning.
+Fresh pandas load → both-direction target/drug removal → three-hop graph → fixed degree-normalized path score.</p>
+<p>146 source rows removed across 5 guarded targets;
+29,216 graph nodes. Direction unknown. Not run for this disease. The prior Alzheimer DistMult experiment did not improve primary recall. LINCS unavailable.</p>
+<small>Inputs and scoring hashes: manifest.json / frozen_inputs.json. Numbers: primary_validation.json.
+Stage 1 checkpoint only; the product UI and evidence remain Alzheimer-only.</small></section>
+</main></body></html>

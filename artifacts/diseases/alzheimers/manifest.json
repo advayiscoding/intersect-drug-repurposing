@@ -1,0 +1,82 @@
+{
+  "disease_id": "alzheimers",
+  "disease_name": "Alzheimer's disease",
+  "run_at": "2026-10-25T04:54:07.812473+00:00",
+  "elapsed_seconds": 21.65636458300287,
+  "source_nodes": 129375,
+  "source_rows": 8100498,
+  "target_diseases": [
+    {
+      "id": 28780,
+      "source_id": "11913_7088_11743_12153_7089_11194_12321_15140_4975_11561_11647_11777_12344_12609_12630_12631_14265_10422_14036_14316_100088",
+      "type": "disease",
+      "name": "Alzheimer disease",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 31527,
+      "source_id": "11513",
+      "type": "disease",
+      "name": "Alzheimer disease, familial early-onset, with coexisting amyloid and prion pathology",
+      "source": "MONDO"
+    },
+    {
+      "id": 32654,
+      "source_id": "17233_100087",
+      "type": "disease",
+      "name": "familial Alzheimer disease",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 83960,
+      "source_id": "11401",
+      "type": "disease",
+      "name": "Alzheimer disease without neurofibrillary tangles",
+      "source": "MONDO"
+    },
+    {
+      "id": 94982,
+      "source_id": "10783",
+      "type": "disease",
+      "name": "Alzheimer disease, susceptibility to, mitochondrial",
+      "source": "MONDO"
+    }
+  ],
+  "guard_diseases": [
+    "alzheimers"
+  ],
+  "guard_target_ids": [
+    28780,
+    31527,
+    32654,
+    83960,
+    94982
+  ],
+  "negative_sampling_guard_target_ids": [
+    28780,
+    31527,
+    32654,
+    83960,
+    94982
+  ],
+  "negative_sampling": "Existing filter rejects all guarded target/drug pairs both ways; no embedding training in this pilot.",
+  "hops": 3,
+  "removed_target_drug_rows": 146,
+  "graph_nodes": 29216,
+  "graph_pairs": 503232,
+  "training_triples": 503473,
+  "original_candidate_count": 1801,
+  "candidate_count": 1792,
+  "label_count": 44,
+  "positive_family_count": 41,
+  "candidates_with_paths": 1229,
+  "primekg_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+  "trials_sha256": "1c68d608baeaaccfdc2100c924497c0383d208dcdd87a385975acdfbed601bdf",
+  "trials_retrieved_at": "2026-10-24T18:48:31.977326+00:00",
+  "frozen_inputs_sha256": "d58d4392d13f31adec701bacdb8844490f47c902ccd8f58dad6d8d64ea314f47",
+  "training_edges_sha256": "f65eb0b9f518db561cb05905e375479b1236672210d4a3f6520431d86f4755de",
+  "candidate_policy": "Source PrimeKG non-target indication, minus known controls; regulatory status not asserted.",
+  "leakage_guard": "All configured target/drug pairs removed in both directions before neighborhood and degrees.",
+  "direction": "direction unknown",
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+}

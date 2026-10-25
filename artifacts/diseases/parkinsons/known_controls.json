@@ -1,0 +1,245 @@
+{
+  "disease_id": "parkinsons",
+  "controls": [
+    {
+      "drug_id": 14139,
+      "name": "Benzatropine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14220,
+      "name": "Apomorphine",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14321,
+      "name": "Levodopa",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14452,
+      "name": "Istradefylline",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14806,
+      "name": "Entacapone",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14830,
+      "name": "Amantadine",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14831,
+      "name": "Droxidopa",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 14904,
+      "name": "Safinamide",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15124,
+      "name": "Biperiden",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15138,
+      "name": "Selegiline",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15147,
+      "name": "Orphenadrine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15193,
+      "name": "Rotigotine",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15291,
+      "name": "Ropinirole",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15333,
+      "name": "Rasagiline",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15490,
+      "name": "Pergolide",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15493,
+      "name": "Bromocriptine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15772,
+      "name": "Tolcapone",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15812,
+      "name": "Opicapone",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 16054,
+      "name": "Trihexyphenidyl",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 16056,
+      "name": "Procyclidine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 16315,
+      "name": "Cycrimine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 16842,
+      "name": "Pramipexole",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 17270,
+      "name": "Pimavanserin",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 17414,
+      "name": "Piribedil",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 19207,
+      "name": "Carbidopa",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 19208,
+      "name": "Benserazide",
+      "basis": [
+        "sourced named control"
+      ],
+      "in_original_pool": false
+    },
+    {
+      "drug_id": 20153,
+      "name": "Metixene",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 20591,
+      "name": "Melevodopa",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    }
+  ],
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+}

@@ -1,0 +1,4794 @@
+{
+  "disease_id": "parkinsons",
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+  "paths": {
+    "14829": [
+      {
+        "score": 0.053916386601719206,
+        "nodes": [
+          {
+            "id": 14829,
+            "source_id": "DB00875",
+            "type": "drug",
+            "name": "Flupentixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9889,
+            "source_id": "1644",
+            "type": "gene/protein",
+            "name": "DDC",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14829,
+            "target": 9889,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9889,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.053916386601719206,
+        "nodes": [
+          {
+            "id": 14829,
+            "source_id": "DB00875",
+            "type": "drug",
+            "name": "Flupentixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9889,
+            "source_id": "1644",
+            "type": "gene/protein",
+            "name": "DDC",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14829,
+            "target": 9889,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9889,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.053916386601719206,
+        "nodes": [
+          {
+            "id": 14829,
+            "source_id": "DB00875",
+            "type": "drug",
+            "name": "Flupentixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9889,
+            "source_id": "1644",
+            "type": "gene/protein",
+            "name": "DDC",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14829,
+            "target": 9889,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9889,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.053916386601719206,
+        "nodes": [
+          {
+            "id": 14829,
+            "source_id": "DB00875",
+            "type": "drug",
+            "name": "Flupentixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9889,
+            "source_id": "1644",
+            "type": "gene/protein",
+            "name": "DDC",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14829,
+            "target": 9889,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9889,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03571428571428571,
+        "nodes": [
+          {
+            "id": 14829,
+            "source_id": "DB00875",
+            "type": "drug",
+            "name": "Flupentixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14829,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "18226": [
+      {
+        "score": 0.086386842558136,
+        "nodes": [
+          {
+            "id": 18226,
+            "source_id": "DB06720",
+            "type": "drug",
+            "name": "Velaglucerase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1721,
+            "source_id": "2629",
+            "type": "gene/protein",
+            "name": "GBA",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 18226,
+            "target": 1721,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1721,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.086386842558136,
+        "nodes": [
+          {
+            "id": 18226,
+            "source_id": "DB06720",
+            "type": "drug",
+            "name": "Velaglucerase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1721,
+            "source_id": "2629",
+            "type": "gene/protein",
+            "name": "GBA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 18226,
+            "target": 1721,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1721,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.086386842558136,
+        "nodes": [
+          {
+            "id": 18226,
+            "source_id": "DB06720",
+            "type": "drug",
+            "name": "Velaglucerase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1721,
+            "source_id": "2629",
+            "type": "gene/protein",
+            "name": "GBA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 18226,
+            "target": 1721,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1721,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.086386842558136,
+        "nodes": [
+          {
+            "id": 18226,
+            "source_id": "DB06720",
+            "type": "drug",
+            "name": "Velaglucerase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1721,
+            "source_id": "2629",
+            "type": "gene/protein",
+            "name": "GBA",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 18226,
+            "target": 1721,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1721,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.0027708592669656467,
+        "nodes": [
+          {
+            "id": 18226,
+            "source_id": "DB06720",
+            "type": "drug",
+            "name": "Velaglucerase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1721,
+            "source_id": "2629",
+            "type": "gene/protein",
+            "name": "GBA",
+            "source": "NCBI"
+          },
+          {
+            "id": 1340,
+            "source_id": "5071",
+            "type": "gene/protein",
+            "name": "PRKN",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 18226,
+            "target": 1721,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1721,
+            "target": 1340,
+            "relations": [
+              "protein_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1340,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "16353": [
+      {
+        "score": 0.052704627669472995,
+        "nodes": [
+          {
+            "id": 16353,
+            "source_id": "DB00579",
+            "type": "drug",
+            "name": "Mazindol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16353,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.052704627669472995,
+        "nodes": [
+          {
+            "id": 16353,
+            "source_id": "DB00579",
+            "type": "drug",
+            "name": "Mazindol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16353,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.052704627669472995,
+        "nodes": [
+          {
+            "id": 16353,
+            "source_id": "DB00579",
+            "type": "drug",
+            "name": "Mazindol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16353,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.052704627669472995,
+        "nodes": [
+          {
+            "id": 16353,
+            "source_id": "DB00579",
+            "type": "drug",
+            "name": "Mazindol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16353,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.039103094350288754,
+        "nodes": [
+          {
+            "id": 16353,
+            "source_id": "DB00579",
+            "type": "drug",
+            "name": "Mazindol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1311,
+            "source_id": "6531",
+            "type": "gene/protein",
+            "name": "SLC6A3",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16353,
+            "target": 1311,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1311,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "16041": [
+      {
+        "score": 0.04612656040144425,
+        "nodes": [
+          {
+            "id": 16041,
+            "source_id": "DB14751",
+            "type": "drug",
+            "name": "Mecasermin rinfabate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16041,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.04612656040144425,
+        "nodes": [
+          {
+            "id": 16041,
+            "source_id": "DB14751",
+            "type": "drug",
+            "name": "Mecasermin rinfabate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16041,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.04612656040144425,
+        "nodes": [
+          {
+            "id": 16041,
+            "source_id": "DB14751",
+            "type": "drug",
+            "name": "Mecasermin rinfabate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16041,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 16041,
+            "source_id": "DB14751",
+            "type": "drug",
+            "name": "Mecasermin rinfabate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16041,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 16041,
+            "source_id": "DB14751",
+            "type": "drug",
+            "name": "Mecasermin rinfabate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 16041,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "19223": [
+      {
+        "score": 0.046423834544262965,
+        "nodes": [
+          {
+            "id": 19223,
+            "source_id": "DB01626",
+            "type": "drug",
+            "name": "Pargyline",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19223,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.046423834544262965,
+        "nodes": [
+          {
+            "id": 19223,
+            "source_id": "DB01626",
+            "type": "drug",
+            "name": "Pargyline",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19223,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.046423834544262965,
+        "nodes": [
+          {
+            "id": 19223,
+            "source_id": "DB01626",
+            "type": "drug",
+            "name": "Pargyline",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19223,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.04256282653793743,
+        "nodes": [
+          {
+            "id": 19223,
+            "source_id": "DB01626",
+            "type": "drug",
+            "name": "Pargyline",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19223,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.04256282653793743,
+        "nodes": [
+          {
+            "id": 19223,
+            "source_id": "DB01626",
+            "type": "drug",
+            "name": "Pargyline",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19223,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14893": [
+      {
+        "score": 0.03509312031717982,
+        "nodes": [
+          {
+            "id": 14893,
+            "source_id": "DB04818",
+            "type": "drug",
+            "name": "Iproniazid",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14893,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03509312031717982,
+        "nodes": [
+          {
+            "id": 14893,
+            "source_id": "DB04818",
+            "type": "drug",
+            "name": "Iproniazid",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14893,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03509312031717982,
+        "nodes": [
+          {
+            "id": 14893,
+            "source_id": "DB04818",
+            "type": "drug",
+            "name": "Iproniazid",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14893,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03217447260438934,
+        "nodes": [
+          {
+            "id": 14893,
+            "source_id": "DB04818",
+            "type": "drug",
+            "name": "Iproniazid",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14893,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03217447260438934,
+        "nodes": [
+          {
+            "id": 14893,
+            "source_id": "DB04818",
+            "type": "drug",
+            "name": "Iproniazid",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14893,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14734": [
+      {
+        "score": 0.028676966733820218,
+        "nodes": [
+          {
+            "id": 14734,
+            "source_id": "DB09221",
+            "type": "drug",
+            "name": "Polaprezinc",
+            "source": "DrugBank"
+          },
+          {
+            "id": 6848,
+            "source_id": "2876",
+            "type": "gene/protein",
+            "name": "GPX1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14734,
+            "target": 6848,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 6848,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.028676966733820218,
+        "nodes": [
+          {
+            "id": 14734,
+            "source_id": "DB09221",
+            "type": "drug",
+            "name": "Polaprezinc",
+            "source": "DrugBank"
+          },
+          {
+            "id": 6848,
+            "source_id": "2876",
+            "type": "gene/protein",
+            "name": "GPX1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14734,
+            "target": 6848,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 6848,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.028676966733820218,
+        "nodes": [
+          {
+            "id": 14734,
+            "source_id": "DB09221",
+            "type": "drug",
+            "name": "Polaprezinc",
+            "source": "DrugBank"
+          },
+          {
+            "id": 6848,
+            "source_id": "2876",
+            "type": "gene/protein",
+            "name": "GPX1",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14734,
+            "target": 6848,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 6848,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02795084971874737,
+        "nodes": [
+          {
+            "id": 14734,
+            "source_id": "DB09221",
+            "type": "drug",
+            "name": "Polaprezinc",
+            "source": "DrugBank"
+          },
+          {
+            "id": 5877,
+            "source_id": "4803",
+            "type": "gene/protein",
+            "name": "NGF",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14734,
+            "target": 5877,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 5877,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02795084971874737,
+        "nodes": [
+          {
+            "id": 14734,
+            "source_id": "DB09221",
+            "type": "drug",
+            "name": "Polaprezinc",
+            "source": "DrugBank"
+          },
+          {
+            "id": 5877,
+            "source_id": "4803",
+            "type": "gene/protein",
+            "name": "NGF",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14734,
+            "target": 5877,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 5877,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14895": [
+      {
+        "score": 0.041522739926869986,
+        "nodes": [
+          {
+            "id": 14895,
+            "source_id": "DB09042",
+            "type": "drug",
+            "name": "Tedizolid phosphate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14895,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.041522739926869986,
+        "nodes": [
+          {
+            "id": 14895,
+            "source_id": "DB09042",
+            "type": "drug",
+            "name": "Tedizolid phosphate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14895,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.041522739926869986,
+        "nodes": [
+          {
+            "id": 14895,
+            "source_id": "DB09042",
+            "type": "drug",
+            "name": "Tedizolid phosphate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14895,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03806934938134405,
+        "nodes": [
+          {
+            "id": 14895,
+            "source_id": "DB09042",
+            "type": "drug",
+            "name": "Tedizolid phosphate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14895,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03806934938134405,
+        "nodes": [
+          {
+            "id": 14895,
+            "source_id": "DB09042",
+            "type": "drug",
+            "name": "Tedizolid phosphate",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14895,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14885": [
+      {
+        "score": 0.032826608214930636,
+        "nodes": [
+          {
+            "id": 14885,
+            "source_id": "DB01171",
+            "type": "drug",
+            "name": "Moclobemide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14885,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.032826608214930636,
+        "nodes": [
+          {
+            "id": 14885,
+            "source_id": "DB01171",
+            "type": "drug",
+            "name": "Moclobemide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14885,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.032826608214930636,
+        "nodes": [
+          {
+            "id": 14885,
+            "source_id": "DB01171",
+            "type": "drug",
+            "name": "Moclobemide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14885,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.0300964632714423,
+        "nodes": [
+          {
+            "id": 14885,
+            "source_id": "DB01171",
+            "type": "drug",
+            "name": "Moclobemide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14885,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.0300964632714423,
+        "nodes": [
+          {
+            "id": 14885,
+            "source_id": "DB01171",
+            "type": "drug",
+            "name": "Moclobemide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14885,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "15898": [
+      {
+        "score": 0.037904902178945175,
+        "nodes": [
+          {
+            "id": 15898,
+            "source_id": "DB06698",
+            "type": "drug",
+            "name": "Betahistine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15898,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.037904902178945175,
+        "nodes": [
+          {
+            "id": 15898,
+            "source_id": "DB06698",
+            "type": "drug",
+            "name": "Betahistine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15898,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.037904902178945175,
+        "nodes": [
+          {
+            "id": 15898,
+            "source_id": "DB06698",
+            "type": "drug",
+            "name": "Betahistine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8192,
+            "source_id": "4129",
+            "type": "gene/protein",
+            "name": "MAOB",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15898,
+            "target": 8192,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8192,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.0347524023428458,
+        "nodes": [
+          {
+            "id": 15898,
+            "source_id": "DB06698",
+            "type": "drug",
+            "name": "Betahistine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15898,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.0347524023428458,
+        "nodes": [
+          {
+            "id": 15898,
+            "source_id": "DB06698",
+            "type": "drug",
+            "name": "Betahistine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1650,
+            "source_id": "4128",
+            "type": "gene/protein",
+            "name": "MAOA",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15898,
+            "target": 1650,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1650,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "15177": [
+      {
+        "score": 0.031943828249996996,
+        "nodes": [
+          {
+            "id": 15177,
+            "source_id": "DB01624",
+            "type": "drug",
+            "name": "Zuclopenthixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15177,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.031943828249996996,
+        "nodes": [
+          {
+            "id": 15177,
+            "source_id": "DB01624",
+            "type": "drug",
+            "name": "Zuclopenthixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15177,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.031943828249996996,
+        "nodes": [
+          {
+            "id": 15177,
+            "source_id": "DB01624",
+            "type": "drug",
+            "name": "Zuclopenthixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15177,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.019920476822239894,
+        "nodes": [
+          {
+            "id": 15177,
+            "source_id": "DB01624",
+            "type": "drug",
+            "name": "Zuclopenthixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2401,
+            "source_id": "1813",
+            "type": "gene/protein",
+            "name": "DRD2",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15177,
+            "target": 2401,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2401,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.019920476822239894,
+        "nodes": [
+          {
+            "id": 15177,
+            "source_id": "DB01624",
+            "type": "drug",
+            "name": "Zuclopenthixol",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2401,
+            "source_id": "1813",
+            "type": "gene/protein",
+            "name": "DRD2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15177,
+            "target": 2401,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2401,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14554": [
+      {
+        "score": 0.029774566708770683,
+        "nodes": [
+          {
+            "id": 14554,
+            "source_id": "DB01277",
+            "type": "drug",
+            "name": "Mecasermin",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14554,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.029774566708770683,
+        "nodes": [
+          {
+            "id": 14554,
+            "source_id": "DB01277",
+            "type": "drug",
+            "name": "Mecasermin",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14554,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.029774566708770683,
+        "nodes": [
+          {
+            "id": 14554,
+            "source_id": "DB01277",
+            "type": "drug",
+            "name": "Mecasermin",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14554,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02072566680724196,
+        "nodes": [
+          {
+            "id": 14554,
+            "source_id": "DB01277",
+            "type": "drug",
+            "name": "Mecasermin",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14554,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02072566680724196,
+        "nodes": [
+          {
+            "id": 14554,
+            "source_id": "DB01277",
+            "type": "drug",
+            "name": "Mecasermin",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14554,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "20185": [
+      {
+        "score": 0.03571428571428571,
+        "nodes": [
+          {
+            "id": 20185,
+            "source_id": "DB11275",
+            "type": "drug",
+            "name": "Epicriptine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 20185,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03571428571428571,
+        "nodes": [
+          {
+            "id": 20185,
+            "source_id": "DB11275",
+            "type": "drug",
+            "name": "Epicriptine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 20185,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03571428571428571,
+        "nodes": [
+          {
+            "id": 20185,
+            "source_id": "DB11275",
+            "type": "drug",
+            "name": "Epicriptine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 20185,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.022271770159368695,
+        "nodes": [
+          {
+            "id": 20185,
+            "source_id": "DB11275",
+            "type": "drug",
+            "name": "Epicriptine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2401,
+            "source_id": "1813",
+            "type": "gene/protein",
+            "name": "DRD2",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 20185,
+            "target": 2401,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2401,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.022271770159368695,
+        "nodes": [
+          {
+            "id": 20185,
+            "source_id": "DB11275",
+            "type": "drug",
+            "name": "Epicriptine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2401,
+            "source_id": "1813",
+            "type": "gene/protein",
+            "name": "DRD2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 20185,
+            "target": 2401,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2401,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "19718": [
+      {
+        "score": 0.05954913341754137,
+        "nodes": [
+          {
+            "id": 19718,
+            "source_id": "DB13173",
+            "type": "drug",
+            "name": "Cerliponase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19718,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.05954913341754137,
+        "nodes": [
+          {
+            "id": 19718,
+            "source_id": "DB13173",
+            "type": "drug",
+            "name": "Cerliponase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19718,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.05954913341754137,
+        "nodes": [
+          {
+            "id": 19718,
+            "source_id": "DB13173",
+            "type": "drug",
+            "name": "Cerliponase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19718,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.004128989498969068,
+        "nodes": [
+          {
+            "id": 19718,
+            "source_id": "DB13173",
+            "type": "drug",
+            "name": "Cerliponase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 608,
+            "source_id": "55737",
+            "type": "gene/protein",
+            "name": "VPS35",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19718,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 608,
+            "relations": [
+              "protein_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 608,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.004128989498969068,
+        "nodes": [
+          {
+            "id": 19718,
+            "source_id": "DB13173",
+            "type": "drug",
+            "name": "Cerliponase alfa",
+            "source": "DrugBank"
+          },
+          {
+            "id": 2114,
+            "source_id": "3482",
+            "type": "gene/protein",
+            "name": "IGF2R",
+            "source": "NCBI"
+          },
+          {
+            "id": 608,
+            "source_id": "55737",
+            "type": "gene/protein",
+            "name": "VPS35",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 19718,
+            "target": 2114,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 2114,
+            "target": 608,
+            "relations": [
+              "protein_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 608,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14641": [
+      {
+        "score": 0.022473328748774737,
+        "nodes": [
+          {
+            "id": 14641,
+            "source_id": "DB00988",
+            "type": "drug",
+            "name": "Dopamine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14641,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.022473328748774737,
+        "nodes": [
+          {
+            "id": 14641,
+            "source_id": "DB00988",
+            "type": "drug",
+            "name": "Dopamine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14641,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.022473328748774737,
+        "nodes": [
+          {
+            "id": 14641,
+            "source_id": "DB00988",
+            "type": "drug",
+            "name": "Dopamine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14641,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.022473328748774737,
+        "nodes": [
+          {
+            "id": 14641,
+            "source_id": "DB00988",
+            "type": "drug",
+            "name": "Dopamine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14641,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.01758449871133325,
+        "nodes": [
+          {
+            "id": 14641,
+            "source_id": "DB00988",
+            "type": "drug",
+            "name": "Dopamine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 3199,
+            "source_id": "1812",
+            "type": "gene/protein",
+            "name": "DRD1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14641,
+            "target": 3199,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 3199,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "15331": [
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 15331,
+            "source_id": "DB01306",
+            "type": "drug",
+            "name": "Insulin aspart",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15331,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 15331,
+            "source_id": "DB01306",
+            "type": "drug",
+            "name": "Insulin aspart",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15331,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 15331,
+            "source_id": "DB01306",
+            "type": "drug",
+            "name": "Insulin aspart",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15331,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02839809171235324,
+        "nodes": [
+          {
+            "id": 15331,
+            "source_id": "DB01306",
+            "type": "drug",
+            "name": "Insulin aspart",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1066,
+            "source_id": "3480",
+            "type": "gene/protein",
+            "name": "IGF1R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15331,
+            "target": 1066,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1066,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02839809171235324,
+        "nodes": [
+          {
+            "id": 15331,
+            "source_id": "DB01306",
+            "type": "drug",
+            "name": "Insulin aspart",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1066,
+            "source_id": "3480",
+            "type": "gene/protein",
+            "name": "IGF1R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15331,
+            "target": 1066,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1066,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "15332": [
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 15332,
+            "source_id": "DB01309",
+            "type": "drug",
+            "name": "Insulin glulisine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15332,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 15332,
+            "source_id": "DB01309",
+            "type": "drug",
+            "name": "Insulin glulisine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15332,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03210806495339678,
+        "nodes": [
+          {
+            "id": 15332,
+            "source_id": "DB01309",
+            "type": "drug",
+            "name": "Insulin glulisine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15332,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02839809171235324,
+        "nodes": [
+          {
+            "id": 15332,
+            "source_id": "DB01309",
+            "type": "drug",
+            "name": "Insulin glulisine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1066,
+            "source_id": "3480",
+            "type": "gene/protein",
+            "name": "IGF1R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15332,
+            "target": 1066,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1066,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.02839809171235324,
+        "nodes": [
+          {
+            "id": 15332,
+            "source_id": "DB01309",
+            "type": "drug",
+            "name": "Insulin glulisine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1066,
+            "source_id": "3480",
+            "type": "gene/protein",
+            "name": "IGF1R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15332,
+            "target": 1066,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1066,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "15055": [
+      {
+        "score": 0.03450327796711771,
+        "nodes": [
+          {
+            "id": 15055,
+            "source_id": "DB12161",
+            "type": "drug",
+            "name": "Deutetrabenazine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 27576,
+            "source_id": "10820_13060",
+            "type": "disease",
+            "name": "autosomal recessive Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15055,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 27576,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03450327796711771,
+        "nodes": [
+          {
+            "id": 15055,
+            "source_id": "DB12161",
+            "type": "drug",
+            "name": "Deutetrabenazine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15055,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03450327796711771,
+        "nodes": [
+          {
+            "id": 15055,
+            "source_id": "DB12161",
+            "type": "drug",
+            "name": "Deutetrabenazine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15055,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03450327796711771,
+        "nodes": [
+          {
+            "id": 15055,
+            "source_id": "DB12161",
+            "type": "drug",
+            "name": "Deutetrabenazine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 9487,
+            "source_id": "6571",
+            "type": "gene/protein",
+            "name": "SLC18A2",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15055,
+            "target": 9487,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 9487,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.012828950144769636,
+        "nodes": [
+          {
+            "id": 15055,
+            "source_id": "DB12161",
+            "type": "drug",
+            "name": "Deutetrabenazine",
+            "source": "DrugBank"
+          },
+          {
+            "id": 13807,
+            "source_id": "1565",
+            "type": "gene/protein",
+            "name": "CYP2D6",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15055,
+            "target": 13807,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 13807,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "15179": [
+      {
+        "score": 0.03774256780481986,
+        "nodes": [
+          {
+            "id": 15179,
+            "source_id": "DB02701",
+            "type": "drug",
+            "name": "Nicotinamide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 7410,
+            "source_id": "683",
+            "type": "gene/protein",
+            "name": "BST1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15179,
+            "target": 7410,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 7410,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03774256780481986,
+        "nodes": [
+          {
+            "id": 15179,
+            "source_id": "DB02701",
+            "type": "drug",
+            "name": "Nicotinamide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 7410,
+            "source_id": "683",
+            "type": "gene/protein",
+            "name": "BST1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15179,
+            "target": 7410,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 7410,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.03774256780481986,
+        "nodes": [
+          {
+            "id": 15179,
+            "source_id": "DB02701",
+            "type": "drug",
+            "name": "Nicotinamide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 7410,
+            "source_id": "683",
+            "type": "gene/protein",
+            "name": "BST1",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15179,
+            "target": 7410,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 7410,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.010946135246159835,
+        "nodes": [
+          {
+            "id": 15179,
+            "source_id": "DB02701",
+            "type": "drug",
+            "name": "Nicotinamide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8212,
+            "source_id": "1571",
+            "type": "gene/protein",
+            "name": "CYP2E1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15179,
+            "target": 8212,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8212,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.010946135246159835,
+        "nodes": [
+          {
+            "id": 15179,
+            "source_id": "DB02701",
+            "type": "drug",
+            "name": "Nicotinamide",
+            "source": "DrugBank"
+          },
+          {
+            "id": 8212,
+            "source_id": "1571",
+            "type": "gene/protein",
+            "name": "CYP2E1",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 15179,
+            "target": 8212,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 8212,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ],
+    "14435": [
+      {
+        "score": 0.029310519088027464,
+        "nodes": [
+          {
+            "id": 14435,
+            "source_id": "DB09564",
+            "type": "drug",
+            "name": "Insulin degludec",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14435,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.029310519088027464,
+        "nodes": [
+          {
+            "id": 14435,
+            "source_id": "DB09564",
+            "type": "drug",
+            "name": "Insulin degludec",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14435,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.029310519088027464,
+        "nodes": [
+          {
+            "id": 14435,
+            "source_id": "DB09564",
+            "type": "drug",
+            "name": "Insulin degludec",
+            "source": "DrugBank"
+          },
+          {
+            "id": 4536,
+            "source_id": "3643",
+            "type": "gene/protein",
+            "name": "INSR",
+            "source": "NCBI"
+          },
+          {
+            "id": 33241,
+            "source_id": "18466",
+            "type": "disease",
+            "name": "hereditary late onset Parkinson disease",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14435,
+            "target": 4536,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 4536,
+            "target": 33241,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.025923792368260635,
+        "nodes": [
+          {
+            "id": 14435,
+            "source_id": "DB09564",
+            "type": "drug",
+            "name": "Insulin degludec",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1066,
+            "source_id": "3480",
+            "type": "gene/protein",
+            "name": "IGF1R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28547,
+            "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+            "type": "disease",
+            "name": "Parkinson disease",
+            "source": "MONDO_grouped"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14435,
+            "target": 1066,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1066,
+            "target": 28547,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      },
+      {
+        "score": 0.025923792368260635,
+        "nodes": [
+          {
+            "id": 14435,
+            "source_id": "DB09564",
+            "type": "drug",
+            "name": "Insulin degludec",
+            "source": "DrugBank"
+          },
+          {
+            "id": 1066,
+            "source_id": "3480",
+            "type": "gene/protein",
+            "name": "IGF1R",
+            "source": "NCBI"
+          },
+          {
+            "id": 28801,
+            "source_id": "14231",
+            "type": "disease",
+            "name": "juvenile onset Parkinson disease 19A",
+            "source": "MONDO"
+          }
+        ],
+        "edges": [
+          {
+            "source": 14435,
+            "target": 1066,
+            "relations": [
+              "drug_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          },
+          {
+            "source": 1066,
+            "target": 28801,
+            "relations": [
+              "disease_protein"
+            ],
+            "direction": "direction unknown",
+            "provenance": "PrimeKG"
+          }
+        ],
+        "direction": "direction unknown"
+      }
+    ]
+  }
+}

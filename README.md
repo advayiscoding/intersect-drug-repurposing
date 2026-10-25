@@ -52,6 +52,29 @@ LINCS is unavailable. [Full methodology and historical results](docs/METHODOLOGY
 
 ## Verify or rebuild
 
+### Parkinson pilot (Stage 1 checkpoint)
+
+The product demo above remains Alzheimer-only. The isolated Parkinson pilot is
+complete on `feat/parkinsons-pilot`; no disease-specific tuning or new embeddings.
+The original `demo-safe` commit and artifacts are unchanged.
+
+**No primary lift:** path recall@10/@20 is 0/39 (0%; exact 95% CI 0–9.03%),
+versus popularity 1/39 (2.56%) and random expectations 0.56% / 1.13%.
+There are 1,774 candidate drugs / 1,763 families and 39 registry labels / 39
+families. The family permutation p@20 is 0.356. These are not 39 independent
+clinical experiments: frozen label rules also admit healthy-volunteer interaction
+probes. Acetaminophen's top-50 label and caffeine's popularity label are examples.
+No labels were removed after seeing the result.
+
+[Checkpoint, metrics and reproducibility](docs/PARKINSONS_CHECKPOINT.md) ·
+[Cached report](artifacts/diseases/parkinsons/report.html) ·
+[Screenshot](artifacts/screenshots/parkinsons-stage1.png)
+
+Research hypothesis, not medical advice. This tool does not tell anyone what to
+take. Talk to a doctor or pharmacist about any medicine.
+
+### Original Alzheimer cached jobs
+
 ```sh
 python -m pytest -q
 python -m repurpose.cli validate-primary

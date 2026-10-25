@@ -1,0 +1,174 @@
+{
+  "disease": {
+    "id": "alzheimers",
+    "name": "Alzheimer's disease",
+    "radius": 3,
+    "targets": [
+      {
+        "id": 28780,
+        "name": "Alzheimer disease"
+      },
+      {
+        "id": 31527,
+        "name": "Alzheimer disease, familial early-onset, with coexisting amyloid and prion pathology"
+      },
+      {
+        "id": 32654,
+        "name": "familial Alzheimer disease"
+      },
+      {
+        "id": 83960,
+        "name": "Alzheimer disease without neurofibrillary tangles"
+      },
+      {
+        "id": 94982,
+        "name": "Alzheimer disease, susceptibility to, mitochondrial"
+      }
+    ],
+    "label_source": {
+      "provider": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "condition_query": "Alzheimer Disease",
+      "condition_pattern": "alzheimer"
+    },
+    "controls_file": "config/known_controls.json",
+    "controls": {
+      "reviewed_on": "2026-10-24",
+      "rule": "Separate every PrimeKG Alzheimer indication and the named treatment controls below from discovery. Graph indication does not by itself assert current approval.",
+      "treatment_names": [
+        "donepezil",
+        "galantamine",
+        "benzgalantamine",
+        "rivastigmine",
+        "memantine",
+        "lecanemab",
+        "donanemab",
+        "brexpiprazole",
+        "dextromethorphan-bupropion"
+      ],
+      "sources": [
+        "https://www.nia.nih.gov/health/alzheimers-treatment/how-alzheimers-disease-treated",
+        "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-agitation-symptoms-associated-dementia-due-alzheimers-disease",
+        "https://www.fda.gov/news-events/press-announcements/fda-approves-first-non-antipsychotic-drug-treat-agitation-associated-dementia",
+        "https://doi.org/10.7910/DVN/IXA7BM"
+      ],
+      "combination_policy": "Combination approval does not establish approval of each individual ingredient; match combination names only. Control list is conservative and source graph controls are labeled as such."
+    }
+  },
+  "guards": [
+    {
+      "id": "alzheimers",
+      "name": "Alzheimer's disease",
+      "radius": 3,
+      "targets": [
+        {
+          "id": 28780,
+          "name": "Alzheimer disease"
+        },
+        {
+          "id": 31527,
+          "name": "Alzheimer disease, familial early-onset, with coexisting amyloid and prion pathology"
+        },
+        {
+          "id": 32654,
+          "name": "familial Alzheimer disease"
+        },
+        {
+          "id": 83960,
+          "name": "Alzheimer disease without neurofibrillary tangles"
+        },
+        {
+          "id": 94982,
+          "name": "Alzheimer disease, susceptibility to, mitochondrial"
+        }
+      ],
+      "label_source": {
+        "provider": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/api/v2/studies",
+        "condition_query": "Alzheimer Disease",
+        "condition_pattern": "alzheimer"
+      },
+      "controls_file": "config/known_controls.json",
+      "controls": {
+        "reviewed_on": "2026-10-24",
+        "rule": "Separate every PrimeKG Alzheimer indication and the named treatment controls below from discovery. Graph indication does not by itself assert current approval.",
+        "treatment_names": [
+          "donepezil",
+          "galantamine",
+          "benzgalantamine",
+          "rivastigmine",
+          "memantine",
+          "lecanemab",
+          "donanemab",
+          "brexpiprazole",
+          "dextromethorphan-bupropion"
+        ],
+        "sources": [
+          "https://www.nia.nih.gov/health/alzheimers-treatment/how-alzheimers-disease-treated",
+          "https://www.fda.gov/news-events/press-announcements/fda-approves-first-drug-treat-agitation-symptoms-associated-dementia-due-alzheimers-disease",
+          "https://www.fda.gov/news-events/press-announcements/fda-approves-first-non-antipsychotic-drug-treat-agitation-associated-dementia",
+          "https://doi.org/10.7910/DVN/IXA7BM"
+        ],
+        "combination_policy": "Combination approval does not establish approval of each individual ingredient; match combination names only. Control list is conservative and source graph controls are labeled as such."
+      }
+    }
+  ],
+  "families": {
+    "version": 1,
+    "policy": "Conservative, explicit near-duplicate grouping. Unmatched drugs are singletons; broad mechanism classes are not merged. This registry was defined after viewing earlier results, so family inference is exploratory.",
+    "groups": [
+      {
+        "id": "insulin",
+        "name": "Insulin variants",
+        "prefixes": [
+          "insulin "
+        ],
+        "names": [
+          "insulin"
+        ],
+        "rationale": "Human insulin and named insulin analogues/formulations; variants are not independent biological discoveries."
+      },
+      {
+        "id": "mecasermin",
+        "name": "Mecasermin formulations",
+        "names": [
+          "mecasermin",
+          "mecasermin rinfabate"
+        ],
+        "rationale": "IGF-1 and its complex formulation; grouped for presentation, not asserted identical."
+      },
+      {
+        "id": "citalopram",
+        "name": "Citalopram / escitalopram",
+        "names": [
+          "citalopram",
+          "escitalopram"
+        ],
+        "rationale": "Racemate and S-enantiomer."
+      },
+      {
+        "id": "interferon-beta",
+        "name": "Interferon beta variants",
+        "names": [
+          "interferon beta-1a",
+          "interferon beta-1b",
+          "peginterferon beta-1a"
+        ],
+        "rationale": "Related interferon beta preparations."
+      },
+      {
+        "id": "somatropin",
+        "name": "Growth hormone variants",
+        "names": [
+          "somatropin",
+          "somatrem",
+          "somatotropin"
+        ],
+        "rationale": "Closely related recombinant growth hormone variants."
+      }
+    ]
+  },
+  "scorer_sha256": "1608a0c915cacbec88b51189980cd568f838567d3b80f9e9a5da7c7101175496",
+  "trial_snapshot_sha256": "1c68d608baeaaccfdc2100c924497c0383d208dcdd87a385975acdfbed601bdf",
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+}

@@ -1,0 +1,102 @@
+{
+  "disease_id": "parkinsons",
+  "disease_name": "Parkinson's disease",
+  "run_at": "2026-10-25T04:54:07.301300+00:00",
+  "elapsed_seconds": 22.29105887498008,
+  "source_nodes": 129375,
+  "source_rows": 8100498,
+  "target_diseases": [
+    {
+      "id": 27576,
+      "source_id": "10820_13060",
+      "type": "disease",
+      "name": "autosomal recessive Parkinson disease",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 28182,
+      "source_id": "13340_12466_13653_11896",
+      "type": "disease",
+      "name": "Parkinson disease, autosomal dominant, susceptibility to",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 28547,
+      "source_id": "11764_11658_13625_8199_14604_11613_14233_11562_8200_14796_17279_5180_6966_828_10796_10360_11737_13167",
+      "type": "disease",
+      "name": "Parkinson disease",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 28801,
+      "source_id": "14231",
+      "type": "disease",
+      "name": "juvenile onset Parkinson disease 19A",
+      "source": "MONDO"
+    },
+    {
+      "id": 32001,
+      "source_id": "14742_11220",
+      "type": "disease",
+      "name": "parkinson disease, autosomal dominant",
+      "source": "MONDO_grouped"
+    },
+    {
+      "id": 33241,
+      "source_id": "18466",
+      "type": "disease",
+      "name": "hereditary late onset Parkinson disease",
+      "source": "MONDO"
+    }
+  ],
+  "guard_diseases": [
+    "alzheimers",
+    "parkinsons"
+  ],
+  "guard_target_ids": [
+    27576,
+    28182,
+    28547,
+    28780,
+    28801,
+    31527,
+    32001,
+    32654,
+    33241,
+    83960,
+    94982
+  ],
+  "negative_sampling_guard_target_ids": [
+    27576,
+    28182,
+    28547,
+    28780,
+    28801,
+    31527,
+    32001,
+    32654,
+    33241,
+    83960,
+    94982
+  ],
+  "negative_sampling": "Existing filter rejects all guarded target/drug pairs both ways; no embedding training in this pilot.",
+  "hops": 3,
+  "removed_target_drug_rows": 382,
+  "graph_nodes": 29177,
+  "graph_pairs": 502822,
+  "training_triples": 503064,
+  "original_candidate_count": 1801,
+  "candidate_count": 1774,
+  "label_count": 39,
+  "positive_family_count": 39,
+  "candidates_with_paths": 1136,
+  "primekg_sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69",
+  "trials_sha256": "07389567542a26fc49e676fa297c7eb94b5e6f36661856ceb074b32948f1c033",
+  "trials_retrieved_at": "2026-10-25T04:52:49.348047+00:00",
+  "frozen_inputs_sha256": "da2d9c0d006a4a3e24e115e7a37939bdf809add61d4199471839e8c2e6175ab4",
+  "training_edges_sha256": "681c498bf2f9d1e2967708648f6456272fc0f28aa1fb5b316eeac6794e6d8af5",
+  "candidate_policy": "Source PrimeKG non-target indication, minus known controls; regulatory status not asserted.",
+  "leakage_guard": "All configured target/drug pairs removed in both directions before neighborhood and degrees.",
+  "direction": "direction unknown",
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+}

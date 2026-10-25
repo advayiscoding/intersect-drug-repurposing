@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "default_guard_diseases": ["alzheimers", "parkinsons"],
+  "diseases": {
+    "alzheimers": {
+      "id": "alzheimers",
+      "name": "Alzheimer's disease",
+      "radius": 3,
+      "targets": [
+        {"id": 28780, "name": "Alzheimer disease"},
+        {"id": 31527, "name": "Alzheimer disease, familial early-onset, with coexisting amyloid and prion pathology"},
+        {"id": 32654, "name": "familial Alzheimer disease"},
+        {"id": 83960, "name": "Alzheimer disease without neurofibrillary tangles"},
+        {"id": 94982, "name": "Alzheimer disease, susceptibility to, mitochondrial"}
+      ],
+      "label_source": {
+        "provider": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/api/v2/studies",
+        "condition_query": "Alzheimer Disease",
+        "condition_pattern": "alzheimer"
+      },
+      "controls_file": "config/known_controls.json"
+    },
+    "parkinsons": {
+      "id": "parkinsons",
+      "name": "Parkinson's disease",
+      "radius": 3,
+      "targets": [
+        {"id": 28547, "name": "Parkinson disease"},
+        {"id": 28801, "name": "juvenile onset Parkinson disease 19A"},
+        {"id": 33241, "name": "hereditary late onset Parkinson disease"},
+        {"id": 27576, "name": "autosomal recessive Parkinson disease"},
+        {"id": 28182, "name": "Parkinson disease, autosomal dominant, susceptibility to"},
+        {"id": 32001, "name": "parkinson disease, autosomal dominant"}
+      ],
+      "target_policy": "Main and explicitly inherited Parkinson-disease entities only; induced, postencephalitic, mixed and nonspecific parkinsonism syndromes excluded before evaluation.",
+      "label_source": {
+        "provider": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/api/v2/studies",
+        "condition_query": "Parkinson Disease",
+        "condition_pattern": "\\bparkinson(?:['’]?s)?\\s+disease\\b"
+      },
+      "controls": {
+        "reviewed_on": "2026-10-25",
+        "treatment_names": ["levodopa", "carbidopa", "benserazide", "foslevodopa", "foscarbidopa", "apomorphine", "pramipexole", "ropinirole", "rotigotine", "entacapone", "opicapone", "tolcapone", "rasagiline", "safinamide", "selegiline", "istradefylline", "amantadine", "benztropine", "trihexyphenidyl"],
+        "rule": "Exclude graph indications and these named movement-symptom controls. Components of combinations are conservatively excluded; no standalone regulatory claim. Other controls are derived from source-graph indications.",
+        "sources": [
+          "https://www.parkinson.org/sites/default/files/documents/frequently-asked-questions-2025.pdf",
+          "https://www.ninds.nih.gov/current-research/focus-disorders/parkinsons-disease-research/parkinsons-disease-challenges-progress-and-promise",
+          "https://www.nhs.uk/conditions/parkinsons-disease/treatment/"
+        ]
+      }
+    }
+  }
+}

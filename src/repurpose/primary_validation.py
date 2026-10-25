@@ -7,7 +7,7 @@ from scipy.stats import beta, hypergeom
 
 from .data import digest, write_json
 from .evaluation import rank_metrics, random_summary
-from .families import load_families, family_for
+from .families import load_families, family_for, group_rankings
 from .selection import ordered
 
 
@@ -38,16 +38,14 @@ def family_permutation(family_order, positive_families, repetitions=10000, seed=
         "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."}
 
 
-def evaluate_primary(root: Path):
-    out = root / "artifacts"
-    config, rows, groups = load_families(root)
-    protocol = json.loads((out / "protocol.json").read_text())
-    if digest(out / "rankings.json") != protocol["rankings_sha256"]:
-        raise ValueError("Frozen path input changed")
-    positives = set(protocol["tuning_ids"] + protocol["test_ids"])
+def evaluate_rankings(rows, positives, config):
+    """Disease-independent all-label metrics; never fits scores or weights."""
+    groups = group_rankings(rows, config)
+    if not positives:
+        return {"status": "exploratory_no_labels", "candidate_count": len(rows),
+                "heldout_count": 0, "family_count": len(groups), "positive_family_count": 0,
+                "primary_method": "path_only", "methods": {}, "family_permutation": None}
     universe = [r["drug_id"] for r in rows]
-    if set(universe) != set(protocol["candidate_ids"]):
-        raise ValueError("Discovery universe changed")
     by_id = {r["drug_id"]: r for r in rows}
     family_ids = {i: family_for(row, config)[0] for i,row in by_id.items()}
     family_names = {family_for(row, config)[0]: family_for(row, config)[1] for row in by_id.values()}
@@ -63,17 +61,33 @@ def evaluate_primary(root: Path):
             "recovered_families_at_k": {str(k): sorted({family_names[family_ids[i]] for i in order[:k] if i in positives}) for k in (10,20,50)}}
     random = random_summary(universe, positives)
     for k in (10,20,50,100):
-        random["metrics"][f"recall_at_{k}"] = k/len(universe)
-        random["metrics"][f"hits_at_{k}"] = len(positives)*k/len(universe)
+        random["metrics"][f"recall_at_{k}"] = min(k,len(universe))/len(universe)
+        random["metrics"][f"hits_at_{k}"] = len(positives)*min(k,len(universe))/len(universe)
         random["metrics"][f"enrichment_at_{k}"] = 1.0
-    counts = {f: sum(family_ids[i]==f for i in positives) for f in positive_families}
+    counts = {f: sum(family_ids[i]==f for i in positives) for f in sorted(positive_families)}
     methods["random"] = {"metrics": random["metrics"], "exact_95_ci": None,
         "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
-        "distinct_families_at_k": {str(k): float(sum(1-hypergeom.pmf(0,len(universe),m,k) for m in counts.values())) for k in (10,20,50)}}
+        "distinct_families_at_k": {str(k): float(sum(1-hypergeom.pmf(0,len(universe),m,min(k,len(universe))) for m in counts.values())) for k in (10,20,50)}}
     for name, method in methods.items():
         method["lift"] = {str(k): {
-            "vs_random_ratio": method["metrics"][f"recall_at_{k}"]/(k/len(universe)),
+            "vs_random_ratio": method["metrics"][f"recall_at_{k}"]/(min(k,len(universe))/len(universe)),
             "vs_popularity_percentage_points": 100*(method["metrics"][f"recall_at_{k}"]-methods["popularity_only"]["metrics"][f"recall_at_{k}"])} for k in (10,20,50,100)}
+    return {"candidate_count": len(rows), "heldout_count": len(positives),
+            "family_count": len(groups), "positive_family_count": len(positive_families),
+            "primary_method": "path_only", "methods": methods,
+            "family_permutation": family_permutation([g["id"] for g in groups], positive_families)}
+
+
+def evaluate_primary(root: Path):
+    out = root / "artifacts"
+    config, rows, groups = load_families(root)
+    protocol = json.loads((out / "protocol.json").read_text())
+    if digest(out / "rankings.json") != protocol["rankings_sha256"]:
+        raise ValueError("Frozen path input changed")
+    positives = set(protocol["tuning_ids"] + protocol["test_ids"])
+    if {r["drug_id"] for r in rows} != set(protocol["candidate_ids"]):
+        raise ValueError("Discovery universe changed")
+    statistics = evaluate_rankings(rows, positives, config)
     # Keep the split experiment intact in meaning but replace bootstrap CIs for display.
     split = json.loads((out / "validation.json").read_text())
     for name, result in split["methods"].items():
@@ -85,9 +99,7 @@ def evaluate_primary(root: Path):
     split["limitations"] = [v for v in split["limitations"] if "bootstrap" not in v]
     split["limitations"].append("Exact binomial intervals assume exchangeable drug outcomes; near-duplicate drugs remain correlated.")
     write_json(out / "split_validation.json", split)
-    report = {"version": 3, "candidate_count": len(rows), "heldout_count": len(positives),
-        "family_count": len(groups), "positive_family_count": len(positive_families), "primary_method": "path_only",
-        "methods": methods, "family_permutation": family_permutation([g["id"] for g in groups],positive_families),
+    report = {"version": 3, **statistics,
         "path_hyperparameters": {"label_fitted": False, "length_penalty": .5, "degree_exponent": -.5, "aggregate_top_paths": 10,
             "note": "All fixed before the first validation run; no label-fitted weights or hyperparameters. Full-44 evaluation is retrospective/descriptive after method selection."},
         "known_controls_excluded": 9,
@@ -99,4 +111,4 @@ def evaluate_primary(root: Path):
         "provenance": {"protocol_sha256": digest(out / "protocol.json"), "families_sha256": digest(root / "config/drug_families.json"), "ranking_sha256": digest(out / "discovery_rankings.json")}}
     write_json(out / "primary_validation.json", report)
     write_json(out / "family_rankings.json", groups)
-    print(json.dumps({"drugs":len(rows),"positive_drugs":len(positives),"families":len(groups),"positive_families":len(positive_families),"methods":methods,"permutation":report["family_permutation"]},indent=2))
+    print(json.dumps(statistics, indent=2))

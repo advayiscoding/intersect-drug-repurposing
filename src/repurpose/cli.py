@@ -72,14 +72,27 @@ def prepare(root: Path, hops: int):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["fetch-trials", "prepare", "freeze-protocol", "train-embeddings", "tune", "validate", "validate-primary", "prepare-ui", "build-evidence", "build-gap-map", "build-synonyms", "build-check-cache"])
+    parser.add_argument("command", choices=["fetch-trials", "prepare", "freeze-protocol", "train-embeddings", "tune", "validate", "validate-primary", "prepare-ui", "build-evidence", "build-gap-map", "build-synonyms", "build-check-cache", "fetch-disease-trials", "run-disease"])
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--hops", type=int, choices=[2, 3], default=3)
     parser.add_argument("--limit", type=int, default=20, help="build-evidence: top N families")
     parser.add_argument("--family", action="append", help="build-evidence: restrict to a family id or name")
     parser.add_argument("--refresh", action="store_true", help="build-evidence: re-run families already cached")
+    parser.add_argument("--disease", help="Disease ID from config/diseases.json (new isolated commands only)")
+    parser.add_argument("--guard-disease", action="append", help="Guarded disease IDs; defaults to all configured guards")
+    parser.add_argument("--trials-snapshot", type=Path, help="Existing snapshot for a disease replay")
     args = parser.parse_args()
-    if args.command == "fetch-trials":
+    if args.command in {"fetch-disease-trials", "run-disease"}:
+        if not args.disease:
+            parser.error("--disease is required for isolated disease commands")
+        from .disease_pipeline import fetch_disease_trials, run_disease
+        if args.command == "fetch-disease-trials":
+            fetch_disease_trials(args.root, args.disease)
+        else:
+            run_disease(args.root, args.disease, args.guard_disease, args.trials_snapshot)
+    elif args.disease:
+        parser.error("--disease is supported only by fetch-disease-trials and run-disease; legacy commands remain Alzheimer-only")
+    elif args.command == "fetch-trials":
         fetch_trials(args.root)
     elif args.command == "prepare":
         prepare(args.root, args.hops)

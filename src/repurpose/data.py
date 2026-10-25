@@ -37,10 +37,10 @@ def session():
     return client
 
 
-def fetch_trials(root: Path):
+def fetch_trials(root: Path, condition: str = "Alzheimer Disease", output_path: Path | None = None):
     """Snapshot all query pages; eligibility is applied locally and reproducibly."""
     client = session()
-    params = {"query.cond": "Alzheimer Disease", "format": "json", "pageSize": 1000,
+    params = {"query.cond": condition, "format": "json", "pageSize": 1000,
               "filter.overallStatus": "COMPLETED,TERMINATED"}
     studies = []
     pages = 0
@@ -55,8 +55,8 @@ def fetch_trials(root: Path):
         if not token:
             break
         params["pageToken"] = token
-    write_json(root / "data/raw/trials.json", {"source": TRIALS_URL,
-        "query": "Alzheimer Disease", "status_filter": "COMPLETED,TERMINATED",
+    write_json(output_path or root / "data/raw/trials.json", {"source": TRIALS_URL,
+        "query": condition, "status_filter": "COMPLETED,TERMINATED",
         "retrieved_at": datetime.now(timezone.utc).isoformat(),
         "pages": pages, "studies": studies})
 
@@ -83,7 +83,7 @@ def normalize(name: str) -> str:
     return re.sub(r"[^a-z0-9]", "", name.casefold())
 
 
-def match_trials(snapshot: dict, nodes: dict):
+def match_trials(snapshot: dict, nodes: dict, condition_pattern: str = "alzheimer"):
     """Conservative exact name/alias matches; never substring or fuzzy matches."""
     lookup = {}
     for node in nodes.values():
@@ -93,7 +93,7 @@ def match_trials(snapshot: dict, nodes: dict):
     for study in snapshot["studies"]:
         p = study["protocolSection"]
         conditions = p.get("conditionsModule", {}).get("conditions", [])
-        if not any("alzheimer" in c.casefold() for c in conditions):
+        if not any(re.search(condition_pattern, c, re.IGNORECASE) for c in conditions):
             continue
         design = p.get("designModule", {})
         status = p.get("statusModule", {})

@@ -1,0 +1,1512 @@
+{
+  "disease_id": "parkinsons",
+  "label": "registered experimental-arm drugs in Parkinson's disease-tagged trials",
+  "labels": [
+    {
+      "drug_id": 14144,
+      "name": "Topiramate",
+      "rank": 610,
+      "family_id": "drug-14144",
+      "trials": [
+        {
+          "nct_id": "NCT00794313",
+          "url": "https://clinicaltrials.gov/study/NCT00794313",
+          "intervention": "Topiramate",
+          "matched_names": [
+            "Topiramate",
+            "Topamax"
+          ],
+          "title": "Quantification of the Antidyskinetic Effect of Amantadine and Topiramate in Parkinson's Disease",
+          "status": "TERMINATED",
+          "enrollment": 3
+        }
+      ]
+    },
+    {
+      "drug_id": 14154,
+      "name": "Acetaminophen",
+      "rank": 44,
+      "family_id": "drug-14154",
+      "trials": [
+        {
+          "nct_id": "NCT02305017",
+          "url": "https://clinicaltrials.gov/study/NCT02305017",
+          "intervention": "Paracetamol",
+          "matched_names": [
+            "Paracetamol",
+            "acetaminophen"
+          ],
+          "title": "Effect of Paracetamol on Opicapone Pharmacokinetics in Healthy Volunteers",
+          "status": "COMPLETED",
+          "enrollment": 28
+        }
+      ]
+    },
+    {
+      "drug_id": 14180,
+      "name": "Buspirone",
+      "rank": 42,
+      "family_id": "drug-14180",
+      "trials": [
+        {
+          "nct_id": "NCT02589340",
+          "url": "https://clinicaltrials.gov/study/NCT02589340",
+          "intervention": "Buspirone",
+          "matched_names": [
+            "Buspirone"
+          ],
+          "title": "Buspirone, in Combination With Amantadine, for the Treatment of Levodopa-induced Dyskinesia",
+          "status": "TERMINATED",
+          "enrollment": 6
+        },
+        {
+          "nct_id": "NCT02803749",
+          "url": "https://clinicaltrials.gov/study/NCT02803749",
+          "intervention": "Buspirone",
+          "matched_names": [
+            "Buspirone"
+          ],
+          "title": "Buspirone in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 21
+        }
+      ]
+    },
+    {
+      "drug_id": 14189,
+      "name": "Nortriptyline",
+      "rank": 146,
+      "family_id": "drug-14189",
+      "trials": [
+        {
+          "nct_id": "NCT00062738",
+          "url": "https://clinicaltrials.gov/study/NCT00062738",
+          "intervention": "Nortriptyline",
+          "matched_names": [
+            "Nortriptyline",
+            "Pamelor"
+          ],
+          "title": "Treatment of Depression in Parkinson's Disease Trial",
+          "status": "COMPLETED",
+          "enrollment": 52
+        }
+      ]
+    },
+    {
+      "drug_id": 14216,
+      "name": "Warfarin",
+      "rank": 851,
+      "family_id": "drug-14216",
+      "trials": [
+        {
+          "nct_id": "NCT02169440",
+          "url": "https://clinicaltrials.gov/study/NCT02169440",
+          "intervention": "Warfarin",
+          "matched_names": [
+            "Warfarin",
+            "Varfine\u00ae"
+          ],
+          "title": "Effect of BIA 9-1067 on the Pharmacokinetics and Pharmacodynamics of Warfarin",
+          "status": "COMPLETED",
+          "enrollment": 20
+        },
+        {
+          "nct_id": "NCT02305030",
+          "url": "https://clinicaltrials.gov/study/NCT02305030",
+          "intervention": "Warfarin",
+          "matched_names": [
+            "Warfarin",
+            "Uniwarfin"
+          ],
+          "title": "Effect of Opicapone at Steady State on Warfarin Pharmacokinetics",
+          "status": "COMPLETED",
+          "enrollment": 20
+        }
+      ]
+    },
+    {
+      "drug_id": 14259,
+      "name": "Repaglinide",
+      "rank": 930,
+      "family_id": "drug-14259",
+      "trials": [
+        {
+          "nct_id": "NCT01536366",
+          "url": "https://clinicaltrials.gov/study/NCT01536366",
+          "intervention": "Repaglinide",
+          "matched_names": [
+            "Repaglinide",
+            "Novonorm\u00ae"
+          ],
+          "title": "Effect of BIA 9-1067 on the Pharmacokinetics of Repaglinide",
+          "status": "COMPLETED",
+          "enrollment": 27
+        }
+      ]
+    },
+    {
+      "drug_id": 14286,
+      "name": "Rifampicin",
+      "rank": 356,
+      "family_id": "drug-14286",
+      "trials": [
+        {
+          "nct_id": "NCT04070495",
+          "url": "https://clinicaltrials.gov/study/NCT04070495",
+          "intervention": "Rifampicin",
+          "matched_names": [
+            "Rifampicin"
+          ],
+          "title": "A Drug Interaction Study of KW-6356 and Clarithromycin or Rifampicin",
+          "status": "COMPLETED",
+          "enrollment": 20
+        }
+      ]
+    },
+    {
+      "drug_id": 14298,
+      "name": "Rosuvastatin",
+      "rank": 897,
+      "family_id": "drug-14298",
+      "trials": [
+        {
+          "nct_id": "NCT03970798",
+          "url": "https://clinicaltrials.gov/study/NCT03970798",
+          "intervention": "Rosuvastatin",
+          "matched_names": [
+            "Rosuvastatin"
+          ],
+          "title": "A Drug Interaction Study of KW-6356 With Midazolam, Caffeine, or Rosuvastatin",
+          "status": "COMPLETED",
+          "enrollment": 50
+        }
+      ]
+    },
+    {
+      "drug_id": 14299,
+      "name": "Sertraline",
+      "rank": 23,
+      "family_id": "drug-14299",
+      "trials": [
+        {
+          "nct_id": "NCT01437189",
+          "url": "https://clinicaltrials.gov/study/NCT01437189",
+          "intervention": "Sertraline",
+          "matched_names": [
+            "Sertraline",
+            "Zoloft"
+          ],
+          "title": "The Effects of Sertraline on Depression in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 35
+        }
+      ]
+    },
+    {
+      "drug_id": 14306,
+      "name": "Pioglitazone",
+      "rank": 448,
+      "family_id": "drug-14306",
+      "trials": [
+        {
+          "nct_id": "NCT01280123",
+          "url": "https://clinicaltrials.gov/study/NCT01280123",
+          "intervention": "Pioglitazone",
+          "matched_names": [
+            "Pioglitazone",
+            "Pioglitazone Hydrochloride",
+            "ACTOS (R)"
+          ],
+          "title": "Pioglitazone in Early Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 210
+        }
+      ]
+    },
+    {
+      "drug_id": 14318,
+      "name": "Ceftriaxone",
+      "rank": 616,
+      "family_id": "drug-14318",
+      "trials": [
+        {
+          "nct_id": "NCT03413384",
+          "url": "https://clinicaltrials.gov/study/NCT03413384",
+          "intervention": "Ceftriaxone",
+          "matched_names": [
+            "Ceftriaxone",
+            "Ceftriaxone Sandoz powder for IV Injection"
+          ],
+          "title": "To Assess the Efficacy and Safety of Ceftriaxone in Patients With Mild to Moderate Parkinson's Disease Dementia",
+          "status": "COMPLETED",
+          "enrollment": 100
+        }
+      ]
+    },
+    {
+      "drug_id": 14406,
+      "name": "Mirabegron",
+      "rank": 80,
+      "family_id": "drug-14406",
+      "trials": [
+        {
+          "nct_id": "NCT02536976",
+          "url": "https://clinicaltrials.gov/study/NCT02536976",
+          "intervention": "mirabegron",
+          "matched_names": [
+            "mirabegron",
+            "Myrbetriq"
+          ],
+          "title": "Mirabegron in Parkinson Disease and Impaired Cognition",
+          "status": "COMPLETED",
+          "enrollment": 7
+        }
+      ]
+    },
+    {
+      "drug_id": 14447,
+      "name": "Pitolisant",
+      "rank": 276,
+      "family_id": "drug-14447",
+      "trials": [
+        {
+          "nct_id": "NCT00642928",
+          "url": "https://clinicaltrials.gov/study/NCT00642928",
+          "intervention": "BF 2.649 5 mg",
+          "matched_names": [
+            "BF 2.649 5 mg",
+            "pitolisant"
+          ],
+          "title": "Dose Range Finding Study of BF2.649 Versus Placebo to Treat Excessive Daytime Sleepiness in Parkinson's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 108
+        },
+        {
+          "nct_id": "NCT00642928",
+          "url": "https://clinicaltrials.gov/study/NCT00642928",
+          "intervention": "BF 2.649 10 mg",
+          "matched_names": [
+            "BF 2.649 10 mg",
+            "pitolisant"
+          ],
+          "title": "Dose Range Finding Study of BF2.649 Versus Placebo to Treat Excessive Daytime Sleepiness in Parkinson's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 108
+        },
+        {
+          "nct_id": "NCT00642928",
+          "url": "https://clinicaltrials.gov/study/NCT00642928",
+          "intervention": "BF 2.649 20 mg",
+          "matched_names": [
+            "BF 2.649 20 mg",
+            "pitolisant"
+          ],
+          "title": "Dose Range Finding Study of BF2.649 Versus Placebo to Treat Excessive Daytime Sleepiness in Parkinson's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 108
+        },
+        {
+          "nct_id": "NCT00642928",
+          "url": "https://clinicaltrials.gov/study/NCT00642928",
+          "intervention": "BF 2.649 40 mg",
+          "matched_names": [
+            "BF 2.649 40 mg",
+            "pitolisant"
+          ],
+          "title": "Dose Range Finding Study of BF2.649 Versus Placebo to Treat Excessive Daytime Sleepiness in Parkinson's Disease Patients",
+          "status": "COMPLETED",
+          "enrollment": 108
+        },
+        {
+          "nct_id": "NCT01036139",
+          "url": "https://clinicaltrials.gov/study/NCT01036139",
+          "intervention": "BF2.649 (pitolisant)",
+          "matched_names": [
+            "BF2.649 (pitolisant)",
+            "Pitolisant"
+          ],
+          "title": "Efficacy and Safety of BF2.649 in Excessive Daytime Sleepiness (EDS) in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 268
+        },
+        {
+          "nct_id": "NCT01066442",
+          "url": "https://clinicaltrials.gov/study/NCT01066442",
+          "intervention": "BF2.649 (Pitolisant)",
+          "matched_names": [
+            "BF2.649 (Pitolisant)",
+            "Pitolisant"
+          ],
+          "title": "Efficacy and Safety of BF2.649 in Excessive Daytime Sleepiness (EDS) in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 273
+        }
+      ]
+    },
+    {
+      "drug_id": 14643,
+      "name": "Capsaicin",
+      "rank": 168,
+      "family_id": "drug-14643",
+      "trials": [
+        {
+          "nct_id": "NCT02183519",
+          "url": "https://clinicaltrials.gov/study/NCT02183519",
+          "intervention": "Capsaicin",
+          "matched_names": [
+            "Capsaicin"
+          ],
+          "title": "Respiratory Kinematics of Cough in Healthy Older Adults and Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 44
+        }
+      ]
+    },
+    {
+      "drug_id": 14644,
+      "name": "Sodium oxybate",
+      "rank": 440,
+      "family_id": "drug-14644",
+      "trials": [
+        {
+          "nct_id": "NCT00641186",
+          "url": "https://clinicaltrials.gov/study/NCT00641186",
+          "intervention": "sodium oxybate",
+          "matched_names": [
+            "sodium oxybate",
+            "Xyrem"
+          ],
+          "title": "Trial of Xyrem for Excessive Daytime Sleepiness and Sleep Disturbance in Parkinson's Disease (PD)",
+          "status": "COMPLETED",
+          "enrollment": 30
+        },
+        {
+          "nct_id": "NCT02111122",
+          "url": "https://clinicaltrials.gov/study/NCT02111122",
+          "intervention": "Sodium Oxybate",
+          "matched_names": [
+            "Sodium Oxybate",
+            "Brand name: Xyrem"
+          ],
+          "title": "Study of the Symptomatic Effects of Nocturnal Sodium Oxybate in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 16
+        }
+      ]
+    },
+    {
+      "drug_id": 14656,
+      "name": "Cannabidiol",
+      "rank": 32,
+      "family_id": "drug-14656",
+      "trials": [
+        {
+          "nct_id": "NCT02818777",
+          "url": "https://clinicaltrials.gov/study/NCT02818777",
+          "intervention": "cannabidiol",
+          "matched_names": [
+            "cannabidiol",
+            "GWP42003-P"
+          ],
+          "title": "A Study of Tolerability and Efficacy of Cannabidiol on Tremor in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 13
+        },
+        {
+          "nct_id": "NCT03582137",
+          "url": "https://clinicaltrials.gov/study/NCT03582137",
+          "intervention": "Cannabidiol",
+          "matched_names": [
+            "Cannabidiol",
+            "CBD"
+          ],
+          "title": "A Study of Tolerability and Efficacy of Cannabidiol on Motor Symptoms in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 74
+        }
+      ]
+    },
+    {
+      "drug_id": 14725,
+      "name": "Glycerol phenylbutyrate",
+      "rank": 376,
+      "family_id": "drug-14725",
+      "trials": [
+        {
+          "nct_id": "NCT02046434",
+          "url": "https://clinicaltrials.gov/study/NCT02046434",
+          "intervention": "Glycerol Phenylbutyrate",
+          "matched_names": [
+            "Glycerol Phenylbutyrate",
+            "Ravicti"
+          ],
+          "title": "Phenylbutyrate Response as a Biomarker for Alpha-synuclein Clearance From the Brain",
+          "status": "COMPLETED",
+          "enrollment": 38
+        }
+      ]
+    },
+    {
+      "drug_id": 14783,
+      "name": "Caffeine",
+      "rank": 533,
+      "family_id": "drug-14783",
+      "trials": [
+        {
+          "nct_id": "NCT03970798",
+          "url": "https://clinicaltrials.gov/study/NCT03970798",
+          "intervention": "Caffeine",
+          "matched_names": [
+            "Caffeine"
+          ],
+          "title": "A Drug Interaction Study of KW-6356 With Midazolam, Caffeine, or Rosuvastatin",
+          "status": "COMPLETED",
+          "enrollment": 50
+        }
+      ]
+    },
+    {
+      "drug_id": 14880,
+      "name": "Nicotine",
+      "rank": 104,
+      "family_id": "drug-14880",
+      "trials": [
+        {
+          "nct_id": "NCT00957918",
+          "url": "https://clinicaltrials.gov/study/NCT00957918",
+          "intervention": "nicotine",
+          "matched_names": [
+            "nicotine",
+            "NP002"
+          ],
+          "title": "Study of NP002 in Subjects With Idiopathic Parkinson's Disease to Treat Dyskinesias Due to Levodopa Therapy",
+          "status": "COMPLETED",
+          "enrollment": 65
+        }
+      ]
+    },
+    {
+      "drug_id": 14936,
+      "name": "Erythromycin",
+      "rank": 649,
+      "family_id": "drug-14936",
+      "trials": [
+        {
+          "nct_id": "NCT02005029",
+          "url": "https://clinicaltrials.gov/study/NCT02005029",
+          "intervention": "Erythromycin",
+          "matched_names": [
+            "Erythromycin"
+          ],
+          "title": "Erythromycin in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 18
+        }
+      ]
+    },
+    {
+      "drug_id": 14937,
+      "name": "Sildenafil",
+      "rank": 181,
+      "family_id": "drug-14937",
+      "trials": [
+        {
+          "nct_id": "NCT01941732",
+          "url": "https://clinicaltrials.gov/study/NCT01941732",
+          "intervention": "Sildenafil",
+          "matched_names": [
+            "Sildenafil",
+            "Sildenafil (Viagra (R)) 100 mg"
+          ],
+          "title": "Motor Response to Sildenafil in PD",
+          "status": "COMPLETED",
+          "enrollment": 8
+        },
+        {
+          "nct_id": "NCT02162979",
+          "url": "https://clinicaltrials.gov/study/NCT02162979",
+          "intervention": "sildenafil",
+          "matched_names": [
+            "sildenafil",
+            "Viagra"
+          ],
+          "title": "Sildenafil (Viagra) for the Treatment of Dyskinesias in Parkinson's Disease",
+          "status": "TERMINATED",
+          "enrollment": 2
+        }
+      ]
+    },
+    {
+      "drug_id": 14956,
+      "name": "Carbamazepine",
+      "rank": 645,
+      "family_id": "drug-14956",
+      "trials": [
+        {
+          "nct_id": "NCT05581823",
+          "url": "https://clinicaltrials.gov/study/NCT05581823",
+          "intervention": "Carbamazepine",
+          "matched_names": [
+            "Carbamazepine"
+          ],
+          "title": "Study to Evaluate the Effects of Cytochrome P450 (CYP) 3A4 Inducer Carbamazepine on Tavapadon Pharmacokinetics in Healthy Adult Participants",
+          "status": "COMPLETED",
+          "enrollment": 16
+        }
+      ]
+    },
+    {
+      "drug_id": 14963,
+      "name": "Midazolam",
+      "rank": 1114,
+      "family_id": "drug-14963",
+      "trials": [
+        {
+          "nct_id": "NCT03970798",
+          "url": "https://clinicaltrials.gov/study/NCT03970798",
+          "intervention": "Midazolam",
+          "matched_names": [
+            "Midazolam"
+          ],
+          "title": "A Drug Interaction Study of KW-6356 With Midazolam, Caffeine, or Rosuvastatin",
+          "status": "COMPLETED",
+          "enrollment": 50
+        }
+      ]
+    },
+    {
+      "drug_id": 14995,
+      "name": "Clarithromycin",
+      "rank": 612,
+      "family_id": "drug-14995",
+      "trials": [
+        {
+          "nct_id": "NCT04070495",
+          "url": "https://clinicaltrials.gov/study/NCT04070495",
+          "intervention": "Clarithromycin",
+          "matched_names": [
+            "Clarithromycin"
+          ],
+          "title": "A Drug Interaction Study of KW-6356 and Clarithromycin or Rifampicin",
+          "status": "COMPLETED",
+          "enrollment": 20
+        }
+      ]
+    },
+    {
+      "drug_id": 15029,
+      "name": "Perampanel",
+      "rank": 1167,
+      "family_id": "drug-15029",
+      "trials": [
+        {
+          "nct_id": "NCT00505622",
+          "url": "https://clinicaltrials.gov/study/NCT00505622",
+          "intervention": "Perampanel",
+          "matched_names": [
+            "Perampanel"
+          ],
+          "title": "Evaluation of the Long-term Safety, Tolerability, and Efficacy of Perampanel (E2007) as an Adjunctive Therapy in Levodopa Treated Parkinson's Disease Subjects With Motor Fluctuations",
+          "status": "TERMINATED",
+          "enrollment": 328
+        },
+        {
+          "nct_id": "NCT00566462",
+          "url": "https://clinicaltrials.gov/study/NCT00566462",
+          "intervention": "perampanel",
+          "matched_names": [
+            "perampanel"
+          ],
+          "title": "Assessment of Perampanel (E2007) on Synaptic Dopamine in Mild-moderate PD Patients: A Pilot Study With [^123I]-IBZM SPECT",
+          "status": "TERMINATED",
+          "enrollment": 1
+        },
+        {
+          "nct_id": "NCT01634360",
+          "url": "https://clinicaltrials.gov/study/NCT01634360",
+          "intervention": "Perampanel",
+          "matched_names": [
+            "Perampanel",
+            "E2007"
+          ],
+          "title": "Long-Term Safety, Tolerability and Efficacy in Perampanel Treated Parkinson's Disease Patients With Motor Fluctuations",
+          "status": "TERMINATED",
+          "enrollment": 185
+        }
+      ]
+    },
+    {
+      "drug_id": 15099,
+      "name": "Zolpidem",
+      "rank": 494,
+      "family_id": "drug-15099",
+      "trials": [
+        {
+          "nct_id": "NCT03621046",
+          "url": "https://clinicaltrials.gov/study/NCT03621046",
+          "intervention": "Zolpidem",
+          "matched_names": [
+            "Zolpidem",
+            "Stilnoct"
+          ],
+          "title": "Use of Low-dose Zolpidem in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 28
+        }
+      ]
+    },
+    {
+      "drug_id": 15116,
+      "name": "Paroxetine",
+      "rank": 116,
+      "family_id": "drug-15116",
+      "trials": [
+        {
+          "nct_id": "NCT00062738",
+          "url": "https://clinicaltrials.gov/study/NCT00062738",
+          "intervention": "paroxetine",
+          "matched_names": [
+            "paroxetine",
+            "Paxil CR"
+          ],
+          "title": "Treatment of Depression in Parkinson's Disease Trial",
+          "status": "COMPLETED",
+          "enrollment": 52
+        }
+      ]
+    },
+    {
+      "drug_id": 15126,
+      "name": "Donepezil",
+      "rank": 92,
+      "family_id": "drug-15126",
+      "trials": [
+        {
+          "nct_id": "NCT00912808",
+          "url": "https://clinicaltrials.gov/study/NCT00912808",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "aricept"
+          ],
+          "title": "Cholinergic Augmentation in Frequently Falling Subjects With Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 23
+        },
+        {
+          "nct_id": "NCT01014858",
+          "url": "https://clinicaltrials.gov/study/NCT01014858",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil"
+          ],
+          "title": "Multi-centre UK Study of the Acetylcholinesterase Inhibitor Donepezil in Early Dementia Associated With Parkinson's Disease",
+          "status": "TERMINATED",
+          "enrollment": 64
+        },
+        {
+          "nct_id": "NCT01521117",
+          "url": "https://clinicaltrials.gov/study/NCT01521117",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "The Effect of Donepezil on Gait and Balance in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 21
+        },
+        {
+          "nct_id": "NCT02206620",
+          "url": "https://clinicaltrials.gov/study/NCT02206620",
+          "intervention": "Donepezil",
+          "matched_names": [
+            "Donepezil",
+            "Aricept"
+          ],
+          "title": "Effects of Cholinergic Augmentation on Measures of Balance and Gait",
+          "status": "COMPLETED",
+          "enrollment": 49
+        }
+      ]
+    },
+    {
+      "drug_id": 15201,
+      "name": "Dapagliflozin",
+      "rank": 154,
+      "family_id": "drug-15201",
+      "trials": [
+        {
+          "nct_id": "NCT06263673",
+          "url": "https://clinicaltrials.gov/study/NCT06263673",
+          "intervention": "Dapagliflozin",
+          "matched_names": [
+            "Dapagliflozin",
+            "SGLT2 inhibitor therapy"
+          ],
+          "title": "Anti-Diabetic Medications to Fight PD and LBD",
+          "status": "COMPLETED",
+          "enrollment": 18
+        }
+      ]
+    },
+    {
+      "drug_id": 15212,
+      "name": "Fesoterodine",
+      "rank": 174,
+      "family_id": "drug-15212",
+      "trials": [
+        {
+          "nct_id": "NCT02385500",
+          "url": "https://clinicaltrials.gov/study/NCT02385500",
+          "intervention": "Fesoterodine",
+          "matched_names": [
+            "Fesoterodine",
+            "Toviaz"
+          ],
+          "title": "Fesoterodine on Urgency Episodes in Parkinson's Disease Population",
+          "status": "TERMINATED",
+          "enrollment": 5
+        }
+      ]
+    },
+    {
+      "drug_id": 15426,
+      "name": "Isradipine",
+      "rank": 958,
+      "family_id": "drug-15426",
+      "trials": [
+        {
+          "nct_id": "NCT00753636",
+          "url": "https://clinicaltrials.gov/study/NCT00753636",
+          "intervention": "Dynacirc CR (Isradipine)",
+          "matched_names": [
+            "Dynacirc CR (Isradipine)",
+            "Isradipine"
+          ],
+          "title": "Parkinson's Disease Isradipine Safety Study",
+          "status": "COMPLETED",
+          "enrollment": 31
+        }
+      ]
+    },
+    {
+      "drug_id": 15441,
+      "name": "Eszopiclone",
+      "rank": 1104,
+      "family_id": "drug-15441",
+      "trials": [
+        {
+          "nct_id": "NCT00324896",
+          "url": "https://clinicaltrials.gov/study/NCT00324896",
+          "intervention": "eszopiclone",
+          "matched_names": [
+            "eszopiclone",
+            "Lunesta 2 - 3 mg q HS"
+          ],
+          "title": "Treatment of Insomnia in Patients With Parkinson's Disease: A Multi-site, Placebo-controlled Study of Eszopiclone",
+          "status": "COMPLETED",
+          "enrollment": 30
+        }
+      ]
+    },
+    {
+      "drug_id": 15496,
+      "name": "Rifaximin",
+      "rank": 929,
+      "family_id": "drug-15496",
+      "trials": [
+        {
+          "nct_id": "NCT01662791",
+          "url": "https://clinicaltrials.gov/study/NCT01662791",
+          "intervention": "Rifaximin",
+          "matched_names": [
+            "Rifaximin",
+            "Xifaxan"
+          ],
+          "title": "Weight Loss in Parkinson's Disease and Role of Small Bowel Bacterial Overgrowth",
+          "status": "COMPLETED",
+          "enrollment": 49
+        },
+        {
+          "nct_id": "NCT02470780",
+          "url": "https://clinicaltrials.gov/study/NCT02470780",
+          "intervention": "Rifaximin",
+          "matched_names": [
+            "Rifaximin"
+          ],
+          "title": "Treating Bacterial Overgrowth in Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 4
+        }
+      ]
+    },
+    {
+      "drug_id": 15501,
+      "name": "Sitagliptin",
+      "rank": 620,
+      "family_id": "drug-15501",
+      "trials": [
+        {
+          "nct_id": "NCT06263673",
+          "url": "https://clinicaltrials.gov/study/NCT06263673",
+          "intervention": "Sitagliptin",
+          "matched_names": [
+            "Sitagliptin",
+            "DPP4 inhibitor therapy"
+          ],
+          "title": "Anti-Diabetic Medications to Fight PD and LBD",
+          "status": "COMPLETED",
+          "enrollment": 18
+        }
+      ]
+    },
+    {
+      "drug_id": 15579,
+      "name": "Ambroxol",
+      "rank": 1308,
+      "family_id": "drug-15579",
+      "trials": [
+        {
+          "nct_id": "NCT05287503",
+          "url": "https://clinicaltrials.gov/study/NCT05287503",
+          "intervention": "Ambroxol Hydrochloride",
+          "matched_names": [
+            "Ambroxol Hydrochloride",
+            "Ambroxol"
+          ],
+          "title": "Ambroxol as a Disease-modifying Treatment in GBA-PD",
+          "status": "COMPLETED",
+          "enrollment": 65
+        }
+      ]
+    },
+    {
+      "drug_id": 15822,
+      "name": "Ursodeoxycholic acid",
+      "rank": 205,
+      "family_id": "drug-15822",
+      "trials": [
+        {
+          "nct_id": "NCT02967250",
+          "url": "https://clinicaltrials.gov/study/NCT02967250",
+          "intervention": "ursodeoxycholic acid",
+          "matched_names": [
+            "ursodeoxycholic acid",
+            "Ursodiol"
+          ],
+          "title": "Brain Bioenergetics in Parkinson's Disease and Response to Repeated Oral UDCA Treatment",
+          "status": "COMPLETED",
+          "enrollment": 5
+        }
+      ]
+    },
+    {
+      "drug_id": 15891,
+      "name": "Deferiprone",
+      "rank": 1290,
+      "family_id": "drug-15891",
+      "trials": [
+        {
+          "nct_id": "NCT02728843",
+          "url": "https://clinicaltrials.gov/study/NCT02728843",
+          "intervention": "Deferiprone",
+          "matched_names": [
+            "Deferiprone",
+            "DFP"
+          ],
+          "title": "Study of Parkinson's Early Stage With Deferiprone",
+          "status": "COMPLETED",
+          "enrollment": 140
+        }
+      ]
+    },
+    {
+      "drug_id": 16855,
+      "name": "Methylphenidate",
+      "rank": 363,
+      "family_id": "drug-16855",
+      "trials": [
+        {
+          "nct_id": "NCT00359723",
+          "url": "https://clinicaltrials.gov/study/NCT00359723",
+          "intervention": "methylphenidate",
+          "matched_names": [
+            "methylphenidate"
+          ],
+          "title": "Methylphenidate and Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 13
+        },
+        {
+          "nct_id": "NCT01244269",
+          "url": "https://clinicaltrials.gov/study/NCT01244269",
+          "intervention": "Methylphenidate",
+          "matched_names": [
+            "Methylphenidate",
+            "Ritalin"
+          ],
+          "title": "The Effect of Methylphenidate on Non-motor Symptoms and Postural Control in Parkinson's Disease.",
+          "status": "TERMINATED",
+          "enrollment": 6
+        },
+        {
+          "nct_id": "NCT01244269",
+          "url": "https://clinicaltrials.gov/study/NCT01244269",
+          "intervention": "Methylphenidate",
+          "matched_names": [
+            "Methylphenidate",
+            "Ritalin"
+          ],
+          "title": "The Effect of Methylphenidate on Non-motor Symptoms and Postural Control in Parkinson's Disease.",
+          "status": "TERMINATED",
+          "enrollment": 6
+        }
+      ]
+    },
+    {
+      "drug_id": 17951,
+      "name": "Lixisenatide",
+      "rank": 1363,
+      "family_id": "drug-17951",
+      "trials": [
+        {
+          "nct_id": "NCT03439943",
+          "url": "https://clinicaltrials.gov/study/NCT03439943",
+          "intervention": "Lixisenatide",
+          "matched_names": [
+            "Lixisenatide",
+            "injection drug"
+          ],
+          "title": "Study to Evaluate the Effect of Lixisenatide in Patient With Parkinson's Disease",
+          "status": "COMPLETED",
+          "enrollment": 156
+        }
+      ]
+    }
+  ],
+  "all_matched_count": 71,
+  "controls_in_trial_labels": [
+    14220,
+    14321,
+    14452,
+    14806,
+    14830,
+    14831,
+    14904,
+    15138,
+    15193,
+    15291,
+    15333,
+    15493,
+    15812,
+    16842,
+    17270,
+    17414,
+    19207,
+    19208
+  ],
+  "excluded_outside_candidate_universe": [
+    {
+      "drug_id": 14328,
+      "name": "Exenatide"
+    },
+    {
+      "drug_id": 14915,
+      "name": "Inosine"
+    },
+    {
+      "drug_id": 15111,
+      "name": "Dexmedetomidine"
+    },
+    {
+      "drug_id": 15813,
+      "name": "Lubiprostone"
+    },
+    {
+      "drug_id": 15818,
+      "name": "Memantine"
+    },
+    {
+      "drug_id": 16863,
+      "name": "Sarizotan"
+    },
+    {
+      "drug_id": 16865,
+      "name": "Pardoprunox"
+    },
+    {
+      "drug_id": 16866,
+      "name": "SEP-363856"
+    },
+    {
+      "drug_id": 17279,
+      "name": "Nelotanserin"
+    },
+    {
+      "drug_id": 17495,
+      "name": "Sargramostim"
+    },
+    {
+      "drug_id": 17515,
+      "name": "Talampanel"
+    },
+    {
+      "drug_id": 17889,
+      "name": "Varenicline"
+    },
+    {
+      "drug_id": 18758,
+      "name": "Dipraglurant"
+    },
+    {
+      "drug_id": 19208,
+      "name": "Benserazide"
+    },
+    {
+      "drug_id": 20426,
+      "name": "Trimethobenzamide"
+    }
+  ],
+  "eligible_trials": 547,
+  "unmatched_intervention_names": [
+    "0 mg tropicamide",
+    "0.04 mg Lu AE04621",
+    "0.08 mg Lu AE04621",
+    "0.2 mg Lu AE04621",
+    "0.3 mg tropicamide",
+    "0.4 mg Lu AE04621",
+    "0.6 mg Lu AE04621",
+    "0.8 mg Lu AE04621",
+    "009-1",
+    "009-2",
+    "009-3",
+    "009-4",
+    "009-5",
+    "009-A1",
+    "009-A2",
+    "009-A3",
+    "009-B1 (active --> placebo) crossover",
+    "009-B2 (placebo --> active) crossover",
+    "1 mg QD to 15 mg QD PF-06649751",
+    "1 mg QD to 7 mg QD PF-06649751 (if de-escalated in parent study)",
+    "1 mg tropicamide",
+    "1.0 mg Lu AE04621",
+    "1.0 mg rasagiline mesylate",
+    "1.2 mg Lu AE04621",
+    "15 mg QD PF-06649751",
+    "15 mg QD de-escalated to 7 mg QD PF-06649751 in parent study remain at 7 mg QD",
+    "2 mg perampanel",
+    "200 mg BIA 6-512",
+    "240mg Amantadine HCl ER tablets",
+    "3 mg QD to 15 mg QD PF-06649751",
+    "3 mg QD to 7 mg QD PF-06649751 (de-escalated in parent study)",
+    "3 mg tropicamide",
+    "320mg Amantadine HCl ER tablets",
+    "4 mg perampanel",
+    "7 mg QD to 15 mg QD PF-06649751",
+    "7 mg QD to 7 mg QD PF-06649751 (de-escalated in parent study)",
+    "A-DOPAMINE",
+    "A-dopamine",
+    "ABBV-951",
+    "ABT-SLV187",
+    "ACR325",
+    "ADS-5102",
+    "AFQ056",
+    "AFQ056 with L-dopa",
+    "AKST4290",
+    "ANAVEX2-73",
+    "APL-130277",
+    "APOKYN",
+    "ATH-1017",
+    "ATM FOG in PD",
+    "AVP-923-45",
+    "Active Investigational Treatment ENT-01",
+    "Active drug: pimavanserin 17mg (2 strength tablets)",
+    "Allopregnanolone",
+    "Amantadine 300 mg",
+    "Ampyra first, then Placebo",
+    "Antiparkinsonian Agent(s)",
+    "BBM-P002",
+    "BEN-2001",
+    "BI-Sifrol\u00ae",
+    "BIA 3-202",
+    "BIA 3-202 (200 mg)",
+    "BIA 6-512",
+    "BIA 6-512 100 mg",
+    "BIA 6-512 100 mg dose",
+    "BIA 6-512 200 mg dose",
+    "BIA 6-512 25 mg",
+    "BIA 6-512 25 mg dose",
+    "BIA 6-512 400 mg",
+    "BIA 6-512 50 mg dose",
+    "BIA 9-1067",
+    "BIA 9-1067 (test)",
+    "BIA 9-1067 15 mg",
+    "BIA 9-1067 25 mg",
+    "BIA 9-1067 30 mg",
+    "BIA 9-1067 5 mg",
+    "BIA 9-1067 micronized",
+    "BIA 9-1067 non-micronized",
+    "BIIB054",
+    "BIIB094",
+    "BIIB122",
+    "BTRX-246040",
+    "CEP-1347 10mg",
+    "CEP-1347 50mg",
+    "CEP1347 25mg",
+    "CERE-120 (Adeno-Associated Virus Serotype 2 [AAV2]-Neurturin [NTN])",
+    "CPL500036 - high dose",
+    "CPL500036 - low dose",
+    "CVL-751",
+    "CVN424 150 mg",
+    "CVT-301",
+    "CVT-301 (Dose Level 1)",
+    "CVT-301 (Dose Level 2)",
+    "CVT-301 High Dose",
+    "CVT-301 Low Dose",
+    "CVT-301, LIP",
+    "CVXL-0107",
+    "Caffeine 100-200 mg BID",
+    "Caffeine alkaloid",
+    "Carbidopa Levodopa",
+    "Carbidopa Pill",
+    "Carbidopa/levodopa/entacapone",
+    "Carbon-14 BIA 28-6156",
+    "Cerebral Dopamine Neurotrophic Factor",
+    "Chinese herbal medicine treatment",
+    "Coenzyme Q10 with vitamin E",
+    "Comtan\u00ae",
+    "Continuous Release Dopamine Agonists",
+    "Conventional medication",
+    "Cu(II)ATSM",
+    "Cystoscopic injection of Botox into the urinary bladder",
+    "DA-9701",
+    "DA-9805 45mg",
+    "DA-9805 90mg",
+    "DAAOI-P",
+    "DM-1992",
+    "DNL151",
+    "DNL201",
+    "DNS-7801 (high dose)",
+    "DNS-7801 (low-dose)",
+    "DSP-9632P 27.5 mg",
+    "DSP-9632P 55.0 mg",
+    "DSP-9632P 82.5 mg",
+    "Desmotabs",
+    "Donepezil (Aricept)",
+    "Dopamine Agent",
+    "Dopaminergic medication",
+    "Doxepin and Zopiclone",
+    "Duloxetine hydrochloride",
+    "Duodopa",
+    "E2007",
+    "E2027",
+    "ENT-01",
+    "FB-101",
+    "Foliglurax 10 mg (treatment A)",
+    "Foliglurax 30 mg (treatment B)",
+    "G-CSF",
+    "GM608",
+    "GOCOVRI",
+    "GRF6021",
+    "Gold Nanocrystals",
+    "HEC122505MsOH",
+    "HNC364",
+    "HRG2010(I)",
+    "HRG2010(II)",
+    "HRG2010; Sustained-release Carbidopa/Levodopa administered placebo",
+    "Herbal Medicinal Mixture (Roucongrong, Heshouwu etc.)",
+    "High dose ANAVEX2-73",
+    "Hydrogen",
+    "Hypoestoxide",
+    "Hypoxic Gas Mixture",
+    "IBEROGAST",
+    "IPX054 100 mg",
+    "IPX054 150 mg",
+    "IPX054 200 mg",
+    "IPX054 250 mg",
+    "IPX054 300 mg",
+    "IPX066",
+    "IPX066 145 mg LD",
+    "IPX066 195 mg LD",
+    "IPX066 245 mg LD",
+    "IPX066 95 mg LD",
+    "IPX203",
+    "IPX203 ER CD-LD",
+    "IR CD-LD",
+    "IRL790",
+    "IRX4204",
+    "ITI-214",
+    "IkT-148009 (risvodetinib)",
+    "IncobotulinumtoxinA (100 Units)",
+    "IncobotulinumtoxinA (75 Units)",
+    "Infusions of young plasma",
+    "Inhaled VR040",
+    "Insulin",
+    "Intranasal Insulin",
+    "Istradefylline 20 mg",
+    "Istradefylline 20 mg or 40 mg",
+    "Istradefylline 40 mg",
+    "Istradefylline Pill",
+    "JM-010",
+    "JZP-110",
+    "K0706",
+    "KDT-3594",
+    "KW-6356",
+    "KW-6356 High Dose",
+    "KW-6356 Low Dose",
+    "KW-6356 Middle Dose",
+    "KW-6356 X Dose",
+    "KW-6356 Y Dose",
+    "KW-6500",
+    "Ketamine Infusion",
+    "L-dopa",
+    "LD/CD SC solution",
+    "LY03003",
+    "LY03003 ( Rotigotine, extended-release microspheres)",
+    "LY03003( the name of rotigotine)",
+    "LY03003(Rotigotine,extended-release microspheres)",
+    "Lenrispodun",
+    "Levodopa (L-dopa)",
+    "Levodopa (Pardoprunox)",
+    "Levodopa Benserazide Teva Italia",
+    "Levodopa carbidopa intestinal gel (LCIG)",
+    "Levodopa dispersible",
+    "Levodopa formulation",
+    "Levodopa infusion",
+    "Levodopa placebo",
+    "Levodopa, carbidopa, ODM-104",
+    "Levodopa-Carbidopa Intestinal Gel",
+    "Levodopa-Carbidopa Intestinal Gel (LCIG)",
+    "Levodopa-carbidopa Immediate Release (LC-IR) Tablets",
+    "Levodopa-carbidopa intestinal gel",
+    "Levodopa-carbidopa intestinal gel (LCIG)",
+    "Levodopa/Benzerazide",
+    "Levodopa/Carbidopa",
+    "Levodopa/DDCI",
+    "Levodopa/carbidopa",
+    "Levodopa/carbidopa solution for SC administration",
+    "Levodopa/carbidopa/entacapone",
+    "Lithium",
+    "Lu AF28996",
+    "Lu AF82422",
+    "MEDI1341",
+    "MT101-5",
+    "Madopar\u00ae 125",
+    "Madopar\u00ae 250",
+    "Madopar\u00ae HBS",
+    "Madopar\u00ae HBS 125",
+    "Melperone HCl",
+    "Mesdopetam",
+    "Mesdopetam (IRL790)",
+    "Mesenchymal Stem Cells",
+    "Metabolic Cofactor Supplementation",
+    "Mid dose ANAVEX2-73",
+    "Minzasolmin (UCB0599)",
+    "MitoQ",
+    "N-acetylcysteine",
+    "N-acetylcysteine capsule",
+    "ND0612",
+    "ND0612 (Levodopa/Carbidopa solution)",
+    "ND0612 (Levodopa/Carbidopa solution) + morning oral IR-LD/CD",
+    "NE3107",
+    "Nebicapone",
+    "Neupro (Reference)",
+    "Nicotine Nasal Spray 10 MG/ML (0.5 MG/SPRAY)",
+    "OPC",
+    "OXB-102",
+    "Onabotulinumtoxin A Injection",
+    "Ongentys 50mg",
+    "Opicapone (OPC)",
+    "Opicapone 50 mg",
+    "Oral Levodopa/Carbidopa",
+    "Other Parkinson's Disease treatments",
+    "Oxaloacetate (OAA)",
+    "Oxybutynin and darifenacin",
+    "P2B001 0.6/0.75 mg",
+    "P2B001 once daily (pramipexole 0.3 mg / rasagiline 0.75 mg),",
+    "P2B001 once daily (pramipexole 0.6 mg / rasagiline 0.75 mg),",
+    "PBF-509",
+    "PDM608",
+    "PF-06412562",
+    "PF-06649751",
+    "PF-06649751 high dose (15 mg QD)",
+    "PF-06649751 low dose (1 mg QD)",
+    "PF-06649751 middle dose 1 (3 mg QD)",
+    "PF-06649751 middle dose 2 (7 mg QD)",
+    "PR Oxycodone",
+    "PRIM-DJ2727",
+    "PTC-589",
+    "PXT002331 - dose 1",
+    "PXT002331 - dose 2",
+    "PYM50028",
+    "Parcopa",
+    "Part 1, JM-010 component Group A",
+    "Part 1, JM-010 component Group B",
+    "Part 1, JM-010 component Group C",
+    "Part 2, JM-010 combination Group A",
+    "Part 2, JM-010 combination Group B",
+    "Part 2, JM-010 component Group C",
+    "Pimavanserin tartrate (ACP-103)",
+    "Pirepemat",
+    "Placebo",
+    "Placebo (PBO) oral capsules",
+    "Placebo (treatment C)",
+    "Placebo domperidone",
+    "Placebo for Levodopa/Carbidopa (LD/CD)",
+    "Placebo for Rasagiline 1 mg capsule",
+    "Placebo for Sinemet",
+    "Placebo for XP21279 and carbidopa",
+    "Placebo oral capsule",
+    "Placebo to Rasagiline capsule",
+    "Placebo to rasagiline",
+    "Plantago ovata husk",
+    "Pramipexol Extended Release",
+    "Pramipexol Immediate Release",
+    "Pramipexole 0.6 mg",
+    "Pramipexole Extended Release",
+    "Pramipexole Immediate Release",
+    "Pramipexole SR",
+    "Preladenant",
+    "Preladenant 10 mg tablet",
+    "Preladenant 2 mg tablet",
+    "Preladenant 5 mg tablet",
+    "Premarin \u00ae",
+    "Pridopidine",
+    "Prior Donepezil 5mg",
+    "Prior Donzepezil 10mg",
+    "Prolopa\u00ae",
+    "Psilocybin therapy",
+    "Pyridostigmine bromide",
+    "RO7486967",
+    "ROP",
+    "ROP+L-Dopa",
+    "RQ-00000010",
+    "Rasagiline 0.75 mg",
+    "Rasagiline Mesylate",
+    "Rasagiline mesylate plus Mirapex",
+    "Rasagiline mesylate with Levodopa",
+    "Rasagiline mesylate with Requip",
+    "ReQuip PR",
+    "Reduced Glutathione",
+    "Requip PR",
+    "Rivastigmine Patch 9.5 cm2",
+    "Rivastigmine capsule",
+    "Rivastigmine transdermal patch",
+    "Ropinirole CR 2mg tablet",
+    "Ropinirole CR 8mg tablet",
+    "Ropinirole CR matching Placebo tablet",
+    "Ropinirole Implant",
+    "Ropinirole oral product",
+    "Ropinirole prolonged release/extended release(PR/XR)",
+    "Rotigotine (Reference product PR 2.1.1)",
+    "Rotigotine (Test product PR 2.3.1)",
+    "Rotigotine TTS (Test)",
+    "Rotigotine nasal spray",
+    "Rotigotine transdermal patch",
+    "Rotigotine, extended-release microspheres",
+    "SAGE-217",
+    "SAGE-718",
+    "SAM-e",
+    "SCH 420814 10 mg",
+    "SCH 420814 100 mg",
+    "SPM 962",
+    "SYN120",
+    "Safinamide Mesilate",
+    "Safinamide Methanesulfonate",
+    "Safinimide 50-100 mg/day",
+    "Semi continuous intra-oral administration of LD/CD",
+    "Sinemet",
+    "Sinemet (comparator)",
+    "Sinemet 25/100",
+    "Sinemet CR",
+    "Sinemet\u00ae",
+    "Sinemet\u00ae 100/25",
+    "Sinemet\u00ae 100/25 mg",
+    "Sinemet\u00ae CR 100/25",
+    "Stalevo",
+    "Stalevo (levodopa/carbidopa/entacapone)",
+    "Suvecaltamide",
+    "TAK-071",
+    "TD-9855",
+    "THN102 Dosage B",
+    "THN102 Dosage C",
+    "TJ0113 200mg",
+    "TJ0113 400mg",
+    "TR-012001",
+    "TRIGEL",
+    "TRN501 - Dose 1",
+    "TRN501 - Dose 2",
+    "TRN501 - Dose 3",
+    "TRN501 - Dose 4",
+    "TRN501 - Dose 5",
+    "TRN501 - Dose 6",
+    "TRN501 - Dose 7",
+    "TRN501 - Dose 8",
+    "TVP-1012",
+    "TVP-1012 0.5mg",
+    "TVP-1012 1mg",
+    "Talineuren",
+    "Tavapadon",
+    "Terazosin 5 MG",
+    "Tigan\u00ae",
+    "Tozadenant",
+    "Tozadenant (SYN115) 120 mg BID",
+    "Tozadenant (SYN115) 180 mg BID",
+    "Tozadenant (SYN115) 240 mg BID",
+    "Tozadenant (SYN115) 60 mg BID",
+    "Transdermal nicotine",
+    "UCB0022",
+    "UCB0599",
+    "VENT-02",
+    "VTX3232",
+    "VY-AADC01",
+    "Vutiglabridin",
+    "WD-1603 Carbidopa-Levodopa Extended-Release Tablets",
+    "XP21279",
+    "XP21279 and carbidopa (experimental)",
+    "Zelapar",
+    "[11C]PXT012253",
+    "[14C]-BIA 9-1067",
+    "active comparator",
+    "amantadine HCl ER",
+    "ampreloxetine",
+    "aplindore MR tablets or Placebo",
+    "bee venom",
+    "buntanetap/posiphen",
+    "capsules containing: carbidopa (25 mg), levodopa (100 mg), entacapone (200 mg)",
+    "clenbuterol (CST-103), nadolol (CST-107), matching placebo",
+    "dihydroergotine mesylate sustained-release tablets",
+    "exidavnemab",
+    "foliglurax",
+    "glial cell line-derived neurotrophic factor",
+    "hydrolyzed guar gum",
+    "l dopa versus placebo",
+    "levodopa 100 mg / benserazide 25 mg",
+    "levodopa MR",
+    "levodopa, carbidopa, ODM-104",
+    "levodopa-carbidopa",
+    "levodopa/benserazide",
+    "levodopa/benserazide 100/25 mg",
+    "levodopa/carbidopa",
+    "levodopa/carbidopa 100/25",
+    "levodopa/dopa decarboxylase inhibitor",
+    "oxyhydrogen nanobubble infusion",
+    "pimavanserin tartrate",
+    "pimavanserin tartrate (ACP-103)",
+    "pramipexole extended release tablet",
+    "rasagiline mesylate",
+    "rasagiline mesylate 1.0 mg",
+    "ropinirole PR/XR",
+    "ropinirole monotherapy",
+    "ropinirole/L-dopa",
+    "sNN0031",
+    "sodium phosphate enema, oral rifaximin and polyethylene glycol",
+    "solifenacin succinate (VESIcare)",
+    "tozadenant",
+    "tributyrin",
+    "venglustat GZ/SAR402671"
+  ],
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+}

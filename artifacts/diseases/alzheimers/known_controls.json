@@ -1,0 +1,97 @@
+{
+  "disease_id": "alzheimers",
+  "controls": [
+    {
+      "drug_id": 15113,
+      "name": "Galantamine",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15126,
+      "name": "Donepezil",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15232,
+      "name": "Brexpiprazole",
+      "basis": [
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15294,
+      "name": "Tacrine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 15818,
+      "name": "Memantine",
+      "basis": [
+        "sourced named control"
+      ],
+      "in_original_pool": false
+    },
+    {
+      "drug_id": 17174,
+      "name": "Rivastigmine",
+      "basis": [
+        "PrimeKG target indication",
+        "sourced named control"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 20185,
+      "name": "Epicriptine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 20211,
+      "name": "Acetylcarnitine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 20523,
+      "name": "Pramiracetam",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 20575,
+      "name": "Ipidacrine",
+      "basis": [
+        "PrimeKG target indication"
+      ],
+      "in_original_pool": true
+    },
+    {
+      "drug_id": 21155,
+      "name": "Lecanemab",
+      "basis": [
+        "sourced named control"
+      ],
+      "in_original_pool": false
+    }
+  ],
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+}
