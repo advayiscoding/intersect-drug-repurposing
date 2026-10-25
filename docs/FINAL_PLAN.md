@@ -25,7 +25,7 @@ No new diseases, selectors, agents or paid calls. React/Vite + existing Python A
   evaluator against fixed cached rankings; raw remains secondary. Stop immediately
   if Alzheimer strict labels <10 or evaluation becomes uninterpretable. Otherwise
   update validation API/UI and copy, with exact intervals and <30-family warning.
-- [ ] Phase 2: static Parkinson raw/strict table in validation only; no selector,
+- [x] Phase 2: static Parkinson raw/strict table in validation only; no selector,
   candidates or evidence. Use the same artifact schema and label caveats.
 - [ ] Phase 3: shared plain-language data/templates, Simple/Detailed context,
   collapsible intro, keyboard tooltips and graph labels, evidence-specific card
