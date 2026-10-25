@@ -26,6 +26,16 @@ External source links still require internet when clicked.
 
 ## What the results actually say
 
+**Strict-label protocol (frozen before strict recalculation):** retain the raw
+registry and identity filters, then require affirmative evidence that participants
+have the target disease and the drug is a focal studied intervention with a clinical
+objective/outcome. Exclude healthy-only, probe/interaction/PK-only, background or
+unseparated co-administered agents; ambiguous records do not qualify. Diagnosed-
+patient symptom studies may qualify. A drug needs at least one qualifying study.
+No scores or ranking settings change. See [the fixed rule](docs/STRICT_LABEL_RULE.md).
+Until its results are computed, the figures below are the **raw, secondary** result:
+small test, not shown to generalize.
+
 | Primary all-44 evaluation | Result |
 | --- | --- |
 | Path recall@10 / @20 | 4/44 = 9.09%; exact 95% CI 2.53–21.67% |
@@ -62,7 +72,7 @@ The original `demo-safe` commit and artifacts are unchanged.
 versus popularity 1/39 (2.56%) and random expectations 0.56% / 1.13%.
 There are 1,774 candidate drugs / 1,763 families and 39 registry labels / 39
 families. The family permutation p@20 is 0.356. These are not 39 independent
-clinical experiments: frozen label rules also admit healthy-volunteer interaction
+clinical experiments: original raw label rules also admit healthy-volunteer interaction
 probes. Acetaminophen's top-50 label and caffeine's popularity label are examples.
 No labels were removed after seeing the result.
 

@@ -98,3 +98,5 @@
 - Phase 1 requires a rule-preregistration commit before its result commit; this specific requirement overrides the general one-commit-per-phase rule.
 - Audit cached source snapshots, not live registries, so results remain reproducible and no external calls or payments are required.
 - Secret verification compares configured key values in memory and scans reachable history/current tracked files for provider/private-key patterns; no secret values are logged. Unrecognized formats remain a scan limitation.
+- The strict protocol is frozen before its recalculation, not described as a new prospective preregistered test: raw results were already known. Per-record adjudication is rank-blind and quote-backed; ambiguous records fail closed.
+- The source-audit sample is the first ten ascending drug IDs per disease, independent of ranking. Audit categories are not strict eligibility decisions.

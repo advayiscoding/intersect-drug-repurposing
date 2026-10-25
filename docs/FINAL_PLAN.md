@@ -16,7 +16,7 @@ No new diseases, selectors, agents or paid calls. React/Vite + existing Python A
   two local credential-value comparisons and provider/private-key patterns, no
   matches. Secret values never emitted. Gitleaks unavailable; this is a bounded
   scan, not a proof against every possible secret format.
-- [ ] Phase 1a: document all existing label filters and audit ten labels per disease;
+- [x] Phase 1a: document all existing label filters and audit ten labels per disease;
   freeze a principle-based strict rule in README/docs before any strict metrics.
   This required preregistration commit is the explicit exception to one commit
   per phase. Do not inspect rank positions when adjudicating records.

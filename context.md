@@ -18,7 +18,18 @@ feat/parkinsons-pilot at 293e85e, demo-safe/main d35abee, expected artifacts.
 Secret scan: 250 reachable blobs / 164 tracked files, two configured-value checks
 plus provider/private-key patterns; zero findings, no values printed. Gitleaks
 not installed. Historical 132-test sections below describe the old baseline only.
-Next: audit labels and COMMIT strict rule before calculating strict results.
+Phase 0 committed as 68b10fb. Phase 1a raw audit complete: 10 labels/disease
+sampled by drug ID, all 83 raw labels audited. Clear all-supporting concerns:
+AD 4/44, PD 10/39; mixed/unclear AD19, PD7. See docs/LABEL_AUDIT.md.
+docs/STRICT_LABEL_RULE.md is being frozen in the Phase 1a commit BEFORE assigning
+strict inclusion decisions or metrics. No strict results computed. Reviewer
+strict_rule_review checked the rule without accessing labels/ranks; wording clarified
+separable registered contrasts and retrospective status. Parent owns evaluation;
+raw_label_audit produced only the audit. Next: source bundle, rank-blind per-record
+strict decisions, independent review, then fixed-rank strict/raw evaluation.
+tests/test_strict_labels.py currently contains six expected failing tests for the
+not-yet-created strict-label module (red phase); do not mistake this for a baseline
+regression. Commit only the rule/audit/docs for the pre-evaluation freeze.
 No new disease selectors, agents, verdict changes or paid calls. Merge to main and
 demo-final tag only after all final checks. Keep demo-safe untouched.
 
