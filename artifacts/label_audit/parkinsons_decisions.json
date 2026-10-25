@@ -1,0 +1,1126 @@
+{
+  "disease_id": "parkinsons",
+  "adjudicator": "pd_strict_decisions",
+  "rank_blind": true,
+  "rule_sha256": "c67af905bdf8286f22cf7c8df20a631f317cc2666836e78af924cb30b47ae2cd",
+  "source_sha256": "b1016ed6319f7105ba1911a0c6e2ededc0da1ad9262560ee8d5ade6c72d76f04",
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+  "decisions": [
+    {
+      "record_id": "14144:NCT00794313:topiramate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Topiramate is added to a separate amantadine arm in diagnosed patients; that registered contrast measures dyskinesia.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's Disease"
+        },
+        "role": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "All PD participants will receive all three of the drug treatment intervention (placebo, Amantadine 300 mg, Amantadine 300 mg plus Topiramate 150 mg)."
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.0.measure",
+          "quote": "Modified Abnormal Involuntary Movement Scale Area Under the Curve"
+        }
+      }
+    },
+    {
+      "record_id": "14154:NCT02305017:paracetamol",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "pk_only"
+      ],
+      "rationale": "Paracetamol is administered to healthy volunteers to assess opicapone pharmacokinetics, without a Parkinson clinical outcome.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Subjects who are healthy as determined by pre-study medical history"
+        },
+        "objective": {
+          "field": "identificationModule.briefTitle",
+          "quote": "Effect of Paracetamol on Opicapone Pharmacokinetics in Healthy Volunteers"
+        }
+      }
+    },
+    {
+      "record_id": "14180:NCT02589340:buspirone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Buspirone is the varied treatment added to stable amantadine to reduce levodopa-induced dyskinesia.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease diagnosis"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The primary objective of this study is to evaluate the efficacy of buspirone in combination with amantadine in reducing levodopa-induced dyskinesia (LID) in patients with Parkinson's disease (PD)."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Area Under the Curve - Dyskinesia - Forceplate"
+        }
+      }
+    },
+    {
+      "record_id": "14180:NCT02803749:buspirone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Buspirone is tested against placebo for anxiety in diagnosed Parkinson patients; a clinical secondary outcome captures anxiety.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic PD by UK Parkinson's Disease Society Brain Bank Clinical Diagnostic Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Anxiety is highly prevalent in Parkinson's disease and negatively impacts quality of life yet it frequently remains untreated and there have been no clinical trials dedicated to evaluating the pharmacological treatment of anxiety in Parkinson's disease. Buspirone is effective for the treatment of generalized anxiety disorder in the general and elderly population. It is not known if it is effective for the treatment of anxiety in Parkinson's disease. This is a single-center, placebo-controlled, double-blind design with participants randomized with a 4:1 allocation ratio to flexible dosage buspirone (maximum dosage 30 mg twice daily) or placebo for 12 weeks."
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.0.measure",
+          "quote": "Mean Change in Hamilton Anxiety Rating Scale (HAM-A) From Baseline to 12 Weeks"
+        }
+      }
+    },
+    {
+      "record_id": "14189:NCT00062738:nortriptyline",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Nortriptyline is a separate antidepressant arm evaluated for depression in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease without dementia."
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The goal of this study is to evaluate the effectiveness and safety of two antidepressants--nortriptyline and paroxetine, compared to placebo in patients with Parkinson's disease and depression."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Hamilton Depression Scale"
+        }
+      }
+    },
+    {
+      "record_id": "14216:NCT02169440:warfarin",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Warfarin is a CYP2C9 substrate in a healthy-volunteer interaction study, with pharmacokinetic outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Healthy as determined by pre-study medical history"
+        },
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "the pharmacokinetics of S-warfarin, a substrate of CYP2C9"
+        }
+      }
+    },
+    {
+      "record_id": "14216:NCT02305030:warfarin",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Warfarin is the substrate of an opicapone interaction study in healthy volunteers; no Parkinson clinical outcome is specified.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Healthy as determined by pre-study medical history"
+        },
+        "outcome": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "R- and S-warfarin plasma concentration"
+        }
+      }
+    },
+    {
+      "record_id": "14259:NCT01536366:repaglinide",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Repaglinide is used to probe CYP2C8 inhibition in healthy volunteers, with PK measures only.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Healthy as determined by pre-study medical history"
+        },
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "investigate the CYP2C8 inhibition by BIA 9-1067"
+        }
+      }
+    },
+    {
+      "record_id": "14286:NCT04070495:rifampicin",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Rifampicin is a CYP3A4/5 inducer used for a KW-6356 interaction experiment in healthy men.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "CYP3A4/5 inhibitor or inducer is orally administered to healthy Japanese men for 7 days"
+        }
+      }
+    },
+    {
+      "record_id": "14298:NCT03970798:rosuvastatin",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Rosuvastatin is an index substrate in healthy men for KW-6356 pharmacokinetics.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "pharmacokinetics of index substrates for CYP3A4/5, CYP1A2 and BCRP"
+        },
+        "population": {
+          "field": "armsInterventionsModule.armGroups.0.label",
+          "quote": "Healthy Japanese adult male subjects"
+        }
+      }
+    },
+    {
+      "record_id": "14299:NCT01437189:sertraline",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Sertraline is evaluated for depression and quality of life in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "confirmed diagnosis of PD according to Brain Bank Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The aim of this open-label, self-control study is to evaluate the efficacy of sertraline in treating depression in Patients with Parkinson's disease. In addition, the investigators also want to find out whether patient gets better quality of life when depression is improved."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change From Baseline in Hamilton Depression Rating Scale (HAMD)"
+        }
+      }
+    },
+    {
+      "record_id": "14306:NCT01280123:pioglitazone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Pioglitazone dose arms are compared with placebo on clinical Parkinson progression.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Men and women with idiopathic PD of less than 5 years duration"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This is a multi-center, double-blind, placebo controlled clinical trial of two dosages of oral pioglitazone (15 milligram(mg) and 45 milligram (mg)) for safety, tolerability, and futility.\n\nSubjects who are on stable dose of rasagiline 1 mg/day or selegiline 10 mg/day for at least 8 weeks but no more than 8 months, will be randomized to one of two dosages of oral pioglitazone (15 mg and 45 mg) or matching placebo.\n\nThe study will measure disease progression by the change in total Unified Parkinson's Disease Rating Scale (UPDRS) score between the baseline visit and 44 weeks."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Total Unified Parkinson's Disease Rating Scale (UPDRS) Score From Baseline to 44 Weeks"
+        }
+      }
+    },
+    {
+      "record_id": "14318:NCT03413384:ceftriaxone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Ceftriaxone is randomized against placebo for cognition in diagnosed Parkinson disease dementia.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic Parkinson's disease (PD) based on the UK Parkinson's Disease Society Brain Bank Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This is a randomized, double blinded, placebo-controlled Phase II study to investigate the efficacy and safety of ceftriaxone in patients with mild to moderate Parkinson's disease dementia (PDD).This study will enroll approximately 106 patients to have up to 84 evaluable subjects, and conduct in Chung Shan Medical University Hospital, National Taiwan University Hospital, Kaohsiung Chang Gung Memorial Hospital, China Medical University Hospital, Changhua Christian Hospital, and Taipei Veterans General Hospital."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Compare the treatment difference in mean net change in ADAS-Cog score with time course"
+        }
+      }
+    },
+    {
+      "record_id": "14406:NCT02536976:mirabegron",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Mirabegron is the active arm in diagnosed patients with bladder symptoms and impaired cognition; cognition is the registered primary clinical measure.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Clinical Diagnosis of PD based on the United Kingdom Brain Bank diagnostic criteria for PD"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "There is a high prevalence of OAB symptoms among patients with Parkinson's disease and a lack of pharmacotherapies with an acceptable side effect profile. Specifically, available anticholinergic medications have a high risk of cognitive side-effects, which preclude their use in PD patients with CI. PD can also cause a number of non-motor symptoms that are likely to be adversely affected by the currently available anticholinergic agents. Mirabegron is the first pharmacologic treatment which may not exacerbate CI, constipation, orthostatic hypotension (OH), somnolence, and dry mouth in PD."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Montreal Cognitive Assessment Total Score"
+        }
+      }
+    },
+    {
+      "record_id": "14447:NCT00642928:bf264910mg",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "This registered BF 2.649 dose arm is studied against placebo for excessive daytime sleepiness in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic Parkinson disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The objective of this trial is to define the minimum effective dose of BF 2.649 between 5 mg, 10 mg, 20 mg or 40 mg versus placebo in reducing the Excessive Daytime Sleepiness of Parkinson's disease patients"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Epworth Sleepiness Scale scores (ESS)"
+        }
+      }
+    },
+    {
+      "record_id": "14447:NCT00642928:bf264920mg",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "This registered BF 2.649 dose arm is studied against placebo for excessive daytime sleepiness in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic Parkinson disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The objective of this trial is to define the minimum effective dose of BF 2.649 between 5 mg, 10 mg, 20 mg or 40 mg versus placebo in reducing the Excessive Daytime Sleepiness of Parkinson's disease patients"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Epworth Sleepiness Scale scores (ESS)"
+        }
+      }
+    },
+    {
+      "record_id": "14447:NCT00642928:bf264940mg",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "This registered BF 2.649 dose arm is studied against placebo for excessive daytime sleepiness in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic Parkinson disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The objective of this trial is to define the minimum effective dose of BF 2.649 between 5 mg, 10 mg, 20 mg or 40 mg versus placebo in reducing the Excessive Daytime Sleepiness of Parkinson's disease patients"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Epworth Sleepiness Scale scores (ESS)"
+        }
+      }
+    },
+    {
+      "record_id": "14447:NCT00642928:bf26495mg",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "This registered BF 2.649 dose arm is studied against placebo for excessive daytime sleepiness in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic Parkinson disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The objective of this trial is to define the minimum effective dose of BF 2.649 between 5 mg, 10 mg, 20 mg or 40 mg versus placebo in reducing the Excessive Daytime Sleepiness of Parkinson's disease patients"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Epworth Sleepiness Scale scores (ESS)"
+        }
+      }
+    },
+    {
+      "record_id": "14447:NCT01036139:bf2649pitolisant",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Pitolisant is compared with placebo for excessive daytime sleepiness in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "documented history of Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "To compare the efficacy of BF2.649 over placebo (12 week Double-Blind Phase) and assess the long term safety and the efficacy maintenance(9 months Open-Label Extension Phase) of BF2.649 in the improvement of excessive daytime sleepiness in patients diagnosed with Parkinson's Disease."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "ESS change (Epworth Sleepiness Scale)"
+        }
+      }
+    },
+    {
+      "record_id": "14447:NCT01066442:bf2649pitolisant",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Pitolisant is compared with placebo for excessive daytime sleepiness in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "documented history of Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "To compare the efficacy of BF2.649 over placebo (12 week Double-Blind Phase) and assess the long term safety and the efficacy maintenance(9 months Open-Label Extension Phase) of BF2.649 in the improvement of excessive daytime sleepiness in patients diagnosed with Parkinson's Disease."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "ESS change (Epworth Sleepiness Scale) versus baseline"
+        }
+      }
+    },
+    {
+      "record_id": "14643:NCT02183519:capsaicin",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Capsaicin evokes reflex cough as a challenge agent in a physiological comparison; the study does not evaluate its clinical treatment effect.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "test cough function in individuals with Parkinson's disease and healthy older adults"
+        },
+        "role": {
+          "field": "armsInterventionsModule.armGroups.1.description",
+          "quote": "coughing in response to capsaicin (reflex cough)"
+        }
+      }
+    },
+    {
+      "record_id": "14644:NCT00641186:sodiumoxybate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Sodium oxybate is given to test symptomatic sleep and fatigue benefit in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "a diagnosis of idiopathic PD"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This clinical trial is designed to evaluate the safety and potential efficacy of Xyrem for the treatment of excessive daytime sleepiness (EDS) and nocturnal sleep disturbance in patients with mild to moderate Parkinson's Disease (PD)."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Sleep and Fatigue"
+        }
+      }
+    },
+    {
+      "record_id": "14644:NCT02111122:sodiumoxybate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Sodium oxybate is tested against placebo for sleep-wake disturbance in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease (Hoehn and Yahr II/III) diagnosis"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Sleep wake disturbance is a common problem in Parkinson's disease patients and so far the therapeutic possibilities for symptomatic relief are limited. Small, open-label studies indicate that the use of Xyrem (gamma-hydroxybutyrate) might be of benefit in this situation.\n\nThis study is intended to show a beneficial effect of the study medication in a randomized cross-over trial, that fulfills strict scientific criteria."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Objective excessive daytime sleepiness"
+        }
+      }
+    },
+    {
+      "record_id": "14656:NCT02818777:cannabidiol",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Although dose tolerability is the major purpose, the registered secondary specific aim explicitly examines CBD effects on tremor and other Parkinson symptoms, with clinical outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic PD, per UK Parkinson's Disease Society (UKPDS) Brain Bank Clinical Diagnostic Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "Secondary Specific Aim: To examine the effect of CBD on severity \\& duration of tremor and other conditions that are problematic in PD."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.6.measure",
+          "quote": "Change in Movement Disorder Society-Unified Parkinsons Disease Rating Scale Total Score"
+        }
+      }
+    },
+    {
+      "record_id": "14656:NCT03582137:cannabidiol",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Cannabidiol is randomized against placebo to assess motor symptom efficacy in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic PD, per UK Parkinson's Disease Society (UKPDS) Brain Bank Clinical Diagnostic Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The major purpose of this study is to assess the efficacy of CBD on motor symptoms of Parkinson's Disease (PD), and secondarily to study the safety and tolerability of CBD and other efficacy, particularly regarding tremor in PD. The study has been powered to detect a clinically significant reduction in Movement Disorder Society (MDS) Unified Parkinson's Disease Rating Scale (UPDRS) Part III motor scores. This is a 1:1 parallel, double-blind, randomized controlled trial (RCT) with 60 participants. The investigators will be recruiting up to 75 participants; the goal is to have 60 participants (30 in CBD group and 30 in placebo group) complete the study. The study drug is obtained from the National Institute on Drug Abuse (NIDA)."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Movement Disorders Society-Unified Parkinson's Disease Rating Scale (MDS-UPDRS) Part III (Motor Examination) Scores"
+        }
+      }
+    },
+    {
+      "record_id": "14725:NCT02046434:glycerolphenylbutyrate",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "The phenylbutyrate study measures alpha-synuclein movement into blood; its protocol explicitly expects no symptom effects in this short trial.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "increase the removal of alpha-synuclein from the brain into the bloodstream"
+        },
+        "clinical": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "No effects on Parkinson symptoms are expected during this short trial."
+        }
+      }
+    },
+    {
+      "record_id": "14783:NCT03970798:caffeine",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Caffeine is an index substrate in a healthy-volunteer KW-6356 PK interaction experiment.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "pharmacokinetics of index substrates for CYP3A4/5, CYP1A2 and BCRP"
+        },
+        "population": {
+          "field": "armsInterventionsModule.armGroups.0.label",
+          "quote": "Healthy Japanese adult male subjects"
+        }
+      }
+    },
+    {
+      "record_id": "14880:NCT00957918:nicotine",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Nicotine is compared with placebo for levodopa-induced dyskinesia; the clinical dyskinesia measure is secondary.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "clinical diagnosis of probable idiopathic Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The study is designed to answer the question: will nicotine at doses that do not cause serious side effects, show feasibility in treatment of levodopa-induced dyskinesia in patients with Parkinson's disease?"
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.0.measure",
+          "quote": "measure of frequency and severity of dyskinesia (USDysRS), active vs placebo"
+        }
+      }
+    },
+    {
+      "record_id": "14936:NCT02005029:erythromycin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Erythromycin is varied against placebo to test levodopa absorption and motor function in diagnosed patients; motor performance is a registered clinical secondary measure.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "definitive diagnosis of Parkinson's Disease (per United Kingdom brain bank criteria)"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Gastroparesis (slow stomach emptying) is a common feature of Parkinson's Disease. Levodopa (Sinemet), a common medication for Parkinson's Disease, can make gastroparesis worse. Gastroparesis effects how the levodopa is absorbed and used by the body. This study will explore the possibility of using Erythromycin, a drug commonly used (off label) for gastroparesis, along with levodopa to determine if there is improved levodopa absorption and motor function."
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.0.measure",
+          "quote": "9-hole Peg Test Right Hand"
+        }
+      }
+    },
+    {
+      "record_id": "14937:NCT01941732:sildenafil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Sildenafil is taken to test motor function and cerebral flow in diagnosed Parkinson patients; motor function is primary.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinsons disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Sildenafil (Viagra(R))is widely used by men with Parkinsons Disease (PD) and erectile dysfunction. A number of patients have reported that when they take Sildenafil, their need of anti-PD medication is reduced.\n\nWe hypotheses that sildenafil increases brain blood flow and hence improves the function of specific brain regions, improving motor function.\n\nMotor function and cerebral blood flow of 8 patients will be tested before and after Sildenafil intake and before and after anti-PD medication."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Motor function"
+        }
+      }
+    },
+    {
+      "record_id": "14937:NCT02162979:sildenafil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Sildenafil is compared with placebo for dyskinesia in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This study is to determine if Viagra is effective in reducing dyskinesias in patients with Parkinson's Disease."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Duration of Dyskinesia."
+        }
+      }
+    },
+    {
+      "record_id": "14956:NCT05581823:carbamazepine",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Carbamazepine is a CYP3A4 inducer given to healthy adults to test tavapadon pharmacokinetics.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "steady-state pharmacokinetics (PK) of tavapadon in healthy adult participants"
+        }
+      }
+    },
+    {
+      "record_id": "14963:NCT03970798:midazolam",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Midazolam is an index substrate in a healthy-volunteer KW-6356 PK interaction experiment.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "pharmacokinetics of index substrates for CYP3A4/5, CYP1A2 and BCRP"
+        },
+        "population": {
+          "field": "armsInterventionsModule.armGroups.0.label",
+          "quote": "Healthy Japanese adult male subjects"
+        }
+      }
+    },
+    {
+      "record_id": "14995:NCT04070495:clarithromycin",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Clarithromycin is a CYP3A4/5 inhibitor in a healthy-volunteer KW-6356 interaction experiment.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "CYP3A4/5 inhibitor or inducer is orally administered to healthy Japanese men for 7 days"
+        }
+      }
+    },
+    {
+      "record_id": "15029:NCT00505622:perampanel",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Perampanel is an adjunctive active treatment in an extension cohort with idiopathic Parkinson disease and motor fluctuations; OFF time is clinical.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Male or female subjects with idiopathic PD"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This is a multicentre, open-label extension study to evaluate the long-term safety, tolerability, and efficacy of Perampanel (E2007) as an adjunctive therapy in levodopa treated PD subjects with motor fluctuations. All subjects who have completed E2007-E044-213 or E2007-G000-309 will be candidates for entering this extension trial, provided that they meet the inclusion/exclusion criteria and have completed the core study, up to and including the final efficacy visit."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Mean Change From Baseline in Total Daily OFF Time (Hours) During Open-label Extension Study"
+        }
+      }
+    },
+    {
+      "record_id": "15029:NCT00566462:perampanel",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "This perampanel study measures striatal imaging binding after a levodopa challenge and specifies no disease-relevant clinical objective or outcome.",
+      "evidence": {
+        "outcome": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Striatal [^123I]-Iodobenzamine (IBZM_ Binding Following a Single Dose Carbidopa/Levodopa Challenge"
+        }
+      }
+    },
+    {
+      "record_id": "15029:NCT01634360:perampanel",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Resolved to uncertain under docs/STRICT_LABEL_PROTOCOL.md: the independent reviewer read this record as 'uncertain' where the adjudicator read it as 'include'. Original adjudicator rationale: The perampanel extension explicitly studies efficacy in a Parkinson motor-fluctuation cohort; OFF time is clinical.",
+      "evidence": {
+        "population": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "patients with Parkinson's Disease with \"wearing off\" motor fluctuations"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "A 48-month open label multi-centered extension study to evaluate the long-term safety, tolerability and efficacy of E2007 in patients with Parkinson's Disease with \"wearing off\" motor fluctuations and \"on\" period Dyskinesias."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Mean Change From Baseline in Total Daily OFF Time (Hours) During Open-label Extension Study"
+        }
+      }
+    },
+    {
+      "record_id": "15099:NCT03621046:zolpidem",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Low-dose zolpidem is compared with placebo for motor and cognitive benefit in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic Parkinson's"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This study will evaluate the motor and cognitive benefits of low-dose zolpidem in Parkinson's."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Changes in motor function"
+        }
+      }
+    },
+    {
+      "record_id": "15116:NCT00062738:paroxetine",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Paroxetine is a separate antidepressant arm evaluated for depression in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease without dementia."
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The goal of this study is to evaluate the effectiveness and safety of two antidepressants--nortriptyline and paroxetine, compared to placebo in patients with Parkinson's disease and depression."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Hamilton Depression Scale"
+        }
+      }
+    },
+    {
+      "record_id": "15126:NCT00912808:donepezil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Donepezil is compared with placebo to reduce falls in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The purpose of this study is to find out if a medication that increases levels of a brain chemical called acetylcholine will improve balance and reduce falls in patients with parkinson's disease who have the problem of very poor balance and are frequently falling or nearly falling on a daily basis. Donepezil, a drug approved for the treatment of Alzheimer's dementia, will reduce falls in subjects with Parkinson's disease and balance impairment."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Fall Frequency Per Day"
+        }
+      }
+    },
+    {
+      "record_id": "15126:NCT01014858:donepezil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Donepezil is compared with placebo for cognition and function in Parkinson disease with mild dementia.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "A diagnosis of Parkinson's disease according to UK Parkinson's Disease Society Brain Bank Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "To demonstrate the superiority of donepezil over placebo in improving cognitive function, neuropsychiatric burden and functional ability in people with Parkinson's disease and mild dementia after 24 months of treatment.\n\nTo demonstrate the superiority of donepezil over placebo in improving patient and carer quality of life and to establish the cost-effectiveness of donepezil.\n\nTo determine the instrument most suitable for evaluating change in cognition in people with Parkinson's disease and mild dementia."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "To demonstrate the superiority of donepezil over placebo in improving cognitive function, neuropsychiatric burden and functional ability in people with Parkinson's disease and mild dementia after 24 months of treatment."
+        }
+      }
+    },
+    {
+      "record_id": "15126:NCT01521117:donepezil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Donepezil is crossed over with placebo to study gait and balance in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic Parkinson's disease, defined by the UK Brain Bank criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This study involves Parkinson's disease (PD). Symptoms include slow movement, tremor, and muscle rigidity. Current medications for the treatment of PD do not improve gait and balance difficulties in individuals with PD. Donepezil (study drug) has been found to reduce falls in individuals with PD. The mechanism in which this reduction of falls occurs is unclear. The investigators study will look at what aspects of gait and balance are improved by the study drug. The study drug is not approved to treat PD in the United States or other countries because we do not know enough about it."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Sensory Organization Test - Composite Score"
+        }
+      }
+    },
+    {
+      "record_id": "15126:NCT02206620:donepezil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Donepezil is compared with placebo on balance and gait outcomes in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This study will compare the effects of placebo and donepezil, a drug that helps conserve concentrations of the neurotransmitter, acetylcholine, on measures of balance and gait in subjects with Parkinson's disease (PD). This study is a double-blind, placebo controlled, cross-over randomized clinical trial. Short-latency afferent inhibition (SAI), a physiological index of cholinergic function will be measured to determine if the deficits in balance and gait correlate with abnormalities of the SAI and if SAI is altered by donepezil as a measure of drug efficacy. Cognitive tests like the Attention Network Test (ANT) will be administered to determine if changes in gait and balance are mediated by changes in attention.\n\nThe results of this study will be the most direct test of the hypothesized role of cholinergic neurons and the neurotransmitter, acetylcholine in terms of gait and balance. The study is exploratory because it is not known whether donepezil will affect gait, balance or attention, nor which measures of gait, balance or attention will be sensitive to drug manipulation. The study's immediate goal is to determine the potential utility of cholinergic manipulation as a strategy for preventing or treating balance and gait dysfunction in PD. The findings of this trial are intended to lead to more sharply focused questions about the role of cholinergic neurons in balance and gait and eventually to Phase II B trials to determine clinical utility of cholinergic manipulation to prevent falls and improve mobility."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Delta Medio-lateral Postural Sway Range (Foam)"
+        }
+      }
+    },
+    {
+      "record_id": "15201:NCT06263673:dapagliflozin",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Dapagliflozin has its own active arm and neurological outcomes, but the eligibility permits Parkinson disease or Lewy body dementia without a separately specified Parkinson treatment cohort and outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease or Lewy Body Dementia"
+        },
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Parkinson's disease and Lewy body dementia"
+        }
+      }
+    },
+    {
+      "record_id": "15212:NCT02385500:fesoterodine",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Fesoterodine is compared with placebo for urinary urgency and sleep problems in an explicitly described Parkinson cohort.",
+      "evidence": {
+        "population": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "A representative number of patients with baseline overactive bladder (OAB) symptoms and Parkinson's disease will be recruited"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Parkinson's disease (PD) causes several non-motor autonomic symptoms including lower urinary tract dysfunction. Their symptoms can be managed with antimuscarinics with variable efficacy. Fesoterodine offers a new therapeutic molecule to target the symptoms of urinary frequency, urgency and nocturia in this patient population. The purpose of this protocol is to compare the impact of fesoterodine to placebo on urinary urgency and nocturnal sleep problems in a heterogeneous population of PD patients in a cross-over fashion.\n\nA representative number of patients with baseline overactive bladder (OAB) symptoms and Parkinson's disease will be recruited to receive either the active drug or placebo for the first phase of eight weeks. The groups will then be crossed-over during the second phase of eight weeks. The main outcomes assessed will be the urgency episodes on a 3-day voiding diary, as well as the nocturnal sleep problems will be the Parkinson's Disease Sleep Scale (PDSS)."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Urgency episodes"
+        }
+      }
+    },
+    {
+      "record_id": "15426:NCT00753636:dynacirccrisradipine",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Isradipine is studied for dose safety and tolerability; a motor rating is measured but the objective does not study clinical effects.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "establish the safety and tolerability of isradipine"
+        },
+        "outcome": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Tolerability of Isradipine"
+        }
+      }
+    },
+    {
+      "record_id": "15441:NCT00324896:eszopiclone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Eszopiclone is randomized against placebo for Parkinson sleep disturbance; sleep duration is the registered clinical endpoint.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease by research criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Parkinson's disease (PD) is the second most common neurodegenerative disease in the US, affecting nearly 1 million Americans. Up to 82% of community dwelling individuals with PD complain of sleep disturbances, typically sleep fragmentation. Despite the high prevalence of sleep problems and their impact on the life of these individuals, there has been, until recently, little research focus on the problem. This will be a multi-site, double blind, placebo-controlled, two arm, parallel group, fixed-dose trial which will last 6 weeks. Seventy patients at four sites (30 at the PI's site and a total of 40 patients at three external sites) will be equally randomized to eszopiclone or placebo. The primary hypothesis is that eszopiclone will be superior to placebo for the treatment of insomnia in patients with Parkinson's disease"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.description",
+          "quote": "Total sleep time in hours"
+        }
+      }
+    },
+    {
+      "record_id": "15496:NCT01662791:rifaximin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Rifaximin is offered to the Parkinson weight-loss case cohort in an open-label therapeutic component; the protocol explicitly studies response to treatment and measures weight and symptoms.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Inclusion criteria: Parkinson's Disease"
+        },
+        "role": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "All individuals in the weight loss group (i.e., only the Case group) were offered open-label treatment with the poorly absorbed antibiotic, rifaximin, 550 mg PO twice a day for 14 days."
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.5.measure",
+          "quote": "Weight Change in Case Group After Treatment"
+        }
+      }
+    },
+    {
+      "record_id": "15496:NCT02470780:rifaximin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Rifaximin is randomized against placebo for SIBO-positive Parkinson patients to test motor OFF time.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic PD"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This study investigates the effect of treating Small Intestinal Bacterial Overgrowth (SIBO) in patients with Parkinson's Disease (PD). It will test the hypothesis that treating SIBO with the antibiotic rifaximin will improve motor complications in previously SIBO-positive PD patients."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in \"Off\" Time as Measured by Patient Diary"
+        }
+      }
+    },
+    {
+      "record_id": "15501:NCT06263673:sitagliptin",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Sitagliptin has its own active arm and neurological outcomes, but the eligibility permits Parkinson disease or Lewy body dementia without a separately specified Parkinson treatment cohort and outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease or Lewy Body Dementia"
+        },
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Parkinson's disease and Lewy body dementia"
+        }
+      }
+    },
+    {
+      "record_id": "15579:NCT05287503:ambroxolhydrochloride",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Ambroxol is compared with placebo in GBA1-associated diagnosed Parkinson disease with cognitive and motor outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of idiopathic PD"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The present multicenter, randomized, double-blind, placebo-controlled clinical trial will investigate whether the prolonged administration of high-dose oral Ambroxol over 52 weeks is safe, tolerable, able to change Glucocerebrosidase enzyme activity and alpha-synuclein levels in the central nervous system and, ultimately, to reduce the progression of cognitive decline and motor disability in 60 individuals with Parkinson's disease with mutations of the glucocerebrosidase gene (GBA1; OMIM 606463).\n\nParticipants will undergo clinical, biomarker blood and cerebrospinal fluid analysis, neuropsychological, neuroimaging assessment throughout the course of the study."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change from baseline in Montreal Cognitive Assessment score"
+        }
+      }
+    },
+    {
+      "record_id": "15822:NCT02967250:ursodeoxycholicacid",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "UDCA is evaluated for brain ATP/MRS bioenergetics and drug pharmacokinetics; no qualifying clinical effect is an objective despite a Parkinson cohort.",
+      "evidence": {
+        "objective": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "repeated oral dosing of UDCA will result in increased brain ATP levels"
+        },
+        "outcome": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in ATP concentration"
+        }
+      }
+    },
+    {
+      "record_id": "15891:NCT02728843:deferiprone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Deferiprone dose arms are randomized against placebo and evaluate motor symptoms in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Parkinson's disease diagnosed"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The goal of this study is to evaluate the effects of deferiprone, an iron-chelating drug, in patients with Parkinson's disease. Participants will be randomized to receive one of four different dosages of deferiprone or placebo, and will take the assigned study product twice a day for nine months."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Score on the Part III Subscale of the Movement Disorder Society-Unified Parkinson's Disease Rating Scale (MDS-UPDRS)"
+        }
+      }
+    },
+    {
+      "record_id": "16855:NCT00359723:methylphenidate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Methylphenidate is added to levodopa to test clinical motor benefit in Parkinson patients with fluctuations.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Idiopathic PD treated with levodopa and experiencing motor fluctuations"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The purpose of this trial is to determine if methylphenidate (MPD), a drug marketed in the U.S. to treat hyperactivity and narcolepsy, added to levodopa, will increase the beneficial effects of levodopa without bothersome side effects in people with Parkinson's disease (PD)."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Time \"on\" defined by tapping speed"
+        }
+      }
+    },
+    {
+      "record_id": "16855:NCT01244269:methylphenidate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Methylphenidate is varied against placebo to evaluate attention, orthostatic symptoms, and postural control in diagnosed Parkinson patients.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Patients with stages 2-3 Parkinson's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "This project aims to determine if methylphenidate can improve deficits in attention and symptoms of orthostatic hypotension, two common non-motor symptoms, in patients with Parkinson's Disease. This project also seeks to evaluate the effect of methylphenidate on postural control in these patients, a debilitating motor symptom that places patients at an increased risk of falling. This study will build on existing data to support a new indication for the use of methylphenidate in Parkinson's Disease. Using standard and objective evaluations, this study will quantify the effect of methylphenidate at two doses on attention levels, orthostatic hypotension, and measures of postural control. Phase I of the study will compare methylphenidate 10mg three times daily to placebo and Phase II of the study, for those tolerating the lower dose in Phase I, will compare methylphenidate 20mg three times daily to placebo. By incorporating two different doses, the study also seeks to determine if any improvements are dose-related. Secondary endpoints will include safety assessments (adverse event monitoring and vital signs) performed every 30 minutes following supervised drug administration. Visual analog scales will be presented to each participant before treatment and following the final dose of each treatment to assess changes in fatigue. A secondary task will be added to postural tests to assess the influence of cognitive processes. It is hypothesized that methylphenidate will demonstrate a significant beneficial effect on all outcomes. It is projected that objective improvements will be observed following treatment with methylphenidate at both doses (10 and 20mg three time daily) when compared to placebo. It is further hypothesized that the effects will be dose-related and therefore more profound with higher doses."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Conners' Continuous Performance Test-II score"
+        }
+      }
+    },
+    {
+      "record_id": "17951:NCT03439943:lixisenatide",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Lixisenatide is added to stable usual treatment and compared with placebo for clinical motor disability in early diagnosed Parkinson disease.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Patients with PD according to UKPDSBB criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The main objective of the study is to evaluate the effect of lixisenatide (20 \u03bcg/d), versus placebo, administered as add-on therapy with the usual antiparkinsonian treatment, on the progression of motor disability in patients with early PD in order to assess its potential \"disease-modifying\" effect."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change from baseline to end-point (M12) in the MDS-UPDRS III motor (Movement Disorder Society-Unified Parkinson's disease rating scale)"
+        }
+      }
+    }
+  ],
+  "disagreement_resolution": {
+    "protocol": "docs/STRICT_LABEL_PROTOCOL.md",
+    "rule": "reviewer disagreement in either direction becomes uncertain",
+    "reviewer": "independent_review_parkinsons",
+    "agreement": {
+      "records": 56,
+      "agreed": 55,
+      "disagreed": 1,
+      "observed_agreement": 0.9821,
+      "expected_agreement": 0.5462,
+      "cohens_kappa": 0.9606
+    },
+    "resolved": [
+      {
+        "record_id": "15029:NCT01634360:perampanel",
+        "adjudicator_decision": "include",
+        "reviewer_decision": "uncertain",
+        "resolved_to": "uncertain",
+        "resolved_reasons": [
+          "unclear_population"
+        ],
+        "reviewer_note": "Gate 2 requires that \"Registry inclusion criteria or an explicit cohort/arm description must require the target disease\" and states that \"A condition tag, the title alone, or healthyVolunteers=false alone is insufficient\". The adjudicator rests population on descriptionModule.briefSummary (\"patients with Parkinson's Disease with \\\"wearing off\\\" motor fluctuations\"). That quote is genuinely present, so this is not a transcription error. I read it differently for two reasons. First, the record's entire eligibilityModule inclusion text is \"Patients enrolled in Study E2007-E044-204 and who either completed 12 weeks of study drug treatment or who withdrew from the study due to lack of efficacy\" - it never requires a Parkinson disease diagnosis, and the parent study's criteria are not reproduced in this record; the armGroup description likewise only says subjects \"entered this open-label extension study from the double-blind core study (E2007-E044-204)\". Second, the briefSummary sentence is word-for-word the officialTitle (differing only in capitalisation), so leaning on it is in substance leaning on the title, which the rule rules out. Gate 2 also demands \"an explicit clinical diagnosis of Parkinson disease\"; a descriptive label in the summary is not a stated diagnostic requirement. The contrast with the sibling extension record 15029:NCT00505622, whose inclusion criteria do say \"Male or female subjects with idiopathic PD\" and which we both include, is exactly what Gate 2 is built to separate. Missing affirmative population evidence fails closed, so I mark uncertain/unclear_population. Gate 3 is not in dispute: perampanel alone in the EXPERIMENTAL arm with \"Mean Change From Baseline in Total Daily OFF Time\" as primary outcome would satisfy it."
+      }
+    ]
+  }
+}

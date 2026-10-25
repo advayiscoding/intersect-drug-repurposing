@@ -1,0 +1,1113 @@
+{
+  "disease_id": "alzheimers",
+  "adjudicator": "ad_strict_decisions",
+  "rank_blind": true,
+  "rule_sha256": "c67af905bdf8286f22cf7c8df20a631f317cc2666836e78af924cb30b47ae2cd",
+  "source_sha256": "6fddef7475b89d3386255e247bbe4604ef128ea88c58e039c39ca666285dac05",
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+  "decisions": [
+    {
+      "record_id": "14161:NCT00245206:olanzapine",
+      "decision": "exclude",
+      "reasons": [
+        "unclear_population",
+        "no_clinical_objective"
+      ],
+      "rationale": "Olanzapine is assigned to a drug arm, but eligibility allows many disorders without an identifiable Alzheimer cohort; the trial measures antipsychotic metabolic adverse effects rather than an Alzheimer clinical outcome.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "DSM-IV diagnosis of a disease or disorder that requires treatment with an atypical antipsychotic medication"
+        },
+        "additional": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Body Mass Index"
+        }
+      }
+    },
+    {
+      "record_id": "14179:NCT00368459:raloxifene",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable Alzheimer disease is required; raloxifene is randomized against placebo with cognition as the primary endpoint. Stable cholinesterase therapy is background.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "criteria for probable Alzheimer's disease (AD)"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "randomized trial of raloxifene or placebo for the treatment of women with Alzheimer's disease"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Alzheimer's Disease Assessment Scale, Cognitive Subscale (ADAS-cog)"
+        }
+      }
+    },
+    {
+      "record_id": "14218:NCT04552795:3tc",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Diagnosed early Alzheimer participants receive 3TC; its protocol explicitly tests disease-relevant outcomes, including a prespecified cognitive severity measure, alongside target engagement.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Clinical diagnosis of early Alzheimer's disease"
+        },
+        "role": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "This open label study of 3TC will collect initial proof-of-concept data on 3TC target engagement, CNS penetration, efficacy and safety in older adults with early stage Alzheimer's disease."
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.0.measure",
+          "quote": "Change in Dementia Severity From Baseline to Week 24 of Treatment Based on the PACC-5 Z-score"
+        }
+      }
+    },
+    {
+      "record_id": "14223:NCT00245206:risperidone",
+      "decision": "exclude",
+      "reasons": [
+        "unclear_population",
+        "no_clinical_objective"
+      ],
+      "rationale": "Risperidone has its own arm, but no required or separately evaluated Alzheimer cohort; registered primary endpoints are metabolic adverse effects.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "DSM-IV diagnosis of a disease or disorder that requires treatment with an atypical antipsychotic medication"
+        },
+        "additional": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Body Mass Index"
+        }
+      }
+    },
+    {
+      "record_id": "14271:NCT01560585:isotretinoin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required. Isotretinoin is the open-label study drug, and the registered primary endpoint is change on an AD cognitive scale despite the safety emphasis in the summary.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Probable AD by DSM IV and NINCDS-ADRDA criteria"
+        },
+        "role": {
+          "field": "armsInterventionsModule.armGroups.0.description",
+          "quote": "All participants will receive Isotretinoin for 24 weeks"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change From Baseline to Six Month Timepoint in the Score on the Alzheimer's Disease Assessment Scale- Cognitive Subscale"
+        }
+      }
+    },
+    {
+      "record_id": "14286:NCT00439166:rifampicin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required. Rifampicin has a single-component arm against matched doxycycline placebo as well as a combination arm; registered primary endpoints include clinical dementia and cognition.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of probable Alzheimer's disease by NINCDS-ADRDA criteria"
+        },
+        "role": {
+          "field": "armsInterventionsModule.armGroups.2.description",
+          "quote": "Rifampin 300 mg o.d. plus placebo matched to doxycycline b.i.d. for 12 months."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Clinical Dementia Rating scale"
+        }
+      }
+    },
+    {
+      "record_id": "14306:NCT00982202:pioglitazone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "AD severity is specified in criteria; pioglitazone is varied against placebo, and the protocol explicitly seeks clinical cognition/function/behavior effects as secondary outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Clinical Dementia Rating (CDR) score of 1 or 2 (mild to moderate AD severity) at both screening and baseline"
+        },
+        "role": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "Another goal of the study is to assess how clinical measures of cognition, daily function, and behavior might respond to PGZ treatment."
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.1.measure",
+          "quote": "Cognition"
+        }
+      }
+    },
+    {
+      "record_id": "14306:NCT01931566:pioglitazone",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only"
+      ],
+      "rationale": "This pioglitazone trial enrolls cognitively normal at-risk participants for prevention, not participants with diagnosed or biomarker-supported prodromal Alzheimer disease.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Is cognitively normal at baseline"
+        }
+      }
+    },
+    {
+      "record_id": "14306:NCT02284906:pioglitazone",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "The extension requires adjudicated MCI due to AD, but this record does not affirm a biomarker-supported prodromal diagnosis under the frozen Alzheimer gate; AD dementia is expressly excluded.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "adjudicated diagnosis of mild cognitive impairment (MCI) due to Alzheimer's Disease (AD)"
+        },
+        "additional": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Completed the pivotal AD-4833/TOMM40\\_301 study with an adjudicated diagnosis of AD dementia."
+        }
+      }
+    },
+    {
+      "record_id": "14323:NCT00245206:aripiprazole",
+      "decision": "exclude",
+      "reasons": [
+        "unclear_population",
+        "no_clinical_objective"
+      ],
+      "rationale": "Aripiprazole has its own arm, but the broad population is not an identifiable AD cohort and primary endpoints are metabolic adverse effects.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "DSM-IV diagnosis of a disease or disorder that requires treatment with an atypical antipsychotic medication"
+        },
+        "additional": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Body Mass Index"
+        }
+      }
+    },
+    {
+      "record_id": "14329:NCT01547169:insulindetemir",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "The detemir study gives active drug to a pooled MCI/AD population and registers a shared memory endpoint; a separately specified AD clinical outcome is not established.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosed with mild cognitive impairment, or mild/moderate AD"
+        }
+      }
+    },
+    {
+      "record_id": "14329:NCT01595646:insulindetemir",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "The longer detemir study also pools MCI and AD recipients; memory and daily-function endpoints are not specified separately for AD.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosed with mild cognitive impairment, or mild/moderate AD"
+        }
+      }
+    },
+    {
+      "record_id": "14402:NCT00548145:pitavastatin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Diagnosed AD with hypercholesterolemia is required. Pitavastatin efficacy is tested and AD cognition is the primary outcome.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Alzheimer's Disease patients (15 \u2264 MMSE total score \u2264 23, CDR \"1\" or \"2\")"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "evaluate the efficacy of pitavastatin in patients with mild to moderate Alzheimer's disease and hypercholesterolemia"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Alzheimer's Disease Assessment Scale-cognitive Component-Japanese Version(ADAS-Jcog)"
+        }
+      }
+    },
+    {
+      "record_id": "14424:NCT02380573:methyleneblue",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Resolved to uncertain under docs/STRICT_LABEL_PROTOCOL.md: the independent reviewer read this record as 'uncertain' where the adjudicator read it as 'include'. Original adjudicator rationale: The AD group has its own methylene-blue and placebo arms. The protocol states memory-performance effects for MCI and AD groups relative to healthy controls; phenazopyridine is common to active and placebo arms, leaving a separable MB contrast.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Inclusion for AD group only: Alzheimer's Early-stage, sporadic-type"
+        },
+        "role": {
+          "field": "armsInterventionsModule.armGroups.4.description",
+          "quote": "Methylene Blue (USP grade, 282 mg oral, daily, 2 weeks, 12 weeks)"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.1.measure",
+          "quote": "Wechsler Memory Scale, Third Edition"
+        },
+        "cohort_comparison": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "The fMRI and behavioral performance effects on memory will be greater in the MCI and mild AD groups than in the healthy aging group."
+        }
+      }
+    },
+    {
+      "record_id": "14475:NCT04777409:semaglutide",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Participants have an Alzheimer-type clinical syndrome with required amyloid positivity, covering biomarker-supported prodromal AD and mild AD dementia. Semaglutide is randomized against placebo for clinical change.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "MCI (mild cognitive impairment) or mild dementia of the Alzheimer's type according to the NIA-AA (National Institute of Aging-Alzheimer's Association) 2018 criteria."
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "whether the medicine, semaglutide, has a positive effect on early Alzheimer's disease"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in the Clinical Dementia Rating - Sum of Boxes (CDR-SB) score"
+        },
+        "biomarker": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Amyloid positivity established with either amyloid PET"
+        }
+      }
+    },
+    {
+      "record_id": "14475:NCT05891496:semaglutide",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "The semaglutide mechanistic study measures gene expression, safety and concentration; it registers no disease-relevant clinical effect endpoint.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "understand how the medicine, semaglutide, affects the immune system and other biological processes"
+        },
+        "additional": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in Gene Expression Assessed by Single-cell Ribonucleic Acid Sequencing (scRNAseq) (Cells in Cerebrospinal Fluid [CSF])"
+        }
+      }
+    },
+    {
+      "record_id": "14539:NCT01126099:prazosin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Eligibility requires probable or possible AD; prazosin is contrasted with placebo for disruptive agitation, a qualifying clinical symptom.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Probable or Possible Alzheimer's Disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Prazosin is a medication that is commonly used to treat people with high blood pressure. Research with prazosin has shown that it may be effective in treating behavioral problems"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.1.measure",
+          "quote": "Change in Neuropsychiatric Inventory Score"
+        }
+      }
+    },
+    {
+      "record_id": "14599:NCT03991988:montelukast",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Montelukast has an explicit AD dementia group, but the registered cognitive and behavioral outcomes are not specified separately for that group versus the MCI group.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Early AD dementia group will be defined based on:"
+        }
+      }
+    },
+    {
+      "record_id": "14653:NCT05880849:choline",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "no_clinical_objective"
+      ],
+      "rationale": "APOE4 risk is not a diagnosed Alzheimer cohort, and the registered effects are biochemical and safety measures.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "people with increased risk of Alzheimer's Disease (AD), also known as pre-symptomatic AD"
+        }
+      }
+    },
+    {
+      "record_id": "14664:NCT01439555:tetrahydrobiopterin",
+      "decision": "exclude",
+      "reasons": [
+        "background_or_coadministered"
+      ],
+      "rationale": "Sapropterin is given only in an inseparable three-drug regimen; there is no registered component-specific clinical contrast.",
+      "evidence": {
+        "basis": {
+          "field": "armsInterventionsModule.armGroups.0.description",
+          "quote": "Simvastatin, 40 mg per day orally; L-Arginine, 2 Gm four times per day orally; Tetrahydrobiopterin 20 mg/kg/day orally"
+        }
+      }
+    },
+    {
+      "record_id": "14685:NCT00066157:medroxyprogesterone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Women with diagnosed AD are enrolled. The four registered arms cross active/placebo estradiol patches with active/placebo medroxyprogesterone pills, creating a separable component contrast for cognitive/function outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Postmenopausal women with Alzheimer's disease and without other dementias"
+        },
+        "role": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "patients will be given either medroxyprogesterone or an inactive placebo pill"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Cognition: delayed recall on Buschke Selective Reminding Test; Stroop Interference condition--completion time and errors; Clinician-rated Interview Based Impression of Change"
+        },
+        "component_contrast": {
+          "field": "armsInterventionsModule.armGroups.2.description",
+          "quote": "placebo patch and medroxyprogesterone"
+        }
+      }
+    },
+    {
+      "record_id": "14961:NCT01439555:simvastatin",
+      "decision": "exclude",
+      "reasons": [
+        "background_or_coadministered"
+      ],
+      "rationale": "Simvastatin is one component of the same three-drug regimen, with no registered component-specific clinical contrast.",
+      "evidence": {
+        "basis": {
+          "field": "armsInterventionsModule.armGroups.0.description",
+          "quote": "Simvastatin, 40 mg per day orally; L-Arginine, 2 Gm four times per day orally; Tetrahydrobiopterin 20 mg/kg/day orally"
+        }
+      }
+    },
+    {
+      "record_id": "14962:NCT01142258:trazodone",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD and sleep disturbance are required; trazodone is evaluated for the clinical sleep symptom.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of probable Alzheimer's disease by National Institute of Neurological and Communicative Disorders and Stroke/the Alzheimer's Disease and Related Disorders Association criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "whether trazodone is effective in the treatment of sleep disorders in Alzheimer's disease (AD)"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change from Baseline in Nighttime Total Sleep Time"
+        }
+      }
+    },
+    {
+      "record_id": "14968:NCT00626210:modafinil",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Modafinil is tested for sleep/wake disturbance in a pooled AD-or-MCI cohort; the sleep endpoints are not specified separately for diagnosed AD.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "A clinical diagnosis of Alzheimer's disease or Mild Cognitive Impairment"
+        }
+      }
+    },
+    {
+      "record_id": "14968:NCT01172145:modafinil",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD and apathy are required. Modafinil is added against a stable cholinesterase-inhibitor background, and apathy is the clinical endpoint.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "diagnosis of mild to moderate stage Probable Alzheimer's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "effects of modafinil on apathetic symptomatology, performance of activities of daily living (ADLs) and caregiver burden in individuals with Alzheimer's disease (AD)"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Apathy"
+        }
+      }
+    },
+    {
+      "record_id": "14975:NCT04200911:rapamune",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Rapamune is administered to a pooled MCI/AD cohort. Although cognition and function are listed among exploratory outcomes, AD-specific clinical effects are not separately specified.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of Mild Cognitive Impairment (MCI) or Alzheimer's disease"
+        }
+      }
+    },
+    {
+      "record_id": "14975:NCT06022068:sirolimus",
+      "decision": "uncertain",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Resolved to uncertain under docs/STRICT_LABEL_PROTOCOL.md: the independent reviewer read this record as 'include' where the adjudicator read it as 'exclude'. Original adjudicator rationale: This sirolimus pilot frames efficacy around PET glucose metabolism and registers cognitive assessment as an exploratory secondary measure without an explicit clinical-effect objective.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "The primary endpoint will be change in cerebral glucose metabolism"
+        }
+      }
+    },
+    {
+      "record_id": "14991:NCT01409564:cilostazol",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required. Cilostazol is varied against placebo while donepezil is common background; the stated study evaluates effects with cognitive tasks and PET.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Patients with probable Alzheimer's disease according to the standard of NINCDS-ADRDA"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "examine the effects of cilostazol augmentation in mild to moderate Alzheimer disease patients"
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.0.measure",
+          "quote": "Alzheimer's Disease Assessment Scale-Cognitive Subscale (ADAS-cog)"
+        }
+      }
+    },
+    {
+      "record_id": "14992:NCT06586606:itraconazole",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Healthy volunteers receive itraconazole as an interaction perpetrator to alter MK-1708 exposure; only pharmacokinetic/safety endpoints are registered.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "compare what happens to MK-1708 in the body when it is given with or without a medicine called itraconazole"
+        }
+      }
+    },
+    {
+      "record_id": "15082:NCT00898807:citalopram",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD with agitation is required. Citalopram is evaluated for the clinical behavioral symptom.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Probable Alzheimer's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "evaluate the safety and efficacy of citalopram for agitation in Alzheimer's dementia"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "NeuroBehavior Rating Scale-- Agitation"
+        }
+      }
+    },
+    {
+      "record_id": "15099:NCT03075241:zolpidem",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD with sleep disturbance is required; zolpidem has a distinct experimental arm and sleep is the primary clinical endpoint.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of probable Alzheimer's disease (AD)"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "whether Zolpidem and Zoplicone are efective in the treatment of sleep disorders in Alzheimer's disease (AD)"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Nighttime Total Sleep Time"
+        }
+      }
+    },
+    {
+      "record_id": "15148:NCT00702780:escitalopram",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "This AD trial registers hippocampal and whole-brain volume only; an effect on cognition, function or a clinical symptom is not specified.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "test whether escitalopram would slow the brain atrophy"
+        }
+      }
+    },
+    {
+      "record_id": "15148:NCT01841125:escitalopram",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Diagnosed AD patients receive escitalopram or placebo to test depression response, a clinical symptom outcome.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Subject diagnosed with Alzheimer's disease in accordance with NINCDS-ADRDA Criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Efficacy of Escitalopram for the Treatment of Depression in Alzheimer's Disease"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change in CSDD(Cornell scale for depression in dementia) from baseline after 12 weeks of between treatment groups"
+        }
+      }
+    },
+    {
+      "record_id": "15148:NCT01876823:escitalopram",
+      "decision": "exclude",
+      "reasons": [
+        "condition_mismatch",
+        "background_or_coadministered"
+      ],
+      "rationale": "The criterion explicitly excludes dementia/probable AD; this is a depression plus cognitive-impairment cohort. Escitalopram is combined with memantine without a separable component contrast.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Meets Criteria for dementia (DSM-IV) or probable Alzheimer's disease"
+        },
+        "additional": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "es-citalopram lead-in period. At two weeks, memantine (Namenda) is added"
+        }
+      }
+    },
+    {
+      "record_id": "15179:NCT00580931:nicotinamide",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required; nicotinamide is the assigned intervention with a registered cognitive primary endpoint.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of probable AD according to DSM-IV criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "whether nicotinamide, or vitamin B3, is safe and effective in the treatment of Alzheimer's disease"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Alzheimer's Disease Assessment Scale-Cognitive Subscale"
+        }
+      }
+    },
+    {
+      "record_id": "15179:NCT03061474:nicotinamide",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "This biomarker-focused nicotinamide trial has tau change as its stated objective and primary endpoint; clinical scales are secondary without an explicit clinical-effect objective.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "can reduce phosphorylation of tau"
+        }
+      }
+    },
+    {
+      "record_id": "15201:NCT03801642:dapagliflozin",
+      "decision": "uncertain",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Resolved to uncertain under docs/STRICT_LABEL_PROTOCOL.md: the independent reviewer read this record as 'uncertain' where the adjudicator read it as 'include'. Original adjudicator rationale: Probable AD is required. Dapagliflozin is randomized against placebo; the protocol explicitly says it will explore effects on cognitive performance, with ADAS-Cog 14 registered among other outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Have a diagnosis of probable AD per McKhann et al. criteria"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "testing the effects of 10 mg dapagliflozin, taken daily for 12 weeks"
+        },
+        "clinical": {
+          "field": "outcomesModule.otherOutcomes.19.measure",
+          "quote": "ADAS-Cog 14"
+        },
+        "clinical_aim": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "and cognitive performance."
+        }
+      }
+    },
+    {
+      "record_id": "15284:NCT01075763:interferonbeta1a",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Diagnosed AD participants receive interferon beta-1a or placebo; clinical efficacy and cognition are explicit.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Subjects diagnosed with AD, according to the Diagnostic and Statistical Manual of Mental Disorders, 4th edition (DSM-IV)"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "evaluate safety, tolerability and clinical efficacy of subcutaneous (sc) interferon (IFN) beta-1a"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Alzheimer's Disease Assessment Scale, Cognitive Subscale (ADAS-Cog) Score"
+        }
+      }
+    },
+    {
+      "record_id": "15308:NCT01703117:riluzole",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Mild AD diagnosis is required; riluzole is tested against placebo and the stated objective includes cognitive functional change, with clinical scales registered as secondary outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "mild Alzheimer's disease determined after neurological and neuropsychological evaluation"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "Riluzole, a glutamate modulator agent, will be tested in mild Alzheimer's disease patients. Cognitive functional changes"
+        },
+        "clinical": {
+          "field": "outcomesModule.secondaryOutcomes.1.measure",
+          "quote": "Alzheimer's Disease Assessment Scale (ADAS) - Cognitive Subscale (ADAScog)"
+        }
+      }
+    },
+    {
+      "record_id": "15331:NCT02462161:insulinaspart",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Insulin aspart is tested for cognition in a pooled AD-or-MCI group; no separately specified AD clinical outcome is registered.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Previous or subsequent diagnosis of Alzheimer's disease or mild cognitive impairment"
+        }
+      }
+    },
+    {
+      "record_id": "15332:NCT01436045:insulinglulisine",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required; intranasal glulisine is compared with placebo for memory and cognition.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "clinical diagnosis of probable AD"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "effect of the rapidly acting intranasal insulin derivative (glulisine) on memory and cognition"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Cognitive Performance"
+        }
+      }
+    },
+    {
+      "record_id": "15332:NCT02503501:insulinglulisine",
+      "decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Glulisine has a mixed MCI/probable AD population and shared cognitive and function endpoints; no separately specified AD result is registered.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "clinical and research diagnosis of amnestic-MCI OR probable mild AD"
+        }
+      }
+    },
+    {
+      "record_id": "15425:NCT00439166:doxycycline",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required. Doxycycline has a single-component arm against matched rifampin placebo, and clinical dementia/cognition scales are registered primary outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of probable Alzheimer's disease by NINCDS-ADRDA criteria"
+        },
+        "role": {
+          "field": "armsInterventionsModule.armGroups.1.description",
+          "quote": "Doxycycline 100 mg b.i.d. plus placebo matched to rifampin o.d. for 12 months."
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Clinical Dementia Rating scale"
+        }
+      }
+    },
+    {
+      "record_id": "15611:NCT02750306:suvorexant",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD and insomnia are required; suvorexant is evaluated against placebo for the clinical sleep symptom.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of probable Alzheimer's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "efficacy of suvorexant (MK-4305) to improve sleep in individuals with Alzheimer's disease (AD)"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Change From Baseline in Polysomnography-derived Total Sleep Time (TST) at Week 4"
+        }
+      }
+    },
+    {
+      "record_id": "15666:NCT05189106:baricitinib",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "The basket trial includes possible/probable AD among several disorders, but its registered objectives and outcomes are CSF exposure and inflammatory biomarkers, without a clinical effect.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "whether baricitinib at 2 mg per day, 4 mg per day, or both reaches therapeutic levels in the CSF and suppresses inflammatory biomarkers"
+        }
+      }
+    },
+    {
+      "record_id": "15836:NCT02085265:telmisartan",
+      "decision": "uncertain",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Resolved to uncertain under docs/STRICT_LABEL_PROTOCOL.md: the independent reviewer read this record as 'include' where the adjudicator read it as 'exclude'. Original adjudicator rationale: Telmisartan is randomized in diagnosed AD, but the stated proof-of-concept objective is MRI atrophy. The broad secondary cognitive/functional measure is not explicitly tied to a clinical-effect objective.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "determine if there is less global brain atrophy over one year"
+        }
+      }
+    },
+    {
+      "record_id": "15840:NCT00831506:digoxin",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Digoxin is the sensitive P-gp substrate in a healthy-volunteer interaction study with Dimebon; only digoxin exposure is assessed.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Healthy male and/or female subjects between the ages of 18 and 55 years"
+        },
+        "additional": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "pharmacokinetic interaction between Dimebon"
+        }
+      }
+    },
+    {
+      "record_id": "15986:NCT03277573:salsalate",
+      "decision": "uncertain",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Resolved to uncertain under docs/STRICT_LABEL_PROTOCOL.md: the independent reviewer read this record as 'uncertain' where the adjudicator read it as 'exclude'. Original adjudicator rationale: Probable AD participants receive salsalate, but the registered endpoints are adverse events, PK and pharmacodynamics, with no clinical symptom/function/cognition effect.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "test the safety and tolerability of twice daily Salsalate"
+        }
+      }
+    },
+    {
+      "record_id": "16063:NCT02051335:scopolamine",
+      "decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "background_or_coadministered"
+      ],
+      "rationale": "Scopolamine creates a transient cognitive challenge in healthy adults to test roflumilast plus donepezil; it is not the clinical intervention for AD.",
+      "evidence": {
+        "basis": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Is a healthy adult male"
+        },
+        "additional": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "scopolamine-induced cognitive impairment is attenuated by the administration of roflumilast in combination with donepezil"
+        }
+      }
+    },
+    {
+      "record_id": "16588:NCT01965756:metformin",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "The MCI-due-to-AD/early-AD cohort requires a positive AD-consistent imaging or molecular biomarker. Metformin is contrasted with placebo in crossover arms for memory.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of MCI due to AD127 or early dementia due to AD128"
+        },
+        "role": {
+          "field": "armsInterventionsModule.armGroups.0.label",
+          "quote": "Metformin, Then Placebo"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Word List Memory Total - ADAS-cog"
+        },
+        "biomarker": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "positive topographic (MRI, FDG-PET) or molecular (CSF, amyloid imaging) biomarker consistent with AD"
+        }
+      }
+    },
+    {
+      "record_id": "16855:NCT00495820:methylphenidate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Alzheimer-type dementia is required; methylphenidate is compared with placebo for apathy.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Diagnosis of dementia of the Alzheimer type (DSM-IV Text Revision (TR) criteria)"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "efficacy of methylphenidate over placebo in treating apathy in patients with Alzheimer's dementia"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Apathy Evaluation Scale Score at 12 Weeks"
+        }
+      }
+    },
+    {
+      "record_id": "16855:NCT01117181:methylphenidate",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Possible/probable AD is required; methylphenidate is tested for clinically significant apathy.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Possible or probable Alzheimer's disease"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "efficacy and safety of methylphenidate for the treatment of clinically significant apathy in patients with Alzheimer's dementia"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Apathy Evaluation Scale (AES)"
+        }
+      }
+    },
+    {
+      "record_id": "17270:NCT03118947:pimavanserin",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "This extension treats probable AD with agitation, but it registers treatment-emergent adverse events only and no clinical agitation outcome.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "evaluate the safety and tolerability of pimavanserin"
+        }
+      }
+    },
+    {
+      "record_id": "18277:NCT02002819:levetiracetam",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD dementia is required; levetiracetam and placebo are crossed over with executive function as the primary clinical outcome.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Meets National Institute on Aging-Alzheimer's Association Workgroups criteria for probable AD dementia"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "determine if levetiracetam can be used to treat patients with AD"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Changes in Executive Function as Measured by the NIH EXAMINER Computer Battery"
+        }
+      }
+    },
+    {
+      "record_id": "18277:NCT03489044:levetiracetam",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Probable AD is required; levetiracetam is compared with placebo to test cognitive benefit, with mood and quality-of-life secondary outcomes.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Meets the National Institute of Aging-Alzheimer's Association criteria for probable AD (2011)"
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "test whether Levetiracetam, through stabilisation of neuronal networks, may offer benefit to cognition in patients with AD"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Effect of Levetiracetam on hippocampal function in patients with Alzheimer's disease as assessed by a computerised test of hippocampal binding"
+        }
+      }
+    },
+    {
+      "record_id": "18277:NCT03875638:levetiracetam",
+      "decision": "include",
+      "reasons": [],
+      "rationale": "Only the diagnosed AD group receives levetiracetam or placebo; healthy controls undergo baseline testing alone. The AD group has a separately specified neuropsychological primary outcome.",
+      "evidence": {
+        "population": {
+          "field": "eligibilityModule.eligibilityCriteria",
+          "quote": "Meeting the National Institute of Neurological and Communicative Disorders and Stroke and the Alzheimer's Disease and Related Disorders Association (NINCDS-ADRDA) criteria for probable AD."
+        },
+        "role": {
+          "field": "descriptionModule.briefSummary",
+          "quote": "levetiracetam (LEV) normalizes these measures and improves cognition"
+        },
+        "clinical": {
+          "field": "outcomesModule.primaryOutcomes.0.measure",
+          "quote": "Neuropsychological Test Battery (NTB)"
+        }
+      }
+    },
+    {
+      "record_id": "20270:NCT05323812:tw001",
+      "decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "The edaravone alias TW001 is tested in AD, but registered objectives are safety, oxidative biomarkers and PK; the cognitive measure is exploratory with no explicit clinical-effect objective.",
+      "evidence": {
+        "basis": {
+          "field": "descriptionModule.detailedDescription",
+          "quote": "evaluate the safety, pharmacodynamics and pharmacokinetics of TW001 in patients with mild AD"
+        }
+      }
+    }
+  ],
+  "disagreement_resolution": {
+    "protocol": "docs/STRICT_LABEL_PROTOCOL.md",
+    "rule": "reviewer disagreement in either direction becomes uncertain",
+    "reviewer": "independent_review_alzheimers",
+    "agreement": {
+      "records": 57,
+      "agreed": 52,
+      "disagreed": 5,
+      "observed_agreement": 0.9123,
+      "expected_agreement": 0.3906,
+      "cohens_kappa": 0.8561
+    },
+    "resolved": [
+      {
+        "record_id": "14424:NCT02380573:methyleneblue",
+        "adjudicator_decision": "include",
+        "reviewer_decision": "uncertain",
+        "resolved_to": "uncertain",
+        "resolved_reasons": [
+          "unclear_population"
+        ],
+        "reviewer_note": "The rule admits a mixed cohort only if 'a separately identifiable disease cohort receives the labeled intervention AND its clinical outcomes are separately specified'. I agree the AD cohort is separately identifiable (dedicated 'Mild Alzheimer's Disease (AD) MB' and 'AD Placebo' arms) and that the methylene-blue contrast is separable from the constant phenazopyridine. I read the second conjunct more strictly: the outcomesModule registers one undifferentiated set of measures across all eight arms, and no registered outcome is specified for the AD cohort. The adjudicator supplies the separation from a detailedDescription hypothesis ('effects on memory will be greater in the MCI and mild AD groups than in the healthy aging group'), which is an analysis-plan statement rather than a separately specified outcome. The AD-group inclusion text, 'Alzheimer's Early-stage, sporadic-type', also cites no diagnostic criteria. Under 'Missing evidence fails closed' I land on uncertain. This is a close call and the adjudicator's reading is defensible."
+      },
+      {
+        "record_id": "14975:NCT06022068:sirolimus",
+        "adjudicator_decision": "exclude",
+        "reviewer_decision": "include",
+        "resolved_to": "uncertain",
+        "resolved_reasons": [
+          "no_clinical_objective"
+        ],
+        "reviewer_note": "The adjudicator excludes on no_clinical_objective, citing the briefSummary line 'The primary endpoint will be change in cerebral glucose metabolism', and describes MoCA as 'an exploratory secondary measure'. The same briefSummary opens 'This single-center, uncontrolled pilot study aims to evaluate the efficacy, safety, and tolerability of six months of intermittently dosed oral rapamycin (sirolimus) in subjects with early-stage Alzheimer's disease', and 'Change in Montreal Cognitive Assessment (MoCA) rating' is registered under outcomesModule.secondaryOutcomes, not otherOutcomes. The rule says clinical secondary outcomes count when the objective explicitly studies the drug's clinical effects; a stated efficacy objective in diagnosed AD plus a registered cognitive secondary outcome meets that. This is also the structure the adjudicator accepted for 14218:NCT04552795:3tc (non-clinical primaries, 'efficacy' in the objective, a cognitive secondary outcome), so I read the two records as requiring the same outcome."
+      },
+      {
+        "record_id": "15201:NCT03801642:dapagliflozin",
+        "adjudicator_decision": "include",
+        "reviewer_decision": "uncertain",
+        "resolved_to": "uncertain",
+        "resolved_reasons": [
+          "no_clinical_objective"
+        ],
+        "reviewer_note": "The adjudicator includes, resting the clinical limb on briefSummary 'and cognitive performance.' plus 'ADAS-Cog 14' at outcomesModule.otherOutcomes.19. Both quotes are accurate. I read the rule's clause as reaching only clinical secondary outcomes ('Clinical secondary outcomes count if the objective explicitly studies the drug's clinical effects'); here every clinical measure sits in exploratory other outcomes, the single primary outcome is an MR-spectroscopy proxy, and the detailedDescription states 'The primary objective of the study is to assess the effect of 12 weeks of 10mg dapagliflozin once daily on cerebral NAA'. With the objective's cognitive language framed as 'explore' and no clinical primary or secondary outcome, I treat the affirmative Gate 3 evidence as incomplete and fail closed to uncertain rather than include."
+      },
+      {
+        "record_id": "15836:NCT02085265:telmisartan",
+        "adjudicator_decision": "exclude",
+        "reviewer_decision": "include",
+        "resolved_to": "uncertain",
+        "resolved_reasons": [
+          "no_clinical_objective"
+        ],
+        "reviewer_note": "The adjudicator excludes, holding that 'The broad secondary cognitive/functional measure is not explicitly tied to a clinical-effect objective'. The registered secondary outcome's own description states the objective in terms: 'Determine comparative efficacy of perindopril vs. telmisartan on cognitive and functional measures and on other structural brain imaging'. That is an explicit clinical-effect objective, registered, and attached to a secondary (not exploratory) clinical outcome, which is exactly what the rule's clinical-secondary clause requires. I also note the asymmetry with 15201:NCT03801642:dapagliflozin, which the adjudicator included on weaker clinical-limb evidence (an 'explore' phrase plus an exploratory other outcome); telmisartan's clinical-objective evidence is at least as strong."
+      },
+      {
+        "record_id": "15986:NCT03277573:salsalate",
+        "adjudicator_decision": "exclude",
+        "reviewer_decision": "uncertain",
+        "resolved_to": "uncertain",
+        "resolved_reasons": [
+          "no_clinical_objective"
+        ],
+        "reviewer_note": "I reach the same practical effect (not a positive) but a different label, and the stated ground differs. The adjudicator's rationale asserts 'the registered endpoints are adverse events, PK and pharmacodynamics, with no clinical symptom/function/cognition effect'; the record does register clinical measures, namely 'Change in Alzheimer's Disease Assessment Scale-cognitive scale', 'Change in Mini Mental State Examination', 'Change in Alzheimer's disease Clinical Activities of Daily Living Scale' and 'Change in Clinical Dementia Rating Scale (CDR-SB)' under outcomesModule.otherOutcomes, and the detailedDescription says the study 'will test the effects of Salsalate on cerebrospinal fluid (CSF) proteins, brain magnetic resonance imaging (MRI), and cognitive (thinking and memory) tests'. Because those clinical measures are exploratory rather than primary or secondary, I treat the Gate 3 evidence as incomplete rather than absent, which under the rule is uncertain, not exclude. Either way the record is not a positive."
+      }
+    ]
+  }
+}

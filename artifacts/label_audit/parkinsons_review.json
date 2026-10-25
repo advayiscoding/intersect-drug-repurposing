@@ -1,0 +1,587 @@
+{
+  "disease_id": "parkinsons",
+  "reviewer": "independent_review_parkinsons",
+  "approved": true,
+  "rank_blind": true,
+  "rule_commit": "c041084",
+  "rule_sha256": "c67af905bdf8286f22cf7c8df20a631f317cc2666836e78af924cb30b47ae2cd",
+  "source_sha256": "b1016ed6319f7105ba1911a0c6e2ededc0da1ad9262560ee8d5ade6c72d76f04",
+  "decisions_sha256": "468df65422aabe60ba39ec00f124a4a4a69461a92848f525ac4a6fc94eb9d835",
+  "reviewed_record_ids": [
+    "14144:NCT00794313:topiramate",
+    "14154:NCT02305017:paracetamol",
+    "14180:NCT02589340:buspirone",
+    "14180:NCT02803749:buspirone",
+    "14189:NCT00062738:nortriptyline",
+    "14216:NCT02169440:warfarin",
+    "14216:NCT02305030:warfarin",
+    "14259:NCT01536366:repaglinide",
+    "14286:NCT04070495:rifampicin",
+    "14298:NCT03970798:rosuvastatin",
+    "14299:NCT01437189:sertraline",
+    "14306:NCT01280123:pioglitazone",
+    "14318:NCT03413384:ceftriaxone",
+    "14406:NCT02536976:mirabegron",
+    "14447:NCT00642928:bf264910mg",
+    "14447:NCT00642928:bf264920mg",
+    "14447:NCT00642928:bf264940mg",
+    "14447:NCT00642928:bf26495mg",
+    "14447:NCT01036139:bf2649pitolisant",
+    "14447:NCT01066442:bf2649pitolisant",
+    "14643:NCT02183519:capsaicin",
+    "14644:NCT00641186:sodiumoxybate",
+    "14644:NCT02111122:sodiumoxybate",
+    "14656:NCT02818777:cannabidiol",
+    "14656:NCT03582137:cannabidiol",
+    "14725:NCT02046434:glycerolphenylbutyrate",
+    "14783:NCT03970798:caffeine",
+    "14880:NCT00957918:nicotine",
+    "14936:NCT02005029:erythromycin",
+    "14937:NCT01941732:sildenafil",
+    "14937:NCT02162979:sildenafil",
+    "14956:NCT05581823:carbamazepine",
+    "14963:NCT03970798:midazolam",
+    "14995:NCT04070495:clarithromycin",
+    "15029:NCT00505622:perampanel",
+    "15029:NCT00566462:perampanel",
+    "15029:NCT01634360:perampanel",
+    "15099:NCT03621046:zolpidem",
+    "15116:NCT00062738:paroxetine",
+    "15126:NCT00912808:donepezil",
+    "15126:NCT01014858:donepezil",
+    "15126:NCT01521117:donepezil",
+    "15126:NCT02206620:donepezil",
+    "15201:NCT06263673:dapagliflozin",
+    "15212:NCT02385500:fesoterodine",
+    "15426:NCT00753636:dynacirccrisradipine",
+    "15441:NCT00324896:eszopiclone",
+    "15496:NCT01662791:rifaximin",
+    "15496:NCT02470780:rifaximin",
+    "15501:NCT06263673:sitagliptin",
+    "15579:NCT05287503:ambroxolhydrochloride",
+    "15822:NCT02967250:ursodeoxycholicacid",
+    "15891:NCT02728843:deferiprone",
+    "16855:NCT00359723:methylphenidate",
+    "16855:NCT01244269:methylphenidate",
+    "17951:NCT03439943:lixisenatide"
+  ],
+  "reviews": [
+    {
+      "record_id": "14144:NCT00794313:topiramate",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "eligibilityModule.eligibilityCriteria requires 'Parkinson's Disease' plus 'Must be taking Oral levodopa' and 'Must have dyskinesias'; armGroups register 'Amantadine' vs 'Amantadine plus Topiramate' vs placebo, so topiramate has an explicit separable component-specific contrast (the two active arms differ only by topiramate), and briefSummary/detailedDescription state the purpose is 'to measure the reduction of the movements by amantadine and/or topiramate', with mAIMS dyskinesia severity as a registered outcome.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14154:NCT02305017:paracetamol",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "eligibilityModule.healthyVolunteers=true and inclusion requires 'Subjects who are healthy as determined by pre-study medical history'; briefSummary/detailedDescription describe an open-label crossover in which paracetamol is given before opicapone and every primary/secondary outcome is an opicapone PK parameter (Cmax, Tmax, AUC). Paracetamol is the interaction perpetrator, not an intervention evaluated for a clinical outcome.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14180:NCT02589340:buspirone",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion criteria require 'Parkinson's disease diagnosis', 'Currently taking a levodopa containing medication' and 'Currently taking between 200-500 mg of amantadine daily ... with insufficient suppression'; buspirone is the drug randomized against placebo on top of that stable background (rule: 'A drug deliberately varied against stable background therapy can qualify'), and briefSummary states the primary objective is 'to evaluate the efficacy of buspirone ... in reducing levodopa-induced dyskinesia (LID) in patients with Parkinson's disease (PD)' with UDysRS registered.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14180:NCT02803749:buspirone",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic PD by UK Parkinson's Disease Society Brain Bank Clinical Diagnostic Criteria' with Parkinson Anxiety Scale >= 14. Primary outcome is a tolerability measure, but briefSummary explicitly frames the clinical question ('It is not known if it is effective for the treatment of anxiety in Parkinson's disease') and registers clinical secondary outcomes (HAM-A change, responders, CGI-I, HADS), so the rule's clause allowing clinical secondary outcomes where the objective explicitly studies the drug's clinical effects applies.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14189:NCT00062738:nortriptyline",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion criteria: 'Parkinson's disease without dementia' and 'Depression'. Nortriptyline is its own EXPERIMENTAL arm against paroxetine and placebo; briefSummary states the goal is 'to evaluate the effectiveness and safety of two antidepressants--nortriptyline and paroxetine, compared to placebo in patients with Parkinson's disease and depression', primary outcome Hamilton Depression Scale.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14216:NCT02169440:warfarin",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true; inclusion requires 'Healthy as determined by pre-study medical history'. briefSummary: 'to investigate CYP2C9 inhibition by BIA 9-1067 through the assessment of its effect on the pharmacokinetics of S-warfarin, a substrate of CYP2C9'. Warfarin is an index substrate; all primary outcomes are PK parameters.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14216:NCT02305030:warfarin",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true, inclusion requires 'Healthy as determined by pre-study medical history'; official title 'Effect of Opicapone at Steady State on Warfarin Pharmacokinetics in Healthy Volunteers'; outcomes are R-/S-warfarin and opicapone plasma concentrations only.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14259:NCT01536366:repaglinide",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true, 'Healthy as determined by pre-study medical history' in inclusion; briefSummary 'to investigate the CYP2C8 inhibition by BIA 9-1067'; repaglinide is the CYP2C8 substrate and all outcomes are PK (Cmax, Tmax, AUC).",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14286:NCT04070495:rifampicin",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true; inclusion limited to 'Japanese men aged 20 to 44 years'; briefSummary 'to investigate the effects of CYP3A4/5 inhibitor or inducer on the pharmacokinetics of KW-6356'. Rifampicin is named the 'perpetrator drug' in the exclusion criteria and outcomes are geometric mean ratios of KW-6356 PK.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14298:NCT03970798:rosuvastatin",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true, inclusion limited to healthy 'Japanese males aged 20 to 44 years'; arm label is 'KW-6356/Healthy Japanese adult male subjects'; rosuvastatin is explicitly an 'index substrate' (exclusion criterion 6 and arm description) and all outcomes are PK of the index substrates.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14299:NCT01437189:sertraline",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'All patients should have a confirmed diagnosis of PD according to Brain Bank Criteria' and 'Diagnosed to be major depression episode according to DSM-IV'. Sertraline is the sole drug in the EXPERIMENTAL arm; briefSummary: 'to evaluate the efficacy of sertraline in treating depression in Patients with Parkinson's disease'; primary outcome HAMD change, secondary PDQ-39.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14306:NCT01280123:pioglitazone",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Men and women with idiopathic PD of less than 5 years duration' with diagnosis 'confirmed by bradykinesia plus one of the other cardinal signs'. Pioglitazone is randomized (15/45 mg vs placebo) against stable rasagiline/selegiline background; primary outcome 'Change in Total Unified Parkinson's Disease Rating Scale (UPDRS) Score From Baseline to 44 Weeks'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14318:NCT03413384:ceftriaxone",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic Parkinson's disease (PD) based on the UK Parkinson's Disease Society Brain Bank Criteria' plus PDD by MDS criteria. Ceftriaxone is the randomized drug against placebo on top of stable levodopa background; primary outcome is ADAS-Cog net change, i.e. cognition.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14406:NCT02536976:mirabegron",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Clinical Diagnosis of PD based on the United Kingdom Brain Bank diagnostic criteria for PD' with >=8 micturitions/24h and >=3 urgency episodes. Mirabegron vs matching placebo; primary outcome is MoCA change (cognition) and secondary outcomes OABQ symptom bother/HRQL and UPDRS; briefSummary frames mirabegron as 'the first pharmacologic treatment which may not exacerbate CI, constipation, orthostatic hypotension (OH), somnolence, and dry mouth in PD'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14447:NCT00642928:bf264910mg",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion criteria begin 'Idiopathic Parkinson disease' with Epworth >= 13. BF 2.649 (pitolisant) 10 mg is its own EXPERIMENTAL arm vs placebo; briefSummary: 'to define the minimum effective dose of BF 2.649 ... versus placebo in reducing the Excessive Daytime Sleepiness of Parkinson's disease patients'; primary outcome Epworth Sleepiness Scale.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14447:NCT00642928:bf264920mg",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Same protocol as the 10 mg record: inclusion 'Idiopathic Parkinson disease'; BF 2.649 20 mg is its own EXPERIMENTAL arm vs placebo with ESS as primary outcome and an explicit dose-finding efficacy objective.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14447:NCT00642928:bf264940mg",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Same protocol: inclusion 'Idiopathic Parkinson disease'; BF 2.649 40 mg registered as its own EXPERIMENTAL arm vs placebo, ESS primary outcome, explicit efficacy objective.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14447:NCT00642928:bf26495mg",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Same protocol: inclusion 'Idiopathic Parkinson disease'; BF 2.649 5 mg registered as its own EXPERIMENTAL arm vs placebo, ESS primary outcome, explicit efficacy objective.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14447:NCT01036139:bf2649pitolisant",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Patients with a documented history of Parkinson's disease according to UPDRS ... Hoehn and Yahr score <5' and exclusion rules out 'other degenerative parkinsonian syndromes'. Pitolisant vs placebo; briefSummary: 'To compare the efficacy of BF2.649 over placebo ... in the improvement of excessive daytime sleepiness in patients diagnosed with Parkinson's Disease'; primary outcome ESS change.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14447:NCT01066442:bf2649pitolisant",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Same design as NCT01036139: inclusion 'Patients with a documented history of Parkinson's disease according to UPDRS ... Hoehn and Yahr score <5'; pitolisant vs placebo; primary outcome ESS change with an explicit efficacy objective.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14643:NCT02183519:capsaicin",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "interaction_probe",
+        "no_clinical_objective"
+      ],
+      "rationale": "Population side is arguably met (a separate arm 'Parkinson's disease' with inclusion 'Diagnosis of PD ... by applying strict United Kingdom brain bank criteria'), but Gate 3 fails: the intervention description says 'For reflex cough testing, all participants will receive various concentrations of nebulized capsaicin', i.e. capsaicin is a challenge/probe agent used to elicit reflex cough, and the only registered outcome is Peak Expiratory Flow Rate. briefSummary describes testing cough physiology, not evaluating capsaicin for a clinical outcome. Rule excludes challenge agents and studies without a disease-relevant clinical objective.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14644:NCT00641186:sodiumoxybate",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Male or female with a diagnosis of idiopathic PD' with ESS > 10 and nocturnal sleep disturbance. Sodium oxybate is the sole drug in the arm 'Xyrem in Parkinson disease'; briefSummary: 'designed to evaluate the safety and potential efficacy of Xyrem for the treatment of excessive daytime sleepiness (EDS) and nocturnal sleep disturbance in patients with mild to moderate Parkinson's Disease'; primary outcome is the ESS/FSS/PSQI sleep-and-fatigue set (detailedDescription names ESS the 'primary efficacy point').",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14644:NCT02111122:sodiumoxybate",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Moderate to severe Parkinson's disease (Hoehn and Yahr II/III) diagnosis according to international criteria' with EDS; exclusion rules out 'Atypical Parkinson disorder'. Sodium oxybate vs placebo crossover; official title 'Study of the Symptomatic Effects of Nocturnal Sodium Oxybate in Parkinson's Disease', primary MSLT sleepiness latency plus clinical secondaries (UPDRS III, PDSS-2, PDQ-39, ESS).",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14656:NCT02818777:cannabidiol",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Idiopathic PD, per UK Parkinson's Disease Society (UKPDS) Brain Bank Clinical Diagnostic Criteria' with rest tremor >= 2 on MDS-UPDRS 3.17. Official title 'A Randomized, Double Blind, Placebo-controlled Crossover Study of Tolerability and Efficacy of Cannabidiol (CBD) on Tremor in Parkinson's Disease' and the registered primary/secondary outcomes include MDS-UPDRS total, UDysRS and the MDS-UPDRS tremor score, so the clinical effect of CBD is an explicit registered objective, not an incidental measure. Borderline: briefSummary calls the efficacy assessments 'simply explorative'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14656:NCT03582137:cannabidiol",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Idiopathic PD, per UK Parkinson's Disease Society (UKPDS) Brain Bank Clinical Diagnostic Criteria' with ON motor MDS-UPDRS > 20. CBD vs placebo parallel; briefSummary: 'The major purpose of this study is to assess the efficacy of CBD on motor symptoms of Parkinson's Disease'; primary outcome MDS-UPDRS Part III change.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14725:NCT02046434:glycerolphenylbutyrate",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "no_clinical_objective",
+        "unclear_population"
+      ],
+      "rationale": "Gate 3 fails decisively: the only registered outcome is 'Levels of alpha-synuclein in blood plasma', official title 'Phenylbutyrate Response As a Biomarker for Alpha-Synuclein Clearance From Brain', and detailedDescription states 'No effects on Parkinson symptoms are expected during this short trial'. The cohort is also mixed ('Idiopathic Parkinson's disease with mild symptoms' plus 'Age and sex matched normal control subjects'), and the mixed-cohort clause requires the disease cohort's clinical outcomes to be separately specified - none are specified at all.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14783:NCT03970798:caffeine",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true; inclusion limited to healthy 'Japanese males aged 20 to 44 years'; caffeine is an 'index substrate' for CYP1A2 (briefSummary: 'to evaluate the influence of repeated oral doses of KW-6356 on the pharmacokinetics of index substrates for CYP3A4/5, CYP1A2 and BCRP') and all outcomes are PK.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14880:NCT00957918:nicotine",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'clinical diagnosis of probable idiopathic Parkinson's disease', H&Y II-IV, levodopa-induced dyskinesias > 25% of waking day, stable levodopa >= 30 days; exclusion rules out 'Secondary or non-idiopathic Parkinson's disease'. Nicotine is its own EXPERIMENTAL arm vs placebo and detailedDescription states the study is 'designed to see if doses which can be tolerated by parkinsonian patients will also reduce the severity and frequency of the dyskinesias', with UDysRS and UPDRS II/III/IV registered as secondary outcomes.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14936:NCT02005029:erythromycin",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'a definitive diagnosis of Parkinson's Disease (per United Kingdom brain bank criteria)' with stable levodopa >= 28 days. Erythromycin is the randomized drug (EXPERIMENTAL arm, one-time IV 100 mg) against placebo with levodopa unchanged, i.e. the varied drug against stable background. Borderline because the co-primary endpoints are gastric emptying time and levodopa AUC, but briefSummary states the study will 'determine if there is improved levodopa absorption and motor function' and registers clinical secondaries (MDS-UPDRS Part 3, gait speed, TUAG, dyskinesia), so it is not a PK/interaction-only study.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14937:NCT01941732:sildenafil",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion criteria list 'Parkinsons disease' together with erectile dysfunction. Sildenafil is the only drug in the single EXPERIMENTAL arm; the registered primary outcome is 'Motor function' (rCBF is secondary) and briefSummary states the hypothesis that 'sildenafil increases brain blood flow and hence improves the function of specific brain regions, improving motor function'. Borderline: the title calls it an 'Acute Challenge', but the drug's own clinical effect is the primary endpoint, so this is an acute-dose paradigm rather than a probe role.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14937:NCT02162979:sildenafil",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic Parkinson's disease, Hoehn and Yahr stage 2.0 to 4.0' with 'Presence of drug-induced dyskinesias'; exclusion rules out atypical parkinsonian syndromes. Sildenafil vs placebo crossover; briefSummary: 'to determine if Viagra is effective in reducing dyskinesias in patients with Parkinson's Disease'; primary outcome change in duration of dyskinesia. Terminated with ACTUAL enrollment 2 (> 0).",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "14956:NCT05581823:carbamazepine",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true; inclusion requires 'Healthy as determined by medical evaluation' in adults 18-55. briefSummary: 'to evaluate the effect of carbamazepine, a strong CYP3A4 inducer, on the steady-state pharmacokinetics (PK) of tavapadon in healthy adult participants'; primary outcomes are tavapadon Cmax and AUCtau.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14963:NCT03970798:midazolam",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "Same protocol as the caffeine/rosuvastatin records: healthyVolunteers=true, healthy Japanese males only, midazolam is the CYP3A4/5 'index substrate' and every outcome is a PK parameter of the index substrates.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "14995:NCT04070495:clarithromycin",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "healthy_only",
+        "interaction_probe",
+        "pk_only"
+      ],
+      "rationale": "healthyVolunteers=true, healthy 'Japanese men aged 20 to 44 years'; clarithromycin is the CYP3A4/5 inhibitor 'perpetrator drug' in a DDI study whose outcomes are geometric mean ratios of KW-6356 PK parameters.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "15029:NCT00505622:perampanel",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion criteria read 'Male or female subjects with idiopathic PD who have fulfilled the entry criteria to studies E2007-G000-309 or E2007-E044-213' - the record's own eligibility text states idiopathic PD. Perampanel is the sole drug in the EXPERIMENTAL arm, adjunctive to (unchanged) levodopa, and the primary outcome is 'Mean Change From Baseline in Total Daily OFF Time (Hours)' with UPDRS II/III secondaries.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15029:NCT00566462:perampanel",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Population is clean (inclusion requires 'idiopathic PD fulfilling the United Kingdom Parkinson's Disease Society Brain Bank (UKPDSBB) diagnostic criteria'), but the only registered outcomes are striatal and caudate/putamen [123I]-IBZM SPECT binding; official title 'Assessment of Perampanel (E2007) on Synaptic Dopamine in Mild-moderate PD Patients: A Pilot Study With [^123I]-IBZM SPECT'. The rule excludes studies limited to imaging or laboratory biomarkers without a disease-relevant clinical objective/outcome.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "15029:NCT01634360:perampanel",
+      "reviewer_decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Gate 3 would be satisfied (perampanel alone in the EXPERIMENTAL arm; primary outcome 'Mean Change From Baseline in Total Daily OFF Time'), but Gate 2 fails closed: the entire eligibilityModule inclusion text is 'Patients enrolled in Study E2007-E044-204 and who either completed 12 weeks of study drug treatment or who withdrew from the study due to lack of efficacy' - it never requires a Parkinson disease diagnosis, and the parent study's criteria are not in this record. The armGroup description likewise only says subjects 'entered this open-label extension study from the double-blind core study (E2007-E044-204)'. The only PD statement is the briefSummary sentence, which is verbatim the official title, and the rule says a condition tag or the title alone is insufficient. Missing affirmative population evidence fails closed.",
+      "adjudicator_decision": "include",
+      "agrees": false,
+      "disagreement_note": "Gate 2 requires that \"Registry inclusion criteria or an explicit cohort/arm description must require the target disease\" and states that \"A condition tag, the title alone, or healthyVolunteers=false alone is insufficient\". The adjudicator rests population on descriptionModule.briefSummary (\"patients with Parkinson's Disease with \\\"wearing off\\\" motor fluctuations\"). That quote is genuinely present, so this is not a transcription error. I read it differently for two reasons. First, the record's entire eligibilityModule inclusion text is \"Patients enrolled in Study E2007-E044-204 and who either completed 12 weeks of study drug treatment or who withdrew from the study due to lack of efficacy\" - it never requires a Parkinson disease diagnosis, and the parent study's criteria are not reproduced in this record; the armGroup description likewise only says subjects \"entered this open-label extension study from the double-blind core study (E2007-E044-204)\". Second, the briefSummary sentence is word-for-word the officialTitle (differing only in capitalisation), so leaning on it is in substance leaning on the title, which the rule rules out. Gate 2 also demands \"an explicit clinical diagnosis of Parkinson disease\"; a descriptive label in the summary is not a stated diagnostic requirement. The contrast with the sibling extension record 15029:NCT00505622, whose inclusion criteria do say \"Male or female subjects with idiopathic PD\" and which we both include, is exactly what Gate 2 is built to separate. Missing affirmative population evidence fails closed, so I mark uncertain/unclear_population. Gate 3 is not in dispute: perampanel alone in the EXPERIMENTAL arm with \"Mean Change From Baseline in Total Daily OFF Time\" as primary outcome would satisfy it."
+    },
+    {
+      "record_id": "15099:NCT03621046:zolpidem",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic Parkinson's and Hoehn and Yahr score of 2.5 or more'. Zolpidem vs placebo; briefSummary: 'This study will evaluate the motor and cognitive benefits of low-dose zolpidem in Parkinson's'; primary outcome 'Changes in motor function'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15116:NCT00062738:paroxetine",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Same trial as the nortriptyline record: inclusion 'Parkinson's disease without dementia' and 'Depression'. Paroxetine is registered as its own EXPERIMENTAL arm (separable from nortriptyline and placebo) and briefSummary names it as one of the two antidepressants whose 'effectiveness and safety' is evaluated; primary outcome Hamilton Depression Scale.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15126:NCT00912808:donepezil",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of Parkinson's disease' and treatment with dopaminergic medication for at least 1 year. Donepezil vs placebo crossover; briefSummary: 'Donepezil ... will reduce falls in subjects with Parkinson's disease and balance impairment'; primary outcome 'Fall Frequency Per Day'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15126:NCT01014858:donepezil",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'A diagnosis of Parkinson's disease according to UK Parkinson's Disease Society Brain Bank Criteria' plus mild PD dementia by MDS Task Force criteria. Donepezil vs placebo; briefSummary: 'To demonstrate the superiority of donepezil over placebo in improving cognitive function, neuropsychiatric burden and functional ability in people with Parkinson's disease and mild dementia'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15126:NCT01521117:donepezil",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Idiopathic Parkinson's disease, defined by the UK Brain Bank criteria, with a Hoehn and Yahr score of 2 to 4'. Donepezil vs placebo crossover; detailedDescription states the goal is to determine whether donepezil will 'Improve quantitative measures of balance ... gait ... cognitive measures in non-demented subjects with Parkinson's disease', and balance/gait dysfunction is described as among 'the most disabling symptoms of Parkinson's disease' - functioning, not a laboratory biomarker.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15126:NCT02206620:donepezil",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic Parkinson's disease' and ability to stand/walk unassisted. Donepezil vs placebo crossover; briefSummary: 'will compare the effects of placebo and donepezil ... on measures of balance and gait in subjects with Parkinson's disease (PD)' and 'The study's immediate goal is to determine the potential utility of cholinergic manipulation as a strategy for preventing or treating balance and gait dysfunction in PD'. Primary outcomes are postural sway and stride-time variability, i.e. functional measures of a PD symptom.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15201:NCT06263673:dapagliflozin",
+      "reviewer_decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Gate 3 is satisfied - dapagliflozin has its own EXPERIMENTAL arm against a placebo arm (an explicit component-specific separable contrast) and the co-primary outcomes are MDS-UPDRS and MMSE change. Gate 2 fails closed: inclusion requires 'Parkinson's disease or Lewy Body Dementia (diagnosis confirmed by neurologist at Mayo Clinic)', so the cohort receiving dapagliflozin is mixed and need not have Parkinson disease. Arms are defined by drug, not by diagnosis, so there is no separately identifiable PD cohort whose clinical outcomes are separately specified; the rule says mark uncertain in that case.",
+      "adjudicator_decision": "uncertain",
+      "agrees": true
+    },
+    {
+      "record_id": "15212:NCT02385500:fesoterodine",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Borderline population call, resolved on eligibility text rather than tag or title: inclusion requires 'Stable dose of dopaminergic medications and levodopa (between 300 and 1200 mg daily)' while exclusion rules out 'Atypical Parkinsonian syndrome' and 'Patients on anticholinergics for motor disturbances', and briefSummary states 'A representative number of patients with baseline overactive bladder (OAB) symptoms and Parkinson's disease will be recruited'. Fesoterodine vs placebo crossover; primary outcome urgency episodes, secondaries OAB-Q, PPBC and the Parkinson's Disease Sleep Scale - lower urinary tract dysfunction is framed as a PD non-motor symptom.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15426:NCT00753636:dynacirccrisradipine",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "no_clinical_objective"
+      ],
+      "rationale": "Population is clean ('Patients with idiopathic Parkinson's disease age 30-75'), but the objective is tolerability only: briefSummary says 'The objective of this study is to establish the safety and tolerability of isradipine' and both stated hypotheses are that 'Patients with PD will be able to tolerate isradipine'; the study is 'conducted in preparation to NIH submission of the pivotal study on the efficacy of this agent'. Primary outcome is 'Tolerability of Isradipine Based on the Number of Participants That Complete the Study'. The single motor-UPDRS secondary is an incidental clinical measure, which the rule says does not count absent an explicit clinical objective.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "15441:NCT00324896:eszopiclone",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Parkinson's disease by research criteria' with the criteria spelled out (two of resting tremor, cogwheel rigidity, bradykinesia, postural reflex impairment; 'no other cause of parkinsonism'; 'no signs of more extensive neurodegeneration indicating atypical parkinsonism') plus insomnia. Eszopiclone vs placebo; briefSummary: 'The primary hypothesis is that eszopiclone will be superior to placebo for the treatment of insomnia in patients with Parkinson's disease'; primary outcome total sleep time.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15496:NCT01662791:rifaximin",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion criteria are 'Parkinson's Disease' and the arm receiving the drug is the 'Case Group' of 'PD patients who experienced significant weight loss'. Rifaximin is the only drug, in the EXPERIMENTAL arm; briefSummary states aim 2 as 'determine the response to its treatment with a poorly absorbed antibiotic', and the registered secondaries 'PDQ-39 Over Time in Case Group', 'GISSI Over Time in Case Group' and 'Weight Change in Case Group After Treatment' are clinical post-treatment outcomes. Borderline: the primary outcome (number of subjects with SBBO) is a breath-test measure belonging to the observational Part 1.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15496:NCT02470780:rifaximin",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic PD' with daily off time >= 4 hours and no expected change in levodopa. Rifaximin vs placebo; briefSummary: 'It will test the hypothesis that treating SIBO with the antibiotic rifaximin will improve motor complications in previously SIBO-positive PD patients'; co-primary outcomes are change in 'Off' time by diary and by wireless monitoring.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15501:NCT06263673:sitagliptin",
+      "reviewer_decision": "uncertain",
+      "reasons": [
+        "unclear_population"
+      ],
+      "rationale": "Same protocol as the dapagliflozin record. Sitagliptin has its own EXPERIMENTAL arm against placebo and the co-primary outcomes are MDS-UPDRS and MMSE change, so Gate 3 holds, but inclusion requires only 'Parkinson's disease or Lewy Body Dementia', the arms are defined by drug rather than diagnosis, and no PD-specific cohort outcomes are separately specified. Mixed cohort without a separable disease cohort - mark uncertain per the rule.",
+      "adjudicator_decision": "uncertain",
+      "agrees": true
+    },
+    {
+      "record_id": "15579:NCT05287503:ambroxolhydrochloride",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Diagnosis of idiopathic PD', motor symptoms > 5 years, GBA1 heterozygous carrier; exclusion rules out 'Secondary and primary atypical parkinsonism'. Ambroxol vs placebo; co-primary outcomes are MoCA change and conversion rate from normal cognition to PD-MCI/PD-dementia, with MDS-UPDRS II/III and PD-CFRS secondaries - cognition and motor function, not biomarkers alone.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "15822:NCT02967250:ursodeoxycholicacid",
+      "reviewer_decision": "exclude",
+      "reasons": [
+        "no_clinical_objective",
+        "unclear_population"
+      ],
+      "rationale": "Gate 3 fails: the only registered outcomes are 'Change in ATP concentration' (7T MRS brain bioenergetics) and 'UDCA pharmacokinetics', and briefSummary states the hypothesis as 'repeated oral dosing of UDCA will result in increased brain ATP levels' with secondary aims to build a PK/PD model. No clinical symptom, function, cognition or quality-of-life outcome is registered. The cohort is also mixed - inclusion reads 'Individuals with medically stable mild to moderate Parkinson's disease or healthy controls' - with a single undifferentiated treatment arm, so the mixed-cohort clause is not met either.",
+      "adjudicator_decision": "exclude",
+      "agrees": true
+    },
+    {
+      "record_id": "15891:NCT02728843:deferiprone",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Parkinson's disease diagnosed' at an early stage on stable dopaminergic therapy; exclusion rules out 'Atypical or secondary Parkinsonism without dopa-sensitivity'. Four deferiprone dose arms vs placebo; primary outcome 'Change in Score on the Part III Subscale of the ... MDS-UPDRS'.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "16855:NCT00359723:methylphenidate",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Idiopathic PD treated with levodopa and experiencing motor fluctuations'. Methylphenidate vs placebo crossover administered 'along with their usual carbidopa/levodopa therapy' - the varied drug against unchanged background; briefSummary: 'to determine if methylphenidate (MPD) ... added to levodopa, will increase the beneficial effects of levodopa'; primary outcome time 'on' by tapping speed.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "16855:NCT01244269:methylphenidate",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Patients with stages 2-3 Parkinson's disease as defined by the Hoehn & Yahr staging system'. Methylphenidate 10 mg and 20 mg arms each against a matched placebo arm; briefSummary: 'aims to determine if methylphenidate can improve deficits in attention and symptoms of orthostatic hypotension, two common non-motor symptoms, in patients with Parkinson's Disease' and the effect 'on postural control ... a debilitating motor symptom'. Primary outcomes are Conners' CPT-II, orthostatic BP drop and centre-of-pressure measures.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    },
+    {
+      "record_id": "17951:NCT03439943:lixisenatide",
+      "reviewer_decision": "include",
+      "reasons": [],
+      "rationale": "Inclusion requires 'Patients with PD according to UKPDSBB criteria', early stage, on stable dopaminergic regimen; exclusion rules out 'other parkinsonian syndromes other than PD'. Lixisenatide vs placebo as add-on with background unchanged; briefSummary: 'to evaluate the effect of lixisenatide (20 microg/d), versus placebo, administered as add-on therapy ... on the progression of motor disability in patients with early PD'; primary outcome MDS-UPDRS III change at M12.",
+      "adjudicator_decision": "include",
+      "agrees": true
+    }
+  ],
+  "transcription_errors": [],
+  "notes": "Independent, rank-blind review of all 56 records. I read only docs/STRICT_LABEL_RULE.md, artifacts/label_audit/parkinsons_sources.json and artifacts/label_audit/parkinsons_decisions.json; I opened no ranking, score, metric, validation or evidence artifact, ran no git history command and did no web access, and I saw no rank, score or position at any point. I verified the three sha256 hashes myself and they match the values recorded here. For every record I formed my own decision from the registry text and the frozen rule before opening the adjudicator's entry. RESULT: 38 include, 15 exclude, 3 uncertain; 55 agreements and 1 disagreement with the adjudicator. The single disagreement is 15029:NCT01634360:perampanel (mine uncertain/unclear_population vs their include) and it is a Gate 2 reading of whether a briefSummary sentence that duplicates the official title can carry population evidence. It has no effect on the strict label set: the same drug id 15029 also has 15029:NCT00505622:perampanel, which we both score include on eligibility text that says \"Male or female subjects with idiopathic PD\", so perampanel is a strict label under either reading and no other drug identity turns on this record. TRANSCRIPTION CHECK: none found. I resolved every evidence field path in the decisions file against the source protocol and confirmed each quote appears verbatim in the cited field (0 failures over all slots); every nct_id in a record_id matches protocol identificationModule.nctId; every named intervention exists in armsInterventionsModule.interventions; all reason codes are from the permitted vocabulary; every include carries no reason codes and all three evidence slots, and every exclude/uncertain carries at least one code. REASON-CODE DIFFERENCES (same decision, not disagreements, listed for the record): 14154:NCT02305017:paracetamol - I add interaction_probe, since paracetamol is the interaction perpetrator dosed before opicapone; 14643:NCT02183519:capsaicin - I add interaction_probe, since nebulised capsaicin is a challenge agent under Gate 3's probe clause; 14725:NCT02046434:glycerolphenylbutyrate and 15822:NCT02967250:ursodeoxycholicacid - I add unclear_population, because both enrol PD patients together with healthy or normal controls and specify no separate clinical outcomes for the disease cohort, so the mixed-cohort clause fails independently of the biomarker-only Gate 3 failure. BORDERLINE CALLS THE PARENT SHOULD KNOW I MADE (all agreeing with the adjudicator, each resting on the rule's clause that clinical secondary outcomes count where the objective explicitly studies the drug's clinical effects): 14180:NCT02803749:buspirone (primary outcome is tolerability, but the summary poses the efficacy question and clinical secondaries are registered); 14656:NCT02818777:cannabidiol (Stage 1 safety/tolerability whose summary calls efficacy assessments \"simply explorative\", though the title names efficacy on tremor and clinical scales are registered primaries); 14936:NCT02005029:erythromycin (co-primaries are gastric emptying and levodopa AUC, so near the PK/interaction-only exclusion, but the summary names improved motor function and MDS-UPDRS III is a registered secondary); 14937:NCT01941732:sildenafil (title calls it an \"Acute Challenge\", but the drug's own effect is studied and Motor function is the primary outcome, so I read \"challenge\" as an acute-dose paradigm rather than a probe role); 15496:NCT01662791:rifaximin (primary outcome is a breath test belonging to the observational Part 1, but aim 2 is to \"determine the response to its treatment\" and PDQ-39, GISSI and weight change are registered as post-treatment outcomes in the treated Case group); 15212:NCT02385500:fesoterodine (no literal PD-diagnosis inclusion bullet - I relied on eligibility text, namely required levodopa 300-1200 mg daily plus exclusion of \"Atypical Parkinsonian syndrome\", not on the condition tag or title). BACKGROUND-MEDICATION HANDLING: in 14144 (topiramate on top of a registered amantadine arm), 14180/NCT02589340 (buspirone on stable amantadine), 14306 (pioglitazone on stable rasagiline/selegiline), 14318 (ceftriaxone on stable levodopa), 15029/NCT00505622 (perampanel adjunctive to levodopa), 16855/NCT00359723 (methylphenidate added to usual carbidopa/levodopa) and 17951 (lixisenatide add-on) the labelled drug is the one deliberately varied against unchanged background therapy, which the rule permits; the unchanged levodopa/carbidopa itself is never credited. No levodopa or carbidopa record appears in this bundle. MULTI-DRUG REGIMENS: 14144 passes because the registered arms \"Amantadine\" and \"Amantadine plus Topiramate\" differ only by topiramate, a component-specific separable contrast; NCT06263673 passes the component test (each anti-diabetic has its own arm against placebo) but fails the population gate; NCT00062738 gives nortriptyline and paroxetine separate experimental arms, so both are separable. SCOPE QUALIFIER, as the rule requires with every interpretation: these judgments admit clinical symptom studies in diagnosed participants and do not require disease modification; small test, not shown to generalize; trial participation does not establish efficacy or any recommendation. \"approved\": true attests that I independently reviewed every one of the 56 records against the frozen rule - it is not an attestation of agreement with the adjudicator.",
+  "resolution_applied": {
+    "protocol": "docs/STRICT_LABEL_PROTOCOL.md",
+    "records_demoted_to_uncertain": [
+      "15029:NCT01634360:perampanel"
+    ],
+    "note": "decisions_sha256 re-pinned to the post-resolution file; the reviewer's own per-record decisions above are unchanged."
+  }
+}
