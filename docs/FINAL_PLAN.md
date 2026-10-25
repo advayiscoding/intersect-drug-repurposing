@@ -35,7 +35,7 @@ No new diseases, selectors, agents or paid calls. React/Vite + existing Python A
   offline checks; all requested idea queries; deployment config without deployment;
   DEMO/Q&A, HUMAN_CHECKS (10 claims + three human-AD families + five labels/disease),
   one-page README, screenshot set and deployment checklist.
-- [ ] Phase 5: all tests/build/review/secret scan; merge only after passing; tag
+- [x] Phase 5: all tests/build/review/secret scan; merge only after passing; tag
   demo-final without moving demo-safe; final handoff and outcome table.
 
 ## Verification and scope decisions

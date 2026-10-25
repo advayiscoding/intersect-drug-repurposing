@@ -7,86 +7,46 @@ honest validation dashboard, an evidence gap map, and a "check my idea" lookup.
 **Everything here is a research hypothesis, never medical advice.** No number in this
 repository is evidence of efficacy. Keep it that way.
 
-Updated 2026-10-25. Workspace `/Users/advay/Downloads/Hackathon`, branch `feat/parkinsons-pilot`.
+Updated 2026-10-25. Workspace `/Users/advay/Downloads/Hackathon`, branch `main` at tag `demo-final`.
 
-## Active continuation — read before the historical state below
+## Where this left off
 
-LATEST REQUEST: final-demo phases 0–5, authorized to proceed without the old
-checkpoint approvals; only the latest attachment's hard stops apply. Read
-docs/FINAL_PLAN.md. Phase 0 verified 144 collected/144 passed, clean branch
-feat/parkinsons-pilot at 293e85e, demo-safe/main d35abee, expected artifacts.
-Secret scan: 250 reachable blobs / 164 tracked files, two configured-value checks
-plus provider/private-key patterns; zero findings, no values printed. Gitleaks
-not installed. Historical 132-test sections below describe the old baseline only.
-Phase 0 committed as 68b10fb. Phase 1a raw audit complete: 10 labels/disease
-sampled by drug ID, all 83 raw labels audited. Clear all-supporting concerns:
-AD 4/44, PD 10/39; mixed/unclear AD19, PD7. See docs/LABEL_AUDIT.md.
-docs/STRICT_LABEL_RULE.md is being frozen in the Phase 1a commit BEFORE assigning
-strict inclusion decisions or metrics. No strict results computed. Reviewer
-strict_rule_review checked the rule without accessing labels/ranks; wording clarified
-separable registered contrasts and retrospective status. Parent owns evaluation;
-raw_label_audit produced only the audit. Next: source bundle, rank-blind per-record
-strict decisions, independent review, then fixed-rank strict/raw evaluation.
-tests/test_strict_labels.py currently contains six expected failing tests for the
-not-yet-created strict-label module (red phase); do not mistake this for a baseline
-regression. Commit only the rule/audit/docs for the pre-evaluation freeze.
-UPDATE: strict rule freeze is c041084. strict_labels.py added; six tests now pass
-after observed red failures. Rank-free source bundles exported to artifacts/label_audit.
-Rule hash c67af905bdf8286f22cf7c8df20a631f317cc2666836e78af924cb30b47ae2cd.
-Next: quote-backed per-record adjudication and independent review using
-docs/STRICT_ADJUDICATION_BRIEF.md. No strict metrics yet. The evaluator refuses
-unreviewed decisions, hash changes, changed ranks, or result overwrite and raises
-the hard stop if Alzheimer strict count is below 10. No UI changes yet.
-Adjudicators ad_strict_decisions and pd_strict_decisions are writing separate
-decision files/docs from rank-free source bundles; do not evaluate until their
-independent review JSON files cover every record and pin source/rule/decision hashes.
-Validator now also rejects condition/title-only inclusion evidence for population.
-No new disease selectors, agents, verdict changes or paid calls. Merge to main and
-demo-final tag only after all final checks. Keep demo-safe untouched.
+**All phases complete.** `main` is at the `demo-final` tag; `demo-safe` is untouched
+at `d35abee`. 191 tests pass, frontend builds, fresh clone verified offline with no
+keys, and a production server was verified serving the tag itself.
 
-The following Stage 1 checkpoint is historical, not the current stop instruction:
+Phase ledger (docs/FINAL_PLAN.md) is fully checked: 0 baseline, 1a rule freeze,
+1b strict evaluation, 2 Parkinson static table, 3 plain-language mode, 4 fresh clone
+and deployment prep, 5 final checks and tag.
 
-User authorized a staged multi-disease extension via attached spec. Work ONLY on
-Stage 1: disease parameterization + Parkinson pilot, then STOP for user decision.
-Stage 2 (ALS/Huntington/MS), Stage 3 product/evidence, and Stage 4 plain-language
-layer are not authorized to proceed past this checkpoint yet. Read
-docs/PARKINSONS_PLAN.md. Start time: 2026-10-24 23:59 UTC, three-hour ceiling.
-Baseline: 132 tests pass; original commit d35abee; demo-safe was absent and now pins
-that verified commit. Never move it. Original artifacts and web UI remain frozen.
-Stage 1 COMPLETE; STOP here pending the user's decision. See
-docs/PARKINSONS_CHECKPOINT.md for the result, caveats and reproducibility commands.
-New outputs are under artifacts/diseases/<slug>; no product/evidence changes yet.
+What the strict audit did to the headline:
 
-Verification: 144 tests pass; frontend production build passes. Existing warnings
-are Starlette/httpx deprecation and Vite's large main chunk. No paid model calls.
-Both real runs completed in ~22 seconds each. Parkinson: 1,774 drugs / 1,763
-families; 39 labels / 39 families; path 0/39 at k=10/20 versus popularity 1/39.
-Full Alzheimer replay preserves every path rank, score and degree. Final audit
-found inherited registry labels include healthy-volunteer interaction probes:
-acetaminophen top-50 path hit (NCT02305017), caffeine popularity hit (NCT03970798).
-Keep the frozen labels/method; qualify their meaning prominently, not disease-
-patient testing. Only descriptive label metadata corrected; no numbers changed.
-Read-only review confirms actual saved Parkinson training edges contain zero
-guarded pairs. Review gap fixed: explicit Parkinson-only guard override now fails;
-only explicit Alzheimer snapshot replay may omit the cross-disease union.
-Cached report: artifacts/diseases/parkinsons/report.html. Two browser-verified
-screenshots: artifacts/screenshots/parkinsons-stage1.png and
-parkinsons-stage1-caveats.png. Stage commit is the branch tip above d35abee.
-Production changes are confined to data.py, cli.py, primary_validation.py and two
-new config/runner modules plus a checkpoint renderer; scoring and UI are untouched.
-Trial fetch succeeded with network approval: 2,922 records / 3 pages, 2026-10-25.
-Timing: initial setup at 00:00 UTC, then a several-hour gap before the user's
-“continue”; implementation files began at 04:49 UTC. Count active work separately
-from that gap; do not claim the entire wall-clock interval as implementation time.
-Resumed implementation/review took roughly 15 minutes, plus initial setup.
-Path exact CI at 10/20: [0, 9.03]%; random expectations 0.56/1.13%; popularity 2.56%.
-Family recovery among top-10/20/50 drugs: 0/0/4; collapsed-family permutation p@20
-0.356 (one label in the first 20 family cards, a different unit). Secondary path
-recall@50/100: 4/39 and 6/39. No tuning or favorable-result selection permitted.
-Next decision is whether to proceed to Stage 2; do not infer approval from these
-handoff notes. The historical "Next" section below predates this authorized pilot.
+| Alzheimer's | Labels | Hits@10/20 | Recall | Exact CI | Families | p@20 |
+| --- | ---: | ---: | ---: | --- | ---: | ---: |
+| Strict (primary) | 24 | 1 | 4.17% | 0.11-21.12% | 1 of 23 | 0.233 |
+| Strict sensitivity | 32 | 3 | 9.38% | 1.98-25.02% | 1 of 29 | 0.287 |
+| Raw (secondary) | 44 | 4 | 9.09% | 2.53-21.67% | 2 of 41 | 0.080 |
 
----
+Parkinson's: 0 of 24 strict, 0 of 39 raw. Reviewer agreement kappa 0.856 (AD) and
+0.961 (PD); six disagreements all demoted to uncertain by the pre-declared rule.
+
+**Open items for whoever picks this up:**
+
+1. `demo-safe` was NOT moved. The last instruction said to tag the hardened commit
+   `demo-safe`, but that tag already pinned d35abee under a standing "never move it",
+   so `demo-final` was created instead and the conflict was reported twice without a
+   reply. Moving it is a one-line change if that is what was wanted.
+2. **No public deployment happened.** FINAL_PLAN forbids exposing the service in this
+   task and no hosting credentials were used. Dockerfile and docs/DEPLOYMENT.md are
+   ready; the pre-flight list starts with a provider-side spend limit.
+3. A cross-contamination incident: two blinded reviewers run concurrently returned
+   each other's shell output once. Review data was verified clean, but **never run
+   two blinded agents in parallel with a shared scratch namespace.**
+4. The `no_clinical_objective` threshold lands inconsistently across four label
+   records. Deliberately not fixed, because re-adjudicating after seeing the split is
+   what the freeze forbids. Documented in docs/METHODOLOGY.md.
+5. 15 hand-checks await a human in docs/HUMAN_CHECKS.md; they sit on the ambiguous
+   insulin records that decide the headline.
 
 ## 1. Read this first: the honest summary
 
