@@ -31,7 +31,7 @@ No new diseases, selectors, agents or paid calls. React/Vite + existing Python A
   collapsible intro, keyboard tooltips and graph labels, evidence-specific card
   summaries; reading-level script and banned-copy lint. Same numeric artifacts
   in both modes; no agent/verdict changes. Browser-check all four pages.
-- [ ] Phase 4: actual local Git clone, README-only dependency install/build and
+- [x] Phase 4: actual local Git clone, README-only dependency install/build and
   offline checks; all requested idea queries; deployment config without deployment;
   DEMO/Q&A, HUMAN_CHECKS (10 claims + three human-AD families + five labels/disease),
   one-page README, screenshot set and deployment checklist.

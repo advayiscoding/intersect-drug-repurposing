@@ -69,6 +69,54 @@ membership and an 8–40-word source quote, **not that the interpretation is cor
 Verdicts are heuristics, not efficacy findings; agents never affect validation.
 LINCS is unavailable. [Full methodology and historical results](docs/METHODOLOGY.md).
 
+## Three things we are not burying
+
+- **The recovery is one insulin**, as the table above says outright.
+- **It did not generalise.** The same method, unchanged, recovers **0 of 24** strict
+  Parkinson's labels in the top 20. Reported because it failed.
+- **The top candidate may point the wrong way.** Mecamylamine ranks first, and the
+  agents found it *abolished* nicotine's cognitive benefit in the retrieved animal
+  work. Path scoring reads an undirected, unsigned graph and cannot see direction;
+  every edge in the UI says "direction unknown". The agents catching what the score
+  cannot is the point of the design.
+
+## Architecture
+
+```
+  PrimeKG CSV              ClinicalTrials.gov            PubMed
+  (937 MiB, local)         (dated snapshot)              (disk-cached)
+        |                         |                          |
+        v                         v                          v
+   graph.py                   data.py                    pubmed.py
+   leakage removal            label matching              retriever
+   both edge directions,            |                         |
+   all relations, ALL drugs         |                         v
+        |                           |                     agents.py
+        v                           |      mechanism . safety . skeptic . synthesis
+  training_edges.parquet            |                         |
+   the only model input             |                         v
+        |                           |                   citations.py
+        v                           |      every claim needs a PMID from the retrieved
+   ranking.py                       |      set plus a verbatim 8-40 word quote
+   fixed path scoring               |                         |
+   drug -> protein -> disease       |                         v
+        |                           |                   evidence.json
+        v                           v                         |
+  discovery_rankings -----> strict_labels.py <------- gapmap.py
+   frozen, hashed            audited evaluation        verdicts, relevance
+        |                           |                         |
+        +-------------+-------------+-------------------------+
+                      v
+             api.py  read-only, serves cached artifacts
+                      v
+             web/  React + Cytoscape
+             Explore . Gap map . Check my idea . Validation
+             with a Simple/Detailed reading mode
+```
+
+Nothing is computed per request except an optional live agent run. Agent output is
+display-only: it never re-enters the ranking or the validation numbers.
+
 ## Verify or rebuild
 
 ### Parkinson pilot (Stage 1 checkpoint)
@@ -112,5 +160,26 @@ on macOS/Linux; daily reset is UTC. Failed attempts consume budget. Ephemeral di
 or separate replicas can reset/multiply limits: configure a provider-side spending
 limit. Do not expose live endpoints publicly without access control.
 
-[Three-minute demo and Q&A](docs/DEMO.md) · [Handoff](context.md) ·
-[Assumptions](ASSUMPTIONS.md)
+## Documentation
+
+| Document | What it covers |
+| --- | --- |
+| [METHODOLOGY.md](docs/METHODOLOGY.md) | Full method, every metric, the verdict audit, all limitations |
+| [QA.md](docs/QA.md) | Honest answers to the hard questions |
+| [DEMO.md](docs/DEMO.md) | Demo script |
+| [HUMAN_CHECKS.md](docs/HUMAN_CHECKS.md) | What a person must verify by hand, with sources beside each item |
+| [STRICT_LABEL_RULE.md](docs/STRICT_LABEL_RULE.md) | The label rule, frozen before any strict metric |
+| [STRICT_LABEL_PROTOCOL.md](docs/STRICT_LABEL_PROTOCOL.md) | Ambiguity and reviewer disagreement, pre-declared |
+| [DEPLOYMENT.md](docs/DEPLOYMENT.md) | Sizing, cost controls, pre-flight checklist |
+| [ASSUMPTIONS.md](ASSUMPTIONS.md) | Every judgement call, with reasons |
+| [context.md](context.md) | Handoff: state, invariants, traps |
+
+Every page has a **Simple / Detailed** reading switch. Simple mode shortens the
+prose and never changes a number: its copy is generated from the same audited
+artifact, and a test asserts the figures match.
+
+Sources: [PrimeKG](https://github.com/mims-harvard/PrimeKG)
+([dataset](https://doi.org/10.7910/DVN/IXA7BM)) ·
+[ClinicalTrials.gov](https://clinicaltrials.gov/data-api/api) ·
+[PubMed](https://www.ncbi.nlm.nih.gov/home/develop/api/) ·
+[PubChem](https://pubchem.ncbi.nlm.nih.gov/) synonyms, public domain

@@ -29,6 +29,7 @@ CORPUS = [
     "docs/PARKINSONS_CHECKPOINT.md", "docs/PARKINSONS_PLAN.md",
     "docs/LABEL_AUDIT.md", "docs/HUMAN_CHECKS.md",
     "docs/STRICT_LABEL_PROTOCOL.md", "docs/ALZHEIMERS_ADJUDICATION.md",
+    "docs/QA.md", "docs/DEPLOYMENT.md",
     "docs/PARKINSONS_ADJUDICATION.md",
     "web/src/main.jsx",
 ]
