@@ -27,7 +27,7 @@ No new diseases, selectors, agents or paid calls. React/Vite + existing Python A
   update validation API/UI and copy, with exact intervals and <30-family warning.
 - [x] Phase 2: static Parkinson raw/strict table in validation only; no selector,
   candidates or evidence. Use the same artifact schema and label caveats.
-- [ ] Phase 3: shared plain-language data/templates, Simple/Detailed context,
+- [x] Phase 3: shared plain-language data/templates, Simple/Detailed context,
   collapsible intro, keyboard tooltips and graph labels, evidence-specific card
   summaries; reading-level script and banned-copy lint. Same numeric artifacts
   in both modes; no agent/verdict changes. Browser-check all four pages.

@@ -29,6 +29,7 @@ def overview():
             "split":artifact("split_validation.json"),"manifest":artifact("manifest.json"),
             "controls":artifact("known_controls.json"),
             "audited":artifact("audited_validation.json"),
+            "plain":artifact("plain_language.json"),
             "evidence":{"cached_family_ids":sorted(cache["families"]),"model":cache.get("model"),
                         "live_available":available(ROOT),"summary":summary(cache)}}
 

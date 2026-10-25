@@ -88,6 +88,79 @@ function CandidateList({families,selected,onSelect}){
     </div><div className="panel-foot"><ShieldCheck size={14}/> Known Alzheimer’s controls excluded</div></aside>;
 }
 
+const PLAIN_VERDICT={
+  'supported by human evidence':'Papers describe studies in people.',
+  'animal or in vitro only':'Only animal, cell or review papers were found.',
+  'mixed or contested':'The papers disagree with each other.',
+  'possible wrong direction':'Some papers suggest it pushes the wrong way.',
+  'none in the retrieved set':'No checked claim was found for this search.',
+};
+const PLAIN_RELEVANCE={
+  alzheimer:'At least one of those studies was in Alzheimer\u2019s.',
+  other:'Those studies were in other conditions, not Alzheimer\u2019s.',
+  unassessed:'',
+};
+function cardSummary(card){
+  const bits=[PLAIN_VERDICT[card.verdict]||''];
+  const rel=PLAIN_RELEVANCE[card.disease_relevance?.key];
+  if(rel) bits.push(rel);
+  bits.push(card.trial_count?`There ${card.trial_count===1?'is':'are'} ${card.trial_count} matching trial record${card.trial_count===1?'':'s'} in this dataset.`
+                        :'No matching trial record is in this dataset.');
+  return bits.filter(Boolean).join(' ');
+}
+
+function Tip({label,children}){
+  // Keyboard-reachable tooltip: focusable, described by its own bubble, Esc to close.
+  const [open,setOpen]=useState(false);
+  const id=useMemo(()=>`tip-${Math.random().toString(36).slice(2,8)}`,[]);
+  return <span className="tip-wrap">
+    <button type="button" className="tip-trigger" aria-describedby={open?id:undefined}
+      aria-expanded={open} onFocus={()=>setOpen(true)} onBlur={()=>setOpen(false)}
+      onMouseEnter={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
+      onClick={()=>setOpen(!open)} onKeyDown={e=>{if(e.key==='Escape')setOpen(false)}}>
+      {children}<Info size={12}/></button>
+    {open&&<span role="tooltip" id={id} className="tip-bubble">{label}</span>}
+  </span>;
+}
+
+function PlainSection({section}){
+  if(!section) return null;
+  return <section className="plain-section"><h2>{section.title}</h2>
+    {section.body.map((line,i)=><p key={i}>{line}</p>)}</section>;
+}
+
+function SimpleIntro({plain,open,onToggle}){
+  if(!plain) return null;
+  return <section className="plain-intro panel">
+    <button className="intro-toggle" aria-expanded={open} onClick={onToggle}>
+      <span><span className="eyebrow">START HERE</span><h2>{plain.what_this_is.title}</h2></span>
+      <ChevronDown size={18} style={{transform:open?'rotate(180deg)':'none'}}/>
+    </button>
+    {open&&<div className="intro-body">
+      {plain.what_this_is.body.map((line,i)=><p key={i}>{line}</p>)}
+      <p className="plain-disclaimer"><AlertTriangle size={14}/> {plain.disclaimer}</p>
+    </div>}
+  </section>;
+}
+
+function PlainValidation({plain}){
+  if(!plain) return <div className="page-loading">Plain summary unavailable.</div>;
+  const n=plain.numbers;
+  return <><div className="page-heading"><div><span className="eyebrow">IN PLAIN WORDS</span><h1>What we found.</h1><p>The same numbers as the detailed view, in shorter sentences.</p></div></div>
+    <div className="hypothesis-banner wide"><AlertTriangle size={15}/><span>{plain.disclaimer}</span></div>
+    <div className="plain-figures">
+      <article><strong>{n.strict_hits} of {n.strict_labels}</strong><span>found in the top 20, out of the trials we read one by one</span></article>
+      <article><strong>{n.sensitivity_hits} of {n.sensitivity_labels}</strong><span>if we also count the trials we were unsure about</span></article>
+      <article><strong>{n.parkinsons_hits} of {n.parkinsons_labels}</strong><span>on a second disease, Parkinson’s — it did not work there</span></article>
+    </div>
+    <PlainSection section={plain.how_well_it_did}/>
+    <PlainSection section={plain.what_it_does_not_mean}/>
+    <PlainSection section={plain.how_it_works}/>
+    <PlainSection section={plain.second_disease}/>
+    <PlainSection section={plain.about_the_reading}/>
+  </>;
+}
+
 function Claim({claim}){
   return <li className={claim.verified?'claim':'claim unverified'}>
     <p>{claim.text}</p>
@@ -162,7 +235,7 @@ function EvidencePanel({detail,node,family,evidence,tabRequest}){
   </section>;
 }
 
-function Explorer({data,focus}){
+function Explorer({data,focus,simple}){
   const [selected,setSelected]=useState(data.families[0].id),[drug,setDrug]=useState(data.families[0].representative_id),[detail,setDetail]=useState(null),[error,setError]=useState(''),[context,setContext]=useState(false),[pathIndex,setPathIndex]=useState(-1),[allPaths,setAllPaths]=useState(false),[node,setNode]=useState(null);
   const DEFAULT_PATHS=3, pathLimit=allPaths?Infinity:DEFAULT_PATHS;
   const choosePath=i=>{setPathIndex(i);setContext(i>=0);};
@@ -182,6 +255,7 @@ function Explorer({data,focus}){
       {error?<div className="empty error">{error}</div>:detail?<Graph detail={detail} context={context} pathIndex={pathIndex} pathLimit={pathLimit} onSelect={setNode}/>:<div className="graph-loading"><span className="spinner"/> Loading sourced connections…</div>}
       <div className="path-selector"><span>Scored paths</span><button className={pathIndex===-1?'active':''} onClick={()=>choosePath(-1)}>{allPaths?'All':`Top ${Math.min(DEFAULT_PATHS,detail?.paths.length??0)}`}</button>{detail?.paths.map((p,i)=><button key={i} className={pathIndex===i?'active':''} onClick={()=>choosePath(i)}>Path {i+1}</button>)}{detail&&!detail.paths.length&&<span className="muted">No scored path in this subgraph</span>}
         {detail&&detail.paths.length>DEFAULT_PATHS&&<button className="toggle-all" onClick={()=>{setAllPaths(!allPaths);setPathIndex(-1);setContext(false);}}>{allPaths?`Show top ${DEFAULT_PATHS} paths`:`Show all ${detail.paths.length} paths`}</button>}</div>
+      {simple&&<p className="card-plain graph-plain">Each dot is a drug, a protein, a pathway or the disease. A line means the two are linked in the map. A line does not say which way the effect goes.</p>}
       <div className="graph-caption"><Info size={14}/><span>Hover a node to highlight its connections and read relation labels. Connections show associations, not causality. Dashed pathway branches are context only.</span></div>
       {detail&&<details className="node-list"><summary>Accessible node and connection list</summary><div>{detail.graph.nodes.map(n=><button key={n.id} onClick={()=>setNode({...n,label:n.name})}>{n.name}<small>{n.type}</small></button>)}</div><ul>{detail.graph.edges.map(e=><li key={e.id}>{detail.graph.nodes.find(n=>n.id===e.source)?.name} ↔ {detail.graph.nodes.find(n=>n.id===e.target)?.name}: {e.relations.join(', ')}; direction unknown{e.context?' (context)':''}</li>)}</ul></details>}
       </section><EvidencePanel detail={detail} node={node} family={family} evidence={data.evidence} tabRequest={tabRequest}/>
@@ -197,12 +271,12 @@ function Validation({data}){
   return <><div className="page-heading"><div><span className="eyebrow">VALIDATION / STRICT TRIAL LABELS</span><h1>A very small signal, with limits.</h1><p>Audited labels first. Every denominator, interval and assumption visible.</p></div><span className="badge green"><ShieldCheck size={14}/> Untuned path scoring</span></div>
     <div className="hypothesis-banner wide"><AlertTriangle size={15}/><span><strong>Small test, not shown to generalize.</strong> Trial participation does not establish efficacy. The label rule was frozen, and the handling of ambiguous records pre-declared, before any of these numbers were computed. Rankings never changed.</span></div>
     {primaryPath&&<div className="validation-stats"><article><span>STRICT RECALL @ 10 AND @ 20</span><strong>{pct(primaryPath.metrics.recall_at_20)}</strong><p>{primaryPath.metrics.hits_at_20} of {primary.heldout_count} audited labels</p><small>95% exact CI {pct(primaryPath.exact_95_ci.recall_at_20[0])}–{pct(primaryPath.exact_95_ci.recall_at_20[1])} · {primary.sample_note}</small></article><article><span>DISTINCT FAMILIES @ 20</span><strong>{primaryPath.distinct_families_at_k['20']}<em> / {primary.positive_family_count}</em></strong><p>{primaryPath.recovered_families_at_k['20'].join(' + ')||'None recovered'}</p><small>Family-card permutation p = {pk(primary)?.toFixed(3)}</small></article><article><span>WHAT THE AUDIT REMOVED</span><strong>{v.heldout_count-primary.heldout_count}<em> labels</em></strong><p>{v.heldout_count} raw → {primary.heldout_count} strict</p><small>Ambiguous records are excluded here and counted in the sensitivity row below</small></article></div>}
-    {ad&&<section className="panel validation-table"><div className="section-title"><div><span className="eyebrow">LABEL SET COMPARISON</span><h2>Strict, sensitivity and raw</h2></div><span className="muted">path scoring, identical ranks</span></div><div className="table-scroll"><table><thead><tr><th>Alzheimer’s label set</th><th>Labels</th><th>Hits @10/20</th><th>Recall <small>95% exact CI</small></th><th>Families</th><th>Permutation p@20</th></tr></thead><tbody>
+    {ad&&<section className="panel validation-table"><div className="section-title"><div><span className="eyebrow">LABEL SET COMPARISON</span><h2>Strict, sensitivity and raw</h2></div><span className="muted">path scoring, identical ranks</span></div><div className="table-scroll"><table><thead><tr><th>Alzheimer’s label set</th><th>Labels</th><th>Hits @10/20</th><th><Tip label="Of the audited trial drugs, the share the ranking placed in its top 20. The interval is a 95% Clopper-Pearson exact binomial range; it is wide because the sample is tiny.">Recall</Tip> <small>95% exact CI</small></th><th>Families</th><th><Tip label="Shuffle the collapsed drug families at random 10,000 times and count how often chance does as well. Exploratory and unadjusted; it is not a significance test of efficacy.">Permutation p@20</Tip></th></tr></thead><tbody>
       {[['strict','Strict (primary)',true],['strict_sensitivity','Strict sensitivity (uncertain included)',false],['raw','Raw, unaudited (secondary)',false]].map(([key,label,hi])=>{
         const b=ad[key], m=b?.methods?.path_only; if(!m) return null;
         return <tr key={key} className={hi?'highlight':''}><th>{label}{hi&&<span className="badge green">Primary</span>}</th><td>{b.heldout_count}</td><td>{m.metrics.hits_at_20}</td><td><strong>{pct(m.metrics.recall_at_20)}</strong><small>{pct(m.exact_95_ci.recall_at_20[0])}–{pct(m.exact_95_ci.recall_at_20[1])}</small></td><td>{m.distinct_families_at_k['20']} / {b.positive_family_count}</td><td>{pk(b)?.toFixed(3)}</td></tr>;})}
     </tbody></table></div><p className="table-note">Uncertain records are excluded from the primary set and counted in the sensitivity row, as pre-declared. Under the strict rule the Alzheimer’s recovery is a single insulin: insulin glulisine survives, insulin aspart and insulin detemir became uncertain on ambiguous population evidence, and choline was excluded outright.</p></section>}
-    {pd&&<section className="panel validation-table"><div className="section-title"><div><span className="eyebrow">GENERALIZATION CHECK / STATIC</span><h2>Parkinson’s, same fixed method</h2></div><span className="muted">no selector, no candidates, no evidence</span></div><div className="table-scroll"><table><thead><tr><th>Parkinson’s label set</th><th>Labels</th><th>Hits @10/20</th><th>Recall <small>95% exact CI</small></th><th>Hits @50</th><th>Permutation p@20</th></tr></thead><tbody>
+    {pd&&<section className="panel validation-table"><div className="section-title"><div><span className="eyebrow">GENERALIZATION CHECK / STATIC</span><h2>Parkinson’s, same fixed method</h2></div><span className="muted">no selector, no candidates, no evidence</span></div><div className="table-scroll"><table><thead><tr><th>Parkinson’s label set</th><th>Labels</th><th>Hits @10/20</th><th><Tip label="Of the audited trial drugs, the share the ranking placed in its top 20. The interval is a 95% Clopper-Pearson exact binomial range; it is wide because the sample is tiny.">Recall</Tip> <small>95% exact CI</small></th><th>Hits @50</th><th><Tip label="Shuffle the collapsed drug families at random 10,000 times and count how often chance does as well. Exploratory and unadjusted; it is not a significance test of efficacy.">Permutation p@20</Tip></th></tr></thead><tbody>
       {[['strict','Strict (primary)',true],['strict_sensitivity','Strict sensitivity',false],['raw','Raw, unaudited',false]].map(([key,label,hi])=>{
         const b=pd[key], m=b?.methods?.path_only; if(!m) return null;
         return <tr key={key} className={hi?'highlight':''}><th>{label}{hi&&<span className="badge green">Primary</span>}</th><td>{b.heldout_count}</td><td>{m.metrics.hits_at_20}</td><td><strong>{pct(m.metrics.recall_at_20)}</strong><small>{pct(m.exact_95_ci.recall_at_20[0])}–{pct(m.exact_95_ci.recall_at_20[1])}</small></td><td>{m.metrics.hits_at_50}</td><td>{pk(b)?.toFixed(3)}</td></tr>;})}
@@ -226,12 +300,13 @@ const GROUPS=[
 const TIER_ORDER=['human trial','animal','in vitro','review','other'];
 const VERDICT_TONE={'supported by human evidence':'green','animal or in vitro only':'neutral','mixed or contested':'amber','possible wrong direction':'amber','none in the retrieved set':'neutral'};
 
-function GapCard({card,onOpen}){
+function GapCard({card,onOpen,simple}){
   const tiers=card.evidence_tier_counts||{};
   const ordered=TIER_ORDER.filter(t=>tiers[t]);
   const q=card.supporting_quote;
   return <article className="gap-card">
     <header><span className="rank">{String(card.rank).padStart(2,'0')}</span><h3>{card.family_name}</h3><span className={`badge ${VERDICT_TONE[card.verdict]??'neutral'}`}>{card.verdict}</span></header>
+    {simple&&<p className="card-plain">{cardSummary(card)}</p>}
     {q&&<blockquote className="verdict-quote">“{q.quote}”<a href={`https://pubmed.ncbi.nlm.nih.gov/${q.pmid}/`} target="_blank" rel="noopener noreferrer">PMID {q.pmid} <ExternalLink size={11}/></a></blockquote>}
     <div className="gap-strength"><span>Path strength</span><div className="score-track"><i style={{width:`${Math.max(3,card.path_strength*100)}%`}}/></div><strong>{card.path_score.toFixed(3)}</strong></div>
     {!!ordered.length&&<div className="tier-breakdown"><span>Verified claims by evidence type</span><div>{ordered.map(t=><span key={t} className={`tier tier-${t.replace(/ /g,'-')}`}>{t}<strong>{tiers[t]}</strong></span>)}</div></div>}
@@ -249,7 +324,7 @@ function GapCard({card,onOpen}){
   </article>;
 }
 
-function GapMap({onOpen}){
+function GapMap({onOpen,simple}){
   const [data,setData]=useState(null),[error,setError]=useState('');
   useEffect(()=>{fetch('/api/gap-map').then(r=>r.ok?r.json():Promise.reject(new Error('Run build-gap-map first'))).then(setData).catch(e=>setError(e.message))},[]);
   if(error) return <div className="empty error"><h1>Gap map unavailable</h1><p>{error}</p></div>;
@@ -260,7 +335,7 @@ function GapMap({onOpen}){
       const cards=data.families.filter(f=>f.group===id);
       return <section key={id} className={`gap-column ${id.replace(/ /g,'-')}`}>
         <div className="gap-column-head"><h2>{title}<span>{cards.length}</span></h2><p>{blurb}</p></div>
-        {cards.map(c=><GapCard key={c.family_id} card={c} onOpen={onOpen}/>)}
+        {cards.map(c=><GapCard key={c.family_id} card={c} onOpen={onOpen} simple={simple}/>)}
         {!cards.length&&<p className="muted empty-column">No families in this group.</p>}
       </section>;})}</div>
     {data.verification&&<section className="panel verification-strip"><div className="section-title"><div><span className="eyebrow">CITATION VERIFICATION, WHOLE CACHE</span><h2>What survived checking</h2></div><ShieldCheck size={20}/></div>
@@ -278,7 +353,7 @@ function GapMap({onOpen}){
 
 const SESSION = Math.random().toString(36).slice(2, 12);
 
-function CheckIdea(){
+function CheckIdea({simple}){
   const [drug,setDrug]=useState(''),[result,setResult]=useState(null),[state,setState]=useState('idle'),[error,setError]=useState('');
   const [context,setContext]=useState(false),[pathIndex,setPathIndex]=useState(-1),[node,setNode]=useState(null);
   const run=(live)=>{
@@ -339,11 +414,17 @@ function CheckIdea(){
 function App(){
   const [page,setPage]=useState('explore'),[data,setData]=useState(null),[error,setError]=useState('');
   const [focus,setFocus]=useState(null);
+  const [simple,setSimple]=useState(()=>{try{return localStorage.getItem('intersect-mode')==='simple'}catch{return false}});
+  const [introOpen,setIntroOpen]=useState(true);
+  const setMode=value=>{setSimple(value);try{localStorage.setItem('intersect-mode',value?'simple':'detailed')}catch{}};
   useEffect(()=>{fetch('/api/overview').then(r=>{if(!r.ok)throw new Error('Cached data is unavailable. Run validate-primary and prepare-ui.');return r.json()}).then(setData).catch(e=>setError(e.message))},[]);
   const openFamily=(card,tab)=>{setFocus({familyId:card.family_id,tab,at:Date.now()});setPage('explore');};
   const nav=[['explore','Explore',Network],['gaps','Gap map',Layers],['check','Check my idea',FlaskConical],['validation','Validation',BarChart3]];
-  return <><header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setPage('explore')}}><span className="brand-symbol"><Network size={22}/></span>intersect<span className="brand-sub">/ biology</span></a><nav aria-label="Main navigation">{nav.map(([id,label,Icon])=><button key={id} className={page===id?'active':''} onClick={()=>setPage(id)}><Icon size={16}/>{label}</button>)}</nav><div className="header-label"><span className="status-dot"/>LOCAL RESEARCH DEMO</div></header>
-    <main>{error?<div className="empty error"><h1>Could not load the workbench</h1><p>{error}</p></div>:!data?<div className="page-loading"><span className="spinner"/>Opening the cached research workbench…</div>:page==='gaps'?<GapMap onOpen={openFamily}/>:page==='check'?<CheckIdea/>:page==='validation'?<Validation data={data}/>:<Explorer data={data} focus={focus}/>}</main>
+  return <><header className="topbar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setPage('explore')}}><span className="brand-symbol"><Network size={22}/></span>intersect<span className="brand-sub">/ biology</span></a><nav aria-label="Main navigation">{nav.map(([id,label,Icon])=><button key={id} className={page===id?'active':''} onClick={()=>setPage(id)}><Icon size={16}/>{label}</button>)}</nav><div className="header-right"><div className="mode-switch" role="group" aria-label="Reading mode"><button className={simple?'':'on'} aria-pressed={!simple} onClick={()=>setMode(false)}>Detailed</button><button className={simple?'on':''} aria-pressed={simple} onClick={()=>setMode(true)}>Simple</button></div><div className="header-label"><span className="status-dot"/>LOCAL RESEARCH DEMO</div></div></header>
+    <main>{error?<div className="empty error"><h1>Could not load the workbench</h1><p>{error}</p></div>:!data?<div className="page-loading"><span className="spinner"/>Opening the cached research workbench…</div>:<>
+      {simple&&<SimpleIntro plain={data.plain} open={introOpen} onToggle={()=>setIntroOpen(!introOpen)}/>}
+      {page==='gaps'?<GapMap onOpen={openFamily} simple={simple}/>:page==='check'?<CheckIdea simple={simple}/>:page==='validation'?(simple?<PlainValidation plain={data.plain}/>:<Validation data={data}/>):<Explorer data={data} focus={focus} simple={simple}/>}
+    </>}</main>
     <footer><span><FlaskConical size={14}/> Research hypotheses only</span><p>Trial participation does not establish efficacy. Not medical advice.</p><span>PrimeKG × trial evidence</span></footer></>;
 }
 createRoot(document.getElementById('root')).render(<App/>);

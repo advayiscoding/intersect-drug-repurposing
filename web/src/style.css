@@ -109,3 +109,28 @@
 .relevance-other{background:#f6f1e6;border-color:#e8dcc6;color:#93804f}
 .relevance-inline{display:block;margin-top:6px;font-size:9px;color:#8b9a81;font-family:inherit}
 .suggestions button small{display:block;font-size:8px;color:#9aa593;margin-top:2px}
+.header-right{display:flex;align-items:center;gap:22px}
+.mode-switch{display:flex;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.mode-switch button{font-size:10px;padding:7px 12px;color:#86927e;background:#f7f9f2}
+.mode-switch button.on{background:#4f6b45;color:#f6f9f0;font-weight:600}
+.plain-intro{margin-bottom:22px}
+.intro-toggle{display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px;padding:20px 25px;text-align:left}
+.intro-toggle h2{font-family:Georgia,serif;font-size:22px;font-weight:400}
+.intro-toggle svg{color:#8d9b7f;transition:transform .15s}
+.intro-body{padding:0 25px 22px}
+.intro-body p{font-size:14px;color:#54684f;line-height:1.75;margin-bottom:12px;max-width:760px}
+.plain-disclaimer{display:flex;gap:9px;align-items:flex-start;background:#f3eddf;border:1px solid #e5dac3;border-radius:6px;padding:12px 15px;color:#8d7144;font-size:12px!important}
+.plain-figures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:26px}
+.plain-figures article{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px}
+.plain-figures strong{display:block;font-family:Georgia,serif;font-size:34px;font-weight:400;color:#3d603d;letter-spacing:-1px}
+.plain-figures span{display:block;margin-top:9px;font-size:13px;color:#6d8168;line-height:1.6}
+.plain-section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;margin-bottom:18px}
+.plain-section h2{font-family:Georgia,serif;font-size:21px;font-weight:400;margin-bottom:13px}
+.plain-section p{font-size:14px;color:#54684f;line-height:1.8;margin-bottom:11px;max-width:760px}
+.tip-wrap{position:relative;display:inline-flex}
+.tip-trigger{display:inline-flex;align-items:center;gap:5px;font:inherit;color:inherit;border-bottom:1px dotted #a7b39c}
+.tip-trigger svg{color:#9aa78d}
+.tip-bubble{position:absolute;bottom:125%;left:0;z-index:40;min-width:220px;max-width:300px;background:#2b3f36;color:#f2f5ec;font-size:11px;font-weight:400;line-height:1.55;padding:9px 11px;border-radius:5px}
+@media (max-width:900px){.plain-figures{grid-template-columns:1fr}}
+.card-plain{font-size:11.5px;color:#5c7056;line-height:1.65;background:#f3f7ec;border:1px solid #e2eada;border-radius:5px;padding:9px 11px;margin:11px 0}
+.graph-plain{margin:0 24px 11px}

@@ -1,0 +1,59 @@
+{
+  "disclaimer": "This is a research idea, not medical advice. It does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+  "what_this_is": {
+    "title": "What this is",
+    "body": [
+      "This is a research tool. It reads a large map of biology and guesses which existing medicines might be worth studying for Alzheimer's.",
+      "It does not test medicines. It does not know if any of them work. It points at connections a researcher could go and check."
+    ]
+  },
+  "how_it_works": {
+    "title": "How it works",
+    "body": [
+      "The map links a drug to the proteins it acts on, and links those proteins to the disease. A short chain of links scores higher than a long one, and links through very busy proteins count for less.",
+      "The map does not say which way an effect goes. A drug can be linked to the right protein and still push the wrong way."
+    ]
+  },
+  "how_well_it_did": {
+    "title": "How well it did",
+    "body": [
+      "We checked the ranking against 24 trials that we read one by one to be sure they really tested the drug in people with the disease. The ranking put 1 of those 24 in its top 20.",
+      "That is 4 in 100. The true number could be anywhere from 0 to 21 in 100, because the sample is tiny.",
+      "The one it found is an insulin. Two more insulins were too unclear to count, and we counted them separately: that gives 3 of 32.",
+      "Before we read the trials, a looser list of 44 trials gave 4 hits. Reading them carefully removed most of that."
+    ]
+  },
+  "what_it_does_not_mean": {
+    "title": "What this does not mean",
+    "body": [
+      "A drug being tested in a trial does not mean it worked. Many trials fail, and some never report results.",
+      "Nothing here says a medicine is safe or effective for anyone.",
+      "This was one small test on one disease. It does not show the method would work again."
+    ]
+  },
+  "second_disease": {
+    "title": "We tried it on a second disease",
+    "body": [
+      "We ran the same method, unchanged, on Parkinson's. It found 0 of 24 checked trials in its top 20.",
+      "We are reporting that because it did not work, not because it did."
+    ]
+  },
+  "about_the_reading": {
+    "title": "About the reading agents",
+    "body": [
+      "For the top candidates, a set of agents reads real papers. The papers come from PubMed. The agents write a short summary. One writes a safety note. One argues against the idea.",
+      "Every sentence they show has to quote the paper word for word, and we check the quote is really there. Anything we cannot check is marked unverified and is not shown as support."
+    ]
+  },
+  "numbers": {
+    "strict_hits": 1,
+    "strict_labels": 24,
+    "strict_recall_percent": 4.17,
+    "sensitivity_hits": 3,
+    "sensitivity_labels": 32,
+    "raw_hits": 4,
+    "raw_labels": 44,
+    "parkinsons_hits": 0,
+    "parkinsons_labels": 24
+  }
+}

@@ -140,6 +140,30 @@ The evaluation is a retrospective graph holdout, not a temporal/prospective test
 
 These JSON files can be read without the raw dataset or network access.
 
+## Simple and Detailed modes
+
+Every page has a **Simple / Detailed** switch in the header. Simple mode shortens the
+prose; it never changes a number. All plain copy is generated from
+`artifacts/audited_validation.json` into `artifacts/plain_language.json` by
+`src/repurpose/plain_language.py`, so the two modes cannot drift apart — a test
+asserts the generated figures equal the audited artifact's.
+
+```sh
+PYTHONPATH=src python3 -c "from pathlib import Path; from repurpose.plain_language import build; build(Path('.'))"
+PYTHONPATH=src python3 scripts/reading_level.py
+```
+
+`scripts/reading_level.py` scores every reader-facing sentence (Flesch-Kincaid); the
+copy currently reads at **grade 4.7** with nothing above the grade-9 target.
+`tests/test_plain_language.py` additionally forbids claim vocabulary — cure, treats,
+proven, is safe, effective for, recommended dose and similar — except inside an
+explicit negation, and checks the disclaimer and the limits survive simplification.
+
+Simple mode also adds a collapsible intro, an evidence-specific one-line summary on
+each gap-map card derived from that card's own verdict, relevance tag and trial
+count, and a plain note over the graph saying a line does not give direction.
+Tooltips are real buttons with `aria-describedby` and Escape-to-close.
+
 ## Local demo
 
 The workbench is a React/Cytoscape frontend over a read-only FastAPI server that
