@@ -521,6 +521,9 @@ Test labels: 22 trial-tested drugs in 1,770 candidates, after known-control and
 opposite-split exclusions. The other 22 labels were used only for mixture tuning.
 Bootstrap intervals below use 10,000 resamples of test drugs. No efficacy claims.
 
+All figures in this table are from the preserved 22/22 split on **raw, unaudited**
+labels. They are historical and are not the current primary result.
+
 | Method | Recall@10 [95% CI] | Recall@20 [95% CI] | Recall@50 | Recall@100 | Single-query MRR | Mean reciprocal rank, all test drugs |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Random (1,000 permutations) | 0.55% [0.47, 0.64] | 1.05% [0.95, 1.17] | 2.70% | 5.65% | 0.05498 | 0.00450 |
@@ -580,19 +583,92 @@ Displayed intervals are **95% Clopper–Pearson exact binomial** over integer dr
 recoveries out of 44. Exact arithmetic does not repair dependence between
 near-duplicate compounds, which the family analysis below addresses instead.
 
-| Ranking method | Recall@10 [95% exact CI] | Recall@20 [95% exact CI] | Recall@50 | Recall@100 | Enrichment@20 |
+**This all-44 table is the raw, unaudited, secondary result.** The primary result is
+the strict evaluation in "Strict trial labels" below, which supersedes it as the
+headline. Raw figures remain true of the raw label set and are kept for comparison.
+
+| Ranking method (raw labels) | Recall@10 [95% exact CI] | Recall@20 [95% exact CI] | Recall@50 | Recall@100 | Enrichment@20 |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Path (primary) | 9.09% (4/44) [2.53, 21.67] | 9.09% (4/44) [2.53, 21.67] | 9.09% [2.53, 21.67] | 13.64% [5.17, 27.35] | 8.15× |
+| Path (raw primary) | 9.09% (4/44) [2.53, 21.67] | 9.09% (4/44) [2.53, 21.67] | 9.09% [2.53, 21.67] | 13.64% [5.17, 27.35] | 8.15× |
 | Popularity | 0% (0/44) [0, 8.04] | 0% (0/44) [0, 8.04] | 6.82% [1.43, 18.66] | 11.36% [3.79, 24.56] | 0× |
 | Random (analytical k/N) | 0.56% | 1.12% | 2.79% | 5.58% | 1× |
 
-Path recall@20 is **8.15× the exact random expectation** and **+9.09 percentage
-points over popularity**; a ratio against a zero popularity baseline is undefined.
-Single-query MRR is 0.2; the mean reciprocal rank across all 44 labels is 0.01536.
-Random recall k/N is an analytical reference, not an estimated proportion, so no
-binomial interval is attached to it.
+On raw labels, path recall@20 is 8.15× the exact random expectation and +9.09
+percentage points over popularity; a ratio against a zero popularity baseline is
+undefined. Single-query MRR is 0.2; the mean reciprocal rank across all 44 raw
+labels is 0.01536. Random recall k/N is an analytical reference, not an estimated
+proportion, so no binomial interval is attached to it.
+## Strict trial labels — the primary result
 
-### Drug families and biological diversity
+The rule was frozen at `c041084` before any strict assignment
+([`docs/STRICT_LABEL_RULE.md`](STRICT_LABEL_RULE.md)) and the handling of ambiguity
+was pre-declared before any metric
+([`docs/STRICT_LABEL_PROTOCOL.md`](STRICT_LABEL_PROTOCOL.md)). Rankings, candidate
+universes, controls, family assignments, path constants and leakage guards are
+unchanged; only the label set differs. **Very small sample. Small test, not shown to
+generalize. Trial participation does not establish efficacy.**
+
+### Adjudication and independent review
+
+Every raw drug–trial–intervention record was adjudicated rank-blind, then re-decided
+by an independent reviewer in a fresh context with only the rule, the rank-free
+source bundle and the decision file — no ranks, scores or metrics.
+
+| Disease | Records | Agreement | Cohen's κ | Disagreements |
+| --- | ---: | ---: | ---: | ---: |
+| Alzheimer's | 57 | 52 (91.23%) | 0.856 | 5 |
+| Parkinson's | 56 | 55 (98.21%) | 0.961 | 1 |
+
+Each disagreement became `uncertain` under the pre-declared rule: methylene blue,
+sirolimus, dapagliflozin, telmisartan, salsalate (Alzheimer's) and perampanel
+(Parkinson's). After resolution: Alzheimer's 27 include / 17 exclude / 13 uncertain;
+Parkinson's 38 / 15 / 3.
+
+### Results
+
+| Alzheimer's | Labels | Hits@10/20 | Recall | Exact 95% CI | Families | Permutation p@20 |
+| --- | ---: | ---: | ---: | --- | ---: | ---: |
+| **Strict (primary)** | 24 | **1** | **4.17%** | 0.11–21.12% | 1 of 23 | 0.233 |
+| Strict sensitivity | 32 | 3 | 9.38% | 1.98–25.02% | 1 of 29 | 0.287 |
+| Raw (secondary) | 44 | 4 | 9.09% | 2.53–21.67% | 2 of 41 | 0.080 |
+
+| Parkinson's | Labels | Hits@10/20 | Recall | Exact 95% CI | Hits@50 | Permutation p@20 |
+| --- | ---: | ---: | ---: | --- | ---: | ---: |
+| **Strict (primary)** | 24 | **0** | 0% | 0–14.25% | 3 | 0.238 |
+| Strict sensitivity | 26 | 0 | 0% | 0–13.23% | 3 | 0.254 |
+| Raw (secondary) | 39 | 0 | 0% | 0–9.03% | 4 | 0.356 |
+
+Popularity recovers 0 at 10 and 20 in every Alzheimer's analysis.
+
+**The Alzheimer's recovery is one insulin.** Of the four raw top-20 hits, insulin
+glulisine (rank 6) survives the strict rule; insulin aspart (rank 5) and insulin
+detemir (rank 9) fall to *uncertain* on ambiguous population evidence and count only
+in the sensitivity analysis; choline (rank 10) is excluded outright. The
+"essentially insulin" caveat we had been reporting is literally true under audit, and
+the permutation test is no longer suggestive at any cutoff. **Parkinson's remains
+negative**, as it was on raw labels.
+
+### Known limitations of this audit
+
+- **Verdict-threshold inconsistency.** The reviewer observed that the
+  `no_clinical_objective` bar lands inconsistently across four records (3TC
+  included, ERAP sirolimus excluded on a similar pattern; dapagliflozin included on
+  weaker clinical-limb evidence than telmisartan and salsalate, which were excluded).
+  Re-adjudicating for consistency after seeing the split is exactly what the
+  pre-evaluation freeze forbids, so it is reported rather than fixed. Three of the
+  four were demoted to `uncertain` anyway, which resolves toward the conservative
+  reading.
+- **One weak identity.** In `14685:NCT00066157` the labelled identity is Progesterone
+  but the registered intervention is Medroxyprogesterone, normalized through the
+  registry's own `otherNames`. It satisfies the letter of Gate 1.5, but these are
+  distinct molecules.
+- **Self-audited verdict heuristics.** The gap-map verdicts remain keyword rules
+  self-audited on the 20 families they were tuned on; see the audit table above.
+- **A reviewer is not ground truth.** Two careful readings agreeing is not proof that
+  either is right. The 15 hand-checks in [`HUMAN_CHECKS.md`](HUMAN_CHECKS.md) exist
+  because `uncertain` records sit directly on the drugs that drove the headline.
+
+## Drug families and biological diversity
 
 `config/drug_families.json` explicitly groups near-duplicate compounds (insulin
 variants, mecasermin formulations, citalopram/escitalopram, interferon-beta and

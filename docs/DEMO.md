@@ -16,10 +16,14 @@ calls are needed; no public deployment is required.
    donepezil. Metformin illustrates a cached lookup; donepezil illustrates an
    excluded known control, not a discovery or a miss. If a synonym is ambiguous,
    show the explicit choice rather than silently picking a variant.
-4. **1:35–2:30 — Be honest about validation.** Show 4/44 at 10/20, the exact interval,
-   8.15× random expectation and +9.09 points over popularity. Show that the hits
-   collapse to only two families, and p@20 is 0.080. Say the earlier split's hits
-   were insulin variants. Show the embedding negative finding.
+4. **1:35–2:30 — Be honest about validation.** Lead with the **strict primary**
+   result: **1 of 24 labels at 10/20, 4.17%, exact CI 0.11–21.12%**, family-aware
+   permutation p@20 = 0.233, very small sample. Then say what it replaced — the raw,
+   unaudited set gave 4/44 (9.09%) and p@20 = 0.080, and auditing the trial records
+   against a rule frozen beforehand removed most of it. Say plainly what survives:
+   **one insulin**. Insulin glulisine is the only strict top-20 hit; insulin aspart
+   and detemir became uncertain on ambiguous population evidence; choline was
+   excluded. Then show the embedding negative finding.
 5. **2:30–3:00 — Close.** Gap map shows what is and is not in the retrieved set.
    “The value is inspectable connections and explicit objections. Trial participation
    is not efficacy, and this small retrospective evaluation does not establish

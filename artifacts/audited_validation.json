@@ -1,0 +1,1554 @@
+{
+  "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+  "headline_qualifier": "small test, not shown to generalize",
+  "rule_commit": "c041084",
+  "rule_sha256": "c67af905bdf8286f22cf7c8df20a631f317cc2666836e78af924cb30b47ae2cd",
+  "diseases": {
+    "alzheimers": {
+      "strict": {
+        "candidate_count": 1792,
+        "heldout_count": 24,
+        "family_count": 1781,
+        "positive_family_count": 23,
+        "primary_method": "path_only",
+        "methods": {
+          "path_only": {
+            "metrics": {
+              "mrr": 0.16666666666666666,
+              "mean_reciprocal_heldout_rank": 0.009170676158693583,
+              "hits_at_10": 1,
+              "recall_at_10": 0.041666666666666664,
+              "enrichment_at_10": 7.466666666666666,
+              "hits_at_20": 1,
+              "recall_at_20": 0.041666666666666664,
+              "enrichment_at_20": 3.733333333333333,
+              "hits_at_50": 1,
+              "recall_at_50": 0.041666666666666664,
+              "enrichment_at_50": 1.4933333333333332,
+              "hits_at_100": 2,
+              "recall_at_100": 0.08333333333333333,
+              "enrichment_at_100": 1.4933333333333332
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.001054352445469748,
+                0.2112016834569731
+              ],
+              "recall_at_20": [
+                0.001054352445469748,
+                0.2112016834569731
+              ],
+              "recall_at_50": [
+                0.001054352445469748,
+                0.2112016834569731
+              ],
+              "recall_at_100": [
+                0.010256341281250152,
+                0.26997280155760356
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 1,
+              "20": 1,
+              "50": 1
+            },
+            "recovered_families_at_k": {
+              "10": [
+                "Insulin variants"
+              ],
+              "20": [
+                "Insulin variants"
+              ],
+              "50": [
+                "Insulin variants"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 7.466666666666666,
+                "vs_popularity_percentage_points": 4.166666666666666
+              },
+              "20": {
+                "vs_random_ratio": 3.733333333333333,
+                "vs_popularity_percentage_points": 4.166666666666666
+              },
+              "50": {
+                "vs_random_ratio": 1.4933333333333332,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 1.4933333333333332,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "popularity_only": {
+            "metrics": {
+              "mrr": 0.03125,
+              "mean_reciprocal_heldout_rank": 0.004233374526930779,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 1,
+              "recall_at_50": 0.041666666666666664,
+              "enrichment_at_50": 1.4933333333333332,
+              "hits_at_100": 2,
+              "recall_at_100": 0.08333333333333333,
+              "enrichment_at_100": 1.4933333333333332
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_20": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_50": [
+                0.001054352445469748,
+                0.2112016834569731
+              ],
+              "recall_at_100": [
+                0.010256341281250152,
+                0.26997280155760356
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 1
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": [
+                "Progesterone"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 1.4933333333333332,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 1.4933333333333332,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "random": {
+            "metrics": {
+              "mrr": 0.06019260772606139,
+              "mean_reciprocal_heldout_rank": 0.004544831800028281,
+              "hits_at_10": 0.13392857142857142,
+              "recall_at_10": 0.005580357142857143,
+              "enrichment_at_10": 1.0,
+              "hits_at_20": 0.26785714285714285,
+              "recall_at_20": 0.011160714285714286,
+              "enrichment_at_20": 1.0,
+              "hits_at_50": 0.6696428571428571,
+              "recall_at_50": 0.027901785714285716,
+              "enrichment_at_50": 1.0,
+              "hits_at_100": 1.3392857142857142,
+              "recall_at_100": 0.05580357142857143,
+              "enrichment_at_100": 1.0
+            },
+            "exact_95_ci": null,
+            "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+            "distinct_families_at_k": {
+              "10": 0.13390052943288,
+              "20": 0.2677387433197739,
+              "50": 0.6688794917045566
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 0.5580357142857143
+              },
+              "20": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 1.1160714285714286
+              },
+              "50": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -1.376488095238095
+              },
+              "100": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -2.75297619047619
+              }
+            }
+          }
+        },
+        "family_permutation": {
+          "unit": "one collapsed drug family",
+          "permutations": 10000,
+          "seed": 20261024,
+          "statistic": "distinct labeled families among the first k collapsed family cards",
+          "hypothesis": "uniform random family order, preserving family membership and positive family count",
+          "results": {
+            "10": {
+              "observed": 1,
+              "random_mean": 0.1309,
+              "p_value_one_sided": 0.12308769123087691
+            },
+            "20": {
+              "observed": 1,
+              "random_mean": 0.2632,
+              "p_value_one_sided": 0.2333766623337666
+            },
+            "50": {
+              "observed": 1,
+              "random_mean": 0.6533,
+              "p_value_one_sided": 0.48695130486951305
+            }
+          },
+          "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+        },
+        "positive_ids": [
+          14179,
+          14218,
+          14271,
+          14286,
+          14306,
+          14402,
+          14475,
+          14539,
+          14685,
+          14962,
+          14968,
+          14991,
+          15082,
+          15099,
+          15148,
+          15179,
+          15284,
+          15308,
+          15332,
+          15425,
+          15611,
+          16588,
+          16855,
+          18277
+        ],
+        "excluded_ids": [
+          14161,
+          14223,
+          14323,
+          14329,
+          14424,
+          14599,
+          14653,
+          14664,
+          14961,
+          14975,
+          14992,
+          15201,
+          15331,
+          15666,
+          15836,
+          15840,
+          15986,
+          16063,
+          17270,
+          20270
+        ],
+        "uncertain_handling": "uncertain excluded (primary, per docs/STRICT_LABEL_PROTOCOL.md)",
+        "sample_note": "very small sample",
+        "headline_qualifier": "small test, not shown to generalize",
+        "label_note": "Studied interventions in diagnosed participants under the fixed strict rule; clinical symptom studies may qualify. Trial participation does not establish efficacy.",
+        "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+      },
+      "strict_sensitivity": {
+        "candidate_count": 1792,
+        "heldout_count": 32,
+        "family_count": 1781,
+        "positive_family_count": 29,
+        "primary_method": "path_only",
+        "methods": {
+          "path_only": {
+            "metrics": {
+              "mrr": 0.2,
+              "mean_reciprocal_heldout_rank": 0.017083616002727738,
+              "hits_at_10": 3,
+              "recall_at_10": 0.09375,
+              "enrichment_at_10": 16.8,
+              "hits_at_20": 3,
+              "recall_at_20": 0.09375,
+              "enrichment_at_20": 8.4,
+              "hits_at_50": 3,
+              "recall_at_50": 0.09375,
+              "enrichment_at_50": 3.36,
+              "hits_at_100": 4,
+              "recall_at_100": 0.125,
+              "enrichment_at_100": 2.2399999999999998
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.01976718017328488,
+                0.2502269506837947
+              ],
+              "recall_at_20": [
+                0.01976718017328488,
+                0.2502269506837947
+              ],
+              "recall_at_50": [
+                0.01976718017328488,
+                0.2502269506837947
+              ],
+              "recall_at_100": [
+                0.03513065310331142,
+                0.2899484201907557
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 1,
+              "20": 1,
+              "50": 1
+            },
+            "recovered_families_at_k": {
+              "10": [
+                "Insulin variants"
+              ],
+              "20": [
+                "Insulin variants"
+              ],
+              "50": [
+                "Insulin variants"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 16.8,
+                "vs_popularity_percentage_points": 9.375
+              },
+              "20": {
+                "vs_random_ratio": 8.4,
+                "vs_popularity_percentage_points": 9.375
+              },
+              "50": {
+                "vs_random_ratio": 3.36,
+                "vs_popularity_percentage_points": 6.25
+              },
+              "100": {
+                "vs_random_ratio": 2.2399999999999998,
+                "vs_popularity_percentage_points": 6.25
+              }
+            }
+          },
+          "popularity_only": {
+            "metrics": {
+              "mrr": 0.03125,
+              "mean_reciprocal_heldout_rank": 0.003921182010960304,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 1,
+              "recall_at_50": 0.03125,
+              "enrichment_at_50": 1.1199999999999999,
+              "hits_at_100": 2,
+              "recall_at_100": 0.0625,
+              "enrichment_at_100": 1.1199999999999999
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.10888116067935288
+              ],
+              "recall_at_20": [
+                0.0,
+                0.10888116067935288
+              ],
+              "recall_at_50": [
+                0.0007908685979525579,
+                0.16217099418151154
+              ],
+              "recall_at_100": [
+                0.007660736346456389,
+                0.20806942989500743
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 1
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": [
+                "Progesterone"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 1.1199999999999999,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 1.1199999999999999,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "random": {
+            "metrics": {
+              "mrr": 0.07452584361865669,
+              "mean_reciprocal_heldout_rank": 0.0045704566807549816,
+              "hits_at_10": 0.17857142857142858,
+              "recall_at_10": 0.005580357142857143,
+              "enrichment_at_10": 1.0,
+              "hits_at_20": 0.35714285714285715,
+              "recall_at_20": 0.011160714285714286,
+              "enrichment_at_20": 1.0,
+              "hits_at_50": 0.8928571428571429,
+              "recall_at_50": 0.027901785714285716,
+              "enrichment_at_50": 1.0,
+              "hits_at_100": 1.7857142857142858,
+              "recall_at_100": 0.05580357142857143,
+              "enrichment_at_100": 1.0
+            },
+            "exact_95_ci": null,
+            "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+            "distinct_families_at_k": {
+              "10": 0.1784593859160143,
+              "20": 0.3566704496032531,
+              "50": 0.8898241512385933
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 0.5580357142857143
+              },
+              "20": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 1.1160714285714286
+              },
+              "50": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -0.33482142857142844
+              },
+              "100": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -0.6696428571428569
+              }
+            }
+          }
+        },
+        "family_permutation": {
+          "unit": "one collapsed drug family",
+          "permutations": 10000,
+          "seed": 20261024,
+          "statistic": "distinct labeled families among the first k collapsed family cards",
+          "hypothesis": "uniform random family order, preserving family membership and positive family count",
+          "results": {
+            "10": {
+              "observed": 1,
+              "random_mean": 0.1677,
+              "p_value_one_sided": 0.1541845815418458
+            },
+            "20": {
+              "observed": 1,
+              "random_mean": 0.336,
+              "p_value_one_sided": 0.28687131286871315
+            },
+            "50": {
+              "observed": 1,
+              "random_mean": 0.8263,
+              "p_value_one_sided": 0.5685431456854314
+            }
+          },
+          "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+        },
+        "positive_ids": [
+          14179,
+          14218,
+          14271,
+          14286,
+          14306,
+          14329,
+          14402,
+          14424,
+          14475,
+          14539,
+          14599,
+          14685,
+          14962,
+          14968,
+          14975,
+          14991,
+          15082,
+          15099,
+          15148,
+          15179,
+          15201,
+          15284,
+          15308,
+          15331,
+          15332,
+          15425,
+          15611,
+          15836,
+          15986,
+          16588,
+          16855,
+          18277
+        ],
+        "excluded_ids": [
+          14161,
+          14223,
+          14323,
+          14653,
+          14664,
+          14961,
+          14992,
+          15666,
+          15840,
+          16063,
+          17270,
+          20270
+        ],
+        "uncertain_handling": "uncertain counted as included (sensitivity)",
+        "sample_note": "very small sample",
+        "headline_qualifier": "small test, not shown to generalize",
+        "label_note": "Studied interventions in diagnosed participants under the fixed strict rule; clinical symptom studies may qualify. Trial participation does not establish efficacy.",
+        "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+      },
+      "raw": {
+        "candidate_count": 1792,
+        "heldout_count": 44,
+        "family_count": 1781,
+        "positive_family_count": 41,
+        "primary_method": "path_only",
+        "methods": {
+          "path_only": {
+            "metrics": {
+              "mrr": 0.2,
+              "mean_reciprocal_heldout_rank": 0.01536390737111104,
+              "hits_at_10": 4,
+              "recall_at_10": 0.09090909090909091,
+              "enrichment_at_10": 16.29090909090909,
+              "hits_at_20": 4,
+              "recall_at_20": 0.09090909090909091,
+              "enrichment_at_20": 8.145454545454545,
+              "hits_at_50": 4,
+              "recall_at_50": 0.09090909090909091,
+              "enrichment_at_50": 3.2581818181818183,
+              "hits_at_100": 6,
+              "recall_at_100": 0.13636363636363635,
+              "enrichment_at_100": 2.4436363636363634
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.025328421703450767,
+                0.21668658946527453
+              ],
+              "recall_at_20": [
+                0.025328421703450767,
+                0.21668658946527453
+              ],
+              "recall_at_50": [
+                0.025328421703450767,
+                0.21668658946527453
+              ],
+              "recall_at_100": [
+                0.05173082948627348,
+                0.27350689090382385
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 2,
+              "20": 2,
+              "50": 2
+            },
+            "recovered_families_at_k": {
+              "10": [
+                "Choline",
+                "Insulin variants"
+              ],
+              "20": [
+                "Choline",
+                "Insulin variants"
+              ],
+              "50": [
+                "Choline",
+                "Insulin variants"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 16.29090909090909,
+                "vs_popularity_percentage_points": 9.090909090909092
+              },
+              "20": {
+                "vs_random_ratio": 8.145454545454545,
+                "vs_popularity_percentage_points": 9.090909090909092
+              },
+              "50": {
+                "vs_random_ratio": 3.2581818181818183,
+                "vs_popularity_percentage_points": 2.2727272727272734
+              },
+              "100": {
+                "vs_random_ratio": 2.4436363636363634,
+                "vs_popularity_percentage_points": 2.272727272727272
+              }
+            }
+          },
+          "popularity_only": {
+            "metrics": {
+              "mrr": 0.03125,
+              "mean_reciprocal_heldout_rank": 0.004738831296639475,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 3,
+              "recall_at_50": 0.06818181818181818,
+              "enrichment_at_50": 2.4436363636363634,
+              "hits_at_100": 5,
+              "recall_at_100": 0.11363636363636363,
+              "enrichment_at_100": 2.036363636363636
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.08041993976357587
+              ],
+              "recall_at_20": [
+                0.0,
+                0.08041993976357587
+              ],
+              "recall_at_50": [
+                0.014287668426975394,
+                0.18656201007202233
+              ],
+              "recall_at_100": [
+                0.0379437129392748,
+                0.24557677631553135
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 3
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": [
+                "Olanzapine",
+                "Progesterone",
+                "Scopolamine"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 2.4436363636363634,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 2.036363636363636,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "random": {
+            "metrics": {
+              "mrr": 0.09571311420204959,
+              "mean_reciprocal_heldout_rank": 0.004585154834818443,
+              "hits_at_10": 0.24553571428571427,
+              "recall_at_10": 0.005580357142857143,
+              "enrichment_at_10": 1.0,
+              "hits_at_20": 0.49107142857142855,
+              "recall_at_20": 0.011160714285714286,
+              "enrichment_at_20": 1.0,
+              "hits_at_50": 1.2276785714285714,
+              "recall_at_50": 0.027901785714285716,
+              "enrichment_at_50": 1.0,
+              "hits_at_100": 2.455357142857143,
+              "recall_at_100": 0.05580357142857143,
+              "enrichment_at_100": 1.0
+            },
+            "exact_95_ci": null,
+            "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+            "distinct_families_at_k": {
+              "10": 0.24542367163030077,
+              "20": 0.49059902103182473,
+              "50": 1.2246455798100229
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 0.5580357142857143
+              },
+              "20": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 1.1160714285714286
+              },
+              "50": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -4.028003246753246
+              },
+              "100": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -5.78327922077922
+              }
+            }
+          }
+        },
+        "family_permutation": {
+          "unit": "one collapsed drug family",
+          "permutations": 10000,
+          "seed": 20261024,
+          "statistic": "distinct labeled families among the first k collapsed family cards",
+          "hypothesis": "uniform random family order, preserving family membership and positive family count",
+          "results": {
+            "10": {
+              "observed": 2,
+              "random_mean": 0.2303,
+              "p_value_one_sided": 0.0225977402259774
+            },
+            "20": {
+              "observed": 2,
+              "random_mean": 0.4648,
+              "p_value_one_sided": 0.07989201079892011
+            },
+            "50": {
+              "observed": 2,
+              "random_mean": 1.1546,
+              "p_value_one_sided": 0.3217678232176782
+            }
+          },
+          "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+        },
+        "disease_id": "alzheimers",
+        "disease_name": "Alzheimer's disease",
+        "guard_diseases": [
+          "alzheimers"
+        ],
+        "known_controls_excluded": 9,
+        "interval_method": "95% Clopper-Pearson exact binomial; correlated drug variants limit independence.",
+        "family_metric_note": "Recovery counts use top-k drugs; the permutation test uses top-k collapsed family cards.",
+        "label_definition": "registered experimental-arm drugs in Alzheimer's disease-tagged trials",
+        "label_scope_note": "Registry condition tags and experimental-arm occurrence do not establish disease-patient enrollment or disease-directed testing; healthy-volunteer interaction probes can qualify under the frozen rules.",
+        "trial_note": "Trial participation does not establish efficacy; retrospective graph holdout, not a temporal test.",
+        "small_sample_note": "Inspect distinct families as well as drug counts; labels are incomplete and correlated.",
+        "path_hyperparameters": {
+          "label_fitted": false,
+          "length_penalty": 0.5,
+          "degree_exponent": -0.5,
+          "aggregate_top_paths": 10,
+          "explanation_paths": 5
+        },
+        "embedding_note": "Not run for this disease. The prior Alzheimer DistMult experiment did not improve primary recall.",
+        "lincs": "unavailable",
+        "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+        "provenance": {
+          "frozen_inputs_sha256": "d58d4392d13f31adec701bacdb8844490f47c902ccd8f58dad6d8d64ea314f47",
+          "rankings_sha256": "54453fca01492b1b60f0a54fd97793345faee8def28e815dd6fce97ee650dd77"
+        }
+      },
+      "source_sha256": "6fddef7475b89d3386255e247bbe4604ef128ea88c58e039c39ca666285dac05",
+      "decisions_sha256": "ad66dd3f7def097dbf8d85f788d92226aabfd0af76257e1c072f10ff563d6e2e",
+      "review_sha256": "8828283943b452bd7e968d59986ef53bf2db76a9cc6385ee8a204236b9f15d9f",
+      "rankings_sha256": "54453fca01492b1b60f0a54fd97793345faee8def28e815dd6fce97ee650dd77"
+    },
+    "parkinsons": {
+      "strict": {
+        "candidate_count": 1774,
+        "heldout_count": 24,
+        "family_count": 1763,
+        "positive_family_count": 24,
+        "primary_method": "path_only",
+        "methods": {
+          "path_only": {
+            "metrics": {
+              "mrr": 0.043478260869565216,
+              "mean_reciprocal_heldout_rank": 0.007545332014961559,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 3,
+              "recall_at_50": 0.125,
+              "enrichment_at_50": 4.4350000000000005,
+              "hits_at_100": 5,
+              "recall_at_100": 0.20833333333333334,
+              "enrichment_at_100": 3.6958333333333337
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_20": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_50": [
+                0.026559314986248948,
+                0.3236113581888329
+              ],
+              "recall_at_100": [
+                0.071318617198055,
+                0.42151284363725267
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 3
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": [
+                "Buspirone",
+                "Cannabidiol",
+                "Sertraline"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 4.4350000000000005,
+                "vs_popularity_percentage_points": 12.5
+              },
+              "100": {
+                "vs_random_ratio": 3.6958333333333337,
+                "vs_popularity_percentage_points": 20.833333333333336
+              }
+            }
+          },
+          "popularity_only": {
+            "metrics": {
+              "mrr": 0.008403361344537815,
+              "mean_reciprocal_heldout_rank": 0.0030111281817093104,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 0,
+              "recall_at_50": 0.0,
+              "enrichment_at_50": 0.0,
+              "hits_at_100": 0,
+              "recall_at_100": 0.0,
+              "enrichment_at_100": 0.0
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_20": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_50": [
+                0.0,
+                0.14247359772252563
+              ],
+              "recall_at_100": [
+                0.0,
+                0.14247359772252563
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 0
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": []
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "random": {
+            "metrics": {
+              "mrr": 0.058324309676279676,
+              "mean_reciprocal_heldout_rank": 0.004513756554580131,
+              "hits_at_10": 0.13528748590755355,
+              "recall_at_10": 0.005636978579481398,
+              "enrichment_at_10": 1.0,
+              "hits_at_20": 0.2705749718151071,
+              "recall_at_20": 0.011273957158962795,
+              "enrichment_at_20": 1.0,
+              "hits_at_50": 0.6764374295377678,
+              "recall_at_50": 0.02818489289740699,
+              "enrichment_at_50": 1.0,
+              "hits_at_100": 1.3528748590755355,
+              "recall_at_100": 0.05636978579481398,
+              "enrichment_at_100": 1.0
+            },
+            "exact_95_ci": null,
+            "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+            "distinct_families_at_k": {
+              "10": 0.13528748590755413,
+              "20": 0.27057497181510826,
+              "50": 0.676437429537768
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 0.5636978579481398
+              },
+              "20": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 1.1273957158962795
+              },
+              "50": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 2.818489289740699
+              },
+              "100": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 5.636978579481398
+              }
+            }
+          }
+        },
+        "family_permutation": {
+          "unit": "one collapsed drug family",
+          "permutations": 10000,
+          "seed": 20261024,
+          "statistic": "distinct labeled families among the first k collapsed family cards",
+          "hypothesis": "uniform random family order, preserving family membership and positive family count",
+          "results": {
+            "10": {
+              "observed": 0,
+              "random_mean": 0.1357,
+              "p_value_one_sided": 1.0
+            },
+            "20": {
+              "observed": 1,
+              "random_mean": 0.2697,
+              "p_value_one_sided": 0.23817618238176183
+            },
+            "50": {
+              "observed": 3,
+              "random_mean": 0.6799,
+              "p_value_one_sided": 0.031196880311968805
+            }
+          },
+          "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+        },
+        "positive_ids": [
+          14144,
+          14180,
+          14189,
+          14299,
+          14306,
+          14318,
+          14406,
+          14447,
+          14644,
+          14656,
+          14880,
+          14936,
+          14937,
+          15029,
+          15099,
+          15116,
+          15126,
+          15212,
+          15441,
+          15496,
+          15579,
+          15891,
+          16855,
+          17951
+        ],
+        "excluded_ids": [
+          14154,
+          14216,
+          14259,
+          14286,
+          14298,
+          14643,
+          14725,
+          14783,
+          14956,
+          14963,
+          14995,
+          15201,
+          15426,
+          15501,
+          15822
+        ],
+        "uncertain_handling": "uncertain excluded (primary, per docs/STRICT_LABEL_PROTOCOL.md)",
+        "sample_note": "very small sample",
+        "headline_qualifier": "small test, not shown to generalize",
+        "label_note": "Studied interventions in diagnosed participants under the fixed strict rule; clinical symptom studies may qualify. Trial participation does not establish efficacy.",
+        "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+      },
+      "strict_sensitivity": {
+        "candidate_count": 1774,
+        "heldout_count": 26,
+        "family_count": 1763,
+        "positive_family_count": 26,
+        "primary_method": "path_only",
+        "methods": {
+          "path_only": {
+            "metrics": {
+              "mrr": 0.043478260869565216,
+              "mean_reciprocal_heldout_rank": 0.007276706849168859,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 3,
+              "recall_at_50": 0.11538461538461539,
+              "enrichment_at_50": 4.093846153846155,
+              "hits_at_100": 5,
+              "recall_at_100": 0.19230769230769232,
+              "enrichment_at_100": 3.411538461538462
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.1322746044977541
+              ],
+              "recall_at_20": [
+                0.0,
+                0.1322746044977541
+              ],
+              "recall_at_50": [
+                0.024458075317962225,
+                0.3015404001075678
+              ],
+              "recall_at_100": [
+                0.0655481087367825,
+                0.3935055279393219
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 3
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": [
+                "Buspirone",
+                "Cannabidiol",
+                "Sertraline"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 4.093846153846155,
+                "vs_popularity_percentage_points": 11.538461538461538
+              },
+              "100": {
+                "vs_random_ratio": 3.411538461538462,
+                "vs_popularity_percentage_points": 19.230769230769234
+              }
+            }
+          },
+          "popularity_only": {
+            "metrics": {
+              "mrr": 0.008403361344537815,
+              "mean_reciprocal_heldout_rank": 0.002951494396696854,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 0,
+              "recall_at_50": 0.0,
+              "enrichment_at_50": 0.0,
+              "hits_at_100": 0,
+              "recall_at_100": 0.0,
+              "enrichment_at_100": 0.0
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.1322746044977541
+              ],
+              "recall_at_20": [
+                0.0,
+                0.1322746044977541
+              ],
+              "recall_at_50": [
+                0.0,
+                0.1322746044977541
+              ],
+              "recall_at_100": [
+                0.0,
+                0.1322746044977541
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 0
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": []
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "random": {
+            "metrics": {
+              "mrr": 0.06034184926085062,
+              "mean_reciprocal_heldout_rank": 0.004429783344262831,
+              "hits_at_10": 0.14656144306651633,
+              "recall_at_10": 0.005636978579481398,
+              "enrichment_at_10": 1.0,
+              "hits_at_20": 0.29312288613303267,
+              "recall_at_20": 0.011273957158962795,
+              "enrichment_at_20": 1.0,
+              "hits_at_50": 0.7328072153325818,
+              "recall_at_50": 0.02818489289740699,
+              "enrichment_at_50": 1.0,
+              "hits_at_100": 1.4656144306651635,
+              "recall_at_100": 0.05636978579481398,
+              "enrichment_at_100": 1.0
+            },
+            "exact_95_ci": null,
+            "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+            "distinct_families_at_k": {
+              "10": 0.14656144306651697,
+              "20": 0.29312288613303394,
+              "50": 0.732807215332582
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 0.5636978579481398
+              },
+              "20": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 1.1273957158962795
+              },
+              "50": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 2.818489289740699
+              },
+              "100": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 5.636978579481398
+              }
+            }
+          }
+        },
+        "family_permutation": {
+          "unit": "one collapsed drug family",
+          "permutations": 10000,
+          "seed": 20261024,
+          "statistic": "distinct labeled families among the first k collapsed family cards",
+          "hypothesis": "uniform random family order, preserving family membership and positive family count",
+          "results": {
+            "10": {
+              "observed": 0,
+              "random_mean": 0.1466,
+              "p_value_one_sided": 1.0
+            },
+            "20": {
+              "observed": 1,
+              "random_mean": 0.2905,
+              "p_value_one_sided": 0.2536746325367463
+            },
+            "50": {
+              "observed": 3,
+              "random_mean": 0.7346,
+              "p_value_one_sided": 0.0385961403859614
+            }
+          },
+          "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+        },
+        "positive_ids": [
+          14144,
+          14180,
+          14189,
+          14299,
+          14306,
+          14318,
+          14406,
+          14447,
+          14644,
+          14656,
+          14880,
+          14936,
+          14937,
+          15029,
+          15099,
+          15116,
+          15126,
+          15201,
+          15212,
+          15441,
+          15496,
+          15501,
+          15579,
+          15891,
+          16855,
+          17951
+        ],
+        "excluded_ids": [
+          14154,
+          14216,
+          14259,
+          14286,
+          14298,
+          14643,
+          14725,
+          14783,
+          14956,
+          14963,
+          14995,
+          15426,
+          15822
+        ],
+        "uncertain_handling": "uncertain counted as included (sensitivity)",
+        "sample_note": "very small sample",
+        "headline_qualifier": "small test, not shown to generalize",
+        "label_note": "Studied interventions in diagnosed participants under the fixed strict rule; clinical symptom studies may qualify. Trial participation does not establish efficacy.",
+        "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine."
+      },
+      "raw": {
+        "candidate_count": 1774,
+        "heldout_count": 39,
+        "family_count": 1763,
+        "positive_family_count": 39,
+        "primary_method": "path_only",
+        "methods": {
+          "path_only": {
+            "metrics": {
+              "mrr": 0.043478260869565216,
+              "mean_reciprocal_heldout_rank": 0.006117638011755975,
+              "hits_at_10": 0,
+              "recall_at_10": 0.0,
+              "enrichment_at_10": 0.0,
+              "hits_at_20": 0,
+              "recall_at_20": 0.0,
+              "enrichment_at_20": 0.0,
+              "hits_at_50": 4,
+              "recall_at_50": 0.10256410256410256,
+              "enrichment_at_50": 3.638974358974359,
+              "hits_at_100": 6,
+              "recall_at_100": 0.15384615384615385,
+              "enrichment_at_100": 2.7292307692307696
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0,
+                0.09025110096033431
+              ],
+              "recall_at_20": [
+                0.0,
+                0.09025110096033431
+              ],
+              "recall_at_50": [
+                0.028660105126096323,
+                0.24220972695061777
+              ],
+              "recall_at_100": [
+                0.05862426286078935,
+                0.30527992443671265
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 0,
+              "20": 0,
+              "50": 4
+            },
+            "recovered_families_at_k": {
+              "10": [],
+              "20": [],
+              "50": [
+                "Acetaminophen",
+                "Buspirone",
+                "Cannabidiol",
+                "Sertraline"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": -2.564102564102564
+              },
+              "20": {
+                "vs_random_ratio": 0.0,
+                "vs_popularity_percentage_points": -2.564102564102564
+              },
+              "50": {
+                "vs_random_ratio": 3.638974358974359,
+                "vs_popularity_percentage_points": 7.6923076923076925
+              },
+              "100": {
+                "vs_random_ratio": 2.7292307692307696,
+                "vs_popularity_percentage_points": 12.820512820512823
+              }
+            }
+          },
+          "popularity_only": {
+            "metrics": {
+              "mrr": 0.1111111111111111,
+              "mean_reciprocal_heldout_rank": 0.0059553640455006236,
+              "hits_at_10": 1,
+              "recall_at_10": 0.02564102564102564,
+              "enrichment_at_10": 4.5487179487179485,
+              "hits_at_20": 1,
+              "recall_at_20": 0.02564102564102564,
+              "enrichment_at_20": 2.2743589743589743,
+              "hits_at_50": 1,
+              "recall_at_50": 0.02564102564102564,
+              "enrichment_at_50": 0.9097435897435897,
+              "hits_at_100": 1,
+              "recall_at_100": 0.02564102564102564,
+              "enrichment_at_100": 0.45487179487179485
+            },
+            "exact_95_ci": {
+              "recall_at_10": [
+                0.0006489638954819458,
+                0.13476392155949793
+              ],
+              "recall_at_20": [
+                0.0006489638954819458,
+                0.13476392155949793
+              ],
+              "recall_at_50": [
+                0.0006489638954819458,
+                0.13476392155949793
+              ],
+              "recall_at_100": [
+                0.0006489638954819458,
+                0.13476392155949793
+              ]
+            },
+            "distinct_families_at_k": {
+              "10": 1,
+              "20": 1,
+              "50": 1
+            },
+            "recovered_families_at_k": {
+              "10": [
+                "Caffeine"
+              ],
+              "20": [
+                "Caffeine"
+              ],
+              "50": [
+                "Caffeine"
+              ]
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 4.5487179487179485,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "20": {
+                "vs_random_ratio": 2.2743589743589743,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "50": {
+                "vs_random_ratio": 0.9097435897435897,
+                "vs_popularity_percentage_points": 0.0
+              },
+              "100": {
+                "vs_random_ratio": 0.45487179487179485,
+                "vs_popularity_percentage_points": 0.0
+              }
+            }
+          },
+          "random": {
+            "metrics": {
+              "mrr": 0.08172765918634448,
+              "mean_reciprocal_heldout_rank": 0.004417485759095722,
+              "hits_at_10": 0.21984216459977451,
+              "recall_at_10": 0.005636978579481398,
+              "enrichment_at_10": 1.0,
+              "hits_at_20": 0.43968432919954903,
+              "recall_at_20": 0.011273957158962795,
+              "enrichment_at_20": 1.0,
+              "hits_at_50": 1.0992108229988726,
+              "recall_at_50": 0.02818489289740699,
+              "enrichment_at_50": 1.0,
+              "hits_at_100": 2.1984216459977453,
+              "recall_at_100": 0.05636978579481398,
+              "enrichment_at_100": 1.0
+            },
+            "exact_95_ci": null,
+            "ci_note": "Analytical random recall k/N is a known reference, not a fitted binomial proportion; no CI. MRR is averaged over 1000 permutations.",
+            "distinct_families_at_k": {
+              "10": 0.21984216459977546,
+              "20": 0.4396843291995509,
+              "50": 1.0992108229988733
+            },
+            "lift": {
+              "10": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -2.0004047061544243
+              },
+              "20": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": -1.4367068482062844
+              },
+              "50": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 0.25438672563813486
+              },
+              "100": {
+                "vs_random_ratio": 1.0,
+                "vs_popularity_percentage_points": 3.0728760153788337
+              }
+            }
+          }
+        },
+        "family_permutation": {
+          "unit": "one collapsed drug family",
+          "permutations": 10000,
+          "seed": 20261024,
+          "statistic": "distinct labeled families among the first k collapsed family cards",
+          "hypothesis": "uniform random family order, preserving family membership and positive family count",
+          "results": {
+            "10": {
+              "observed": 0,
+              "random_mean": 0.214,
+              "p_value_one_sided": 1.0
+            },
+            "20": {
+              "observed": 1,
+              "random_mean": 0.4303,
+              "p_value_one_sided": 0.35576442355764426
+            },
+            "50": {
+              "observed": 4,
+              "random_mean": 1.1007,
+              "p_value_one_sided": 0.023497650234976502
+            }
+          },
+          "caveat": "Exploratory, post-hoc grouping; k=20 primary family test, k=10/50 descriptive and unadjusted. Not an efficacy test."
+        },
+        "disease_id": "parkinsons",
+        "disease_name": "Parkinson's disease",
+        "guard_diseases": [
+          "alzheimers",
+          "parkinsons"
+        ],
+        "known_controls_excluded": 27,
+        "interval_method": "95% Clopper-Pearson exact binomial; correlated drug variants limit independence.",
+        "family_metric_note": "Recovery counts use top-k drugs; the permutation test uses top-k collapsed family cards.",
+        "label_definition": "registered experimental-arm drugs in Parkinson's disease-tagged trials",
+        "label_scope_note": "Registry condition tags and experimental-arm occurrence do not establish disease-patient enrollment or disease-directed testing; healthy-volunteer interaction probes can qualify under the frozen rules.",
+        "trial_note": "Trial participation does not establish efficacy; retrospective graph holdout, not a temporal test.",
+        "small_sample_note": "Inspect distinct families as well as drug counts; labels are incomplete and correlated.",
+        "path_hyperparameters": {
+          "label_fitted": false,
+          "length_penalty": 0.5,
+          "degree_exponent": -0.5,
+          "aggregate_top_paths": 10,
+          "explanation_paths": 5
+        },
+        "embedding_note": "Not run for this disease. The prior Alzheimer DistMult experiment did not improve primary recall.",
+        "lincs": "unavailable",
+        "disclaimer": "Research hypothesis, not medical advice. This tool does not tell anyone what to take. Talk to a doctor or pharmacist about any medicine.",
+        "provenance": {
+          "frozen_inputs_sha256": "da2d9c0d006a4a3e24e115e7a37939bdf809add61d4199471839e8c2e6175ab4",
+          "rankings_sha256": "e3c074e576e88a43dd7010328779c59168988c853b35afd3241164e4dbbd4652"
+        }
+      },
+      "source_sha256": "b1016ed6319f7105ba1911a0c6e2ededc0da1ad9262560ee8d5ade6c72d76f04",
+      "decisions_sha256": "468df65422aabe60ba39ec00f124a4a4a69461a92848f525ac4a6fc94eb9d835",
+      "review_sha256": "e8bf3dc48a4b582538b55ab0dc57744145944f728899b9086bab5ebada406523",
+      "rankings_sha256": "e3c074e576e88a43dd7010328779c59168988c853b35afd3241164e4dbbd4652"
+    }
+  },
+  "hard_stop": false
+}

@@ -92,13 +92,16 @@ handoff notes. The historical "Next" section below predates this authorized pilo
 
 If you demo this, these are the facts you must not soften.
 
-- **The headline is 4/44 at k=10/20 (9.09%), exact CI [2.53%, 21.67%].** That is 8.15x
-  the exact random expectation and +9.09 points over popularity (popularity is 0/44, so
-  a ratio is undefined).
-- **The recovery is essentially insulin.** Those 4 drugs span only **2 families**
-  (insulin variants, choline) out of 41 positive families, and it stays at 2 through
-  k=50. The family-aware permutation test gives **p = 0.080 at k=20** (primary), 0.023
-  at k=10, 0.322 at k=50 — exploratory and unadjusted.
+- **The headline is the STRICT result: 1 of 24 Alzheimer labels at k=10/20 (4.17%),
+  exact CI [0.11%, 21.12%], family permutation p@20 = 0.233.** Very small sample.
+  The sensitivity analysis (uncertain counted as included) gives 3/32 = 9.38%,
+  p@20 = 0.287. The raw, unaudited set gave 4/44 = 9.09%, p@20 = 0.080, and is now
+  reported as secondary only.
+- **Under audit the recovery is literally one insulin.** Insulin glulisine (rank 6)
+  survives; insulin aspart (rank 5) and insulin detemir (rank 9) became *uncertain*
+  on ambiguous population evidence; choline (rank 10) was excluded outright. The old
+  "essentially insulin" caveat turned out to understate it.
+- **Parkinson's is negative on both label sets.** 0/39 raw and 0/24 strict at k=10/20.
 - **The embedding experiment failed.** Fixed DistMult scored 0/22 recall@10/20 on the
   reserved split; tuning selected zero embedding weight. Documented, not hidden.
 - **Path scoring cannot see direction.** PrimeKG edges are undirected and unsigned.
@@ -243,10 +246,13 @@ except an optional live agent run.
 | --- | ---: |
 | Discovery pool | 1,792 drugs / 1,781 families |
 | Trial labels | 44 (9 controls excluded) / 41 positive families |
-| Path recall@10 and @20 | 9.09% (4/44), exact CI [2.53, 21.67]% |
-| Enrichment@20 | 8.15x exact random |
-| Distinct families recovered | 2 of 41 (insulin, choline) |
-| Family permutation p@20 | 0.080 |
+| Alzheimer strict primary recall@10/20 | 4.17% (1/24), exact CI [0.11, 21.12]% |
+| Alzheimer strict sensitivity | 9.38% (3/32), exact CI [1.98, 25.02]% |
+| Alzheimer raw, secondary | 9.09% (4/44), exact CI [2.53, 21.67]%, enrichment@20 8.15x |
+| Distinct families recovered, strict | 1 of 23 (insulin glulisine) |
+| Family permutation p@20 | 0.233 strict / 0.287 sensitivity / 0.080 raw |
+| Parkinson strict / raw recall@10/20 | 0/24 and 0/39 |
+| Reviewer agreement (AD / PD) | kappa 0.856 / 0.961 |
 | Agent families cached | 20 |
 | Families with >=1 verified claim | 17 |
 | Claims generated / verified / failed | 231 / 229 / 2 (0.87%) |

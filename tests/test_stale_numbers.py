@@ -100,3 +100,37 @@ def test_the_generator_is_runnable_as_a_script():
     result = subprocess.run([sys.executable, "scripts/headline_numbers.py", "--check"],
                             cwd=ROOT, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
+
+
+# Raw figures stay true of the raw label set, so they are not "retired". They must
+# never stand alone as the headline now that a stricter label set exists.
+RAW_ONLY_FIGURES = ("4/44", "9.09%", "8.15")
+RAW_CONTEXT = ("raw", "superseded", "historical", "unaudited", "before the strict",
+               "pre-strict", "22/22", "stage-2", "stage 2", "previously", "earlier",
+               "popularity", "distmult", "embedding", "combined", "label audit",
+               "source-audit", "all-supporting")
+
+
+@pytest.mark.parametrize("path", _candidate_files(), ids=lambda p: p.name)
+def test_raw_alzheimer_headlines_are_labelled_raw(path):
+    """A reader must never meet 4/44 presented as the current primary result."""
+    # Strong markers set the frame for a whole section, so a table under a paragraph
+    # that says "raw, unaudited" does not need the word repeated in every row.
+    strong = ("raw, unaudited", "raw labels", "raw label set", "not the current primary",
+              "historical", "superseded", "preserved 22/22", "secondary result")
+    offences = []
+    section_marked = False
+    for number, line in enumerate(path.read_text().splitlines(), 1):
+        lowered = line.casefold()
+        if lowered.lstrip().startswith("#"):
+            section_marked = any(token in lowered for token in strong)
+        elif any(token in lowered for token in strong):
+            section_marked = True
+        if not any(f.casefold() in lowered for f in RAW_ONLY_FIGURES):
+            continue
+        if section_marked or any(token in lowered for token in RAW_CONTEXT):
+            continue
+        offences.append(f"{path.name}:{number} presents a raw figure as current: {line.strip()[:140]}")
+    assert not offences, (
+        "Raw-label figures must be marked raw, or carry the strict figure beside them.\n"
+        + "\n".join(offences))

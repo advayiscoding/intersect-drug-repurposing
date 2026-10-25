@@ -32,19 +32,28 @@ have the target disease and the drug is a focal studied intervention with a clin
 objective/outcome. Exclude healthy-only, probe/interaction/PK-only, background or
 unseparated co-administered agents; ambiguous records do not qualify. Diagnosed-
 patient symptom studies may qualify. A drug needs at least one qualifying study.
-No scores or ranking settings change. See [the fixed rule](docs/STRICT_LABEL_RULE.md).
-Until its results are computed, the figures below are the **raw, secondary** result:
-small test, not shown to generalize.
+No scores or ranking settings change. See [the fixed rule](docs/STRICT_LABEL_RULE.md)
+and [the handling pre-declaration](docs/STRICT_LABEL_PROTOCOL.md).
 
-| Primary all-44 evaluation | Result |
-| --- | --- |
-| Path recall@10 / @20 | 4/44 = 9.09%; exact 95% CI 2.53–21.67% |
-| Lift at 20 | 8.15× exact random expectation; +9.09 percentage points over popularity |
-| Distinct recovered families at 10 / 20 / 50 | 2 / 2 / 2 of 41 positive families |
-| Family-aware permutation p@20 | 0.080; exploratory, unadjusted |
-| Single-query / all-label mean reciprocal rank | 0.200 / 0.01536 |
+**The strict result is the primary one, and it is weak.** Small test, not shown to
+generalize; **very small sample**.
 
-The sample is small: recovery is concentrated in **insulin variants and choline**.
+| Alzheimer's, path recall@10 / @20 | Labels | Hits | Recall | Exact 95% CI | Families recovered |
+| --- | ---: | ---: | ---: | --- | ---: |
+| **Strict (primary, uncertain excluded)** | 24 | **1** | **4.17%** | 0.11–21.12% | 1 of 23 |
+| Strict sensitivity (uncertain included) | 32 | 3 | 9.38% | 1.98–25.02% | 1 of 29 |
+| Raw, unaudited (secondary) | 44 | 4 | 9.09% | 2.53–21.67% | 2 of 41 |
+
+Family-aware permutation p@20: **0.233 strict**, 0.287 sensitivity, 0.080 raw —
+all exploratory and unadjusted. Popularity recovers 0 at 10 and 20 in every analysis.
+
+**Under the strict rule the recovery is one insulin.** Of the four raw top-20 hits,
+insulin glulisine survives; insulin aspart and insulin detemir fall to *uncertain*
+on ambiguous population evidence and count only in the sensitivity analysis; choline
+is excluded outright. The long-standing "essentially insulin" caveat turns out to be
+literally true — strip the ambiguous records and a single insulin remains, and the
+permutation test stops being suggestive at all.
+
 The earlier 22/22 test split recovered insulin detemir and insulin glulisine at 20.
 DistMult recovered 0/22 at 10/20; tuning selected zero embedding weight. Path-only
 remains primary, with **no label-fitted hyperparameters**. The 22/22 experiment is

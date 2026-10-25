@@ -20,7 +20,7 @@ No new diseases, selectors, agents or paid calls. React/Vite + existing Python A
   freeze a principle-based strict rule in README/docs before any strict metrics.
   This required preregistration commit is the explicit exception to one commit
   per phase. Do not inspect rank positions when adjudicating records.
-- [ ] Phase 1b: implement `strict_labels.py`, tests for patient/role/ambiguity
+- [x] Phase 1b: implement `strict_labels.py`, tests for patient/role/ambiguity
   exclusions; persist per-record decisions and evidence quotes; use the unchanged
   evaluator against fixed cached rankings; raw remains secondary. Stop immediately
   if Alzheimer strict labels <10 or evaluation becomes uninterpretable. Otherwise
