@@ -30,6 +30,17 @@ strict decisions, independent review, then fixed-rank strict/raw evaluation.
 tests/test_strict_labels.py currently contains six expected failing tests for the
 not-yet-created strict-label module (red phase); do not mistake this for a baseline
 regression. Commit only the rule/audit/docs for the pre-evaluation freeze.
+UPDATE: strict rule freeze is c041084. strict_labels.py added; six tests now pass
+after observed red failures. Rank-free source bundles exported to artifacts/label_audit.
+Rule hash c67af905bdf8286f22cf7c8df20a631f317cc2666836e78af924cb30b47ae2cd.
+Next: quote-backed per-record adjudication and independent review using
+docs/STRICT_ADJUDICATION_BRIEF.md. No strict metrics yet. The evaluator refuses
+unreviewed decisions, hash changes, changed ranks, or result overwrite and raises
+the hard stop if Alzheimer strict count is below 10. No UI changes yet.
+Adjudicators ad_strict_decisions and pd_strict_decisions are writing separate
+decision files/docs from rank-free source bundles; do not evaluate until their
+independent review JSON files cover every record and pin source/rule/decision hashes.
+Validator now also rejects condition/title-only inclusion evidence for population.
 No new disease selectors, agents, verdict changes or paid calls. Merge to main and
 demo-final tag only after all final checks. Keep demo-safe untouched.
 
@@ -106,6 +117,15 @@ hardening is complete. **132 tests pass**, including in a clean Git-index export
 without .env or ignored datasets. Python tests reused the installed runtime;
 frontend dependencies were freshly installed from npm's offline cache, then built.
 The inherited 187-test claim was stale; nine fixture failures are now repaired.
+
+Test-count forensics (pytest --collect-only, verified 2026-10-25): f1abde1 collected
+**106**; HEAD c041084 collects **144** committed plus 8 uncommitted strict-label tests
+= 152 in the working tree. `git diff --stat f1abde1 HEAD -- tests/` is +487/-3 across
+four files, with **zero test files deleted and zero test functions removed** (checked
+with --diff-filter=D and a grep for removed `def test_`). No coverage was lost, so
+nothing needed restoring. The "187" was an arithmetic error in a chat summary: a
+full-suite run of 113 was added to a two-file run of 74 from the same session. Trust
+`--collect-only`, never a remembered total.
 
 | Commit | What |
 | --- | --- |
