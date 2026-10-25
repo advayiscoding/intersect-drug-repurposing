@@ -91,3 +91,10 @@
 - Restrict the single-disease guard exception to an explicit Alzheimer snapshot replay; new runs must include all configured guards, preventing accidental cross-disease holdout reintroduction.
 - Shared random-family expectations sum family counts in stable sorted order; regression tolerates 1e-12 floating precision, with discrete counts and Alzheimer path ranks/scores/degrees unchanged.
 - Keep the Parkinson product selector and evidence outside Stage 1; a static JSON-derived checkpoint report supplies the requested screenshot without expanding the web app.
+
+## Final-demo continuation
+
+- The latest six-phase request supersedes earlier approval checkpoints; only its hard stops apply. Keep the existing feature branch until final verified merge.
+- Phase 1 requires a rule-preregistration commit before its result commit; this specific requirement overrides the general one-commit-per-phase rule.
+- Audit cached source snapshots, not live registries, so results remain reproducible and no external calls or payments are required.
+- Secret verification compares configured key values in memory and scans reachable history/current tracked files for provider/private-key patterns; no secret values are logged. Unrecognized formats remain a scan limitation.

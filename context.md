@@ -11,6 +11,19 @@ Updated 2026-10-25. Workspace `/Users/advay/Downloads/Hackathon`, branch `feat/p
 
 ## Active continuation — read before the historical state below
 
+LATEST REQUEST: final-demo phases 0–5, authorized to proceed without the old
+checkpoint approvals; only the latest attachment's hard stops apply. Read
+docs/FINAL_PLAN.md. Phase 0 verified 144 collected/144 passed, clean branch
+feat/parkinsons-pilot at 293e85e, demo-safe/main d35abee, expected artifacts.
+Secret scan: 250 reachable blobs / 164 tracked files, two configured-value checks
+plus provider/private-key patterns; zero findings, no values printed. Gitleaks
+not installed. Historical 132-test sections below describe the old baseline only.
+Next: audit labels and COMMIT strict rule before calculating strict results.
+No new disease selectors, agents, verdict changes or paid calls. Merge to main and
+demo-final tag only after all final checks. Keep demo-safe untouched.
+
+The following Stage 1 checkpoint is historical, not the current stop instruction:
+
 User authorized a staged multi-disease extension via attached spec. Work ONLY on
 Stage 1: disease parameterization + Parkinson pilot, then STOP for user decision.
 Stage 2 (ALS/Huntington/MS), Stage 3 product/evidence, and Stage 4 plain-language
